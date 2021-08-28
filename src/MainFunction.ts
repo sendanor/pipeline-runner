@@ -17,6 +17,7 @@ import RunnerExitStatus from "./types/RunnerExitStatus";
 import RequestClient from "./nor/ts/RequestClient";
 import { isBearerRunnerAuthentication } from "./types/BearerRunnerAuthentication";
 import { isBasicRunnerAuthentication } from "./types/BasicRunnerAuthentication";
+import { PIPELINE_SCRIPT_NAME } from "./pipeline-runner-constants";
 
 const LOG = LogService.createLogger('main');
 
@@ -56,7 +57,7 @@ export function mainUsage (
     When the room has a state event of type fi.nor.pipeline and has empty state_key with content 
     as the data for pipeline, the pipeline will be executed in that room.
     
-    Otherwise will look for state events of type fi.nor.pipeline with state_key as a Room ID 
+    Otherwise, will look for state events of type fi.nor.pipeline with state_key as a Room ID 
     type to execute.
     
     The ROOM should be either in format !ID:HOMESERVER or #ALIAS:HOMESERVER and decoded correctly 
@@ -211,7 +212,7 @@ export async function main (
 
     try {
 
-        let script_name = 'runner';
+        let script_name = PIPELINE_SCRIPT_NAME;
 
         args.shift();
         const scriptNameFromArgs = args.shift();

@@ -16,11 +16,17 @@ Install in your project:
 
 ### Usage
 
-USAGE: `pipeline-runner ARG(1) [...ARG(N)]`
+USAGE: `nor-pipeline-runner ARG(1) [...ARG(N)]`
 
 Executes instructions from various sources.
   
-Instructions in the resource may be type of Pipeline, Stage, Job or Step resource.
+Instructions in the resource may be type of:
+
+ * [Pipeline](https://github.com/sendanor/test/blob/main/examples/pipeline/pipeline.json)
+ * [Stage](https://github.com/sendanor/test/blob/main/examples/pipeline/stage.json)
+ * [Job](https://github.com/sendanor/test/blob/main/examples/pipeline/job.json)
+ * Steps
+   * [Script Step](https://github.com/sendanor/test/blob/main/examples/pipeline/step-script.json)
 
 ...where `ARG` is one of:
 
