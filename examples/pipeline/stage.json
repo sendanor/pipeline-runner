@@ -1,0 +1,27 @@
+{
+  "name": "Print_stuff",
+  "jobs": [
+
+    {
+      "name": "Print_date",
+      "steps": [
+        {
+          "name": "Print_date",
+          "command": "date"
+        }
+      ]
+    },
+
+    {
+      "name": "Print_timestamp",
+      "steps": [
+        {
+          "name": "Print_timestamp",
+          "command": "date",
+          "args": ["+%s"]
+        }
+      ]
+    }
+
+  ]
+}

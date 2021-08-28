@@ -1,0 +1,41 @@
+{
+  "name": "TestPipeline",
+  "stages": [
+
+    {
+      "name": "Print_stuff_1",
+      "jobs": [
+
+        {
+          "name": "Print_date",
+          "steps": [
+            {
+              "name": "Print_date",
+              "command": "date"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "name": "Print_stuff_2",
+      "jobs": [
+
+        {
+          "name": "Print_timestamp",
+          "steps": [
+            {
+              "name": "Print_timestamp",
+              "command": "date",
+              "args": ["+%s"]
+            }
+          ]
+        }
+
+      ]
+    }
+
+  ]
+}

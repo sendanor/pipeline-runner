@@ -1,0 +1,50 @@
+{
+  "name": "@sendanor/pipeline-runner",
+  "version": "1.0.0",
+  "description": "Sendanor Pipeline Runner",
+  "main": "./dist/main.js",
+  "bin": {
+    "nor-pipeline-runner": "./dist/main.js"
+  },
+  "scripts": {
+    "start": "ts-node ./src/main.ts",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sendanor/pipeline-runner.git"
+  },
+  "keywords": [
+    "pipeline",
+    "automation",
+    "staging"
+  ],
+  "author": "Jaakko Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sendanor/pipeline-runner/issues"
+  },
+  "homepage": "https://github.com/sendanor/pipeline-runner#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-inject": "^4.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.7.4",
+    "lodash": "^4.17.21",
+    "rollup": "^2.56.3",
+    "rollup-plugin-uglify": "^6.0.4",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
+  }
+}

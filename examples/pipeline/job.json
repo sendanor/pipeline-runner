@@ -1,0 +1,14 @@
+{
+  "name": "Print_date_and_timestamp",
+  "steps": [
+    {
+      "name": "Print_date",
+      "command": "date"
+    },
+    {
+      "name": "Print_timestamp",
+      "command": "date",
+      "args": ["+%s"]
+    }
+  ]
+}

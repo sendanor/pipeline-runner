@@ -1,0 +1,8 @@
+[submodule "src/nor/ts"]
+	path = src/nor/ts
+	url = git@github.com:sendanor/typescript.git
+	branch = main
+[submodule "src/nor/pipeline"]
+	path = src/nor/pipeline
+	url = git@github.com:sendanor/pipeline.git
+	branch = main

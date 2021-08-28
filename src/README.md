@@ -1,17 +1,11 @@
-# @sendanor/pipeline-runner
+## Pipeline runner program
 
-Our Pipeline Processor for NodeJS v8 and newer.
-
-For the library, check out [@sendanor/pipeline](https://github.com/sendanor/pipeline).
-
-### Install
-
-`npm i -g sendanor/pipeline-runner`
-
-### Usage
+### Command Line Usage
 
 ```
-USAGE: pipeline-runner ARG(1) [...ARG(N)]
+$ ts-node main.ts 
+[RequestClient] Detected NodeJS environment
+USAGE: runner ARG(1) [...ARG(N)]
 
   Executes instructions from various sources.
   
@@ -70,31 +64,6 @@ USAGE: pipeline-runner ARG(1) [...ARG(N)]
 
 ```
 
-### Build
+### Example pipelines
 
-`npm run build`
-
-### It's MIT licenced
-
-### It doesn't have any runtime dependencies
-
-Except *NodeJS LTS v8 or newer*.
-
-### It's well tested
-
-Our unit tests exists beside the code. To run tests, check out our test repository 
-[@sendanor/test](https://github.com/sendanor/test).
-
-### We don't have traditional releases
-
-This project evolves directly to our git repository in an agile manner.
-
-### Stable releases available for a commercial customer
-
-For *tailored commercial release*, you may contact [our sales](mailto:info@sendanor.fi).
-
-General rule for pricing is 500 € (or $600) / [feature](https://github.com/sendanor/ui/issues). One 
-full stable release containing multiple components is 8000 €.
-
-The payment includes a month of agile development with the customer, and a year of support for that 
-release branch.
+Check out our [example pipelines](https://github.com/sendanor/test/tree/main/examples/pipeline).
