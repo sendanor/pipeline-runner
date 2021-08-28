@@ -6,6 +6,12 @@ export enum RunnerAuthenticationType {
     BEARER_AUTH
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isRunnerAuthenticationType (value: any): value is RunnerAuthenticationType {
     switch (value) {
         case RunnerAuthenticationType.NONE:
@@ -19,6 +25,12 @@ export function isRunnerAuthenticationType (value: any): value is RunnerAuthenti
     }
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyRunnerAuthenticationType (value: RunnerAuthenticationType): string {
     switch (value) {
         case RunnerAuthenticationType.NONE : return 'NONE';
@@ -28,6 +40,12 @@ export function stringifyRunnerAuthenticationType (value: RunnerAuthenticationTy
     throw new TypeError(`Unsupported RunnerAuthenticationType value: ${value}`);
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseRunnerAuthenticationType (value: any): RunnerAuthenticationType | undefined {
 
     switch (value) {

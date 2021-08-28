@@ -79,11 +79,24 @@ The resource will be loaded from the local filesystem and executed.
  * `_bearer:ACCESS_TOKEN`
  * `ACCESS_TOKEN`
 
+##### `PIPELINE_LOG_LEVEL` as one of:
+
+ * `ALL`
+ * `DEBUG`
+ * `INFO` (default)
+ * `WARN`
+ * `ERROR`
+ * `NONE`
+ 
 ### It's MIT licenced
 
 ### It doesn't have any runtime dependencies
 
 Except *NodeJS LTS v8 or newer*.
+
+### It compiles as a single standalone 117 kB script
+
+Including all the dependencies as well!
 
 ### It's well tested
 
@@ -98,7 +111,7 @@ This project evolves directly to our git repository in an agile manner.
 
 For *tailored commercial release*, you may contact [our sales](mailto:info@sendanor.fi).
 
-General rule for pricing is 500 € (or $600) / [feature](https://github.com/sendanor/ui/issues). One 
+General rule for pricing is 500 € (or $600) / [feature](https://github.com/sendanor/pipeline-runner/issues). One 
 full stable release containing multiple components is 8000 €.
 
 The payment includes a month of agile development with the customer, and a year of support for that 

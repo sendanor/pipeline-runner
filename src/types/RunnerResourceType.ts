@@ -6,6 +6,12 @@ export enum RunnerResourceType {
     MATRIX_ROOM
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isRunnerResourceType (value: any): value is RunnerResourceType {
     switch (value) {
 
@@ -20,6 +26,12 @@ export function isRunnerResourceType (value: any): value is RunnerResourceType {
     }
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyRunnerResourceType (value: RunnerResourceType): string {
     switch (value) {
         case RunnerResourceType.HTTP         : return 'http';
@@ -29,6 +41,12 @@ export function stringifyRunnerResourceType (value: RunnerResourceType): string 
     throw new TypeError(`Unsupported RunnerResourceType value: ${value}`);
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseRunnerResourceType (value: any): RunnerResourceType | undefined {
 
     switch (`${value}`.toUpperCase()) {

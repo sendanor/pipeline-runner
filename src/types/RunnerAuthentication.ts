@@ -9,6 +9,12 @@ export interface RunnerAuthentication {
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isRunnerAuthentication (value: any): value is RunnerAuthentication {
     return (
         isRegularObject(value)
@@ -16,10 +22,22 @@ export function isRunnerAuthentication (value: any): value is RunnerAuthenticati
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyRunnerAuthentication (value: RunnerAuthentication): string {
     return `RunnerAuthentication(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseRunnerAuthentication (value: any): RunnerAuthentication | undefined {
     if ( isRunnerAuthentication(value) ) return value;
     return undefined;

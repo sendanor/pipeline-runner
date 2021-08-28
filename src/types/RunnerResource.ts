@@ -11,6 +11,12 @@ export interface RunnerResource {
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isRunnerResource (value: any): value is RunnerResource {
     return (
         isRegularObject(value)
@@ -18,10 +24,22 @@ export function isRunnerResource (value: any): value is RunnerResource {
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyRunnerResource (value: RunnerResource): string {
     return `RunnerResource(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseRunnerResource (value: any): RunnerResource | undefined {
     if ( isRunnerResource(value) ) return value;
     return undefined;

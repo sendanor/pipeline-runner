@@ -6,12 +6,18 @@ import RunnerAuthentication from "./RunnerAuthentication";
 
 export interface BasicRunnerAuthentication extends RunnerAuthentication {
 
-    readonly type     : RunnerAuthenticationType.BASIC_AUTH;
-    readonly username : string;
-    readonly password : string;
+    readonly type: RunnerAuthenticationType.BASIC_AUTH;
+    readonly username: string;
+    readonly password: string;
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isBasicRunnerAuthentication (value: any): value is BasicRunnerAuthentication {
     return (
         isRegularObject(value)
@@ -26,19 +32,46 @@ export function isBasicRunnerAuthentication (value: any): value is BasicRunnerAu
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyBasicRunnerAuthentication (value: BasicRunnerAuthentication): string {
     return `BasicRunnerAuthentication(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBasicRunnerAuthentication (value: any): BasicRunnerAuthentication | undefined;
+
+/**
+ *
+ * @param username
+ * @param password
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBasicRunnerAuthentication (username: any, password: any): BasicRunnerAuthentication | undefined;
 
+/**
+ *
+ * @param value1
+ * @param value2
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBasicRunnerAuthentication (
-    value1  : any,
+    value1: any,
     value2 ?: any
 ): BasicRunnerAuthentication | undefined {
 
-    if (value2 === undefined) {
+    if ( value2 === undefined ) {
 
         if ( value1 === undefined ) return undefined;
         if ( value1 === '' ) return undefined;
@@ -63,9 +96,9 @@ export function parseBasicRunnerAuthentication (
     const username = value1 === undefined ? '' : `${value1}`;
     const password = `${value2}`;
 
-    if (username === '' && password === '') return undefined;
+    if ( username === '' && password === '' ) return undefined;
 
-    if (username === '_bearer') {
+    if ( username === '_bearer' ) {
         return undefined;
     }
 

@@ -10,7 +10,7 @@ import RunnerResource from "./RunnerResource";
 import RunnerResourceType from "./RunnerResourceType";
 import RunnerAuthentication, { isRunnerAuthentication } from "./RunnerAuthentication";
 import RunnerAuthenticationUtils from "../utils/RunnerAuthenticationUtils";
-import { PIPELINE_AUTHENTICATION } from "../pipeline-runner-constants";
+import { PIPELINE_AUTHENTICATION } from "../pipeline-runtime-constants";
 
 export interface HttpRunnerResource extends RunnerResource {
 
@@ -20,6 +20,12 @@ export interface HttpRunnerResource extends RunnerResource {
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isHttpRunnerResource (value: any): value is HttpRunnerResource {
     return (
         isRegularObject(value)
@@ -34,10 +40,22 @@ export function isHttpRunnerResource (value: any): value is HttpRunnerResource {
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyHttpRunnerResource (value: HttpRunnerResource): string {
     return `HttpRunnerResource(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseHttpRunnerResource (value: any): HttpRunnerResource | undefined {
 
     if ( !value ) return undefined;

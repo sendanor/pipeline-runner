@@ -11,6 +11,12 @@ export interface BearerRunnerAuthentication extends RunnerAuthentication {
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isBearerRunnerAuthentication (value: any): value is BearerRunnerAuthentication {
     return (
         isRegularObject(value)
@@ -23,13 +29,40 @@ export function isBearerRunnerAuthentication (value: any): value is BearerRunner
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyBearerRunnerAuthentication (value: BearerRunnerAuthentication): string {
     return `BearerRunnerAuthentication(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBearerRunnerAuthentication (value: any): BearerRunnerAuthentication | undefined;
+
+/**
+ *
+ * @param username
+ * @param password
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBearerRunnerAuthentication (username: any, password: any): BearerRunnerAuthentication | undefined;
 
+/**
+ *
+ * @param value1
+ * @param value2
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseBearerRunnerAuthentication (
     value1  : any,
     value2 ?: any

@@ -17,6 +17,12 @@ export interface LocalRunnerResource extends RunnerResource {
 
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function isLocalRunnerResource (value: any): value is LocalRunnerResource {
     return (
         isRegularObject(value)
@@ -29,10 +35,22 @@ export function isLocalRunnerResource (value: any): value is LocalRunnerResource
     );
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function stringifyLocalRunnerResource (value: LocalRunnerResource): string {
     return `LocalRunnerResource(${value})`;
 }
 
+/**
+ *
+ * @param value
+ * @__PURE__
+ * @nosideeffects
+ */
 export function parseLocalRunnerResource (value: any): LocalRunnerResource | undefined {
 
     if ( !value ) return undefined;
