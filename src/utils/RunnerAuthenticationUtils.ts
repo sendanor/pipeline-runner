@@ -1,8 +1,8 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
-import RunnerAuthentication from "./types/RunnerAuthentication";
-import { parseBasicRunnerAuthentication } from "./types/BasicRunnerAuthentication";
-import { parseBearerRunnerAuthentication } from "./types/BearerRunnerAuthentication";
+import RunnerAuthentication from "../types/RunnerAuthentication";
+import { parseBasicRunnerAuthentication } from "../types/BasicRunnerAuthentication";
+import { parseBearerRunnerAuthentication } from "../types/BearerRunnerAuthentication";
 
 export class RunnerAuthenticationUtils {
 

@@ -1,6 +1,9 @@
 examples
 src
 .idea
+babel.config.json
+rollup.config.json
+tsconfig.json
 
 # Logs
 logs

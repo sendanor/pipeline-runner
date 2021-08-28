@@ -9,7 +9,7 @@ import {
 import RunnerResource from "./RunnerResource";
 import RunnerResourceType from "./RunnerResourceType";
 import RunnerAuthentication, { isRunnerAuthentication } from "./RunnerAuthentication";
-import RunnerAuthenticationUtils from "../RunnerAuthenticationUtils";
+import RunnerAuthenticationUtils from "../utils/RunnerAuthenticationUtils";
 import { PIPELINE_AUTHENTICATION } from "../pipeline-runner-constants";
 
 export interface HttpRunnerResource extends RunnerResource {

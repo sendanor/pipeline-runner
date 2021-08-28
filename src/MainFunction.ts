@@ -9,7 +9,7 @@ import LogService from "./nor/ts/LogService";
 import LocalRunnerResource from "./types/LocalRunnerResource";
 import { parsePipelineModel } from "./nor/pipeline/types/PipelineModel";
 import RunnerResource from "./types/RunnerResource";
-import RunnerResourceUtils from "./RunnerResourceUtils";
+import RunnerResourceUtils from "./utils/RunnerResourceUtils";
 import RunnerResourceType from "./types/RunnerResourceType";
 import HttpRunnerResource from "./types/HttpRunnerResource";
 import MatrixRoomRunnerResource from "./types/MatrixRoomRunnerResource";
