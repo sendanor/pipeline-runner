@@ -15,14 +15,15 @@ export enum RunnerExitStatus {
     ARGUMENT_PARSE_ERROR            = 3,
     UNKNOWN_ARGUMENT                = 4,
     UNKNOWN_RESOURCE_TYPE           = 5,
-    RESOURCE_LOAD_FAILED            = 6,
-    RESOURCE_MODEL_INVALID          = 7,
-    LOCAL_RESOURCE_FAILED           = 8,
-    HTTP_RESOURCE_FAILED            = 9,
-    MATRIX_RESOURCE_FAILED          = 10 ,
-    UNIMPLEMENTED_FEATURE           = 11,
-    UNBUILD_FEATURE                 = 12,
-    FATAL_ERROR                     = 13,
+    UNKNOWN_AUTHENTICATION_TYPE     = 6,
+    RESOURCE_LOAD_FAILED            = 7,
+    RESOURCE_MODEL_INVALID          = 8,
+    LOCAL_RESOURCE_FAILED           = 9,
+    HTTP_RESOURCE_FAILED            = 10,
+    MATRIX_RESOURCE_FAILED          = 11 ,
+    UNIMPLEMENTED_FEATURE           = 12,
+    UNBUILD_FEATURE                 = 13,
+    FATAL_ERROR                     = 14,
 
     // From Linux sysexits.h
     USAGE                           = 64,      /* command line usage error */
@@ -78,12 +79,14 @@ export function isRunnerExitStatus (value: any): value is RunnerExitStatus {
         case RunnerExitStatus.ARGUMENT_PARSE_ERROR:
         case RunnerExitStatus.UNKNOWN_ARGUMENT:
         case RunnerExitStatus.UNKNOWN_RESOURCE_TYPE:
+        case RunnerExitStatus.UNKNOWN_AUTHENTICATION_TYPE:
         case RunnerExitStatus.RESOURCE_LOAD_FAILED:
         case RunnerExitStatus.RESOURCE_MODEL_INVALID:
         case RunnerExitStatus.LOCAL_RESOURCE_FAILED:
         case RunnerExitStatus.HTTP_RESOURCE_FAILED:
         case RunnerExitStatus.MATRIX_RESOURCE_FAILED:
         case RunnerExitStatus.UNIMPLEMENTED_FEATURE:
+        case RunnerExitStatus.UNBUILD_FEATURE:
         case RunnerExitStatus.FATAL_ERROR:
         case RunnerExitStatus.USAGE:
         case RunnerExitStatus.DATAERR:
@@ -135,12 +138,14 @@ export function stringifyRunnerExitStatus (value: RunnerExitStatus): string {
         case RunnerExitStatus.ARGUMENT_PARSE_ERROR            : return 'ARGUMENT_PARSE_ERROR';
         case RunnerExitStatus.UNKNOWN_ARGUMENT                : return 'UNKNOWN_ARGUMENT';
         case RunnerExitStatus.UNKNOWN_RESOURCE_TYPE           : return 'UNKNOWN_RESOURCE_TYPE';
+        case RunnerExitStatus.UNKNOWN_AUTHENTICATION_TYPE           : return 'UNKNOWN_AUTHENTICATION_TYPE';
         case RunnerExitStatus.RESOURCE_LOAD_FAILED            : return 'RESOURCE_LOAD_FAILED';
         case RunnerExitStatus.RESOURCE_MODEL_INVALID          : return 'RESOURCE_MODEL_INVALID';
         case RunnerExitStatus.LOCAL_RESOURCE_FAILED           : return 'LOCAL_RESOURCE_FAILED';
         case RunnerExitStatus.HTTP_RESOURCE_FAILED            : return 'HTTP_RESOURCE_FAILED';
         case RunnerExitStatus.MATRIX_RESOURCE_FAILED          : return 'MATRIX_RESOURCE_FAILED';
         case RunnerExitStatus.UNIMPLEMENTED_FEATURE           : return 'UNIMPLEMENTED_FEATURE';
+        case RunnerExitStatus.UNBUILD_FEATURE           : return 'UNBUILD_FEATURE';
         case RunnerExitStatus.FATAL_ERROR                     : return 'FATAL_ERROR';
         case RunnerExitStatus.USAGE                           : return 'USAGE';
         case RunnerExitStatus.DATAERR                         : return 'DATAERR';
@@ -206,12 +211,14 @@ export function parseRunnerExitStatus (value: any): RunnerExitStatus | undefined
         case 'ARGUMENT_PARSE_ERROR'            : return RunnerExitStatus.ARGUMENT_PARSE_ERROR;
         case 'UNKNOWN_ARGUMENT'                : return RunnerExitStatus.UNKNOWN_ARGUMENT;
         case 'UNKNOWN_RESOURCE_TYPE'           : return RunnerExitStatus.UNKNOWN_RESOURCE_TYPE;
+        case 'UNKNOWN_AUTHENTICATION_TYPE'           : return RunnerExitStatus.UNKNOWN_AUTHENTICATION_TYPE;
         case 'RESOURCE_LOAD_FAILED'            : return RunnerExitStatus.RESOURCE_LOAD_FAILED;
         case 'RESOURCE_MODEL_INVALID'          : return RunnerExitStatus.RESOURCE_MODEL_INVALID;
         case 'LOCAL_RESOURCE_FAILED'           : return RunnerExitStatus.LOCAL_RESOURCE_FAILED;
         case 'HTTP_RESOURCE_FAILED'            : return RunnerExitStatus.HTTP_RESOURCE_FAILED;
         case 'MATRIX_RESOURCE_FAILED'          : return RunnerExitStatus.MATRIX_RESOURCE_FAILED;
         case 'UNIMPLEMENTED_FEATURE'           : return RunnerExitStatus.UNIMPLEMENTED_FEATURE;
+        case 'UNBUILD_FEATURE'           : return RunnerExitStatus.UNBUILD_FEATURE;
         case 'FATAL_ERROR'                     : return RunnerExitStatus.FATAL_ERROR;
         case 'USAGE'                           : return RunnerExitStatus.USAGE;
         case 'DATAERR'                         : return RunnerExitStatus.DATAERR;
