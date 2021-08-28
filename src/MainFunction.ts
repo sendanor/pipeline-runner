@@ -1,6 +1,6 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
-import { readFile } from "fs/promises";
+import { readFileString } from "./nor/pipeline/modules/fs";
 import Json from "./nor/ts/Json";
 import JsonAny from "./nor/ts/Json";
 import PipelineRunner from "./nor/pipeline/PipelineRunner";
@@ -92,7 +92,7 @@ export async function runLocalResource (
 
     try {
 
-        const dataString = await readFile(resource.path, {encoding: 'utf8'});
+        const dataString = await readFileString(resource.path, {encoding: 'utf8'});
 
         const data : Json = JSON.parse(dataString);
 
