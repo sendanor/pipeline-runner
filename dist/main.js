@@ -285,20 +285,22 @@ null==e?void 0:e.to_device)&&!$e(null==e?void 0:e.to_device))throw new TypeError
 null==e?void 0:e.device_one_time_keys_count))throw new TypeError('Property "device_one_time_keys_count" was invalid')}(e
 ),"No errors detected"}catch(e){return e.message}}function Ge(e){return y(e)&&D(e,["display_name","avatar_url"])&&p(
 null==e?void 0:e.display_name)&&(p(null==e?void 0:e.avatar_url)||Vs(null==e?void 0:e.avatar_url))}function He(e){
-return y(e)&&D(e,["errcode","error"])&&(null==e?void 0:e.errcode)===Ma.M_USER_IN_USE&&p(null==e?void 0:e.error)}
-function Be(e){return encodeURIComponent(e)}async function Je(e,t,r,n){n=S(S({},r.data),{},{state:n.getStateDTO()}),
-await e.update(t,n)}var xe,We,qe,Ke,Ve,ze,Xe,Ye,Qe,Ze,et,tt,rt,nt,it,ot,st,at,ut,lt,ct,dt,ht,_t,Et,vt,pt,ft,Tt,gt,At,St,
-Rt,Nt,yt,wt,Ct,mt,bt,It,Dt,Ot,Lt,Pt,Ut,Ft,$t,kt,Mt,jt,Gt,Ht,Bt,Jt,xt,Wt,qt,Kt,Vt,zt,Xt,Yt,Qt,Zt,er,tr,rr,nr,ir,or,sr,ar,
-ur,lr,cr,dr,hr,_r,Er,vr,pr,fr,Tr,gr,Ar,Sr,Rr,Nr,yr,wr,Cr,mr,br,Ir,Dr,Or,Lr,Pr,Ur,Fr,$r,kr,Mr,jr,Gr,Hr,Br,Jr,xr,Wr,qr,Kr,
-Vr,zr,Xr,Yr,Qr,Zr,en,tn,rn,nn,on,sn,an,un,ln,cn,dn,hn,_n,En,vn,pn,fn,Tn,gn,An,Sn,Rn,Nn,yn,wn,Cn,mn,bn,In,Dn,On,Ln,Pn,Un,
-Fn,$n,kn,Mn,jn,Gn,Hn,Bn,Jn,xn,Wn,qn,Kn,Vn,zn,Xn,Yn,Qn,Zn,ei,ti,ri,ni,ii,oi,si,ai,ui,li,ci,di,hi,_i,Ei,vi,pi,fi,Ti,gi,Ai,
-Si,Ri,Ni,yi,wi,Ci,mi,bi,Ii,Di,Oi,Li,Pi,Ui,Fi,$i,ki,Mi,ji,Gi,Hi,Bi,Ji,xi,Wi,qi,Ki,Vi,zi,Xi,Yi,Qi,Zi,eo,to,ro,no,io,oo,so,
-ao,uo,lo,co,ho,_o,Eo,vo,po,fo,To,go,Ao,So,Ro,No,yo,wo,Co,mo,bo,Io,Do,Oo,Lo,Po,Uo,Fo,$o,ko,Mo,jo,Go,Ho,Bo,Jo,xo,Wo,qo,Ko,
-Vo,zo,Xo,Yo,Qo,Zo,es,ts,rs,ns,is,os,ss,as,us,ls,cs,ds,hs,_s,Es,vs,ps,fs,Ts,gs,As,Ss,Rs,Ns,ys,ws,Cs,ms,bs,Is,Ds,Os,Ls,Ps,
-Us,Fs,$s,ks,Ms,js,Gs,Hs,Bs,Js,xs,Ws,qs,Ks,Vs,zs,Xs,Ys,Qs,Zs,ea,ta,ra,na,ia,oa,sa,aa,ua,la,ca,da,ha,_a,Ea,va,pa,fa,Ta,ga,
-Aa,Sa,Ra,Na,ya,wa,Ca,ma,ba,Ia,Da,Oa,La,Pa,Ua,Fa,$a,ka,Ma,ja,Ga,Ha,Ba,Ja,xa,Wa,qa,Ka,Va,za,Xa,Ya,Qa,Za,eu,tu,ru,nu,iu,ou,
-su,au,uu,lu,cu,du,hu,_u,Eu,vu,pu,fu,Tu,gu=require("querystring"),Au=require("url"),Su=require("path"),Ru=require(
-"child_process"),Nu=require("fs"),yu=t(gu),wu=e(Au),Cu=e(Su),
+return y(e)&&D(e,["errcode","error"])&&function(){switch(null==e?void 0:e.errcode){case Ma.M_USER_IN_USE:
+case Ma.M_INVALID_USERNAME:case Ma.M_EXCLUSIVE:case Ma.M_FORBIDDEN:return 1;default:return}}()&&p(null==e?void 0:e.error
+)}function Be(e){return encodeURIComponent(e)}async function Je(e,t,r,n,i){n=S(S({},n.data),{},{state:i.getStateDTO()}),
+await t.update(r,n),await e.setRoomStateByType(r,$a.FI_NOR_PIPELINE_STATE,"",i.toJSON())}var xe,We,qe,Ke,Ve,ze,Xe,Ye,Qe,
+Ze,et,tt,rt,nt,it,ot,st,at,ut,lt,ct,dt,ht,_t,Et,vt,pt,ft,Tt,gt,At,St,Rt,Nt,yt,wt,Ct,mt,bt,It,Dt,Ot,Lt,Pt,Ut,Ft,$t,kt,Mt,
+jt,Gt,Ht,Bt,Jt,xt,Wt,qt,Kt,Vt,zt,Xt,Yt,Qt,Zt,er,tr,rr,nr,ir,or,sr,ar,ur,lr,cr,dr,hr,_r,Er,vr,pr,fr,Tr,gr,Ar,Sr,Rr,Nr,yr,
+wr,Cr,mr,br,Ir,Dr,Or,Lr,Pr,Ur,Fr,$r,kr,Mr,jr,Gr,Hr,Br,Jr,xr,Wr,qr,Kr,Vr,zr,Xr,Yr,Qr,Zr,en,tn,rn,nn,on,sn,an,un,ln,cn,dn,
+hn,_n,En,vn,pn,fn,Tn,gn,An,Sn,Rn,Nn,yn,wn,Cn,mn,bn,In,Dn,On,Ln,Pn,Un,Fn,$n,kn,Mn,jn,Gn,Hn,Bn,Jn,xn,Wn,qn,Kn,Vn,zn,Xn,Yn,
+Qn,Zn,ei,ti,ri,ni,ii,oi,si,ai,ui,li,ci,di,hi,_i,Ei,vi,pi,fi,Ti,gi,Ai,Si,Ri,Ni,yi,wi,Ci,mi,bi,Ii,Di,Oi,Li,Pi,Ui,Fi,$i,ki,
+Mi,ji,Gi,Hi,Bi,Ji,xi,Wi,qi,Ki,Vi,zi,Xi,Yi,Qi,Zi,eo,to,ro,no,io,oo,so,ao,uo,lo,co,ho,_o,Eo,vo,po,fo,To,go,Ao,So,Ro,No,yo,
+wo,Co,mo,bo,Io,Do,Oo,Lo,Po,Uo,Fo,$o,ko,Mo,jo,Go,Ho,Bo,Jo,xo,Wo,qo,Ko,Vo,zo,Xo,Yo,Qo,Zo,es,ts,rs,ns,is,os,ss,as,us,ls,cs,
+ds,hs,_s,Es,vs,ps,fs,Ts,gs,As,Ss,Rs,Ns,ys,ws,Cs,ms,bs,Is,Ds,Os,Ls,Ps,Us,Fs,$s,ks,Ms,js,Gs,Hs,Bs,Js,xs,Ws,qs,Ks,Vs,zs,Xs,
+Ys,Qs,Zs,ea,ta,ra,na,ia,oa,sa,aa,ua,la,ca,da,ha,_a,Ea,va,pa,fa,Ta,ga,Aa,Sa,Ra,Na,ya,wa,Ca,ma,ba,Ia,Da,Oa,La,Pa,Ua,Fa,$a,
+ka,Ma,ja,Ga,Ha,Ba,Ja,xa,Wa,qa,Ka,Va,za,Xa,Ya,Qa,Za,eu,tu,ru,nu,iu,ou,su,au,uu,lu,cu,du,hu,_u,Eu,vu,pu,fu,Tu,gu=require(
+"querystring"),Au=require("url"),Su=require("path"),Ru=require("child_process"),Nu=require("fs"),yu=t(gu),wu=e(Au),Cu=e(
+Su),
 mu="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{}
 ,bu=function(e,t){for(var r=-1,n=null==e?0:e.length,i=Array(n);++r<n;)i[r]=t(e[r],r,e);return i},Iu=function(){
 this.__data__=[],this.size=0},Du=function(e,t){return e===t||e!=e&&t!=t},Ou=Du,Lu=function(e,t){for(var r=e.length;r--;
@@ -498,7 +500,7 @@ tu=Array.prototype,va=tu.join,pa=function(e,t){return null==e?"":va.call(e,t)},(
 eu[eu.INFO=1]="INFO",eu[eu.WARN=2]="WARN",eu[eu.ERROR=3]="ERROR",eu[eu.NONE=4]="NONE",Ta=fa;const Wu=null!==(Uu=L(
 "1.0.2"))&&void 0!==Uu?Uu:"?";Za=null!==(bu=L(""))&&void 0!==bu?bu:"io.nor.fi",eu=null!==(tu=L("")
 )&&void 0!==tu?tu:"nor-pipeline-runner",bu=null!==(Uu=L(""))&&void 0!==Uu?Uu:"",Uu=null!==(tu=L(""))&&void 0!==tu?tu:""
-;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T18:12:12.777Z")
+;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T19:29:55.767Z")
 )&&void 0!==tu?tu:"",Vu=null===(tu=O(""))||void 0===tu||tu,zu=null===(tu=O(""))||void 0===tu||tu,Xu=null===(tu=O("")
 )||void 0===tu||tu,Yu=null===(tu=O(""))||void 0===tu||tu;tu="production"===qu;const Qu="test"===qu,Zu=!tu&&!Qu
 ;bu=null!==(xe=function(e){if(e){if(function(){switch(e){case fa.DEBUG:case fa.INFO:case fa.WARN:case fa.ERROR:
@@ -963,14 +965,15 @@ iu.FI_NOR_PIPELINE_STATE="fi.nor.pipeline.state",$a=Fa,(iu=ka=ka||{})[iu.UNAUTHE
 iu[iu.AUTHENTICATING=1]="AUTHENTICATING",iu[iu.AUTHENTICATED=2]="AUTHENTICATED",
 iu[iu.AUTHENTICATED_AND_STARTING=3]="AUTHENTICATED_AND_STARTING",
 iu[iu.AUTHENTICATED_AND_STARTED=4]="AUTHENTICATED_AND_STARTED",(iu=Ma={}).M_USER_IN_USE="M_USER_IN_USE",
-iu.M_INVALID_USERNAME="M_INVALID_USERNAME",iu.M_EXCLUSIVE="M_EXCLUSIVE",ja=Ma;const Pl=il.createLogger(
-"SimpleMatrixClient");(Ga=Ga||{}).EVENT="SimpleMatrixClient:event";class Ul{constructor(e,t=void 0,r=void 0,n=void 0,
-i=void 0,o=3e4,s=1e3){a(this,"_observer",void 0),a(this,"_originalUrl",void 0),a(this,"_pollTimeout",void 0),a(this,
-"_pollWaitTime",void 0),a(this,"_timeoutCallback",void 0),a(this,"_state",void 0),a(this,"_homeServerUrl",void 0),a(this
-,"_identityServerUrl",void 0),a(this,"_accessToken",void 0),a(this,"_userId",void 0),a(this,"_nextBatch",void 0),a(this,
-"_timer",void 0),a(this,"_syncing",void 0),this._state=n?ka.AUTHENTICATED:ka.UNAUTHENTICATED,this._originalUrl=e,
-this._homeServerUrl=null!=t?t:e,this._identityServerUrl=null!=r?r:e,this._nextBatch=void 0,this._accessToken=n,
-this._userId=i,this._pollTimeout=o,this._pollWaitTime=s,this._syncing=!1,this._observer=new Al("SimpleMatrixClient"),
+iu.M_INVALID_USERNAME="M_INVALID_USERNAME",iu.M_EXCLUSIVE="M_EXCLUSIVE",iu.M_FORBIDDEN="M_FORBIDDEN",ja=Ma
+;const Pl=il.createLogger("SimpleMatrixClient");(Ga=Ga||{}).EVENT="SimpleMatrixClient:event";class Ul{constructor(e,
+t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){a(this,"_observer",void 0),a(this,"_originalUrl",void 0),a(this,
+"_pollTimeout",void 0),a(this,"_pollWaitTime",void 0),a(this,"_timeoutCallback",void 0),a(this,"_state",void 0),a(this,
+"_homeServerUrl",void 0),a(this,"_identityServerUrl",void 0),a(this,"_accessToken",void 0),a(this,"_userId",void 0),a(
+this,"_nextBatch",void 0),a(this,"_timer",void 0),a(this,"_syncing",void 0),
+this._state=n?ka.AUTHENTICATED:ka.UNAUTHENTICATED,this._originalUrl=e,this._homeServerUrl=null!=t?t:e,
+this._identityServerUrl=null!=r?r:e,this._nextBatch=void 0,this._accessToken=n,this._userId=i,this._pollTimeout=o,
+this._pollWaitTime=s,this._syncing=!1,this._observer=new Al("SimpleMatrixClient"),
 this._timeoutCallback=this._onTimeout.bind(this)}getState(){return this._state}destroy(){this._observer.destroy(),
 this.stop()}on(e,t){return this._observer.listenEvent(e,t)}start(){void 0!==this._timer&&(clearTimeout(this._timer),
 this._timer=void 0),this._initSync().catch(e=>{Pl.error("SYNC ERROR: ",e)})}stop(){void 0!==this._timer&&(clearTimeout(
@@ -988,14 +991,15 @@ null==a?void 0:a.device_id)))throw Pl.debug("Invalid response received: ",s),new
 )throw new dl(ma.InternalServerError,"Failed to register user");switch(s.errcode){case ja.M_USER_IN_USE:throw new dl(
 ma.Conflict,"User already exists");case ja.M_INVALID_USERNAME:throw new dl(ma.BadRequest,"Username invalid")
 ;case ja.M_EXCLUSIVE:throw new dl(ma.Conflict,"User name conflicts with exclusive namespace");default:throw new dl(
-ma.InternalServerError,"Failed to register user")}}}async whoami(){var e,t,r,n,i;try{if(!(t=this._accessToken)
+ma.InternalServerError,"Failed to register user")}}}async whoami(){var e,t,r,n,i,o;try{if(!(t=this._accessToken)
 )throw new TypeError("whoami: Client did not have access token");return r=this._resolveHomeServerUrl("/account/whoami"),
 Pl.debug("whoami: Fetching account whoami... ",r),n=await gl.getJson(r,{Authorization:`Bearer ${t}`}),Pl.debug(
-"whoami: response = ",n),i=null!==(e=null==n?void 0:n.user_id)&&void 0!==e?e:void 0,Pl.debug("whoami: user_id = ",i),p(i
-)?i:void 0}catch(e){return void Pl.error("whoami: Could not fetch user_id: ",e)}}async getRegisterNonce(){var e,t,r,n
-;try{if(Pl.debug("Fetching nonce for registration..."),t=this._resolveSynapseServerUrl("/register"),!(n=null!==(
-e=null==(r=await gl.getJson(t))?void 0:r.nonce)&&void 0!==e?e:void 0))throw new TypeError("No nonce detected");return n
-}catch(e){throw Pl.debug("Could not fetch nonce for registration: ",e),new TypeError(
+"whoami: response = ",n),i=null!==(e=null==n?void 0:n.user_id)&&void 0!==e?e:void 0,Pl.debug("whoami: user_id = ",i),
+o=p(i)?i:void 0,this._userId=o}catch(e){return void Pl.error("whoami: Could not fetch user_id: ",e)}}
+async getRegisterNonce(){var e,t,r,n;try{if(Pl.debug("Fetching nonce for registration..."),
+t=this._resolveSynapseServerUrl("/register"),!(n=null!==(e=null==(r=await gl.getJson(t))?void 0:r.nonce
+)&&void 0!==e?e:void 0))throw new TypeError("No nonce detected");return n}catch(e){throw Pl.debug(
+"Could not fetch nonce for registration: ",e),new TypeError(
 "Could not fetch nonce for the register request. Is it Synapse?")}}async registerWithSharedSecret(e){var t,r,n;try{if(
 Pl.debug("registerWithSharedSecret: Registering user:",e),t=this._resolveSynapseServerUrl("/register"),!(y(
 n=r=await gl.postJson(t,e))&&D(n,["access_token","user_id","home_server","device_id"])&&p(null==n?void 0:n.access_token
@@ -1054,36 +1058,39 @@ async forgetRoom(e){var t,r;try{if(!(t=this._accessToken))throw new TypeError(
 `roomId invalid: ${e}`);if(!se(t))throw new TypeError(`userId invalid: ${t}`);if(Pl.info(`Inviting user ${t} to ${e}`),
 !(r=this._accessToken))throw new TypeError("inviteToRoom: Client did not have access token");n=await gl.postJson(
 this._resolveHomeServerUrl(`/rooms/${Be(e)}/invite`),{user_id:t},{Authorization:`Bearer ${r}`}),Pl.debug(
-"inviteToRoom: received: ",n)}catch(e){throw Pl.error("inviteToRoom: Passing on error: ",e),e}}async sendTextMessage(e,t
-){var r=this._accessToken;if(!r)throw new TypeError("sendTextMessage: Client did not have access token");t={
-msgtype:"m.text",body:t},Pl.debug("Sending message with body:",t),r=await gl.postJson(this._resolveHomeServerUrl(
-`/rooms/${Be(e)}/send/m.room.message`),t,{Authorization:`Bearer ${r}`}),Pl.debug("sendTextMessage response received: ",r
-)}async createRoom(e){var t=this._accessToken;if(!t)throw new TypeError("createRoom: Client did not have access token")
-;if(Pl.debug("Creating room with body:",e),!(y(e=t=await gl.postJson(this._resolveHomeServerUrl("/createRoom"),e,{
-Authorization:`Bearer ${t}`}))&&D(e,["room_id","room_alias"])&&ne(null==e?void 0:e.room_id)&&(v(
-null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias)&&e&&"#"===e[0])))throw Pl.debug("response = ",t),
-new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t);return Pl.debug("Create room response received: ",t),t
-}async joinRoom(e,t=void 0){var r=this._accessToken;if(!r)throw new TypeError(
-"createRoom: Client did not have access token");if(Pl.debug(`Joining to room ${e} with body:`,t),!(y(
-r=t=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(e)}/join`),null!=t?t:{},{Authorization:`Bearer ${r}`})
-)&&D(r,["room_id"])&&ne(null==r?void 0:r.room_id)))throw Pl.debug("response = ",t),new TypeError(
-`Could not join to ${e}: Response was not MatrixJoinRoomResponseDTO: `+t);return Pl.debug(`Joined to room ${e}: `,t),t}
-async sync(e){var t;if(Pl.info("sync with ",e),!(t=this._accessToken))throw new TypeError(
-`sync: Client ${this._userId} did not have access token`);var{filter:r,since:n,full_state:i,set_presence:o,timeout:e}=e
-;const s={};if(void 0!==r)if(p(r))s.filter=r;else{if(!te(r))throw new TypeError(`Invalid value for filter option: ${r}`)
-;s.filter=JSON.stringify(r)}if(void 0!==n&&(s.since=n),void 0!==i&&(s.full_state=i?"true":"false"),void 0!==o&&(
-s.set_presence=o),void 0!==e&&(s.timeout=`${e}`),e=pa(yi(P(s),e=>{var t=s[e];return`${Be(e)}=${Be(t)}`}),"&"),!(y(
-t=e=await gl.getJson(this._resolveHomeServerUrl(`/sync?${e}`),{Authorization:`Bearer ${t}`}))&&D(t,["next_batch","rooms"
-,"presence","account_data","to_device","device_lists","device_one_time_keys_count"])&&p(null==t?void 0:t.next_batch)&&(
-v(null==t?void 0:t.rooms)||Pe(null==t?void 0:t.rooms))&&(v(null==t?void 0:t.presence)||Fe(null==t?void 0:t.presence))&&(
-v(null==t?void 0:t.account_data)||Re(null==t?void 0:t.account_data))&&(v(null==t?void 0:t.to_device)||$e(
-null==t?void 0:t.to_device))&&(v(null==t?void 0:t.device_lists)||ke(null==t?void 0:t.device_lists))&&(v(
-null==t?void 0:t.device_one_time_keys_count)||Me(null==t?void 0:t.device_one_time_keys_count))))throw Pl.debug(
-"_sync: response not MatrixSyncResponseDTO: ",JSON.stringify(e,null,2)),new TypeError(
-`Response was not MatrixSyncResponseDTO: ${je(e)}`);return e}_sendMatrixEventList(e,t){gs(e,e=>{this._sendMatrixEvent(e,
-t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(Ga.EVENT,t?S(S({},e),{},{room_id:t}):e)}_onTimeout(){if(
-this._syncing)Pl.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e)throw new TypeError(
-"_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
+"inviteToRoom: received: ",n)}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return;throw Pl.error(
+"inviteToRoom: Passing on error: ",e),e}}async sendTextMessage(e,t){var r=this._accessToken;if(!r)throw new TypeError(
+"sendTextMessage: Client did not have access token");t={msgtype:"m.text",body:t},Pl.debug("Sending message with body:",t
+),r=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(e)}/send/m.room.message`),t,{Authorization:`Bearer ${r}`})
+,Pl.debug("sendTextMessage response received: ",r)}async createRoom(e){var t=this._accessToken;if(!t
+)throw new TypeError("createRoom: Client did not have access token");if(Pl.debug("Creating room with body:",e),!(y(
+e=t=await gl.postJson(this._resolveHomeServerUrl("/createRoom"),e,{Authorization:`Bearer ${t}`}))&&D(e,["room_id",
+"room_alias"])&&ne(null==e?void 0:e.room_id)&&(v(null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias
+)&&e&&"#"===e[0])))throw Pl.debug("response = ",t),new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t)
+;return Pl.debug("Create room response received: ",t),t}async joinRoom(t,e=void 0){var r,n,i;try{if(!(
+r=this._accessToken))throw new TypeError("createRoom: Client did not have access token");if(Pl.debug(
+`Joining to room ${t} with body:`,e),!(y(i=n=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(t)}/join`),
+null!=e?e:{},{Authorization:`Bearer ${r}`}))&&D(i,["room_id"])&&ne(null==i?void 0:i.room_id)))throw Pl.debug(
+"response = ",n),new TypeError(`Could not join to ${t}: Response was not MatrixJoinRoomResponseDTO: `+n)
+;return Pl.debug(`Joined to room ${t}: `,n),n}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{
+room_id:t};throw Pl.debug(`Could not join to room ${t}: `,e),e}}async sync(e){var t;if(Pl.info("sync with ",e),!(
+t=this._accessToken))throw new TypeError(`sync: Client ${this._userId} did not have access token`);var{filter:r,since:n,
+full_state:i,set_presence:o,timeout:e}=e;const s={};if(void 0!==r)if(p(r))s.filter=r;else{if(!te(r))throw new TypeError(
+`Invalid value for filter option: ${r}`);s.filter=JSON.stringify(r)}if(void 0!==n&&(s.since=n),void 0!==i&&(
+s.full_state=i?"true":"false"),void 0!==o&&(s.set_presence=o),void 0!==e&&(s.timeout=`${e}`),e=pa(yi(P(s),e=>{var t=s[e]
+;return`${Be(e)}=${Be(t)}`}),"&"),!(y(t=e=await gl.getJson(this._resolveHomeServerUrl(`/sync?${e}`),{
+Authorization:`Bearer ${t}`}))&&D(t,["next_batch","rooms","presence","account_data","to_device","device_lists",
+"device_one_time_keys_count"])&&p(null==t?void 0:t.next_batch)&&(v(null==t?void 0:t.rooms)||Pe(null==t?void 0:t.rooms)
+)&&(v(null==t?void 0:t.presence)||Fe(null==t?void 0:t.presence))&&(v(null==t?void 0:t.account_data)||Re(
+null==t?void 0:t.account_data))&&(v(null==t?void 0:t.to_device)||$e(null==t?void 0:t.to_device))&&(v(
+null==t?void 0:t.device_lists)||ke(null==t?void 0:t.device_lists))&&(v(null==t?void 0:t.device_one_time_keys_count)||Me(
+null==t?void 0:t.device_one_time_keys_count))))throw Pl.debug("_sync: response not MatrixSyncResponseDTO: ",
+JSON.stringify(e,null,2)),new TypeError(`Response was not MatrixSyncResponseDTO: ${je(e)}`);return e}isAlreadyInTheRoom(
+e){if(He(e)){var t=null!==(t=null==e?void 0:e.errcode)&&void 0!==t?t:"";const r=null!==(e=null==e?void 0:e.error
+)&&void 0!==e?e:"";if(t===ja.M_FORBIDDEN&&0<=r.indexOf("already in the room"))return!0}return!1}_sendMatrixEventList(e,t
+){gs(e,e=>{this._sendMatrixEvent(e,t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(Ga.EVENT,t?S(S({},e),{},{
+room_id:t}):e)}_onTimeout(){if(this._syncing)Pl.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e
+)throw new TypeError("_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
 void 0!==this._timer&&(clearTimeout(this._timer),this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,
 this._pollWaitTime)},e=>{this._syncing=!1,Pl.error("ERROR: ",e),void 0!==this._timer&&(clearTimeout(this._timer),
 this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,this._pollWaitTime)})}}_normalizeRoomName(e){if(!e||!p(
@@ -1134,17 +1141,23 @@ r=null==t||null===(r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{
 )||void 0===t?void 0:t.data)&&void 0!==t?t:{},r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(
 null==e||null===(n=e.content)||void 0===n||!n.deleted);return{data:t,id:i,version:r,deleted:n}}))},[])}
 async getAllByProperty(t,r){var e=await this.getAll();return yi(_s(e,e=>Bn(null==e?void 0:e.data,t)===r),e=>({id:e.id,
-version:e.version,data:e.data}))}async createItem(e,t){var r={data:e,version:1},n=null===(i=this._serviceAccount
-)||void 0===i?void 0:i.getUserId(),i=Bo(Zi(n?[n]:[],t||[])),n=this._allowedGroups,t={[$a.M_FEDERATE]:!1};const o=[{
-type:this._stateType,state_key:this._stateKey,content:r},{type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{
-history_visibility:Ba.SHARED}},{type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:xa.FORBIDDEN}}]
-;return void 0!==n&&o.push({type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({
-type:$a.M_ROOM_MEMBERSHIP,room_id:e}))}}),t=S(S({},i.length?{invite:i}:{}),{},{preset:Ha.PRIVATE_CHAT,
-creation_content:t,initial_state:o,room_version:"8"}),t=(await this._client.createRoom(t)).room_id,
-this._serviceAccount&&await this._serviceAccount.joinRoom(t),{id:t,version:1,data:e,deleted:!1}}async findById(e,t){
-var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Fl.debug("response = ",
-JSON.stringify(n,null,2)),!te(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`);if(!E(
-n=null==n?void 0:n.version))throw new TypeError(`version was not integer: ${n}`);let i=void 0;if(t){
+version:e.version,data:e.data}))}async createItem(e,t){var r,n,i;const o=this._client.getUserId();Fl.debug(
+"createItem: clientUserId = ",o),r={data:e,version:1},Fl.debug("createItem: content = ",r),n=null===(
+i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),Fl.debug("createItem: serviceAccountId = ",n),i=_s(Bo(Zi(n?[n
+]:[],t||[])),e=>e!==o),Fl.debug("createItem: invitedMembers = ",i),n=this._allowedGroups,Fl.debug(
+"createItem: allowedGroups = ",n),t={[$a.M_FEDERATE]:!1};const s=[{type:this._stateType,state_key:this._stateKey,
+content:r},{type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{history_visibility:Ba.SHARED}},{
+type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:xa.FORBIDDEN}}];if(void 0!==n&&s.push({
+type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({type:$a.M_ROOM_MEMBERSHIP,
+room_id:e}))}}),Fl.debug("createItem: initialState = ",s),i=i.length?{invite:i}:{},Fl.debug(
+"createItem: inviteOptions = ",i),t=S(S({},i),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,initial_state:s,
+room_version:"8",power_level_content_override:{events:{[this._stateType]:0,[this._deletedType]:0}}}),
+t=await this._client.createRoom(t),Fl.debug("createItem: response = ",t),t=t.room_id,Fl.debug("createItem: room_id = ",t
+),this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
+Fl.warn(`Warning! Could not join service account to room ${t}: `,e)}return{id:t,version:1,data:e,deleted:!1}}
+async findById(e,t){var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Fl.debug(
+"response = ",JSON.stringify(n,null,2)),!te(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`
+);if(!E(n=null==n?void 0:n.version))throw new TypeError(`version was not integer: ${n}`);let i=void 0;if(t){
 const o=await this._client.getJoinedMembers(e);i=yi(P(o.joined),e=>{var t=o.joined[e];return{id:e,
 displayName:t.display_name,avatarUrl:null!=t&&t.avatar_url?t.avatar_url:void 0}})}return{data:r,id:e,version:n,members:i
 }}async update(e,t){var r,n;if(!te(t))throw new TypeError(`jsonData was not JsonObject: ${t}`);if(void 0===(
@@ -1159,14 +1172,17 @@ this._serviceAccount){try{await this._serviceAccount.leaveRoom(t)}catch(e){Fl.wa
 ){Fl.warn(`Warning! Service account could not forget the room ${t}: `,e)}}return await this._client.leaveRoom(t),
 await this._client.forgetRoom(t),Fl.debug("response = ",JSON.stringify(i,null,2)),{data:e.data,id:t,version:r,deleted:!0
 }}catch(e){if(e instanceof dl&&[401,403,404].includes(e.getStatusCode()))throw e;throw Fl.error(
-`Error in deleteById(${t}): `,e),new dl(500)}}async inviteToItem(r,e){await bo(e,async(e,t)=>{await e,
-await this._client.inviteToRoom(r,t)},Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}
-const kl=il.createLogger("runMatrixRoomResource"),Ml=il.createLogger("main");il.setLogLevel(bu),async function(t=[]){
-var r,n,i,o;try{if(Ml.debug(`Loglevel ${il.getLogLevelString()}`),r=el,t.shift(),!t.shift())return console.log(H(r)),
-ya.ARGUMENT_PARSE_ERROR;if(0===t.length)return console.log(H(r)),ya.ARGUMENT_PARSE_ERROR;let e=!0;do{if(n=t.shift(),e){
-switch(function(){switch(n){case"-h":case"--help":case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":
-case 2:return 2}}()){case 0:return console.log(H(r)),ya.OK;case 1:return console.log(function(e){const t=_s([
-Vu?"LOCAL":"",zu?"HTTP":"",Xu?"MATRIX":"",Qu?"TEST":"",Zu?"DEV":""],e=>!!e);return`${e} v${Wu} [${t.join("|")}]
+`Error in deleteById(${t}): `,e),new dl(500)}}async inviteToItem(r,e){let n;var t;this._serviceAccount&&(n=null===(
+t=this._serviceAccount)||void 0===t?void 0:t.getUserId(),n=n||await this._serviceAccount.whoami()),await bo(e,async(e,t
+)=>{if(await e,!n||t!==n)try{await this._client.inviteToRoom(r,t)}catch(e){if(this._client.isAlreadyInTheRoom(
+null==e?void 0:e.body))return;throw Fl.error(`Warning! Could not invite user ${t} to room ${r}: `,e),e}},
+Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}const kl=il.createLogger(
+"runMatrixRoomResource"),Ml=il.createLogger("main");il.setLogLevel(bu),async function(t=[]){var r,n,i,o;try{if(Ml.debug(
+`Loglevel ${il.getLogLevelString()}`),r=el,t.shift(),!t.shift())return console.log(H(r)),ya.ARGUMENT_PARSE_ERROR;if(
+0===t.length)return console.log(H(r)),ya.ARGUMENT_PARSE_ERROR;let e=!0;do{if(n=t.shift(),e){switch(function(){switch(n){
+case"-h":case"--help":case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":case 2:return 2}}()){case 0:
+return console.log(H(r)),ya.OK;case 1:return console.log(function(e){const t=_s([Vu?"LOCAL":"",zu?"HTTP":"",
+Xu?"MATRIX":"",Qu?"TEST":"",Zu?"DEV":""],e=>!!e);return`${e} v${Wu} [${t.join("|")}]
     
 Built with options:
 
@@ -1192,9 +1208,9 @@ e?n(e):r(t)})}catch(e){n(e)}}));var i,o;return p(t)?t:t.toString("utf8")}(t.path
 `Running ${e.getName()} from ${t.path}`),await Dl.startAndWaitUntilFinished(e),Ll.info(
 `Successfully finished ${e.getName()} from ${t.path}`),ya.OK}catch(e){return Ll.error("Error: ",e),
 ya.LOCAL_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;case Aa.MATRIX:return Xu?async function(i){var o,s,a,u,l,c,d,h,_,E,v,p
-;try{kl.debug("runMatrixResource: ",i);let e;if(M(d=i.authentication))e=new Ul(`https://${i.homeserver}`,void 0,void 0,
-d.access_token);else{if(!$(d))return ya.UNKNOWN_AUTHENTICATION_TYPE;e=new Ul(`https://${i.homeserver}`),e=await e.login(
-d.username,d.password)}let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return kl.error(
+;try{kl.debug("runMatrixResource: ",i),d=i.authentication;let e;if(M(d))e=new Ul(`https://${i.homeserver}`,void 0,void 0
+,d.access_token);else{if(!$(d))return ya.UNKNOWN_AUTHENTICATION_TYPE;e=new Ul(`https://${i.homeserver}`),
+e=await e.login(d.username,d.password)}let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return kl.error(
 "Could not detect agent user ID"),ya.UNKNOWN_AGENT_ID;kl.info(`Agent user ID: ${t}`);const f=new $l(e,
 $a.FI_NOR_AGENT_DTO);if(0===(p=await f.getAll()).length)return kl.debug("Detected no pools available."),ya.OK;h=(
 1===p.length?(kl.debug("Detected single pool available. Picking it."),p[0]):(kl.debug(
@@ -1210,9 +1226,9 @@ r=await T.findById(r.id),!r)return kl.warn("The work item disappeared while we w
 )||void 0===u?void 0:u.agentAccountId))return kl.error(""),ya.CONFLICT;if(kl.debug(
 "Work item secured to us! We can start the job."),void 0===(v=X(null===(l=r)||void 0===l||null===(c=l.data
 )||void 0===c?void 0:c.model)))return kl.warn("Work item did not contain correct pipeline model: ",r),
-ya.RESOURCE_MODEL_INVALID;let n=Dl.createController(v);await Je(T,g,r,n);const A=n.onChanged(()=>{Je(T,g,r,n).catch(e=>{
-kl.error("Failed to save controller state: ",e)})});try{await Dl.startAndWaitUntilFinished(n)}finally{A(),await Je(T,g,r
-,n)}return ya.OK}catch(e){return kl.error("Error: ",e),ya.MATRIX_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;default:
+ya.RESOURCE_MODEL_INVALID;let n=Dl.createController(v);await Je(e,T,g,r,n);const A=n.onChanged(()=>{Je(e,T,g,r,n).catch(
+e=>{kl.error("Failed to save controller state: ",e)})});try{await Dl.startAndWaitUntilFinished(n)}finally{A(),await Je(e
+,T,g,r,n)}return ya.OK}catch(e){return kl.error("Error: ",e),ya.MATRIX_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;default:
 return ya.UNKNOWN_RESOURCE_TYPE}}(i))!==ya.OK)return o===ya.UNKNOWN_RESOURCE_TYPE?(Ml.error(`Error NorPP${o}: ${G(o
 )}: Resource type was unknown: ${i.type}`),console.log(H(r)),ya.UNKNOWN_RESOURCE_TYPE):(function(e){if(na(e)&&!(
 e<0||255<e)){if(Na.FATAL_SIGNAL_RANGE_START<=e&&e<=Na.FATAL_SIGNAL_RANGE_END)return 1;switch(e){case Na.OK:

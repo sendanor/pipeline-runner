@@ -17,10 +17,13 @@ import MatrixRoomId from "../../nor/matrix/types/core/MatrixRoomId";
 import PipelineRunDTO from "../../nor/pipeline/dto/PipelineRunDTO";
 import AgentPoolDTO from "../../nor/pipeline/dto/AgentPoolDTO";
 import Controller from "../../nor/pipeline/controllers/types/Controller";
+import ControllerStateDTO from "../../nor/pipeline/controllers/types/ControllerStateDTO";
+import { JsonObject } from "../../nor/ts/Json";
 
 const LOG = LogService.createLogger('runMatrixRoomResource');
 
 async function updateControllerState (
+    matrixClient  : SimpleMatrixClient,
     runRepository : MatrixCrudRepository<PipelineRunDTO>,
     workItemId    : MatrixRoomId,
     workItem      : RepositoryEntry<PipelineRunDTO>,
@@ -33,6 +36,13 @@ async function updateControllerState (
     };
 
     await runRepository.update(workItemId, newRunDto);
+
+    await matrixClient.setRoomStateByType(
+        workItemId,
+        MatrixType.FI_NOR_PIPELINE_STATE,
+        '',
+        controller.toJSON() as unknown as JsonObject
+    );
 
 }
 
@@ -192,10 +202,10 @@ export async function runMatrixResource (
 
         let controller : Controller = PipelineRunner.createController(model);
 
-        await updateControllerState(runRepository, workId, work, controller);
+        await updateControllerState(matrixClient, runRepository, workId, work, controller);
 
         const listener = controller.onChanged(() => {
-            updateControllerState(runRepository, workId, work, controller).catch(err => {
+            updateControllerState(matrixClient, runRepository, workId, work, controller).catch(err => {
                 LOG.error(`Failed to save controller state: `, err);
             });
         });
@@ -208,7 +218,7 @@ export async function runMatrixResource (
 
             listener();
 
-            await updateControllerState(runRepository, workId, work, controller);
+            await updateControllerState(matrixClient, runRepository, workId, work, controller);
 
         }
         return RunnerExitStatus.OK;
