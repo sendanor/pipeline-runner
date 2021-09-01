@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";function n(t,e){var r,n=Object.keys(t);return Object.getOwnPropertySymbols&&(
 r=Object.getOwnPropertySymbols(t),e&&(r=r.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),
-n.push.apply(n,r)),n}function S(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
+n.push.apply(n,r)),n}function m(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
 Object(r),!0).forEach(function(e){u(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
 Object.getOwnPropertyDescriptors(r)):n(Object(r)).forEach(function(e){Object.defineProperty(t,e,
 Object.getOwnPropertyDescriptor(r,e))});return t}function u(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
@@ -19,29 +19,29 @@ function v(e){return void 0===e}function c(e){return zt(e)}function d(e,t=void 0
 ;var i=null!==(i=null==e?void 0:e.length)&&void 0!==i?i:0;return!(void 0!==r&&i<r)&&!(void 0!==n&&n<i)&&(void 0===t||A(e
 ,t))}function h(e){return v(e)||na(e)}function p(e){return Zs(e)}function f(e){return v(e)||p(e)}function _(e){
 return!!e&&c(e)&&A(e,p)}function E(e){return oa(e)}function T(e){return v(e)||oa(e)}function g(e,t){return Fi(e,t)}
-function A(e,t){return Bi(e,t)}function R(e,t){return ot(e)&&A(Ea(e),t)}function N(e,t=p,r=void 0){return!(
-void 0!==r&&!R(e,r))&&(t=void 0!==t?t:p,ot(e)&&A(P(e),t))}function y(e){return!!ot(e)&&!(e instanceof Date)&&!ut(e)&&!c(
-e)&&N(e,p,void 0)}function w(e,t=p,r=void 0){return ot(e)&&!(e instanceof Date)&&!ut(e)&&!c(e)&&N(e,t,r)}function C(e,
+function A(e,t){return Bi(e,t)}function S(e,t){return ot(e)&&A(Ea(e),t)}function R(e,t=p,r=void 0){return!(
+void 0!==r&&!S(e,r))&&(t=void 0!==t?t:p,ot(e)&&A(P(e),t))}function N(e){return!!ot(e)&&!(e instanceof Date)&&!ut(e)&&!c(
+e)&&R(e,p,void 0)}function y(e,t=p,r=void 0){return ot(e)&&!(e instanceof Date)&&!ut(e)&&!c(e)&&R(e,t,r)}function w(e,
 t=void 0,r=void 0,n=void 0,i=void 0){if(t=void 0===t?p:t,!ot(e))throw new TypeError("value was not object");if(
 e instanceof Date)throw new TypeError("value was Date");if(ut(e))throw new TypeError("value was Function");if(c(e)
 )throw new TypeError("value was array");!function(e,t=void 0,r=void 0,n=void 0,i=void 0){const o=void 0===t?p:t;if(
-void 0===r||R(e,e=>r(e)))throw e=Ro(P(e),e=>!o(e)),n?new TypeError(`Property "${e}": key was not correct: ${n(e)}`
+void 0===r||S(e,e=>r(e)))throw e=Ro(P(e),e=>!o(e)),n?new TypeError(`Property "${e}": key was not correct: ${n(e)}`
 ):new TypeError(`Property "${e}": key was not correct: ${JSON.stringify(e,null,2)}`);var s=Ea(e),n=So(s,e=>!r(e)),t=P(e
 )[n],n=s[n];throw i?new TypeError(`Property "${t}": value not correct: ${i(n)}`):new TypeError(
-`Property "${t}": value not correct: ${JSON.stringify(n,null,2)}`)}(e,t,r,n,i)}function m(e,t=void 0,r=void 0,n=void 0,
-i=void 0){try{return C(e,t,r,n,i),"No errors detected"}catch(e){return null!==(i=null==e?void 0:e.message
-)&&void 0!==i?i:`${e}`}}function b(...e){return t=>g(e,e=>e(t))}function I(e){return ot(e)}function D(e,t){return I(e
+`Property "${t}": value not correct: ${JSON.stringify(n,null,2)}`)}(e,t,r,n,i)}function C(e,t=void 0,r=void 0,n=void 0,
+i=void 0){try{return w(e,t,r,n,i),"No errors detected"}catch(e){return null!==(i=null==e?void 0:e.message
+)&&void 0!==i?i:`${e}`}}function I(...e){return t=>g(e,e=>e(t))}function b(e){return ot(e)}function D(e,t){return b(e
 )&&0===(r=t,_s(P(e),e=>!r.includes(e)).length);var r}function O(e){if(void 0!==e&&""!==e)return Ks(e)?e:["true","t","on"
 ,"1","enabled"].includes(`${e}`.toLowerCase())}function L(e){if(void 0!==e&&""!==e)return`${e}`}function P(e,t=p){if(c(e
-)){var r=yi(e,(e,t)=>t);return _s(r,e=>t(e))}return I(e)?(e=Reflect.ownKeys(e),_s(e,e=>t(e))):[]}function U(e){switch(e
+)){var r=yi(e,(e,t)=>t);return _s(r,e=>t(e))}return b(e)?(e=Reflect.ownKeys(e),_s(e,e=>t(e))):[]}function U(e){switch(e
 ){case ga.HTTP:return"http";case ga.LOCAL:return"local";case ga.MATRIX:return"matrix"}throw new TypeError(
-`Unsupported RunnerResourceType value: ${e}`)}function F(e){return y(e)&&function(){switch(null==e?void 0:e.type){
-case Sa.NONE:case Sa.BASIC_AUTH:case Sa.BEARER_AUTH:return 1;default:return}}()}function $(e){return y(e)&&D(e,["type",
+`Unsupported RunnerResourceType value: ${e}`)}function F(e){return N(e)&&function(){switch(null==e?void 0:e.type){
+case Sa.NONE:case Sa.BASIC_AUTH:case Sa.BEARER_AUTH:return 1;default:return}}()}function $(e){return N(e)&&D(e,["type",
 "username","password"])&&(null==e?void 0:e.type)===Ra.BASIC_AUTH&&p(null==e?void 0:e.username)&&p(
 null==e?void 0:e.password)}function k(e,t){if(void 0===t){if(void 0===e)return;if(""===e)return;if($(e))return e
 ;const i=(e=`${e}`).indexOf(":");if(0<=i){const r=i.substr(0,i),n=i.substr(i+1);return k(r,n)}return k(e,"")}
 const r=void 0===e?"":`${e}`,n=`${t}`;if((""!==r||""!==n)&&"_bearer"!==r)return{type:Ra.BASIC_AUTH,username:r,password:n
-}}function M(e){return y(e)&&D(e,["type","access_token"])&&(null==e?void 0:e.type)===Ra.BEARER_AUTH&&p(
+}}function M(e){return N(e)&&D(e,["type","access_token"])&&(null==e?void 0:e.type)===Ra.BEARER_AUTH&&p(
 null==e?void 0:e.access_token)}function j(e,t){if(void 0===t){if(void 0===e)return;if(""===e)return;if(M(e))return e
 ;const i=(e=`${e}`).indexOf(":");if(0<=i){const r=i.substr(0,i),n=i.substr(i+1);return j(r,n)}return{
 type:Ra.BEARER_AUTH,access_token:e}}const r=void 0===e?"":`${e}`,n=`${t}`;if((""!==r||""!==n)&&"_bearer"===r)return{
@@ -133,15 +133,15 @@ See https://github.com/sendanor/pipeline-runner#usage
 `}function B(e){if(na(e))switch(e){case wa.OPTIONS:return"options";case wa.GET:return"get";case wa.POST:return"post"
 ;case wa.PUT:return"put";case wa.DELETE:return"delete";case wa.PATCH:return"patch"}throw new TypeError(
 `Unsupported value for stringifyRequestMethod(): ${e}`)}function J(e){return!(!Zs(t=e)||(t=null!==(
-t=null==t?void 0:t.length)&&void 0!==t?t:0)<1||!(e.indexOf(" ")<0));var t}function x(e){return y(e)&&J(
+t=null==t?void 0:t.length)&&void 0!==t?t:0)<1||!(e.indexOf(" ")<0));var t}function x(e){return N(e)&&J(
 null==e?void 0:e.name)&&p(null==e?void 0:e.command)&&(r=p,(i=n=void 0)===(t=null==e?void 0:e.args)||d(t,r,n,i))&&(i=n=p,
-void 0===(r=null==e?void 0:e.env)||w(r,n,i))&&D(e,["name","command","args","env"]);var t,r,n,i}function W(e){return!!x(e
-)||!(!y(e)||!J(null==e?void 0:e.name))}function q(e){return y(e)&&J(null==e?void 0:e.name)&&d(null==e?void 0:e.steps,W,1
-)&&D(e,["name","steps"])}function K(e){if(q(e))return e}function V(e){return y(e)&&J(null==e?void 0:e.name)&&d(
-null==e?void 0:e.jobs,q,1)&&D(e,["name","jobs"])}function z(e){return y(e)&&J(null==e?void 0:e.name)&&d(
+void 0===(r=null==e?void 0:e.env)||y(r,n,i))&&D(e,["name","command","args","env"]);var t,r,n,i}function W(e){return!!x(e
+)||!(!N(e)||!J(null==e?void 0:e.name))}function q(e){return N(e)&&J(null==e?void 0:e.name)&&d(null==e?void 0:e.steps,W,1
+)&&D(e,["name","steps"])}function K(e){if(q(e))return e}function V(e){return N(e)&&J(null==e?void 0:e.name)&&d(
+null==e?void 0:e.jobs,q,1)&&D(e,["name","jobs"])}function z(e){return N(e)&&J(null==e?void 0:e.name)&&d(
 null==e?void 0:e.stages,V,1)&&D(e,["name","stages"])}function X(e){var t;return null!==(t=null!==(t=null!==(t=function(e
 ){if(z(e))return e}(e))&&void 0!==t?t:function(e){if(V(e))return e}(e))&&void 0!==t?t:K(e))&&void 0!==t?t:null!==(
-e=function(e){if(x(e))return e}(t=e))&&void 0!==e?e:K(t)}function Y(e){return I(e)&&ut(null==e?void 0:e.getName)&&ut(
+e=function(e){if(x(e))return e}(t=e))&&void 0!==e?e:K(t)}function Y(e){return b(e)&&ut(null==e?void 0:e.getName)&&ut(
 null==e?void 0:e.isRunning)&&ut(null==e?void 0:e.isStarted)&&ut(null==e?void 0:e.isPaused)&&ut(
 null==e?void 0:e.isCancelled)&&ut(null==e?void 0:e.isFinished)&&ut(null==e?void 0:e.isFailed)&&ut(
 null==e?void 0:e.isSuccessful)&&ut(null==e?void 0:e.start)&&ut(null==e?void 0:e.pause)&&ut(null==e?void 0:e.resume)&&ut(
@@ -149,18 +149,18 @@ null==e?void 0:e.stop)&&ut(null==e?void 0:e.destroy)&&ut(null==e?void 0:e.toStri
 null==e?void 0:e.onStarted)&&ut(null==e?void 0:e.onPaused)&&ut(null==e?void 0:e.onResumed)&&ut(
 null==e?void 0:e.onCancelled)&&ut(null==e?void 0:e.onFailed)&&ut(null==e?void 0:e.onFinished)&&ut(
 null==e?void 0:e.onChanged)}function Q(e){return e instanceof Rl}function Z(e){return e instanceof yl}function ee(e){
-return p(t=e)||na(t)||Ks(t)||Vs(t)||d(e,b(ee,v))||te(e);var t}function te(e){return y(e)&&N(e,p,b(ee,v))}function re(e){
+return p(t=e)||na(t)||Ks(t)||Vs(t)||d(e,I(ee,v))||te(e);var t}function te(e){return N(e)&&R(e,p,I(ee,v))}function re(e){
 return v(e)||te(e)}function ne(e){return p(e)&&!!e&&"!"===e[0]}function ie(e){try{return function(e){if(!p(e)
 )throw new TypeError(`value was not string: "${e}"`);if(!e)throw new TypeError(`value was empty: "${e}"`);if("!"!==e[0]
 )throw new TypeError(`value did not start with !: "${e}"`)}(e),"No errors detected"}catch(e){return e.message}}
-function oe(e){return y(e)&&D(e,["m.heroes","m.joined_member_count","m.invited_member_count"])&&(v(t=e["m.heroes"])||_(t
+function oe(e){return N(e)&&D(e,["m.heroes","m.joined_member_count","m.invited_member_count"])&&(v(t=e["m.heroes"])||_(t
 ))&&T(e["m.joined_member_count"])&&T(e["m.invited_member_count"]);var t}function se(e){return p(e)&&!!e&&"@"===e[0]}
-function ae(e){return y(e)&&D(e,["content","type","sender"])&&te(null==e?void 0:e.content)&&p(null==e?void 0:e.type)&&(
-v(null==e?void 0:e.sender)||se(null==e?void 0:e.sender))}function ue(e){return y(e)&&D(e,["age","prev_content",
+function ae(e){return N(e)&&D(e,["content","type","sender"])&&te(null==e?void 0:e.content)&&p(null==e?void 0:e.type)&&(
+v(null==e?void 0:e.sender)||se(null==e?void 0:e.sender))}function ue(e){return N(e)&&D(e,["age","prev_content",
 "prev_sender","redacted_because","replaces_state","transaction_id"])&&E(null==e?void 0:e.age)&&re(
 null==e?void 0:e.prev_content)&&(v(null==e?void 0:e.prev_sender)||se(null==e?void 0:e.prev_sender))&&(v(
 null==e?void 0:e.redacted_because)||ae(null==e?void 0:e.redacted_because))&&f(null==e?void 0:e.replaces_state)&&f(
-null==e?void 0:e.transaction_id)}function le(e){try{return function(e){if(!y(e))throw new TypeError(
+null==e?void 0:e.transaction_id)}function le(e){try{return function(e){if(!N(e))throw new TypeError(
 "Value was not regular object");if(!D(e,["age","prev_content","prev_sender","redacted_because","replaces_state",
 "transaction_id"]))throw new TypeError(`Value had extra properties: All keys: ${P(e)}`);if(!E(null==e?void 0:e.age)
 )throw new TypeError(`Property "age" was not valid: ${null==e?void 0:e.age}`);if(!re(null==e?void 0:e.prev_content)
@@ -172,11 +172,11 @@ null==e?void 0:e.redacted_because))throw new TypeError(
 ))throw new TypeError(`Property "replaces_state" was not valid: ${null==e?void 0:e.replaces_state}`);if(!f(
 null==e?void 0:e.transaction_id))throw new TypeError(
 `Property "transaction_id" was not valid: ${null==e?void 0:e.transaction_id}`)}(e),"No errors detected"}catch(e){
-return e.message}}function ce(e){return y(e)&&D(e,["content","type","event_id","sender","origin_server_ts","unsigned",
+return e.message}}function ce(e){return N(e)&&D(e,["content","type","event_id","sender","origin_server_ts","unsigned",
 "prev_content","state_key"])&&te(null==e?void 0:e.content)&&p(null==e?void 0:e.type)&&p(null==e?void 0:e.event_id)&&p(
 null==e?void 0:e.sender)&&E(null==e?void 0:e.origin_server_ts)&&(v(null==e?void 0:e.unsigned)||ue(
 null==e?void 0:e.unsigned))&&(v(null==e?void 0:e.prev_content)||te(null==e?void 0:e.prev_content))&&p(
-null==e?void 0:e.state_key)}function de(e){try{return function(e){if(!y(e))throw new TypeError(
+null==e?void 0:e.state_key)}function de(e){try{return function(e){if(!N(e))throw new TypeError(
 "value was not regular object");if(!D(e,["content","type","event_id","sender","origin_server_ts","unsigned",
 "prev_content","state_key"]))throw new TypeError(`value had extra keys: all keys: ${P(e)}`);if(!te(
 null==e?void 0:e.content))throw new TypeError(`Property "content" not JsonObject: ${null==e?void 0:e.content}`);if(!p(
@@ -190,14 +190,14 @@ null==e?void 0:e.prev_content)&&!te(null==e?void 0:e.prev_content))throw new Typ
 `Property "prev_content" not valid: ${null==e?void 0:e.prev_content}`);if(!p(null==e?void 0:e.state_key)
 )throw new TypeError(`Property "state_key" not valid: ${null==e?void 0:e.state_key}`)}(e),"No errors detected"}catch(e){
 return e.message}}function he(e){return Zi([],null!==(e=null==e?void 0:e.events)&&void 0!==e?e:[])}function _e(e){
-return y(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ce)}function Ee(e){try{return function(e){if(!y(e)
+return N(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ce)}function Ee(e){try{return function(e){if(!N(e)
 )throw new TypeError("value was not object");if(!D(e,["events"]))throw new TypeError("value had extra keys");if(!d(
 null==e?void 0:e.events,ce))throw e=Ro(null==e?void 0:e.events,e=>!ce(e)),new TypeError(
 `Not array of MatrixSyncResponseStateEventDTO: ${de(e)}`)}(e),"No errors detected"}catch(e){return e.message}}
-function ve(e){return y(e)&&D(e,["content","type","event_id","sender","origin_server_ts","unsigned","state_key"])&&te(
+function ve(e){return N(e)&&D(e,["content","type","event_id","sender","origin_server_ts","unsigned","state_key"])&&te(
 null==e?void 0:e.content)&&p(null==e?void 0:e.type)&&p(null==e?void 0:e.event_id)&&se(null==e?void 0:e.sender)&&E(
 null==e?void 0:e.origin_server_ts)&&(v(null==e?void 0:e.unsigned)||ue(null==e?void 0:e.unsigned))&&f(
-null==e?void 0:e.state_key)}function pe(e){try{return function(e){if(!y(e))throw new TypeError(
+null==e?void 0:e.state_key)}function pe(e){try{return function(e){if(!N(e))throw new TypeError(
 "value was not regular object");if(!D(e,["content","type","event_id","sender","origin_server_ts","unsigned","state_key"]
 ))throw new TypeError(`Had extra properties: All keys: ${P(e)}`);if(!te(null==e?void 0:e.content))throw new TypeError(
 `Property "content" was not correct: ${null==e?void 0:e.content}`);if(!p(null==e?void 0:e.type))throw new TypeError(
@@ -210,23 +210,23 @@ null==e?void 0:e.origin_server_ts))throw new TypeError(
 null==e?void 0:e.unsigned)}`);if(!f(null==e?void 0:e.state_key))throw new TypeError(
 `Property "state_key" was not correct: ${null==e?void 0:e.state_key}`)}(e),"No errors detected"}catch(e){
 return e.message}}function fe(e){return Zi([],null!==(e=null==e?void 0:e.events)&&void 0!==e?e:[])}function Te(e){
-return y(e)&&D(e,["events","limited","prev_batch"])&&d(null==e?void 0:e.events,ve)&&Ks(null==e?void 0:e.limited)&&p(
-null==e?void 0:e.prev_batch)}function ge(e){try{return function(e){if(!y(e))throw new TypeError(`value not object: ${e}`
+return N(e)&&D(e,["events","limited","prev_batch"])&&d(null==e?void 0:e.events,ve)&&Ks(null==e?void 0:e.limited)&&p(
+null==e?void 0:e.prev_batch)}function ge(e){try{return function(e){if(!N(e))throw new TypeError(`value not object: ${e}`
 );if(!D(e,["events","limited","prev_batch"]))throw new TypeError(`Extra properties in value: all keys: ${P(e)}`);if(!d(
 null==e?void 0:e.events,ve)){var t=Ro(null==e?void 0:e.events,e=>!ve(e));throw new TypeError(
 `Property "events" item was not correct: ${pe(t)}`)}if(!Ks(null==e?void 0:e.limited))throw new TypeError(
 `Property "limited" was not boolean: ${null==e?void 0:e.limited}`);if(!p(null==e?void 0:e.prev_batch)
 )throw new TypeError(`Property "prev_batch" was not string: ${null==e?void 0:e.prev_batch}`)}(e),"No errors detected"
-}catch(e){return e.message}}function Ae(e){return y(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ae)}function Se(e){
-return Zi([],null!==(e=null==e?void 0:e.events)&&void 0!==e?e:[])}function Re(e){return y(e)&&D(e,["events"])&&d(
-null==e?void 0:e.events,ae)}function Ne(e){return y(e)&&D(e,["highlight_count","notification_count"])&&E(
-null==e?void 0:e.highlight_count)&&E(null==e?void 0:e.notification_count)}function ye(e){return y(e)&&D(e,["summary",
+}catch(e){return e.message}}function Ae(e){return N(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ae)}function Se(e){
+return Zi([],null!==(e=null==e?void 0:e.events)&&void 0!==e?e:[])}function Re(e){return N(e)&&D(e,["events"])&&d(
+null==e?void 0:e.events,ae)}function Ne(e){return N(e)&&D(e,["highlight_count","notification_count"])&&E(
+null==e?void 0:e.highlight_count)&&E(null==e?void 0:e.notification_count)}function ye(e){return N(e)&&D(e,["summary",
 "state","timeline","ephemeral","account_data","unread_notifications","org.matrix.msc2654.unread_count"])&&(v(
 null==e?void 0:e.summary)||oe(null==e?void 0:e.summary))&&(v(null==e?void 0:e.state)||_e(null==e?void 0:e.state))&&(v(
 null==e?void 0:e.timeline)||Te(null==e?void 0:e.timeline))&&(v(null==e?void 0:e.ephemeral)||Ae(
 null==e?void 0:e.ephemeral))&&(v(null==e?void 0:e.account_data)||Re(null==e?void 0:e.account_data))&&(v(
 null==e?void 0:e.unread_notifications)||Ne(null==e?void 0:e.unread_notifications))&&h(
-e["org.matrix.msc2654.unread_count"])}function we(e){try{return function(e){if(!y(e))throw new TypeError(
+e["org.matrix.msc2654.unread_count"])}function we(e){try{return function(e){if(!N(e))throw new TypeError(
 `value was not object: ${e}`);if(!D(e,["summary","state","timeline","ephemeral","account_data","unread_notifications",
 "org.matrix.msc2654.unread_count"]))throw new TypeError(`value had extra keys: ${e}`);if(!v(null==e?void 0:e.summary
 )&&!oe(null==e?void 0:e.summary))throw new TypeError(`Property "summary" was invalid: ${e}`);if(!v(
@@ -238,10 +238,10 @@ null==e?void 0:e.account_data)&&!Re(null==e?void 0:e.account_data))throw new Typ
 `Property "account_data" was invalid: ${e}`);if(!v(null==e?void 0:e.unread_notifications)&&!Ne(
 null==e?void 0:e.unread_notifications))throw new TypeError(`Property "unread_notifications" was invalid: ${e}`);if(!h(
 e["org.matrix.msc2654.unread_count"]))throw new TypeError(`Property "org.matrix.msc2654.unread_count" was invalid: ${e}`
-)}(e),"No errors detected"}catch(e){return e.message}}function Ce(e){return y(e)&&D(e,["content","state_key","type",
+)}(e),"No errors detected"}catch(e){return e.message}}function Ce(e){return N(e)&&D(e,["content","state_key","type",
 "sender","origin_server_ts","unsigned","event_id"])&&te(null==e?void 0:e.content)&&p(null==e?void 0:e.state_key)&&p(
 null==e?void 0:e.type)&&p(null==e?void 0:e.sender)&&h(null==e?void 0:e.origin_server_ts)&&(v(null==e?void 0:e.unsigned
-)||ue(null==e?void 0:e.unsigned))&&f(null==e?void 0:e.event_id)}function me(e){try{return function(e){if(!y(e)
+)||ue(null==e?void 0:e.unsigned))&&f(null==e?void 0:e.event_id)}function me(e){try{return function(e){if(!N(e)
 )throw new TypeError(`invalid: ${e}`);if(!D(e,["content","state_key","type","sender","origin_server_ts","unsigned",
 "event_id"]))throw new TypeError(`one key is extra: ${P(e)}`);if(!te(null==e?void 0:e.content))throw new TypeError(
 `Property "content" invalid: ${null==e?void 0:e.content}`);if(!p(null==e?void 0:e.state_key))throw new TypeError(
@@ -251,28 +251,28 @@ null==e?void 0:e.type)&&p(null==e?void 0:e.sender)&&h(null==e?void 0:e.origin_se
 `Property "origin_server_ts" invalid: ${null==e?void 0:e.origin_server_ts}`);if(!v(null==e?void 0:e.unsigned)&&!ue(
 null==e?void 0:e.unsigned))throw new TypeError(`Property "unsigned" invalid: ${null==e?void 0:e.unsigned}`);if(!f(
 null==e?void 0:e.event_id))throw new TypeError(`Property "event_id" invalid: ${null==e?void 0:e.event_id}`)}(e),
-"No errors detected"}catch(e){return e.message}}function be(e){return y(e)&&D(e,["events"])&&d(null==e?void 0:e.events,
-Ce)}function Ie(e){try{return function(e){if(!y(e))throw new TypeError(`value invalid: ${e}`);if(!D(e,["events"])
+"No errors detected"}catch(e){return e.message}}function Ie(e){return N(e)&&D(e,["events"])&&d(null==e?void 0:e.events,
+Ce)}function be(e){try{return function(e){if(!N(e))throw new TypeError(`value invalid: ${e}`);if(!D(e,["events"])
 )throw new TypeError(`value has extra keys: all keys: ${P(e)}`);if(!d(null==e?void 0:e.events,Ce))throw e=Ro(
 null==e?void 0:e.events,e=>!Ce(e)),new TypeError(`Property "events" had invalid item: ${me(e)}`)}(e),
-"No errors detected"}catch(e){return e.message}}function De(e){return y(e)&&D(e,["invite_state"])&&be(
-null==e?void 0:e.invite_state)}function Oe(e){try{return function(e){if(!y(e))throw new TypeError(
+"No errors detected"}catch(e){return e.message}}function De(e){return N(e)&&D(e,["invite_state"])&&Ie(
+null==e?void 0:e.invite_state)}function Oe(e){try{return function(e){if(!N(e))throw new TypeError(
 `Value not object: ${e}`);if(!D(e,["invite_state"]))throw new TypeError(`Object has extra keys: all keys: ${P(e)}`);if(
-!be(null==e?void 0:e.invite_state))throw new TypeError(`Property "invite_state" invalid: ${Ie(
-null==e?void 0:e.invite_state)}`)}(e),"No errors detected"}catch(e){return e.message}}function Le(e){return y(e)&&D(e,[
+!Ie(null==e?void 0:e.invite_state))throw new TypeError(`Property "invite_state" invalid: ${be(
+null==e?void 0:e.invite_state)}`)}(e),"No errors detected"}catch(e){return e.message}}function Le(e){return N(e)&&D(e,[
 "state","timeline","account_data"])&&_e(null==e?void 0:e.state)&&Te(null==e?void 0:e.timeline)&&Re(
-null==e?void 0:e.account_data)}function Pe(e){return y(e)&&D(e,["join","invite","leave"])&&(v(null==e?void 0:e.join)||w(
-null==e?void 0:e.join,ne,ye))&&(v(null==e?void 0:e.invite)||w(null==e?void 0:e.invite,ne,De))&&(v(null==e?void 0:e.leave
-)||w(null==e?void 0:e.leave,ne,Le))}function Ue(e){try{return function(e){if(!y(e))throw new TypeError(
+null==e?void 0:e.account_data)}function Pe(e){return N(e)&&D(e,["join","invite","leave"])&&(v(null==e?void 0:e.join)||y(
+null==e?void 0:e.join,ne,ye))&&(v(null==e?void 0:e.invite)||y(null==e?void 0:e.invite,ne,De))&&(v(null==e?void 0:e.leave
+)||y(null==e?void 0:e.leave,ne,Le))}function Ue(e){try{return function(e){if(!N(e))throw new TypeError(
 "value was not regular object");if(!D(e,["join","invite","leave"]))throw new TypeError("value had extra properties");if(
-!v(null==e?void 0:e.join)&&!w(null==e?void 0:e.join,ne,ye))throw new TypeError(`Property "join" was invalid: ${m(
-null==e?void 0:e.join,ne,ye,ie,we)}`);if(!v(null==e?void 0:e.invite)&&!w(null==e?void 0:e.invite,ne,De)
-)throw new TypeError(`Property "invite" was invalid: ${m(null==e?void 0:e.invite,ne,De,ie,Oe)}`);if(!v(
-null==e?void 0:e.leave)&&!w(null==e?void 0:e.leave,ne,Le))throw new TypeError('Property "leave" was invalid')}(e),
-"No errors detected"}catch(e){return e.message}}function Fe(e){return y(e)&&D(e,["events"])&&d(null==e?void 0:e.events,
-ae)}function $e(e){return y(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ae)}function ke(e){return y(e)&&D(e,[
-"changed","left"])&&d(null==e?void 0:e.changed,se)&&d(null==e?void 0:e.left,se)}function Me(e){return w(e,p,E)}
-function je(e){try{return function(e){if(!y(e))throw new TypeError("value not RegularObject");if(!D(e,["next_batch",
+!v(null==e?void 0:e.join)&&!y(null==e?void 0:e.join,ne,ye))throw new TypeError(`Property "join" was invalid: ${C(
+null==e?void 0:e.join,ne,ye,ie,we)}`);if(!v(null==e?void 0:e.invite)&&!y(null==e?void 0:e.invite,ne,De)
+)throw new TypeError(`Property "invite" was invalid: ${C(null==e?void 0:e.invite,ne,De,ie,Oe)}`);if(!v(
+null==e?void 0:e.leave)&&!y(null==e?void 0:e.leave,ne,Le))throw new TypeError('Property "leave" was invalid')}(e),
+"No errors detected"}catch(e){return e.message}}function Fe(e){return N(e)&&D(e,["events"])&&d(null==e?void 0:e.events,
+ae)}function $e(e){return N(e)&&D(e,["events"])&&d(null==e?void 0:e.events,ae)}function ke(e){return N(e)&&D(e,[
+"changed","left"])&&d(null==e?void 0:e.changed,se)&&d(null==e?void 0:e.left,se)}function Me(e){return y(e,p,E)}
+function je(e){try{return function(e){if(!N(e))throw new TypeError("value not RegularObject");if(!D(e,["next_batch",
 "rooms","presence","account_data","to_device","device_lists","device_one_time_keys_count"]))throw new TypeError(
 "value has additional keys");if(!p(null==e?void 0:e.next_batch))throw new TypeError(
 'Property "next_batch" was not string');if(!v(null==e?void 0:e.rooms)&&!Pe(null==e?void 0:e.rooms))throw new TypeError(
@@ -283,29 +283,29 @@ null==e?void 0:e.to_device)&&!$e(null==e?void 0:e.to_device))throw new TypeError
 !v(null==e?void 0:e.device_lists)&&!ke(null==e?void 0:e.device_lists))throw new TypeError(
 'Property "device_lists" was invalid');if(!v(null==e?void 0:e.device_one_time_keys_count)&&!Me(
 null==e?void 0:e.device_one_time_keys_count))throw new TypeError('Property "device_one_time_keys_count" was invalid')}(e
-),"No errors detected"}catch(e){return e.message}}function Ge(e){return y(e)&&D(e,["display_name","avatar_url"])&&p(
+),"No errors detected"}catch(e){return e.message}}function Ge(e){return N(e)&&D(e,["display_name","avatar_url"])&&p(
 null==e?void 0:e.display_name)&&(p(null==e?void 0:e.avatar_url)||Vs(null==e?void 0:e.avatar_url))}function He(e){
-return y(e)&&D(e,["errcode","error"])&&function(){switch(null==e?void 0:e.errcode){case Ma.M_USER_IN_USE:
+return N(e)&&D(e,["errcode","error"])&&function(){switch(null==e?void 0:e.errcode){case Ma.M_USER_IN_USE:
 case Ma.M_INVALID_USERNAME:case Ma.M_EXCLUSIVE:case Ma.M_FORBIDDEN:return 1;default:return}}()&&p(null==e?void 0:e.error
-)}function Be(e){return encodeURIComponent(e)}async function Je(e,t,r,n,i){n=S(S({},n.data),{},{state:i.getStateDTO()}),
+)}function Be(e){return encodeURIComponent(e)}async function Je(e,t,r,n,i){n=m(m({},n.data),{},{state:i.getStateDTO()}),
 await t.update(r,n),await e.setRoomStateByType(r,$a.FI_NOR_PIPELINE_STATE,"",i.toJSON())}var xe,We,qe,Ke,Ve,ze,Xe,Ye,Qe,
-Ze,et,tt,rt,nt,it,ot,st,at,ut,lt,ct,dt,ht,_t,Et,vt,pt,ft,Tt,gt,At,St,Rt,Nt,yt,wt,Ct,mt,bt,It,Dt,Ot,Lt,Pt,Ut,Ft,$t,kt,Mt,
+Ze,et,tt,rt,nt,it,ot,st,at,ut,lt,ct,dt,ht,_t,Et,vt,pt,ft,Tt,gt,At,St,Rt,Nt,yt,wt,Ct,mt,It,bt,Dt,Ot,Lt,Pt,Ut,Ft,$t,kt,Mt,
 jt,Gt,Ht,Bt,Jt,xt,Wt,qt,Kt,Vt,zt,Xt,Yt,Qt,Zt,er,tr,rr,nr,ir,or,sr,ar,ur,lr,cr,dr,hr,_r,Er,vr,pr,fr,Tr,gr,Ar,Sr,Rr,Nr,yr,
-wr,Cr,mr,br,Ir,Dr,Or,Lr,Pr,Ur,Fr,$r,kr,Mr,jr,Gr,Hr,Br,Jr,xr,Wr,qr,Kr,Vr,zr,Xr,Yr,Qr,Zr,en,tn,rn,nn,on,sn,an,un,ln,cn,dn,
-hn,_n,En,vn,pn,fn,Tn,gn,An,Sn,Rn,Nn,yn,wn,Cn,mn,bn,In,Dn,On,Ln,Pn,Un,Fn,$n,kn,Mn,jn,Gn,Hn,Bn,Jn,xn,Wn,qn,Kn,Vn,zn,Xn,Yn,
-Qn,Zn,ei,ti,ri,ni,ii,oi,si,ai,ui,li,ci,di,hi,_i,Ei,vi,pi,fi,Ti,gi,Ai,Si,Ri,Ni,yi,wi,Ci,mi,bi,Ii,Di,Oi,Li,Pi,Ui,Fi,$i,ki,
+wr,Cr,mr,Ir,br,Dr,Or,Lr,Pr,Ur,Fr,$r,kr,Mr,jr,Gr,Hr,Br,Jr,xr,Wr,qr,Kr,Vr,zr,Xr,Yr,Qr,Zr,en,tn,rn,nn,on,sn,an,un,ln,cn,dn,
+hn,_n,En,vn,pn,fn,Tn,gn,An,Sn,Rn,Nn,yn,wn,Cn,mn,In,bn,Dn,On,Ln,Pn,Un,Fn,$n,kn,Mn,jn,Gn,Hn,Bn,Jn,xn,Wn,qn,Kn,Vn,zn,Xn,Yn,
+Qn,Zn,ei,ti,ri,ni,ii,oi,si,ai,ui,li,ci,di,hi,_i,Ei,vi,pi,fi,Ti,gi,Ai,Si,Ri,Ni,yi,wi,Ci,mi,Ii,bi,Di,Oi,Li,Pi,Ui,Fi,$i,ki,
 Mi,ji,Gi,Hi,Bi,Ji,xi,Wi,qi,Ki,Vi,zi,Xi,Yi,Qi,Zi,eo,to,ro,no,io,oo,so,ao,uo,lo,co,ho,_o,Eo,vo,po,fo,To,go,Ao,So,Ro,No,yo,
-wo,Co,mo,bo,Io,Do,Oo,Lo,Po,Uo,Fo,$o,ko,Mo,jo,Go,Ho,Bo,Jo,xo,Wo,qo,Ko,Vo,zo,Xo,Yo,Qo,Zo,es,ts,rs,ns,is,os,ss,as,us,ls,cs,
-ds,hs,_s,Es,vs,ps,fs,Ts,gs,As,Ss,Rs,Ns,ys,ws,Cs,ms,bs,Is,Ds,Os,Ls,Ps,Us,Fs,$s,ks,Ms,js,Gs,Hs,Bs,Js,xs,Ws,qs,Ks,Vs,zs,Xs,
-Ys,Qs,Zs,ea,ta,ra,na,ia,oa,sa,aa,ua,la,ca,da,ha,_a,Ea,va,pa,fa,Ta,ga,Aa,Sa,Ra,Na,ya,wa,Ca,ma,ba,Ia,Da,Oa,La,Pa,Ua,Fa,$a,
+wo,Co,mo,Io,bo,Do,Oo,Lo,Po,Uo,Fo,$o,ko,Mo,jo,Go,Ho,Bo,Jo,xo,Wo,qo,Ko,Vo,zo,Xo,Yo,Qo,Zo,es,ts,rs,ns,is,os,ss,as,us,ls,cs,
+ds,hs,_s,Es,vs,ps,fs,Ts,gs,As,Ss,Rs,Ns,ys,ws,Cs,ms,Is,bs,Ds,Os,Ls,Ps,Us,Fs,$s,ks,Ms,js,Gs,Hs,Bs,Js,xs,Ws,qs,Ks,Vs,zs,Xs,
+Ys,Qs,Zs,ea,ta,ra,na,ia,oa,sa,aa,ua,la,ca,da,ha,_a,Ea,va,pa,fa,Ta,ga,Aa,Sa,Ra,Na,ya,wa,Ca,ma,Ia,ba,Da,Oa,La,Pa,Ua,Fa,$a,
 ka,Ma,ja,Ga,Ha,Ba,Ja,xa,Wa,qa,Ka,Va,za,Xa,Ya,Qa,Za,eu,tu,ru,nu,iu,ou,su,au,uu,lu,cu,du,hu,_u,Eu,vu,pu,fu,Tu,gu=require(
 "querystring"),Au=require("url"),Su=require("path"),Ru=require("child_process"),Nu=require("fs"),yu=t(gu),wu=e(Au),Cu=e(
 Su),
 mu="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{}
-,bu=function(e,t){for(var r=-1,n=null==e?0:e.length,i=Array(n);++r<n;)i[r]=t(e[r],r,e);return i},Iu=function(){
+,Iu=function(e,t){for(var r=-1,n=null==e?0:e.length,i=Array(n);++r<n;)i[r]=t(e[r],r,e);return i},bu=function(){
 this.__data__=[],this.size=0},Du=function(e,t){return e===t||e!=e&&t!=t},Ou=Du,Lu=function(e,t){for(var r=e.length;r--;
 )if(Ou(e[r][0],t))return r;return-1},Pu=Lu,Uu=Array.prototype,Fu=Uu.splice,$u=Lu,ku=Lu,Mu=function(e){return-1<ku(
-this.__data__,e)},ju=Lu,Gu=Iu,Hu=function(e){var t=this.__data__;return!((e=Pu(t,e))<0||(e==t.length-1?t.pop():Fu.call(t
+this.__data__,e)},ju=Lu,Gu=bu,Hu=function(e){var t=this.__data__;return!((e=Pu(t,e))<0||(e==t.length-1?t.pop():Fu.call(t
 ,e,1),--this.size,0))},Bu=function(e){var t=this.__data__;return(e=$u(t,e))<0?void 0:t[e][1]},Ju=Mu,xu=function(e,t){
 var r=this.__data__,n=ju(r,e);return n<0?(++this.size,r.push([e,t])):r[n][1]=t,this};r.prototype.clear=Gu,
 r.prototype.delete=Hu,r.prototype.get=Bu,r.prototype.has=Ju,r.prototype.set=xu,Xe=Va=r,za=function(){
@@ -325,16 +325,16 @@ ct=jt.toString,dt=ut,ht=function(e){return!!lt&&lt in e},_t=ot,Et=kr=function(e)
 ys=Function.prototype,_r=Object.prototype,gu=ys.toString,Au=_r.hasOwnProperty,pt=RegExp("^"+gu.call(Au).replace(Er,
 "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),ft=function(e){return!(!_t(e
 )||ht(e))&&(dt(e)?pt:vt).test(Et(e))},Tt=function(e,t){return null==e?void 0:e[t]},Uu=(Su=function(e,t){return t=Tt(e,t)
-,ft(t)?t:void 0})(ws,"Map"),Lu=Su(Object,"create"),At=gt=Iu=Lu,pu=Object.prototype,St=pu.hasOwnProperty,Rt=Iu,
-fu=Object.prototype,Nt=fu.hasOwnProperty,yt=Iu,Mu=function(e){return e=this.has(e)&&delete this.__data__[e],
+,ft(t)?t:void 0})(ws,"Map"),Lu=Su(Object,"create"),At=gt=bu=Lu,pu=Object.prototype,St=pu.hasOwnProperty,Rt=bu,
+fu=Object.prototype,Nt=fu.hasOwnProperty,yt=bu,Mu=function(e){return e=this.has(e)&&delete this.__data__[e],
 this.size-=e?1:0,e},Tu=function(e){var t,r=this.__data__;return At?"__lodash_hash_undefined__"===(t=r[e]
 )?void 0:t:St.call(r,e)?r[e]:void 0},Gu=function(e){var t=this.__data__;return Rt?void 0!==t[e]:Nt.call(t,e)},
 Hu=function(e,t){var r=this.__data__;return this.size+=this.has(e)?0:1,r[e]=yt&&void 0===t?"__lodash_hash_undefined__":t
 ,this},i.prototype.clear=function(){this.__data__=gt?gt(null):{},this.size=0},i.prototype.delete=Mu,i.prototype.get=Tu,
 i.prototype.has=Gu,i.prototype.set=Hu,wt=i,Ct=Va,mt=Uu,Bu=function(){this.size=0,this.__data__={hash:new wt,map:new(
-mt||Ct),string:new wt}},bt=function(e){var t=typeof e
-;return"string"==t||"number"==t||"symbol"==t||"boolean"==t?"__proto__"!==e:null===e},Lt=Ot=Dt=It=function(e,t){
-return e=e.__data__,bt(t)?e["string"==typeof t?"string":"hash"]:e.map},Ju=function(e){return e=It(this,e).delete(e),
+mt||Ct),string:new wt}},It=function(e){var t=typeof e
+;return"string"==t||"number"==t||"symbol"==t||"boolean"==t?"__proto__"!==e:null===e},Lt=Ot=Dt=bt=function(e,t){
+return e=e.__data__,It(t)?e["string"==typeof t?"string":"hash"]:e.map},Ju=function(e){return e=bt(this,e).delete(e),
 this.size-=e?1:0,e},xu=function(e){return Dt(this,e).get(e)},mu=function(e){return Ot(this,e).has(e)},Xa=function(e,t){
 var r=Lt(this,e),n=r.size;return r.set(e,t),this.size+=r.size==n?0:1,this},o.prototype.clear=Bu,o.prototype.delete=Ju,
 o.prototype.get=xu,o.prototype.has=mu,o.prototype.set=Xa,Ut=Uu,Ft=tu=o,$t=Pt=Va,Po=Rs,Ns=qa,cr=Ka,dr=function(e,t){var r
@@ -356,7 +356,7 @@ case"[object Date]":case"[object Number]":return xt(+e,+t);case"[object Error]":
 return e.name==t.name&&e.message==t.message;case"[object RegExp]":case"[object String]":return e==t+""
 ;case"[object Map]":u=qt;case"[object Set]":return u=u||Kt,!!(e.size==t.size||1&n)&&((a=s.get(e))?a==t:(n|=2,s.set(e,t),
 u=Wt(u(e),u(t),n,i,o,s),s.delete(e),u));case"[object Symbol]":if(Vt)return Vt.call(e)==Vt.call(t)}return!1},pu=function(
-e,t){for(var r=-1,n=t.length,i=e.length;++r<n;)e[i+r]=t[r];return e},fu=Array.isArray,Xt=pu,Yt=zt=fu,Iu=function(e,t,r){
+e,t){for(var r=-1,n=t.length,i=e.length;++r<n;)e[i+r]=t[r];return e},fu=Array.isArray,Xt=pu,Yt=zt=fu,bu=function(e,t,r){
 return t=t(e),Yt(e)?t:Xt(t,r(e))},Qt=Mu=function(e,t){for(var r,n=-1,i=null==e?0:e.length,o=0,s=[];++n<i;)t(r=e[n],n,e
 )&&(s[o++]=r);return s},Tu=Object.prototype,Zt=Tu.propertyIsEnumerable,Gu=(er=Object.getOwnPropertySymbols)?function(t){
 return null==t?[]:(t=Object(t),Qt(er(t),function(e){return Zt.call(t,e)}))}:function(){return[]},Hu=function(e,t){for(
@@ -382,18 +382,18 @@ Xa=Object.prototype,Rr=Xa.hasOwnProperty,za=function(e,t){var r,n=Tr(e),i=!n&&fr
 a=n||i||o||s,u=a?pr(e.length,String):[],l=u.length;for(r in e)!t&&!Rr.call(e,r)||a&&("length"==r||o&&(
 "offset"==r||"parent"==r)||s&&("buffer"==r||"byteLength"==r||"byteOffset"==r)||Ar(r,l))||u.push(r);return u},
 Nr=Object.prototype,Za=function(e){var t=e&&e.constructor;return e===("function"==typeof t&&t.prototype||Nr)},
-Eu=Object.keys,vu=Object,yr=Za,wr=function(e){return Eu(vu(e))},Bu=Object.prototype,Cr=Bu.hasOwnProperty,mr=ut,br=Ns,
-Ir=za,Dr=function(e){var t,r;if(!yr(e))return wr(e);for(r in t=[],Object(e))Cr.call(e,r)&&"constructor"!=r&&t.push(r)
-;return t},Or=Xa=function(e){return null!=e&&br(e.length)&&!mr(e)},Lr=Iu,Pr=Gu,Ur=Za=function(e){return(Or(e)?Ir:Dr)(e)}
+Eu=Object.keys,vu=Object,yr=Za,wr=function(e){return Eu(vu(e))},Bu=Object.prototype,Cr=Bu.hasOwnProperty,mr=ut,Ir=Ns,
+br=za,Dr=function(e){var t,r;if(!yr(e))return wr(e);for(r in t=[],Object(e))Cr.call(e,r)&&"constructor"!=r&&t.push(r)
+;return t},Or=Xa=function(e){return null!=e&&Ir(e.length)&&!mr(e)},Lr=bu,Pr=Gu,Ur=Za=function(e){return(Or(e)?br:Dr)(e)}
 ,Fr=function(e){return Lr(e,Ur,Pr)},Hu=Object.prototype,$r=Hu.hasOwnProperty,Bu=function(e,t,r,n,i,o){var s,a,u,l,c,d,h,
 _,E,v,p,f=1&r,T=Fr(e),g=T.length;if(g!=Fr(t).length&&!f)return!1;for(s=g;s--;)if(a=T[s],!(f?a in t:$r.call(t,a))
 )return!1;if(v=o.get(e),p=o.get(t),v&&p)return v==t&&p==e;for(u=!0,o.set(e,t),o.set(t,e),l=f;++s<g;){if(c=e[a=T[s]],
 d=t[a],!(void 0===(h=n?f?n(d,c,a,t,e,o):n(c,d,a,e,t,o):h)?c===d||i(c,d,r,n,o):h)){u=!1;break}l=l||"constructor"==a}
 return u&&!l&&(_=e.constructor)!=(E=t.constructor)&&"constructor"in e&&"constructor"in t&&!(
 "function"==typeof _&&_ instanceof _&&"function"==typeof E&&E instanceof E)&&(u=!1),o.delete(e),o.delete(t),u},za=Su(ws,
-"DataView"),Iu=Uu,Gu=Su(ws,"Promise"),Uu=Hu=Su(ws,"Set"),ws=Su(ws,"WeakMap"),Mr=it,Gr="[object Map]",
-Hr="[object Promise]",Br="[object Set]",Jr="[object WeakMap]",xr="[object DataView]",Wr=(jr=kr)(kr=za),qr=jr(Iu),Kr=jr(
-Gu),Vr=jr(Uu),zr=jr(ws),za=Mr,(kr&&za(new kr(new ArrayBuffer(1)))!=xr||Iu&&za(new Iu)!=Gr||Gu&&za(Gu.resolve()
+"DataView"),bu=Uu,Gu=Su(ws,"Promise"),Uu=Hu=Su(ws,"Set"),ws=Su(ws,"WeakMap"),Mr=it,Gr="[object Map]",
+Hr="[object Promise]",Br="[object Set]",Jr="[object WeakMap]",xr="[object DataView]",Wr=(jr=kr)(kr=za),qr=jr(bu),Kr=jr(
+Gu),Vr=jr(Uu),zr=jr(ws),za=Mr,(kr&&za(new kr(new ArrayBuffer(1)))!=xr||bu&&za(new bu)!=Gr||Gu&&za(Gu.resolve()
 )!=Hr||Uu&&za(new Uu)!=Br||ws&&za(new ws)!=Jr)&&(za=function(e){var t=Mr(e);if(e=(
 e="[object Object]"==t?e.constructor:void 0)?jr(e):"")switch(e){case Wr:return xr;case qr:return Gr;case Kr:return Hr
 ;case Vr:return Br;case zr:return Jr}return t}),Xr=zn,Yr=ys,Qr=Lu,Zr=Bu,en=za,tn=zt,rn=Rs.exports,nn=Tu,
@@ -412,10 +412,10 @@ An=cn=Ju,Sn=zt,Rn=za=function(e){return"symbol"==typeof e||An(e)&&"[object Symbo
 Nn=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,yn=/^\w*$/,Rs=function(e,t){if(Sn(e))return!1;var r=typeof e
 ;return!("number"!=r&&"symbol"!=r&&"boolean"!=r&&null!=e&&!Rn(e))||yn.test(e)||!Nn.test(e)||null!=t&&e in Object(t)},
 wn=tu,Cn="Expected a function",l.Cache=wn,
-mn=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,bn=/\\(\\)?/g,Gu=0
+mn=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,In=/\\(\\)?/g,Gu=0
 ,_u=(Gu=l(Gu=function(e){var i=[];return 46===e.charCodeAt(0)&&i.push(""),e.replace(mn,function(e,t,r,n){i.push(
-r?n.replace(bn,"$1"):t||e)}),i},function(e){return 500===_u.size&&_u.clear(),e})).cache,In=bu,zn=(Uu=eu
-)?Uu.prototype:void 0,Ln=zn?zn.toString:void 0,Pn=tu=function e(t){if("string"==typeof t)return t;if(Dn(t))return In(t,e
+r?n.replace(In,"$1"):t||e)}),i},function(e){return 500===_u.size&&_u.clear(),e})).cache,bn=Iu,zn=(Uu=eu
+)?Uu.prototype:void 0,Ln=zn?zn.toString:void 0,Pn=tu=function e(t){if("string"==typeof t)return t;if(Dn(t))return bn(t,e
 )+"";if(On(t))return Ln?Ln.call(t):"";var r=t+"";return"0"==r&&1/t==-1/0?"-0":r},$n=Gu,kn=Uu=function(e){
 return null==e?"":Pn(e)},Mn=On=za,Jn=jn=function(e,t){return Un(e)?e:Fn(e,t)?[e]:$n(kn(e))},xn=mu,Kn=Ns,Xn=function(e,t
 ){return null!=e&&t in Object(e)},Yn=zn=function(e,t,r){for(var n,i,o=(t=Jn(t,e)).length,s=!(n=-1);++n<o&&(i=Vn(t[n]),
@@ -426,15 +426,15 @@ si=function(t){return function(e){return null==e?void 0:e[t]}},ai=function(t){re
 ui=ti=Fn=Rs,li=ii=Vn=Gn=function(e){if("string"==typeof e||Mn(e))return e;var t=e+"";return"0"==t&&1/e==-1/0?"-0":t},
 ci=Bu,di=function(r,n){return ti(r)&&ri(n)?ni(ii(r),n):function(e){var t=Zn(e,r);return void 0===t&&t===n?ei(e,r):Qn(n,t
 ,3)}},hi=Ns=function(e){return e},_i=Wn=Un=Dn=zt,Ei=function(e){return ui(e)?si(li(e)):ai(e)},vi=ys=function(e,t,r){for(
-var n,i=-1,o=Object(e),s=r(e),a=s.length;a--&&!1!==t(o[n=s[++i]],n,o););return e},pi=Za,Ai=bu,Ri=Rs=function(e,n){
+var n,i=-1,o=Object(e),s=r(e),a=s.length;a--&&!1!==t(o[n=s[++i]],n,o););return e},pi=Za,Ai=Iu,Ri=Rs=function(e,n){
 var i=-1,o=gi(e)?Array(e.length):[];return Ti(e,function(e,t,r){o[++i]=n(e,t,r)}),o},yi=function(e,t){return(Ni(e)?Ai:Ri
-)(e,Si(t))},Ci=Du,mi=gi=fi=Xa,bi=qn=Po,Ii=ot,Di=Wa,Li=function(e,n){var i;return wi(e,function(e,t,r){return!(i=n(e,t,r)
+)(e,Si(t))},Ci=Du,mi=gi=fi=Xa,Ii=qn=Po,bi=ot,Di=Wa,Li=function(e,n){var i;return wi(e,function(e,t,r){return!(i=n(e,t,r)
 )}),!!i},Fi=function(e,t,r){var n=Pi(e)?Di:Li;return r&&Ui(e,t,r)&&(t=void 0),n(e,Oi(t))},$i=wi=Ti=Bu=function(e,t){if(
 null==e)return e;if(!fi(e))return e&&vi(e,t,pi);for(var r=e.length,n=-1,i=Object(e);++n<r&&!1!==t(i[n],n,i););return e},
 ki=function(e,t){for(var r=-1,n=null==e?0:e.length;++r<n;)if(!t(e[r],r,e))return!1;return!0},Mi=function(e,n){var i=!0
 ;return $i(e,function(e,t,r){return i=!!n(e,t,r)}),i},ji=Oi=Si=ws=function(e){
 return"function"==typeof e?e:null==e?hi:"object"==typeof e?_i(e)?di(e[0],e[1]):ci(e):Ei(e)},Gi=Pi=Ni=zt,
-Hi=Ui=ys=function(e,t,r){if(!Ii(r))return!1;var n=typeof t;return!!("number"==n?mi(r)&&bi(t,r.length
+Hi=Ui=ys=function(e,t,r){if(!bi(r))return!1;var n=typeof t;return!!("number"==n?mi(r)&&Ii(t,r.length
 ):"string"==n&&t in r)&&Ci(r[t],e)},Bi=function(e,t,r){var n=Gi(e)?ki:Mi;return r&&Hi(e,t,r)&&(t=void 0),n(e,ji(t))},
 Ji=Su,Du=function(){try{var e=Ji(Object,"defineProperty");return e({},"",{}),e}catch(e){}}(),xi=mu,qi=(Po=eu
 )?Po.isConcatSpreadable:void 0,Vi=function(e){return Wi(e)||xi(e)||!!(qi&&e&&e[qi])},zi=Ki=pu,Xi=Wa=function e(t,r,n,i,o
@@ -452,10 +452,10 @@ e=Eo(e))!==1/0&&e!==-1/0?e==e?e:0:(e<0?-1:1)*vo:0===e?e:0},fo=Su,To=ws,go=eu=fun
 ;return t==t?e?t-e:t:0},Ao=Math.max,Po=Lu(So=function(e,t,r){var n=null==e?0:e.length;return n?((r=null==r?0:go(r))<0&&(
 r=Ao(n+r,0)),fo(e,To(t),r)):-1}),Ro=Po,No=function(e,t,r,n){var i=-1,o=null==e?0:e.length;for(n&&o&&(r=e[++i]);++i<o;
 )r=t(r,e[i],i,e);return r},yo=Bu,wo=ws,Co=function(e,n,i,o,t){return t(e,function(e,t,r){i=o?(o=!1,e):n(i,e,t,r)}),i},
-mo=zt,bo=function(e,t,r){var n=mo(e)?No:Co,i=arguments.length<3;return n(e,wo(t),r,i,yo)},pu=function(e,t,r){var n,i=-1,
+mo=zt,Io=function(e,t,r){var n=mo(e)?No:Co,i=arguments.length<3;return n(e,wo(t),r,i,yo)},pu=function(e,t,r){var n,i=-1,
 o=e.length;for((r=o<r?o:r)<0&&(r+=o),o=r<(t=t<0?o<-t?0:o+t:t)?0:r-t>>>0,t>>>=0,n=Array(o);++i<o;)n[i]=e[i+t];return n},
-Io=Su,Do=function(e){return e!=e},Oo=function(e,t,r){for(var n=r-1,i=e.length;++n<i;)if(e[n]===t)return n;return-1},
-Lo=Xa=function(e,t,r){return t==t?Oo(e,t,r):Io(e,Do,r)},Lu=function(e,t){return!(null==e||!e.length)&&-1<Lo(e,t,0)},
+bo=Su,Do=function(e){return e!=e},Oo=function(e,t,r){for(var n=r-1,i=e.length;++n<i;)if(e[n]===t)return n;return-1},
+Lo=Xa=function(e,t,r){return t==t?Oo(e,t,r):bo(e,Do,r)},Lu=function(e,t){return!(null==e||!e.length)&&-1<Lo(e,t,0)},
 Po=function(e,t,r){for(var n=-1,i=null==e?0:e.length;++n<i;)if(r(t,e[n]))return!0;return!1},Su=function(){},Su=(Uo=Hu
 )&&1/gu(new Uo([,-0]))[1]==1/0?function(e){return new Uo(e)}:Su,Fo=Mt,$o=Lu,ko=Po,Mo=jt,jo=Su,Go=gu,Ho=function(e,t,r){
 var n,i,o,s,a=-1,u=$o,l=e.length,c=!0,d=[],h=d;if(r)c=!1,u=ko;else if(200<=l){if(n=t?null:jo(e))return Go(n);c=!1,u=Mo,
@@ -463,7 +463,7 @@ h=new Fo}else h=t?[]:d;e:for(;++a<l;)if(i=e[a],o=t?t(i):i,i=r||0!==i?i:0,c&&o==o
 )continue e;t&&h.push(o),d.push(i)}else u(h,o,r)||(h!==d&&h.push(o),d.push(i));return d},Bo=function(e){
 return e&&e.length?Ho(e):[]},Jo=za,xo=function(e,t){var r,n,i,o,s,a,u,l;if(e!==t){if(r=void 0!==e,n=null===e,i=e==e,
 o=Jo(e),s=void 0!==t,a=null===t,u=t==t,l=Jo(t),!a&&!l&&!o&&t<e||o&&s&&u&&!a&&!l||n&&s&&u||!r&&u||!i)return 1;if(
-!n&&!o&&!l&&e<t||l&&r&&i&&!n&&!o||a&&r&&i||!s&&i||!u)return-1}return 0},Wo=bu,qo=Tu,Ko=ws,Vo=Rs,zo=function(e,t){
+!n&&!o&&!l&&e<t||l&&r&&i&&!n&&!o||a&&r&&i||!s&&i||!u)return-1}return 0},Wo=Iu,qo=Tu,Ko=ws,Vo=Rs,zo=function(e,t){
 var r=e.length;for(e.sort(t);r--;)e[r]=e[r].value;return e},Xo=xu,Yo=function(e,t,r){for(var n,i=-1,o=e.criteria,
 s=t.criteria,a=o.length,u=r.length;++i<a;)if(n=xo(o[i],s[i]))return u<=i?n:n*("desc"==r[i]?-1:1);return e.index-t.index}
 ,Qo=Ns,Zo=zt,Rs=function(e,n,r){var i;return n=n.length?Wo(n,function(t){return Zo(t)?function(e){return qo(e,
@@ -485,9 +485,9 @@ xu=function(e,t,r){var n=e.length;return r=void 0===r?n:r,!t&&n<=r?e:As(e,t,r)},
 ws="[\\ufe0e\\ufe0f]?")+"(?:"+(Ns="[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]")+"|"+(Bu="\\ud83c[\\udffb-\\udfff]"
 )+")?(?:\\u200d(?:"+[Ka="[^"+ys+"]",Wa="(?:\\ud83c[\\udde6-\\uddff]){2}",ys="[\\ud800-\\udbff][\\udc00-\\udfff]"].join(
 "|")+")"+ws+"(?:[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]|\\ud83c[\\udffb-\\udfff])?)*",Mu="(?:"+[Ka+Ns+"?",Ns,Wa,
-ys,Mu].join("|")+")",Cs=RegExp(Bu+"(?="+Bu+")|"+Mu+pu,"g"),ms=Rs,bs=Du,Is=function(e){return e.match(Cs)||[]},Os=Ds=Xa,
+ys,Mu].join("|")+")",Cs=RegExp(Bu+"(?="+Bu+")|"+Mu+pu,"g"),ms=Rs,Is=Du,bs=function(e){return e.match(Cs)||[]},Os=Ds=Xa,
 Ls=tu,Ps=mu,Us=xu,Fs=function(e,t){for(var r=e.length;r--&&-1<Ds(t,e[r],0););return r},$s=function(e,t){for(var r=-1,
-n=e.length;++r<n&&-1<Os(t,e[r],0););return r},ks=function(e){return(bs(e)?Is:ms)(e)},Ms=Uu,js=function(e,t,r){return(
+n=e.length;++r<n&&-1<Os(t,e[r],0););return r},ks=function(e){return(Is(e)?bs:ms)(e)},Ms=Uu,js=function(e,t,r){return(
 e=Ms(e))&&(r||void 0===t)?Ps(e):e&&(t=Ls(t))?(r=ks(e),e=ks(t),t=$s(r,e),e=Fs(r,e)+1,Us(r,t,e).join("")):e},
 xu=Object.prototype,Gs=xu.hasOwnProperty,Hs=function(e,t){return null!=e&&Gs.call(e,t)},Bs=zn,Js=function(e,t){
 return null!=e&&Bs(e,t,Hs)},qs="[object Boolean]",Ks=function(e){return!0===e||!1===e||Ws(e)&&xs(e)==qs},Vs=function(e){
@@ -495,19 +495,19 @@ return null===e},Xs=zt,Qs="[object String]",Zs=function(e){return"string"==typeo
 ea=zs=xs=it,ta=Ys=Ws=Ju,ra="[object Number]",na=function(e){return"number"==typeof e||ta(e)&&ea(e)==ra},oa=function(e){
 return"number"==typeof e&&e==ia(e)},sa=function(e,t,r){return e==e&&(void 0!==r&&(e=e<=r?e:r),void 0!==t&&(e=t<=e?e:t)),
 e},aa=tu,ua=ia=eu,la=Uu,ca=function(e,t,r){return e=la(e),r=null==r?0:sa(ua(r),0,e.length),t=aa(t),e.slice(r,r+t.length
-)==t},da=bu,ha=function(t,e){return da(e,function(e){return t[e]})},_a=Za,Ea=function(e){return null==e?[]:ha(e,_a(e))},
+)==t},da=Iu,ha=function(t,e){return da(e,function(e){return t[e]})},_a=Za,Ea=function(e){return null==e?[]:ha(e,_a(e))},
 tu=Array.prototype,va=tu.join,pa=function(e,t){return null==e?"":va.call(e,t)},(eu=fa={})[eu.DEBUG=0]="DEBUG",
 eu[eu.INFO=1]="INFO",eu[eu.WARN=2]="WARN",eu[eu.ERROR=3]="ERROR",eu[eu.NONE=4]="NONE",Ta=fa;const Wu=null!==(Uu=L(
-"1.0.2"))&&void 0!==Uu?Uu:"?";Za=null!==(bu=L(""))&&void 0!==bu?bu:"io.nor.fi",eu=null!==(tu=L("")
-)&&void 0!==tu?tu:"nor-pipeline-runner",bu=null!==(Uu=L(""))&&void 0!==Uu?Uu:"",Uu=null!==(tu=L(""))&&void 0!==tu?tu:""
-;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T19:42:15.059Z")
+"1.0.2"))&&void 0!==Uu?Uu:"?";Za=null!==(Iu=L(""))&&void 0!==Iu?Iu:"io.nor.fi",eu=null!==(tu=L("")
+)&&void 0!==tu?tu:"nor-pipeline-runner",Iu=null!==(Uu=L(""))&&void 0!==Uu?Uu:"",Uu=null!==(tu=L(""))&&void 0!==tu?tu:""
+;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T19:55:17.206Z")
 )&&void 0!==tu?tu:"",Vu=null===(tu=O(""))||void 0===tu||tu,zu=null===(tu=O(""))||void 0===tu||tu,Xu=null===(tu=O("")
 )||void 0===tu||tu,Yu=null===(tu=O(""))||void 0===tu||tu;tu="production"===qu;const Qu="test"===qu,Zu=!tu&&!Qu
-;bu=null!==(xe=function(e){if(e){if(function(){switch(e){case fa.DEBUG:case fa.INFO:case fa.WARN:case fa.ERROR:
+;Iu=null!==(xe=function(e){if(e){if(function(){switch(e){case fa.DEBUG:case fa.INFO:case fa.WARN:case fa.ERROR:
 case fa.NONE:return 1;default:return}}())return e;switch(e=`${e}`.toUpperCase()){case"ALL":case"DEBUG":return fa.DEBUG
 ;case"INFO":return fa.INFO;case"WARN":case"WARNING":return fa.WARN;case"ERR":case"ERROR":return fa.ERROR;case"FALSE":
 case"OFF":case"QUIET":case"SILENT":case"NONE":return fa.NONE;default:return}}}(null!==(xe=L(null===(tu=process
-)||void 0===tu||null===(xe=tu.env)||void 0===xe?void 0:xe.PIPELINE_LOG_LEVEL))&&void 0!==xe?xe:L(bu))
+)||void 0===tu||null===(xe=tu.env)||void 0===xe?void 0:xe.PIPELINE_LOG_LEVEL))&&void 0!==xe?xe:L(Iu))
 )&&void 0!==xe?xe:Ta.INFO;const el=null!==(We=L(null===(xe=process)||void 0===xe||null===(We=xe.env
 )||void 0===We?void 0:We.PIPELINE_SERVER))&&void 0!==We?We:eu,tl=null!==(qe=function(e){if(void 0!==e)return`${e}`}(
 null===(eu=process)||void 0===eu||null===(qe=eu.env)||void 0===qe?void 0:qe.PIPELINE_AUTHENTICATION))&&void 0!==qe?qe:Uu
@@ -525,12 +525,12 @@ static createLogger(e){return new nl(e,il)}}u(il,"_level",Ta.DEBUG),u(il,"_logge
 ,Za[Za.LOCAL=1]="LOCAL",Za[Za.MATRIX=2]="MATRIX",Aa=ga,(Za=Sa={})[Za.NONE=0]="NONE",Za[Za.BASIC_AUTH=1]="BASIC_AUTH",
 Za[Za.BEARER_AUTH=2]="BEARER_AUTH",Ra=Sa;class ol{static parseRunnerAuthentication(e,t){var r;return void 0===t?null!==(
 r=j(e))&&void 0!==r?r:k(e):null!==(r=j(e,t))&&void 0!==r?r:k(e,t)}}const sl=il.createLogger("MatrixRunnerResource")
-;class al{static parseRunnerResource(e){var t;return null!==(t=null!==(t=function(e){var t;if(e)return y(t=e)&&D(t,[
+;class al{static parseRunnerResource(e){var t;return null!==(t=null!==(t=function(e){var t;if(e)return N(t=e)&&D(t,[
 "type","url","authentication"])&&(null==t?void 0:t.type)===Aa.HTTP&&p(null==t?void 0:t.url)&&(v(
 null==t?void 0:t.authentication)||F(null==t?void 0:t.authentication))?e:(t=(e=js(`${e}`)).toLowerCase(),ca(t,"http:"
 )||ca(t,"https:")?(t=new URL(e),t=null!==(t=ol.parseRunnerAuthentication(decodeURIComponent(t.username),
 decodeURIComponent(t.password)))&&void 0!==t?t:ol.parseRunnerAuthentication(tl),{type:Aa.HTTP,url:e,auth:t}):void 0)}(e)
-)&&void 0!==t?t:function(i){var o,s;if(i){if(y(s=i)&&D(s,["type","pool","homeserver","authentication"])&&(
+)&&void 0!==t?t:function(i){var o,s;if(i){if(N(s=i)&&D(s,["type","pool","homeserver","authentication"])&&(
 null==s?void 0:s.type)===Aa.MATRIX&&f(null==s?void 0:s.pool)&&p(null==s?void 0:s.homeserver)&&(v(
 null==s?void 0:s.authentication)||F(null==s?void 0:s.authentication)))return i;i=js(`${i}`),sl.debug(`value: '${i}'`)
 ;let e=i.toLowerCase();if(sl.debug(`lowerCaseValue: '${e}'`),"matrix://"===e&&(i="matrix://io.nor.fi",
@@ -544,7 +544,7 @@ s=0===s.length?void 0:"!"===s[0]||"#"===s[0]?s:`#${s}`,sl.debug(`pool: '${s}'`),
 authentication:o}}ca(e,"matrix:")&&(i=i.substr("matrix:".length),e=e.substr("matrix:".length)),i=decodeURIComponent(i),
 e=i.toLowerCase();let t=void 0,r=void 0,n=void 0;return ca(e,"!")||ca(e,"#")?(o=i.indexOf(":"))<0?n=`${e}:${rl}`:(n=e,(
 o=i.substr(o+1))&&(r=o)):e&&(t=e),t=t||tl,r=r||rl,{type:Aa.MATRIX,homeserver:r,pool:n,
-authentication:ol.parseRunnerAuthentication(t)}}}(e))&&void 0!==t?t:function(e){var t;if(e)return y(t=e)&&D(t,["type",
+authentication:ol.parseRunnerAuthentication(t)}}}(e))&&void 0!==t?t:function(e){var t;if(e)return N(t=e)&&D(t,["type",
 "path"])&&(null==t?void 0:t.type)===Aa.LOCAL&&p(null==t?void 0:t.path)?e:(e=js(`${e}`),(e=ca(e.toLowerCase(),"file://"
 )?e.substr("file://".length):e)?{type:Aa.LOCAL,path:e}:void 0)}(e)}}(Za=Na={})[Za.OK=0]="OK",
 Za[Za.GENERAL_ERRORS=1]="GENERAL_ERRORS",Za[Za.MISUSE_OF_SHELL_BUILTINS=2]="MISUSE_OF_SHELL_BUILTINS",
@@ -600,7 +600,7 @@ lu[lu.GatewayTimeout=504]="GatewayTimeout",lu[lu.HttpVersionNotSupported=505]="H
 lu[lu.VariantAlsoNegotiates=506]="VariantAlsoNegotiates",lu[lu.InsufficientStorage=507]="InsufficientStorage",
 lu[lu.LoopDetected=508]="LoopDetected",lu[lu.BandwidthLimitExceeded=509]="BandwidthLimitExceeded",
 lu[lu.NotExtended=510]="NotExtended",lu[lu.NetworkAuthenticationRequired=511]="NetworkAuthenticationRequired",ma=Ca,(
-ru=ru||{}).ERROR="error",ba=ru;class dl extends Error{constructor(e,t=void 0,r=void 0,n=void 0,i=void 0){super(
+ru=ru||{}).ERROR="error",Ia=ru;class dl extends Error{constructor(e,t=void 0,r=void 0,n=void 0,i=void 0){super(
 t||function(e){switch(e){case Ca.Continue:return"Continue";case Ca.SwitchingProtocols:return"Switching Protocols"
 ;case Ca.Processing:return"Processing";case Ca.CheckPoint:return"Check Point";case Ca.OK:return"OK";case Ca.Created:
 return"Created";case Ca.Accepted:return"Accepted";case Ca.NonAuthoritativeInformation:
@@ -631,7 +631,7 @@ return"Not Implemented";case Ca.BadGateway:return"Bad Gateway";case Ca.ServiceUn
 ;default:return e<400?"HTTP Status":"HTTP Error"}}(e)),u(this,"status",void 0),u(this,"method",void 0),u(this,"url",
 void 0),u(this,"body",void 0),u(this,"__proto__",void 0),t=new.target.prototype,
 Object.setPrototypeOf?Object.setPrototypeOf(this,t):this.__proto__=t,this.status=e,this.method=r,this.url=n,this.body=i}
-valueOf(){return this.status}toString(){return`${this.status} ${this.message}`}toJSON(){return{type:ba.ERROR,
+valueOf(){return this.status}toString(){return`${this.status} ${this.message}`}toJSON(){return{type:Ia.ERROR,
 status:this.status,message:this.message}}getStatusCode(){return this.status}getMethod(){return this.method}getUrl(){
 return this.url}getBody(){return this.body}}const hl=ll?require("fs").promises:void 0,_l=il.createLogger(
 "NodeRequestClient");class El{constructor(e,t){u(this,"_http",void 0),u(this,"_https",void 0),this._http=e,this._https=t
@@ -647,9 +647,9 @@ u=new wu.default.URL(o);let l;const c=null!==(t=null===u||void 0===u?void 0:u.pr
 "unix:"===c||"socket:"===c){const r=null!==u&&void 0!==u&&u.pathname?null===u||void 0===u?void 0:u.pathname:"/";if(
 "/"===r)throw new TypeError(`No socket path found for unix protocol URL: ${o}`);if(!(e=await this._findSocketFile(r))
 )throw new TypeError(`No socket path found for unix protocol URL: ${o}`);var t=`${e.length<r.length?r.substr(e.length
-):""}${"?"!==u.search?u.search:""}`;s=S(S({},s),{},{socketPath:e,path:t}),o="",l=this._http
+):""}${"?"!==u.search?u.search:""}`;s=m(m({},s),{},{socketPath:e,path:t}),o="",l=this._http
 }else l="https:"===c?this._https:this._http;return new Promise((t,r)=>{let n=!1;try{if(!l)throw new Error(
-"HTTP module not defined. This error should not happen.");var i;let e;o&&(s=S(S({},s),{},{hostname:u.hostname,
+"HTTP module not defined. This error should not happen.");var i;let e;o&&(s=m(m({},s),{},{hostname:u.hostname,
 port:null!==(i=null!==u&&void 0!==u&&u.port?parseInt(u.port,10):void 0)&&void 0!==i?i:"https:"===c?443:80,
 path:u.pathname+u.search})),e=l.request(s,e=>{n?_l.warn(
 "Warning! Request had already ended when the response was received."):(n=!0,t(e))}),e.on("error",e=>{n?(_l.warn(
@@ -659,27 +659,27 @@ path:u.pathname+u.search})),e=l.request(s,e=>{n?_l.warn(
 "Passing on error: ",e),n=!0,r(e))}})}async _request(e,t,r,n){return r=await this._httpRequest(t,r,n),
 n=await cl.getRequestDataAsJson(r),{method:e,url:t,statusCode:null!==(t=null==r?void 0:r.statusCode)&&void 0!==t?t:0,
 headers:r.headers,body:n}}async _getJson(e,t,r){const n={method:"GET",headers:{"Content-Type":"application/json"}}
-;return t&&(n.headers=S(S({},n.headers),t)),this._request(uu.GET,e,n,r).then(El._successResponse)}async _putJson(e,t,r){
-const n={method:"PUT",headers:{"Content-Type":"application/json"}};return t&&(n.headers=S(S({},n.headers),t)),
+;return t&&(n.headers=m(m({},n.headers),t)),this._request(uu.GET,e,n,r).then(El._successResponse)}async _putJson(e,t,r){
+const n={method:"PUT",headers:{"Content-Type":"application/json"}};return t&&(n.headers=m(m({},n.headers),t)),
 this._request(uu.PUT,e,n,r).then(El._successResponse)}async _postJson(e,t,r){const n={method:"POST",headers:{
-"Content-Type":"application/json"}};return t&&(n.headers=S(S({},n.headers),t)),this._request(uu.POST,e,n,r).then(
+"Content-Type":"application/json"}};return t&&(n.headers=m(m({},n.headers),t)),this._request(uu.POST,e,n,r).then(
 El._successResponse)}async _patchJson(e,t,r){const n={method:"PATCH",headers:{"Content-Type":"application/json"}}
-;return t&&(n.headers=S(S({},n.headers),t)),this._request(uu.PATCH,e,n,r).then(El._successResponse)}async _deleteJson(e,
-t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=S(S({},n.headers),t)),
+;return t&&(n.headers=m(m({},n.headers),t)),this._request(uu.PATCH,e,n,r).then(El._successResponse)}async _deleteJson(e,
+t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=m(m({},n.headers),t)),
 this._request(uu.DELETE,e,n,r).then(El._successResponse)}static _successResponse(e){var t=null==e?void 0:e.statusCode
 ;if(t<200||400<=t)throw _l.error(`Unsuccessful response with status ${t}: `,e),new dl(t,`Error ${t} for ${B(e.method
 )} ${e.url}`,e.method,e.url,e.body);return e.body}}class vl{constructor(e){u(this,"_fetch",void 0),this._fetch=e}
 jsonRequest(e,t,r,n){switch(e){case uu.GET:return this._getJson(t,r,n);case uu.POST:return this._postJson(t,r,n)
 ;case uu.PUT:return this._putJson(t,r,n);case uu.DELETE:return this._deleteJson(t,r,n);default:throw new TypeError(
 `[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",mode:"cors",cache:"no-cache",
-headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=S(S({},n.headers),t)),r&&(
+headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=m(m({},n.headers),t)),r&&(
 n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>vl._successResponse(e,uu.GET))}_putJson(e,t,r){const n={method:"PUT",
 mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(
-n.headers=S(S({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>vl._successResponse(e,uu.PUT))}
+n.headers=m(m({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>vl._successResponse(e,uu.PUT))}
 _postJson(e,t,r){const n={method:"POST",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},
-credentials:"same-origin"};return t&&(n.headers=S(S({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n
+credentials:"same-origin"};return t&&(n.headers=m(m({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n
 ).then(e=>vl._successResponse(e,uu.POST))}_deleteJson(e,t,r){const n={method:"DELETE",mode:"cors",cache:"no-cache",
-headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=S(S({},n.headers),t)),r&&(
+headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=m(m({},n.headers),t)),r&&(
 n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>vl._successResponse(e,uu.DELETE))}static _successResponse(e,t){
 const r=e.status;if(!e.ok||r<200||400<=r){const n=e.url,i=`${r} ${e.statusText} for ${B(t)} ${n}`;return e.json().then(
 e=>{throw new dl(r,i,t,n,e)})}return e.json()}}const pl=ll?require("http"):void 0,fl=ll?require("https"):void 0,
@@ -703,7 +703,7 @@ removeListener(e,r){if(this.hasCallbacks(e)){let t=!1;this._callbacks[e]=_s(this
 }else console.warn(
 `Warning! Could not remove callback since the observer for "${this._name}" did not have anything listening "${e}"`)}}(
 ru=nu=nu||{})[ru.CONSTRUCTED=0]="CONSTRUCTED",ru[ru.STARTED=1]="STARTED",ru[ru.PAUSED=2]="PAUSED",
-ru[ru.CANCELLED=3]="CANCELLED",ru[ru.FINISHED=4]="FINISHED",ru[ru.FAILED=5]="FAILED",Ia=nu,(nu=iu=iu||{}
+ru[ru.CANCELLED=3]="CANCELLED",ru[ru.FINISHED=4]="FINISHED",ru[ru.FAILED=5]="FAILED",ba=nu,(nu=iu=iu||{}
 ).PIPELINE="fi.nor.pipeline",nu.JOB="fi.nor.pipeline.job",nu.STAGE="fi.nor.pipeline.stage",
 nu.TASK="fi.nor.pipeline.task",nu.STEP="fi.nor.pipeline.step",nu.SCRIPT_STEP="fi.nor.pipeline.step.script",Da=iu
 ;const Sl=il.createLogger("JobController");(iu=Oa={}).JOB_CHANGED="JobController:jobChanged",
@@ -713,35 +713,35 @@ iu.JOB_FAILED="JobController:jobFailed",iu.JOB_FINISHED="JobController:jobFinish
 this,"_observer",void 0),u(this,"_name",void 0),u(this,"_steps",void 0),u(this,"_changedCallback",void 0),u(this,
 "_state",void 0),u(this,"_stepDestructors",void 0),u(this,"_current",void 0),!J(e))throw new TypeError(
 `Job name invalid: ${e}`);if(!d(t,Y,1))throw new TypeError(`Job#${e} must have at least one step`);this._current=0,
-this._name=e,this._steps=t,this._observer=new Al(`JobController#${this._name}`),this._state=Ia.CONSTRUCTED,
+this._name=e,this._steps=t,this._observer=new Al(`JobController#${this._name}`),this._state=ba.CONSTRUCTED,
 this._changedCallback=this._onChanged.bind(this),this._stepDestructors=yi(t,e=>e.onChanged(this._changedCallback))}
 getState(){return this._state}getName(){return this._name}destroy(){this._observer.destroy(),this._stepDestructors=_s(
 this._stepDestructors,(e,t)=>{const r=this._steps[t];try{e()}catch(e){Sl.warn(
 `Warning! Exception in the step#${r.getName()} listener destructor: `,e)}return!1})}on(e,t){
 return this._observer.listenEvent(e,t)}toString(){return`JobController#${this._name}`}getStateDTO(){return{type:Da.JOB,
 state:this._state,name:this._name,steps:yi(this._steps,e=>e.getStateDTO())}}toJSON(){return this.getStateDTO()}
-isRunning(){switch(this._state){case Ia.STARTED:return!0;case Ia.PAUSED:case Ia.CONSTRUCTED:case Ia.CANCELLED:
-case Ia.FINISHED:case Ia.FAILED:return!1}}isStarted(){switch(this._state){case Ia.PAUSED:case Ia.STARTED:return!0
-;case Ia.CONSTRUCTED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.FAILED:return!1}}isPaused(){switch(this._state){
-case Ia.PAUSED:return!0;case Ia.STARTED:case Ia.CONSTRUCTED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.FAILED:return!1}}
-isCancelled(){switch(this._state){case Ia.CANCELLED:return!0;case Ia.PAUSED:case Ia.STARTED:case Ia.CONSTRUCTED:
-case Ia.FINISHED:case Ia.FAILED:return!1}}isFinished(){switch(this._state){case Ia.FINISHED:case Ia.FAILED:
-case Ia.CANCELLED:return!0;case Ia.CONSTRUCTED:case Ia.PAUSED:case Ia.STARTED:return!1}}isFailed(){switch(this._state){
-case Ia.FAILED:return!0;case Ia.CONSTRUCTED:case Ia.FINISHED:case Ia.PAUSED:case Ia.STARTED:case Ia.CANCELLED:return!1}}
-isSuccessful(){switch(this._state){case Ia.FINISHED:return!0;case Ia.FAILED:case Ia.CONSTRUCTED:case Ia.PAUSED:
-case Ia.STARTED:case Ia.CANCELLED:return!1}}start(){if(this._state!==Ia.CONSTRUCTED)throw new Error(
-`Job#${this._name} was already started`);return Sl.info(`Starting job ${this._name}`),this._state=Ia.STARTED,
+isRunning(){switch(this._state){case ba.STARTED:return!0;case ba.PAUSED:case ba.CONSTRUCTED:case ba.CANCELLED:
+case ba.FINISHED:case ba.FAILED:return!1}}isStarted(){switch(this._state){case ba.PAUSED:case ba.STARTED:return!0
+;case ba.CONSTRUCTED:case ba.CANCELLED:case ba.FINISHED:case ba.FAILED:return!1}}isPaused(){switch(this._state){
+case ba.PAUSED:return!0;case ba.STARTED:case ba.CONSTRUCTED:case ba.CANCELLED:case ba.FINISHED:case ba.FAILED:return!1}}
+isCancelled(){switch(this._state){case ba.CANCELLED:return!0;case ba.PAUSED:case ba.STARTED:case ba.CONSTRUCTED:
+case ba.FINISHED:case ba.FAILED:return!1}}isFinished(){switch(this._state){case ba.FINISHED:case ba.FAILED:
+case ba.CANCELLED:return!0;case ba.CONSTRUCTED:case ba.PAUSED:case ba.STARTED:return!1}}isFailed(){switch(this._state){
+case ba.FAILED:return!0;case ba.CONSTRUCTED:case ba.FINISHED:case ba.PAUSED:case ba.STARTED:case ba.CANCELLED:return!1}}
+isSuccessful(){switch(this._state){case ba.FINISHED:return!0;case ba.FAILED:case ba.CONSTRUCTED:case ba.PAUSED:
+case ba.STARTED:case ba.CANCELLED:return!1}}start(){if(this._state!==ba.CONSTRUCTED)throw new Error(
+`Job#${this._name} was already started`);return Sl.info(`Starting job ${this._name}`),this._state=ba.STARTED,
 this._steps[this._current].start(),this._observer.hasCallbacks(Oa.JOB_STARTED)&&this._observer.triggerEvent(
 Oa.JOB_STARTED,this),this._observer.hasCallbacks(Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this),this}
 pause(){if(!this.isRunning())throw new Error(`Job#${this._name} was not running`);return Sl.info(
-`Pausing job ${this._name}`),this._state=Ia.PAUSED,this._steps[this._current].pause(),this._observer.hasCallbacks(
+`Pausing job ${this._name}`),this._state=ba.PAUSED,this._steps[this._current].pause(),this._observer.hasCallbacks(
 Oa.JOB_PAUSED)&&this._observer.triggerEvent(Oa.JOB_PAUSED,this),this._observer.hasCallbacks(Oa.JOB_CHANGED
 )&&this._observer.triggerEvent(Oa.JOB_CHANGED,this),this}resume(){if(!this.isPaused())throw new Error(
-`Job#${this._name} was not paused`);return Sl.info(`Resuming job ${this._name}`),this._state=Ia.STARTED,
+`Job#${this._name} was not paused`);return Sl.info(`Resuming job ${this._name}`),this._state=ba.STARTED,
 this._steps[this._current].resume(),this._observer.hasCallbacks(Oa.JOB_RESUMED)&&this._observer.triggerEvent(
 Oa.JOB_RESUMED,this),this._observer.hasCallbacks(Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this),this}
-stop(){if(this._state!==Ia.STARTED)throw new Error(`Job#${this._name} was not started`);return Sl.info(
-`Stopping job ${this._name}`),this._state=Ia.CANCELLED,this._steps[this._current].stop(),this._observer.hasCallbacks(
+stop(){if(this._state!==ba.STARTED)throw new Error(`Job#${this._name} was not started`);return Sl.info(
+`Stopping job ${this._name}`),this._state=ba.CANCELLED,this._steps[this._current].stop(),this._observer.hasCallbacks(
 Oa.JOB_CANCELLED)&&this._observer.triggerEvent(Oa.JOB_CANCELLED,this),this._observer.hasCallbacks(Oa.JOB_CHANGED
 )&&this._observer.triggerEvent(Oa.JOB_CHANGED,this),this}onCancelled(e){return this.on(Oa.JOB_CANCELLED,e)}onChanged(e){
 return this.on(Oa.JOB_CHANGED,e)}onFailed(e){return this.on(Oa.JOB_FAILED,e)}onFinished(e){return this.on(
@@ -750,16 +750,16 @@ Oa.JOB_FINISHED,e)}onPaused(e){return this.on(Oa.JOB_PAUSED,e)}onResumed(e){retu
 getOutputString(){return yi(this._steps,e=>e.getOutputString()).join("\n")}_onChanged(e,t){var r,n=this._state
 ;const i=this._steps[this._current];if(t===i)if(i.isFinished()&&this.isStarted()){try{r=this._steps.indexOf(i),
 this._stepDestructors[r]()}catch(e){Sl.warn(`Warning! Exception in the step#${i.getName()} listener destructor: `,e)}
-i.isFailed()?(this._state=Ia.FAILED,this._observer.hasCallbacks(Oa.JOB_FAILED)&&this._observer.triggerEvent(
-Oa.JOB_FAILED,this)):i.isCancelled()?(this._state=Ia.CANCELLED,this._observer.hasCallbacks(Oa.JOB_CANCELLED
+i.isFailed()?(this._state=ba.FAILED,this._observer.hasCallbacks(Oa.JOB_FAILED)&&this._observer.triggerEvent(
+Oa.JOB_FAILED,this)):i.isCancelled()?(this._state=ba.CANCELLED,this._observer.hasCallbacks(Oa.JOB_CANCELLED
 )&&this._observer.triggerEvent(Oa.JOB_CANCELLED,this)):(this._current+=1,this._current<this._steps.length?(
-this._state=Ia.STARTED,this._steps[this._current].start(),n===Ia.PAUSED&&this._observer.hasCallbacks(Oa.JOB_RESUMED
-)&&this._observer.triggerEvent(Oa.JOB_RESUMED,this)):(this._state=Ia.FINISHED,this._observer.hasCallbacks(
+this._state=ba.STARTED,this._steps[this._current].start(),n===ba.PAUSED&&this._observer.hasCallbacks(Oa.JOB_RESUMED
+)&&this._observer.triggerEvent(Oa.JOB_RESUMED,this)):(this._state=ba.FINISHED,this._observer.hasCallbacks(
 Oa.JOB_FINISHED)&&this._observer.triggerEvent(Oa.JOB_FINISHED,this))),this._observer.hasCallbacks(Oa.JOB_CHANGED
-)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this)}else i.isPaused()&&!this.isPaused()?(this._state=Ia.PAUSED,
+)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this)}else i.isPaused()&&!this.isPaused()?(this._state=ba.PAUSED,
 this._observer.hasCallbacks(Oa.JOB_PAUSED)&&this._observer.triggerEvent(Oa.JOB_PAUSED,this),this._observer.hasCallbacks(
 Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this)):i.isStarted()&&this.isPaused()&&(
-this._state=Ia.STARTED,this._observer.hasCallbacks(Oa.JOB_RESUMED)&&this._observer.triggerEvent(Oa.JOB_RESUMED,this),
+this._state=ba.STARTED,this._observer.hasCallbacks(Oa.JOB_RESUMED)&&this._observer.triggerEvent(Oa.JOB_RESUMED,this),
 this._observer.hasCallbacks(Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this))}}u(Rl,"Event",Oa)
 ;const Nl=il.createLogger("StageController");(iu=La={}).STAGE_STARTED="StageController:stageStarted",
 iu.STAGE_PAUSED="StageController:stagePaused",iu.STAGE_RESUMED="StageController:stageResumed",
@@ -767,46 +767,46 @@ iu.STAGE_FINISHED="StageController:stageFinished",iu.STAGE_FAILED="StageControll
 iu.STAGE_CANCELLED="StageController:stageCancelled",iu.STAGE_CHANGED="StageController:stageChanged";class yl{
 constructor(e,t){if(u(this,"_observer",void 0),u(this,"_name",void 0),u(this,"_jobs",void 0),u(this,"_changedCallback",
 void 0),u(this,"_state",void 0),u(this,"_jobDestructors",void 0),!J(e))throw new TypeError(`Stage name invalid: ${e}`)
-;if(!d(t,Q,1))throw new TypeError(`Stage#${e} must have at least one job`);this._state=Ia.CONSTRUCTED,this._name=e,
+;if(!d(t,Q,1))throw new TypeError(`Stage#${e} must have at least one job`);this._state=ba.CONSTRUCTED,this._name=e,
 this._jobs=t,this._observer=new Al(`StageController#${this._name}`),this._changedCallback=this._onChanged.bind(this),
 this._jobDestructors=yi(t,e=>e.onChanged(this._changedCallback))}getState(){return this._state}getName(){
 return this._name}destroy(){this._observer.destroy()}on(e,t){return this._observer.listenEvent(e,t)}toString(){
 return`StageController#${this._name}`}getStateDTO(){return{type:Da.STAGE,state:this._state,name:this._name,jobs:yi(
 this._jobs,e=>e.getStateDTO())}}toJSON(){return{type:"StageController",state:this._state,name:this._name,jobs:yi(
-this._jobs,e=>e.toJSON())}}isCancelled(){switch(this._state){case Ia.CANCELLED:return!0;case Ia.FINISHED:case Ia.FAILED:
-case Ia.CONSTRUCTED:case Ia.PAUSED:case Ia.STARTED:return!1}}isFailed(){switch(this._state){case Ia.FAILED:return!0
-;case Ia.CANCELLED:case Ia.FINISHED:case Ia.CONSTRUCTED:case Ia.PAUSED:case Ia.STARTED:return!1}}isFinished(){switch(
-this._state){case Ia.FINISHED:case Ia.FAILED:case Ia.CANCELLED:return!0;case Ia.CONSTRUCTED:case Ia.PAUSED:
-case Ia.STARTED:return!1}}isPaused(){switch(this._state){case Ia.PAUSED:return!0;case Ia.FAILED:case Ia.CANCELLED:
-case Ia.FINISHED:case Ia.CONSTRUCTED:case Ia.STARTED:return!1}}isRunning(){switch(this._state){case Ia.STARTED:return!0
-;case Ia.PAUSED:case Ia.FAILED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.CONSTRUCTED:return!1}}isStarted(){switch(
-this._state){case Ia.PAUSED:case Ia.STARTED:return!0;case Ia.FAILED:case Ia.CANCELLED:case Ia.FINISHED:
-case Ia.CONSTRUCTED:return!1}}isSuccessful(){switch(this._state){case Ia.FINISHED:return!0;case Ia.PAUSED:
-case Ia.STARTED:case Ia.FAILED:case Ia.CANCELLED:case Ia.CONSTRUCTED:return!1}}onCancelled(e){return this.on(
+this._jobs,e=>e.toJSON())}}isCancelled(){switch(this._state){case ba.CANCELLED:return!0;case ba.FINISHED:case ba.FAILED:
+case ba.CONSTRUCTED:case ba.PAUSED:case ba.STARTED:return!1}}isFailed(){switch(this._state){case ba.FAILED:return!0
+;case ba.CANCELLED:case ba.FINISHED:case ba.CONSTRUCTED:case ba.PAUSED:case ba.STARTED:return!1}}isFinished(){switch(
+this._state){case ba.FINISHED:case ba.FAILED:case ba.CANCELLED:return!0;case ba.CONSTRUCTED:case ba.PAUSED:
+case ba.STARTED:return!1}}isPaused(){switch(this._state){case ba.PAUSED:return!0;case ba.FAILED:case ba.CANCELLED:
+case ba.FINISHED:case ba.CONSTRUCTED:case ba.STARTED:return!1}}isRunning(){switch(this._state){case ba.STARTED:return!0
+;case ba.PAUSED:case ba.FAILED:case ba.CANCELLED:case ba.FINISHED:case ba.CONSTRUCTED:return!1}}isStarted(){switch(
+this._state){case ba.PAUSED:case ba.STARTED:return!0;case ba.FAILED:case ba.CANCELLED:case ba.FINISHED:
+case ba.CONSTRUCTED:return!1}}isSuccessful(){switch(this._state){case ba.FINISHED:return!0;case ba.PAUSED:
+case ba.STARTED:case ba.FAILED:case ba.CANCELLED:case ba.CONSTRUCTED:return!1}}onCancelled(e){return this.on(
 La.STAGE_CANCELLED,e)}onChanged(e){return this.on(La.STAGE_CHANGED,e)}onFailed(e){return this.on(La.STAGE_FAILED,e)}
 onFinished(e){return this.on(La.STAGE_FINISHED,e)}onPaused(e){return this.on(La.STAGE_PAUSED,e)}onResumed(e){
 return this.on(La.STAGE_RESUMED,e)}onStarted(e){return this.on(La.STAGE_STARTED,e)}start(){if(
-this._state!==Ia.CONSTRUCTED)throw new Error(`Stage#${this._name} was already started`);return Nl.info(
-`Starting stage ${this._name}`),this._state=Ia.STARTED,_s(this._jobs,t=>{try{return t.start(),!1}catch(e){
-return Nl.error(`Could not start job#${t.getName()}: ${e}`),!0}}).length===this._jobs.length?(this._state=Ia.FAILED,
+this._state!==ba.CONSTRUCTED)throw new Error(`Stage#${this._name} was already started`);return Nl.info(
+`Starting stage ${this._name}`),this._state=ba.STARTED,_s(this._jobs,t=>{try{return t.start(),!1}catch(e){
+return Nl.error(`Could not start job#${t.getName()}: ${e}`),!0}}).length===this._jobs.length?(this._state=ba.FAILED,
 this._observer.hasCallbacks(La.STAGE_FAILED)&&this._observer.triggerEvent(La.STAGE_FAILED,this)
 ):this._observer.hasCallbacks(La.STAGE_STARTED)&&this._observer.triggerEvent(La.STAGE_STARTED,this),
 this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.STAGE_CHANGED,this),this}pause(){if(
-this._state===Ia.PAUSED)throw new Error(`Stage#${this._name} was already paused`);Nl.info(`Pausing stage ${this._name}`)
-,this._state=Ia.PAUSED;var e=_s(this._jobs,t=>{try{return t.isRunning()&&t.pause(),!1}catch(e){return Nl.error(
+this._state===ba.PAUSED)throw new Error(`Stage#${this._name} was already paused`);Nl.info(`Pausing stage ${this._name}`)
+,this._state=ba.PAUSED;var e=_s(this._jobs,t=>{try{return t.isRunning()&&t.pause(),!1}catch(e){return Nl.error(
 `Could not pause job#${t.getName()} for stage#${this._name}: ${e}`),!0}});if(e.length===this._jobs.length
 )throw new TypeError(`Failed to pause jobs for Stage#${this._name}`);return 0<e.length&&Nl.warn(
 `Warning! Failed to pause some jobs for Stage#${this._name}`),this._observer.hasCallbacks(La.STAGE_PAUSED
 )&&this._observer.triggerEvent(La.STAGE_PAUSED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
-)&&this._observer.triggerEvent(La.STAGE_CHANGED,this),this}resume(){if(this._state===Ia.STARTED)throw new Error(
-`Stage#${this._name} was already started`);Nl.info(`Resuming stage ${this._name}`),this._state=Ia.STARTED;var e=_s(
+)&&this._observer.triggerEvent(La.STAGE_CHANGED,this),this}resume(){if(this._state===ba.STARTED)throw new Error(
+`Stage#${this._name} was already started`);Nl.info(`Resuming stage ${this._name}`),this._state=ba.STARTED;var e=_s(
 this._jobs,t=>{try{return t.isPaused()&&t.resume(),!1}catch(e){return Nl.error(`Could not resume job#${t.getName(
 )} for stage#${this._name}: ${e}`),!0}});if(e.length===this._jobs.length)throw new TypeError(
 `Failed to resume all jobs for Stage#${this._name}`);return 0<e.length&&Nl.warn(
 `Warning! Failed to resume some jobs for Stage#${this._name}`),this._observer.hasCallbacks(La.STAGE_RESUMED
 )&&this._observer.triggerEvent(La.STAGE_RESUMED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
 )&&this._observer.triggerEvent(La.STAGE_CHANGED,this),this}stop(){if(this.isFinished())throw new Error(
-`Stage#${this._name} was already finished`);Nl.info(`Stopping stage ${this._name}`),this._state=Ia.CANCELLED;var e=_s(
+`Stage#${this._name} was already finished`);Nl.info(`Stopping stage ${this._name}`),this._state=ba.CANCELLED;var e=_s(
 this._jobs,t=>{try{return t.isStarted()&&(t.isPaused()&&t.resume(),t.stop()),!1}catch(e){return Nl.error(
 `Could not stop job#${t.getName()} for stage#${this._name}: ${e}`),!0}});if(e.length===this._jobs.length
 )throw new TypeError(`Failed to stop jobs for Stage#${this._name}`);return 0<e.length&&Nl.warn(
@@ -815,17 +815,17 @@ e=>e.getErrorString()).join("\n")}getOutputString(){return yi(this._jobs,e=>e.ge
 ,t){var r,n;A(this._jobs,e=>e.isFinished())?(0!==this._jobDestructors.length&&(this._jobDestructors=_s(
 this._jobDestructors,(e,t)=>{const r=this._jobs[t];try{e()}catch(e){Nl.warn(`Warning! Destructor for job#${r.getName(
 )} event listener had an error: ${e}`)}return!1})),this.isFinished()||(r=g(this._jobs,e=>e.isFailed()),n=g(this._jobs,
-e=>e.isCancelled()),r&&this._state!==Ia.FAILED?(this._state=Ia.FAILED,this._observer.hasCallbacks(La.STAGE_FAILED
+e=>e.isCancelled()),r&&this._state!==ba.FAILED?(this._state=ba.FAILED,this._observer.hasCallbacks(La.STAGE_FAILED
 )&&this._observer.triggerEvent(La.STAGE_FAILED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
-)&&this._observer.triggerEvent(La.STAGE_CHANGED,this)):n&&this._state!==Ia.CANCELLED?(this._state=Ia.CANCELLED,
+)&&this._observer.triggerEvent(La.STAGE_CHANGED,this)):n&&this._state!==ba.CANCELLED?(this._state=ba.CANCELLED,
 this._observer.hasCallbacks(La.STAGE_CANCELLED)&&this._observer.triggerEvent(La.STAGE_CANCELLED,this),
 this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.STAGE_CHANGED,this)
-):this._state!==Ia.FINISHED&&(this._state=Ia.FINISHED,this._observer.hasCallbacks(La.STAGE_FINISHED
+):this._state!==ba.FINISHED&&(this._state=ba.FINISHED,this._observer.hasCallbacks(La.STAGE_FINISHED
 )&&this._observer.triggerEvent(La.STAGE_FINISHED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
 )&&this._observer.triggerEvent(La.STAGE_CHANGED,this)))):(n=A(_s(this._jobs,e=>e.isStarted()),e=>e.isPaused())
-)&&this._state!==Ia.PAUSED?(this._state=Ia.PAUSED,this._observer.hasCallbacks(La.STAGE_PAUSED
+)&&this._state!==ba.PAUSED?(this._state=ba.PAUSED,this._observer.hasCallbacks(La.STAGE_PAUSED
 )&&this._observer.triggerEvent(La.STAGE_PAUSED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
-)&&this._observer.triggerEvent(La.STAGE_CHANGED,this)):n||this._state!==Ia.PAUSED||(this._state=Ia.STARTED,
+)&&this._observer.triggerEvent(La.STAGE_CHANGED,this)):n||this._state!==ba.PAUSED||(this._state=ba.STARTED,
 this._observer.hasCallbacks(La.STAGE_RESUMED)&&this._observer.triggerEvent(La.STAGE_RESUMED,this),
 this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.STAGE_CHANGED,this))}}u(yl,"Event",La)
 ;const wl=il.createLogger("PipelineController");(iu=Pa={}).PIPELINE_STARTED="PipelineController:pipelineStarted",
@@ -836,122 +836,122 @@ iu.PIPELINE_FAILED="PipelineController:pipelineFailed",iu.PIPELINE_CHANGED="Pipe
 "_changedCallback",void 0),u(this,"_state",void 0),u(this,"_stageDestructors",void 0),u(this,"_current",void 0),!J(e)
 )throw new TypeError(`Pipeline name invalid: ${e}`);if(!d(t,Z,1))throw new TypeError(
 `Pipeline#${e} must have at least one stage`);this._current=0,this._name=e,this._stages=t,this._observer=new Al(
-`PipelineController#${this._name}`),this._state=Ia.CONSTRUCTED,this._changedCallback=this._onChanged.bind(this),
+`PipelineController#${this._name}`),this._state=ba.CONSTRUCTED,this._changedCallback=this._onChanged.bind(this),
 this._stageDestructors=yi(t,e=>e.onChanged(this._changedCallback))}getState(){return this._state}getName(){
 return this._name}destroy(){this._observer.destroy()}on(e,t){return this._observer.listenEvent(e,t)}toString(){
 return`PipelineController#${this._name}`}getStateDTO(){return{type:Da.PIPELINE,state:this._state,name:this._name,
 stages:yi(this._stages,e=>e.getStateDTO())}}toJSON(){return this.getStateDTO()}isCancelled(){switch(this._state){
-case Ia.CANCELLED:return!0;case Ia.STARTED:case Ia.PAUSED:case Ia.CONSTRUCTED:case Ia.FINISHED:case Ia.FAILED:return!1}}
-isFailed(){switch(this._state){case Ia.FAILED:return!0;case Ia.CANCELLED:case Ia.STARTED:case Ia.PAUSED:
-case Ia.CONSTRUCTED:case Ia.FINISHED:return!1}}isFinished(){switch(this._state){case Ia.FAILED:case Ia.CANCELLED:
-case Ia.FINISHED:return!0;case Ia.STARTED:case Ia.PAUSED:case Ia.CONSTRUCTED:return!1}}isPaused(){switch(this._state){
-case Ia.PAUSED:return!0;case Ia.FAILED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.STARTED:case Ia.CONSTRUCTED:return!1}}
-isRunning(){switch(this._state){case Ia.STARTED:return!0;case Ia.PAUSED:case Ia.FAILED:case Ia.CANCELLED:
-case Ia.FINISHED:case Ia.CONSTRUCTED:return!1}}isStarted(){switch(this._state){case Ia.STARTED:case Ia.PAUSED:return!0
-;case Ia.FAILED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.CONSTRUCTED:return!1}}isSuccessful(){switch(this._state){
-case Ia.FINISHED:return!0;case Ia.STARTED:case Ia.PAUSED:case Ia.FAILED:case Ia.CANCELLED:case Ia.CONSTRUCTED:return!1}}
+case ba.CANCELLED:return!0;case ba.STARTED:case ba.PAUSED:case ba.CONSTRUCTED:case ba.FINISHED:case ba.FAILED:return!1}}
+isFailed(){switch(this._state){case ba.FAILED:return!0;case ba.CANCELLED:case ba.STARTED:case ba.PAUSED:
+case ba.CONSTRUCTED:case ba.FINISHED:return!1}}isFinished(){switch(this._state){case ba.FAILED:case ba.CANCELLED:
+case ba.FINISHED:return!0;case ba.STARTED:case ba.PAUSED:case ba.CONSTRUCTED:return!1}}isPaused(){switch(this._state){
+case ba.PAUSED:return!0;case ba.FAILED:case ba.CANCELLED:case ba.FINISHED:case ba.STARTED:case ba.CONSTRUCTED:return!1}}
+isRunning(){switch(this._state){case ba.STARTED:return!0;case ba.PAUSED:case ba.FAILED:case ba.CANCELLED:
+case ba.FINISHED:case ba.CONSTRUCTED:return!1}}isStarted(){switch(this._state){case ba.STARTED:case ba.PAUSED:return!0
+;case ba.FAILED:case ba.CANCELLED:case ba.FINISHED:case ba.CONSTRUCTED:return!1}}isSuccessful(){switch(this._state){
+case ba.FINISHED:return!0;case ba.STARTED:case ba.PAUSED:case ba.FAILED:case ba.CANCELLED:case ba.CONSTRUCTED:return!1}}
 onCancelled(e){return this.on(Pa.PIPELINE_CANCELLED,e)}onChanged(e){return this.on(Pa.PIPELINE_CHANGED,e)}onFailed(e){
 return this.on(Pa.PIPELINE_FAILED,e)}onFinished(e){return this.on(Pa.PIPELINE_FINISHED,e)}onPaused(e){return this.on(
 Pa.PIPELINE_PAUSED,e)}onResumed(e){return this.on(Pa.PIPELINE_RESUMED,e)}onStarted(e){return this.on(Pa.PIPELINE_STARTED
 ,e)}pause(){if(!this.isRunning())throw new Error(`Job#${this._name} was not running`);return wl.info(
-`Pausing pipeline ${this._name}`),this._state=Ia.PAUSED,this._stages[this._current].pause(),this._observer.hasCallbacks(
+`Pausing pipeline ${this._name}`),this._state=ba.PAUSED,this._stages[this._current].pause(),this._observer.hasCallbacks(
 Pa.PIPELINE_PAUSED)&&this._observer.triggerEvent(Pa.PIPELINE_PAUSED,this),this._observer.hasCallbacks(
 Pa.PIPELINE_CHANGED)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),this}resume(){if(!this.isPaused()
 )throw new Error(`Job#${this._name} was not paused`);return wl.info(`Resuming pipeline ${this._name}`),
-this._state=Ia.STARTED,this._stages[this._current].resume(),this._observer.hasCallbacks(Pa.PIPELINE_RESUMED
+this._state=ba.STARTED,this._stages[this._current].resume(),this._observer.hasCallbacks(Pa.PIPELINE_RESUMED
 )&&this._observer.triggerEvent(Pa.PIPELINE_RESUMED,this),this._observer.hasCallbacks(Pa.PIPELINE_CHANGED
-)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),this}start(){if(this._state!==Ia.CONSTRUCTED)throw new Error(
-`Job#${this._name} was already started`);return wl.info(`Starting pipeline ${this._name}`),this._state=Ia.STARTED,
+)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),this}start(){if(this._state!==ba.CONSTRUCTED)throw new Error(
+`Job#${this._name} was already started`);return wl.info(`Starting pipeline ${this._name}`),this._state=ba.STARTED,
 this._stages[this._current].start(),this._observer.hasCallbacks(Pa.PIPELINE_STARTED)&&this._observer.triggerEvent(
 Pa.PIPELINE_STARTED,this),this._observer.hasCallbacks(Pa.PIPELINE_CHANGED)&&this._observer.triggerEvent(
-Pa.PIPELINE_CHANGED,this),this}stop(){if(this._state!==Ia.STARTED)throw new Error(`Job#${this._name} was not started`)
-;return wl.info(`Stopping pipeline ${this._name}`),this._state=Ia.CANCELLED,this._stages[this._current].stop(),
+Pa.PIPELINE_CHANGED,this),this}stop(){if(this._state!==ba.STARTED)throw new Error(`Job#${this._name} was not started`)
+;return wl.info(`Stopping pipeline ${this._name}`),this._state=ba.CANCELLED,this._stages[this._current].stop(),
 this._observer.hasCallbacks(Pa.PIPELINE_CANCELLED)&&this._observer.triggerEvent(Pa.PIPELINE_CANCELLED,this),
 this._observer.hasCallbacks(Pa.PIPELINE_CHANGED)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),this}
 getErrorString(){return yi(this._stages,e=>e.getErrorString()).join("\n")}getOutputString(){return yi(this._stages,
 e=>e.getOutputString()).join("\n")}_onChanged(e,t){var r,n=this._state;const i=this._stages[this._current];if(t===i)if(
 i.isFinished()&&this.isStarted()){try{r=this._stages.indexOf(i),this._stageDestructors[r]()}catch(e){wl.warn(
-`Warning! Exception in the step#${i.getName()} listener destructor: `,e)}if(i.isFailed())this._state=Ia.FAILED,
+`Warning! Exception in the step#${i.getName()} listener destructor: `,e)}if(i.isFailed())this._state=ba.FAILED,
 this._observer.hasCallbacks(Pa.PIPELINE_FAILED)&&this._observer.triggerEvent(Pa.PIPELINE_FAILED,this),wl.info(
-`Pipeline ${this._name} has failed`);else if(i.isCancelled())this._state=Ia.CANCELLED,this._observer.hasCallbacks(
+`Pipeline ${this._name} has failed`);else if(i.isCancelled())this._state=ba.CANCELLED,this._observer.hasCallbacks(
 Pa.PIPELINE_CANCELLED)&&this._observer.triggerEvent(Pa.PIPELINE_CANCELLED,this),wl.info(
 `Pipeline ${this._name} was cancelled`);else if(this._current+=1,this._current<this._stages.length){
-this._state=Ia.STARTED;const o=this._stages[this._current].start();n===Ia.PAUSED&&this._observer.hasCallbacks(
+this._state=ba.STARTED;const o=this._stages[this._current].start();n===ba.PAUSED&&this._observer.hasCallbacks(
 Pa.PIPELINE_RESUMED)&&this._observer.triggerEvent(Pa.PIPELINE_RESUMED,this),wl.info(`Stage ${o.getName(
-)} for pipeline ${this._name} started`)}else this._state=Ia.FINISHED,this._observer.hasCallbacks(Pa.PIPELINE_FINISHED
+)} for pipeline ${this._name} started`)}else this._state=ba.FINISHED,this._observer.hasCallbacks(Pa.PIPELINE_FINISHED
 )&&this._observer.triggerEvent(Pa.PIPELINE_FINISHED,this),wl.info(`Pipeline ${this._name} finished successfully`)
 ;this._observer.hasCallbacks(Pa.PIPELINE_CHANGED)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this)
-}else i.isPaused()&&!this.isPaused()?(this._state=Ia.PAUSED,this._observer.hasCallbacks(Pa.PIPELINE_PAUSED
+}else i.isPaused()&&!this.isPaused()?(this._state=ba.PAUSED,this._observer.hasCallbacks(Pa.PIPELINE_PAUSED
 )&&this._observer.triggerEvent(Pa.PIPELINE_PAUSED,this),this._observer.hasCallbacks(Pa.PIPELINE_CHANGED
 )&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),wl.info(`Pipeline ${this._name} was paused`)):i.isStarted(
-)&&this.isPaused()&&(this._state=Ia.STARTED,this._observer.hasCallbacks(Pa.PIPELINE_RESUMED
+)&&this.isPaused()&&(this._state=ba.STARTED,this._observer.hasCallbacks(Pa.PIPELINE_RESUMED
 )&&this._observer.triggerEvent(Pa.PIPELINE_RESUMED,this),this._observer.hasCallbacks(Pa.PIPELINE_CHANGED
 )&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),wl.info(`Pipeline ${this._name} was resumed`))}}u(Cl,"Event",Pa
 );const ml=il.createLogger("ScriptController");(iu=Ua={}).SCRIPT_STARTED="ScriptController:scriptStarted",
 iu.SCRIPT_PAUSED="ScriptController:scriptPaused",iu.SCRIPT_RESUMED="ScriptController:scriptResumed",
 iu.SCRIPT_CANCELLED="ScriptController:scriptCancelled",iu.SCRIPT_FAILED="ScriptController:scriptFailed",
-iu.SCRIPT_FINISHED="ScriptController:scriptFinished",iu.SCRIPT_CHANGED="ScriptController:scriptChanged";class bl{
+iu.SCRIPT_FINISHED="ScriptController:scriptFinished",iu.SCRIPT_CHANGED="ScriptController:scriptChanged";class Il{
 constructor(e,t,r=[],n={}){if(u(this,"_observer",void 0),u(this,"_name",void 0),u(this,"_command",void 0),u(this,"_args"
 ,void 0),u(this,"_env",void 0),u(this,"_closeCallback",void 0),u(this,"_stdoutCallback",void 0),u(this,"_stderrCallback"
 ,void 0),u(this,"_state",void 0),u(this,"_process",void 0),u(this,"_stdoutChunks",void 0),u(this,"_stderrChunks",void 0)
 ,!J(e))throw new TypeError(`Script name invalid: ${e}`);if(!p(t))throw new TypeError(
 `Script#${e} must have a valid command: ${t}`);if(!d(r,p,0))throw new TypeError(
-`Script#${e} must have a valid args: ${JSON.stringify(r)}`);if(!w(n,p,p))throw new TypeError(
-`Script#${e} must have a valid env: ${JSON.stringify(n)}`);this._state=Ia.CONSTRUCTED,this._name=e,this._command=t,
+`Script#${e} must have a valid args: ${JSON.stringify(r)}`);if(!y(n,p,p))throw new TypeError(
+`Script#${e} must have a valid env: ${JSON.stringify(n)}`);this._state=ba.CONSTRUCTED,this._name=e,this._command=t,
 this._args=r,this._env=n,this._observer=new Al(`ScriptController#${e}`),this._closeCallback=this._onClose.bind(this),
 this._stdoutCallback=this._onStdOut.bind(this),this._stderrCallback=this._onStdErr.bind(this),this._stdoutChunks=[],
 this._stderrChunks=[]}destroy(){this._observer.destroy(),this.isPaused()?this.resume().stop():this.isRunning(
 )&&this.stop()}getState(){return this._state}getName(){return this._name}on(e,t){return this._observer.listenEvent(e,t)}
 toString(){return`ScriptController#${this._name}`}getStateDTO(){return{type:Da.SCRIPT_STEP,state:this._state,
-name:this._name}}toJSON(){return this.getStateDTO()}isRunning(){switch(this._state){case Ia.STARTED:return!0
-;case Ia.PAUSED:case Ia.CONSTRUCTED:case Ia.CANCELLED:case Ia.FINISHED:case Ia.FAILED:return!1}}isStarted(){switch(
-this._state){case Ia.STARTED:case Ia.PAUSED:return!0;case Ia.CONSTRUCTED:case Ia.CANCELLED:case Ia.FINISHED:
-case Ia.FAILED:return!1}}isPaused(){switch(this._state){case Ia.PAUSED:return!0;case Ia.CONSTRUCTED:case Ia.STARTED:
-case Ia.CANCELLED:case Ia.FINISHED:case Ia.FAILED:return!1}}isFinished(){switch(this._state){case Ia.CANCELLED:
-case Ia.FINISHED:case Ia.FAILED:return!0;case Ia.CONSTRUCTED:case Ia.STARTED:case Ia.PAUSED:return!1}}isSuccessful(){
-switch(this._state){case Ia.FINISHED:return!0;case Ia.FAILED:case Ia.CANCELLED:case Ia.CONSTRUCTED:case Ia.STARTED:
-case Ia.PAUSED:return!1}}isCancelled(){switch(this._state){case Ia.CANCELLED:return!0;case Ia.FINISHED:case Ia.FAILED:
-case Ia.CONSTRUCTED:case Ia.STARTED:case Ia.PAUSED:return!1}}isFailed(){switch(this._state){case Ia.FAILED:return!0
-;case Ia.CANCELLED:case Ia.FINISHED:case Ia.CONSTRUCTED:case Ia.STARTED:case Ia.PAUSED:return!1}}start(){if(
-this._state!==Ia.CONSTRUCTED)throw new Error(`Script#${this._name} was already started`);return ml.info(
-`Starting command "${this._command} ${this._args.join(" ")}"`),this._state=Ia.STARTED,this._process=Ru.spawn(
+name:this._name}}toJSON(){return this.getStateDTO()}isRunning(){switch(this._state){case ba.STARTED:return!0
+;case ba.PAUSED:case ba.CONSTRUCTED:case ba.CANCELLED:case ba.FINISHED:case ba.FAILED:return!1}}isStarted(){switch(
+this._state){case ba.STARTED:case ba.PAUSED:return!0;case ba.CONSTRUCTED:case ba.CANCELLED:case ba.FINISHED:
+case ba.FAILED:return!1}}isPaused(){switch(this._state){case ba.PAUSED:return!0;case ba.CONSTRUCTED:case ba.STARTED:
+case ba.CANCELLED:case ba.FINISHED:case ba.FAILED:return!1}}isFinished(){switch(this._state){case ba.CANCELLED:
+case ba.FINISHED:case ba.FAILED:return!0;case ba.CONSTRUCTED:case ba.STARTED:case ba.PAUSED:return!1}}isSuccessful(){
+switch(this._state){case ba.FINISHED:return!0;case ba.FAILED:case ba.CANCELLED:case ba.CONSTRUCTED:case ba.STARTED:
+case ba.PAUSED:return!1}}isCancelled(){switch(this._state){case ba.CANCELLED:return!0;case ba.FINISHED:case ba.FAILED:
+case ba.CONSTRUCTED:case ba.STARTED:case ba.PAUSED:return!1}}isFailed(){switch(this._state){case ba.FAILED:return!0
+;case ba.CANCELLED:case ba.FINISHED:case ba.CONSTRUCTED:case ba.STARTED:case ba.PAUSED:return!1}}start(){if(
+this._state!==ba.CONSTRUCTED)throw new Error(`Script#${this._name} was already started`);return ml.info(
+`Starting command "${this._command} ${this._args.join(" ")}"`),this._state=ba.STARTED,this._process=Ru.spawn(
 this._command,this._args),this._process.stdout.on("data",this._stdoutCallback),this._process.stderr.on("data",
 this._stderrCallback),this._process.on("close",this._closeCallback),this._observer.hasCallbacks(Ua.SCRIPT_STARTED
 )&&this._observer.triggerEvent(Ua.SCRIPT_STARTED,this),this._observer.hasCallbacks(Ua.SCRIPT_CHANGED
 )&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this),this}pause(){if(!this.isRunning())throw new Error(
 `Script#${this._name} was not running`);if(!this._process)throw new Error("No process initialized");return ml.info(
-`Pausing command "${this._command} ${this._args.join(" ")}"`),this._state=Ia.PAUSED,this._process.kill("SIGSTOP"),
+`Pausing command "${this._command} ${this._args.join(" ")}"`),this._state=ba.PAUSED,this._process.kill("SIGSTOP"),
 this._observer.hasCallbacks(Ua.SCRIPT_PAUSED)&&this._observer.triggerEvent(Ua.SCRIPT_PAUSED,this),
 this._observer.hasCallbacks(Ua.SCRIPT_CHANGED)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this),this}resume(){if(
 !this.isPaused())throw new Error(`Script#${this._name} was not paused`);if(!this._process)throw new Error(
 "No process initialized");return ml.info(`Resuming command "${this._command} ${this._args.join(" ")}"`),
-this._state=Ia.STARTED,this._process.kill("SIGCONT"),this._observer.hasCallbacks(Ua.SCRIPT_RESUMED
+this._state=ba.STARTED,this._process.kill("SIGCONT"),this._observer.hasCallbacks(Ua.SCRIPT_RESUMED
 )&&this._observer.triggerEvent(Ua.SCRIPT_RESUMED,this),this._observer.hasCallbacks(Ua.SCRIPT_CHANGED
-)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this),this}stop(){if(this._state!==Ia.STARTED)throw new Error(
+)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this),this}stop(){if(this._state!==ba.STARTED)throw new Error(
 `Script#${this._name} was not started`);if(!this._process)throw new Error("No process initialized");return ml.debug(
-`Cancelling command "${this._command} ${this._args.join(" ")}"`),this._state=Ia.CANCELLED,this._process.kill("SIGTERM"),
+`Cancelling command "${this._command} ${this._args.join(" ")}"`),this._state=ba.CANCELLED,this._process.kill("SIGTERM"),
 this._observer.hasCallbacks(Ua.SCRIPT_CANCELLED)&&this._observer.triggerEvent(Ua.SCRIPT_CANCELLED,this),
 this._observer.hasCallbacks(Ua.SCRIPT_CHANGED)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this),this}onStarted(e){
 return this.on(Ua.SCRIPT_STARTED,e)}onPaused(e){return this.on(Ua.SCRIPT_PAUSED,e)}onResumed(e){return this.on(
 Ua.SCRIPT_RESUMED,e)}onCancelled(e){return this.on(Ua.SCRIPT_CANCELLED,e)}onFailed(e){return this.on(Ua.SCRIPT_FAILED,e)
 }onFinished(e){return this.on(Ua.SCRIPT_FINISHED,e)}onChanged(e){return this.on(Ua.SCRIPT_CHANGED,e)}getErrorString(){
 return Buffer.concat(this._stderrChunks).toString("utf8")}getOutputString(){return Buffer.concat(this._stdoutChunks
-).toString("utf8")}_onClose(e){ml.debug(`Child process stopped with exit status ${e}`),0===e?(this._state=Ia.FINISHED,
+).toString("utf8")}_onClose(e){ml.debug(`Child process stopped with exit status ${e}`),0===e?(this._state=ba.FINISHED,
 this._observer.hasCallbacks(Ua.SCRIPT_FINISHED)&&this._observer.triggerEvent(Ua.SCRIPT_FINISHED,this)):(
-this._state=Ia.FAILED,this._observer.hasCallbacks(Ua.SCRIPT_FAILED)&&this._observer.triggerEvent(Ua.SCRIPT_FAILED,this))
+this._state=ba.FAILED,this._observer.hasCallbacks(Ua.SCRIPT_FAILED)&&this._observer.triggerEvent(Ua.SCRIPT_FAILED,this))
 ,this._observer.hasCallbacks(Ua.SCRIPT_CHANGED)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this)}_onStdOut(e){
-this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),process.stderr.write(e)}}u(bl
-,"Event",Ua),u(bl,"State",Ia);const Il=il.createLogger("PipelineRunner");class Dl{static createStepController(e){if(x(e)
-)return new bl(e.name,e.command,e.args,e.env);throw new TypeError(`Unknown step type: ${e.name}`)}
+this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),process.stderr.write(e)}}u(Il
+,"Event",Ua),u(Il,"State",ba);const bl=il.createLogger("PipelineRunner");class Dl{static createStepController(e){if(x(e)
+)return new Il(e.name,e.command,e.args,e.env);throw new TypeError(`Unknown step type: ${e.name}`)}
 static createJobController(e){return new Rl(e.name,yi(e.steps,e=>this.createStepController(e)))}
 static createStageController(e){return new yl(e.name,yi(e.jobs,e=>this.createJobController(e)))}
 static createPipelineController(e){return new Cl(e.name,yi(e.stages,e=>this.createStageController(e)))}
-static createController(e){return z(e)?(Il.debug(`Starting pipeline ${e.name}`),this.createPipelineController(e)):V(e)?(
-Il.debug(`Starting stage ${e.name}`),this.createStageController(e)):q(e)?(Il.debug(`Starting job ${e.name}`),
-this.createJobController(e)):(Il.debug(`Starting step ${e.name}`),this.createStepController(e))}
+static createController(e){return z(e)?(bl.debug(`Starting pipeline ${e.name}`),this.createPipelineController(e)):V(e)?(
+bl.debug(`Starting stage ${e.name}`),this.createStageController(e)):q(e)?(bl.debug(`Starting job ${e.name}`),
+this.createJobController(e)):(bl.debug(`Starting step ${e.name}`),this.createStepController(e))}
 static async startAndWaitUntilFinished(n){return new Promise((e,t)=>{let r;try{r=n.onChanged(()=>{try{n.isFinished()?(
-Il.debug(`Controller ${n.toString()} finished`),r&&(r(),r=void 0),e()):Il.debug(`Controller ${n.toString(
-)} state changed`)}catch(e){r&&(r(),r=void 0),t(e)}}),n.start(),Il.debug(`Controller ${n.toString()} started`)}catch(e){
+bl.debug(`Controller ${n.toString()} finished`),r&&(r(),r=void 0),e()):bl.debug(`Controller ${n.toString(
+)} state changed`)}catch(e){r&&(r(),r=void 0),t(e)}}),n.start(),bl.debug(`Controller ${n.toString()} started`)}catch(e){
 r&&(r(),r=void 0),t(e)}})}}const Ol=il.createLogger("runHttpResource"),Ll=il.createLogger("runLocalResource");(iu=Fa={}
 ).M_ROOM_POWER_LEVELS="m.room.power_levels",iu.M_ROOM_JOIN_RULES="m.room.join_rules",
 iu.M_ROOM_MEMBERSHIP="m.room.membership",iu.M_ROOM_HISTORY_VISIBILITY="m.room.history_visibility",
@@ -980,7 +980,7 @@ this._timer=void 0),this._initSync().catch(e=>{Pl.error("SYNC ERROR: ",e)})}stop
 this._timer),this._timer=void 0)}getAccessToken(){return this._accessToken}getUserId(){return this._userId}
 getHomeServerName(){return new URL(this._homeServerUrl).hostname}async register(e,t=void 0,r){var n,i,o,s,a;try{if(
 Pl.debug("Registering user:",e,t),o=null!==(n=null!==(i=null==this?void 0:this._accessToken)&&void 0!==i?i:r
-)&&void 0!==n?n:void 0,!(y(a=s=await gl.postJson(this._resolveHomeServerUrl("/register")+(t?`?kind=${Be(t)}`:""),e,o?{
+)&&void 0!==n?n:void 0,!(N(a=s=await gl.postJson(this._resolveHomeServerUrl("/register")+(t?`?kind=${Be(t)}`:""),e,o?{
 Authorization:`Bearer ${o}`}:void 0))&&D(a,["user_id","access_token","home_server","device_id"])&&p(
 null==a?void 0:a.user_id)&&f(null==a?void 0:a.access_token)&&f(null==a?void 0:a.home_server)&&f(
 null==a?void 0:a.device_id)))throw Pl.debug("Invalid response received: ",s),new TypeError(
@@ -1001,7 +1001,7 @@ t=this._resolveSynapseServerUrl("/register"),!(n=null!==(e=null==(r=await gl.get
 )&&void 0!==e?e:void 0))throw new TypeError("No nonce detected");return n}catch(e){throw Pl.debug(
 "Could not fetch nonce for registration: ",e),new TypeError(
 "Could not fetch nonce for the register request. Is it Synapse?")}}async registerWithSharedSecret(e){var t,r,n;try{if(
-Pl.debug("registerWithSharedSecret: Registering user:",e),t=this._resolveSynapseServerUrl("/register"),!(y(
+Pl.debug("registerWithSharedSecret: Registering user:",e),t=this._resolveSynapseServerUrl("/register"),!(N(
 n=r=await gl.postJson(t,e))&&D(n,["access_token","user_id","home_server","device_id"])&&p(null==n?void 0:n.access_token
 )&&p(null==n?void 0:n.user_id)&&p(null==n?void 0:n.home_server)&&p(null==n?void 0:n.device_id)))throw Pl.debug(
 "registerWithSharedSecret: Invalid response received: ",r),new TypeError(
@@ -1015,11 +1015,11 @@ case ja.M_USER_IN_USE:throw new dl(ma.Conflict,"User already exists");case ja.M_
 ma.BadRequest,"Username invalid");case ja.M_EXCLUSIVE:throw new dl(ma.Conflict,
 "User name conflicts with exclusive namespace");default:throw new dl(ma.InternalServerError,"Failed to register user")}}
 }async login(r,n){var i,o,s,a,u,l,c,d,h,_,E;try{if(i={type:Fa.M_LOGIN_PASSWORD,identifier:{type:Fa.M_ID_USER,user:r},
-password:n},Pl.debug("Sending login with userId:",r),!(y(h=o=await gl.postJson(this._resolveHomeServerUrl("/login"),i)
+password:n},Pl.debug("Sending login with userId:",r),!(N(h=o=await gl.postJson(this._resolveHomeServerUrl("/login"),i)
 )&&D(h,["user_id","access_token","home_server","device_id","well_known"])&&p(null==h?void 0:h.user_id)&&p(
 null==h?void 0:h.access_token)&&f(null==h?void 0:h.home_server)&&f(null==h?void 0:h.device_id)&&(v(
-null==h?void 0:h.MatrixWellKnownDTO)||y(_=h)&&D(_,["m.homeserver","m.identity_server"])&&y(E=_["m.homeserver"])&&D(E,[
-"base_url"])&&p(null==E?void 0:E.base_url)&&(v(_["m.identity_server"])||y(_=_["m.identity_server"])&&D(_,["base_url"]
+null==h?void 0:h.MatrixWellKnownDTO)||N(_=h)&&D(_,["m.homeserver","m.identity_server"])&&N(E=_["m.homeserver"])&&D(E,[
+"base_url"])&&p(null==E?void 0:E.base_url)&&(v(_["m.identity_server"])||N(_=_["m.identity_server"])&&D(_,["base_url"]
 )&&p(null==_?void 0:_.base_url)))))throw Pl.debug("Invalid response received: ",o),new TypeError(
 "login: Response was invalid");Pl.debug("Login response received: ",o),l=this._originalUrl;let e=this._homeServerUrl,t
 ;if(t=null!=o&&o.well_known?(u=null===(s=o.well_known["m.homeserver"])||void 0===s?void 0:s.base_url,e=u||l,(null===(
@@ -1027,14 +1027,14 @@ a=o.well_known["m.identity_server"])||void 0===a?void 0:a.base_url)||e):e=l,!(c=
 )throw new TypeError("Response did not have access_token");if(!(d=null==o?void 0:o.user_id))throw new TypeError(
 "Response did not have user_id");return new Ul(l,e,t,c,d,this._pollTimeout,this._pollWaitTime)}catch(e){throw Pl.debug(
 "Could not login: ",e),new dl(ma.Forbidden,"Access denied")}}async resolveRoomId(e){var t,r,n;try{if(
-t=this._normalizeRoomName(e),!(y(n=r=await gl.getJson(this._resolveHomeServerUrl(`/directory/room/${Be(t)}`)))&&D(n,[
+t=this._normalizeRoomName(e),!(N(n=r=await gl.getJson(this._resolveHomeServerUrl(`/directory/room/${Be(t)}`)))&&D(n,[
 "room_id","servers"])&&p(null==n?void 0:n.room_id)&&_(null==n?void 0:n.servers)))throw Pl.debug(
 "resolveRoomId: response was not GetDirectoryRoomAliasResponseDTO: ",r),new TypeError(
 `Response was not GetDirectoryRoomAliasResponseDTO: ${r}`);return Pl.debug("resolveRoomId: received: ",r),r.room_id
 }catch(e){if(e instanceof dl&&e.getStatusCode()===ma.NotFound)return;throw e}}async getJoinedMembers(e){
-var t=this._accessToken;if(!t)throw new TypeError("getRoomStateByType: Client did not have access token");if(!(y(
+var t=this._accessToken;if(!t)throw new TypeError("getRoomStateByType: Client did not have access token");if(!(N(
 t=e=await gl.getJson(this._resolveHomeServerUrl(`/rooms/${Be(e)}/joined_members`),{Authorization:`Bearer ${t}`}))&&D(t,[
-"joined"])&&w(null==t?void 0:t.joined,se,Ge)))throw Pl.debug(
+"joined"])&&y(null==t?void 0:t.joined,se,Ge)))throw Pl.debug(
 "getJoinedMembers: response was not MatrixRoomJoinedMembersDTO: ",e),new TypeError(
 `Response was not MatrixRoomJoinedMembersDTO: ${e}`);return Pl.debug("getJoinedMembers: received: ",e),e}
 async getRoomStateByType(e,t,r){var n,i;try{if(!(n=this._accessToken))throw new TypeError(
@@ -1043,7 +1043,7 @@ async getRoomStateByType(e,t,r){var n,i;try{if(!(n=this._accessToken))throw new 
 "resolveRoomId: response was not JsonObject: ",i),new TypeError(`Response was not JsonObject: ${JSON.stringify(i)}`)
 ;return Pl.debug("resolveRoomId: received: ",i),i}catch(e){if(e instanceof dl&&e.getStatusCode()===ma.NotFound)return
 ;throw e}}async setRoomStateByType(e,t,r,n){var i,o,s;try{if(!(i=this._accessToken))throw new TypeError(
-"setRoomStateByType: Client did not have access token");if(!(y(s=o=await gl.putJson(this._resolveHomeServerUrl(
+"setRoomStateByType: Client did not have access token");if(!(N(s=o=await gl.putJson(this._resolveHomeServerUrl(
 `/rooms/${Be(e)}/state/${Be(t)}/${Be(r)}`),n,{Authorization:`Bearer ${i}`}))&&D(s,["event_id"])&&p(
 null==s?void 0:s.event_id)))throw Pl.debug("setRoomStateByType: response was not PutRoomStateWithEventTypeDTO: ",o),
 new TypeError(`Response was not PutRoomStateWithEventTypeDTO: ${JSON.stringify(o)}`);return Pl.debug(
@@ -1063,13 +1063,13 @@ this._resolveHomeServerUrl(`/rooms/${Be(e)}/invite`),{user_id:t},{Authorization:
 "sendTextMessage: Client did not have access token");t={msgtype:"m.text",body:t},Pl.debug("Sending message with body:",t
 ),r=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(e)}/send/m.room.message`),t,{Authorization:`Bearer ${r}`})
 ,Pl.debug("sendTextMessage response received: ",r)}async createRoom(e){var t=this._accessToken;if(!t
-)throw new TypeError("createRoom: Client did not have access token");if(Pl.debug("Creating room with body:",e),!(y(
+)throw new TypeError("createRoom: Client did not have access token");if(Pl.debug("Creating room with body:",e),!(N(
 e=t=await gl.postJson(this._resolveHomeServerUrl("/createRoom"),e,{Authorization:`Bearer ${t}`}))&&D(e,["room_id",
 "room_alias"])&&ne(null==e?void 0:e.room_id)&&(v(null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias
 )&&e&&"#"===e[0])))throw Pl.debug("response = ",t),new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t)
 ;return Pl.debug("Create room response received: ",t),t}async joinRoom(t,e=void 0){var r,n,i;try{if(!(
 r=this._accessToken))throw new TypeError("createRoom: Client did not have access token");if(Pl.debug(
-`Joining to room ${t} with body:`,e),!(y(i=n=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(t)}/join`),
+`Joining to room ${t} with body:`,e),!(N(i=n=await gl.postJson(this._resolveHomeServerUrl(`/rooms/${Be(t)}/join`),
 null!=e?e:{},{Authorization:`Bearer ${r}`}))&&D(i,["room_id"])&&ne(null==i?void 0:i.room_id)))throw Pl.debug(
 "response = ",n),new TypeError(`Could not join to ${t}: Response was not MatrixJoinRoomResponseDTO: `+n)
 ;return Pl.debug(`Joined to room ${t}: `,n),n}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{
@@ -1078,7 +1078,7 @@ t=this._accessToken))throw new TypeError(`sync: Client ${this._userId} did not h
 full_state:i,set_presence:o,timeout:e}=e;const s={};if(void 0!==r)if(p(r))s.filter=r;else{if(!te(r))throw new TypeError(
 `Invalid value for filter option: ${r}`);s.filter=JSON.stringify(r)}if(void 0!==n&&(s.since=n),void 0!==i&&(
 s.full_state=i?"true":"false"),void 0!==o&&(s.set_presence=o),void 0!==e&&(s.timeout=`${e}`),e=pa(yi(P(s),e=>{var t=s[e]
-;return`${Be(e)}=${Be(t)}`}),"&"),!(y(t=e=await gl.getJson(this._resolveHomeServerUrl(`/sync?${e}`),{
+;return`${Be(e)}=${Be(t)}`}),"&"),!(N(t=e=await gl.getJson(this._resolveHomeServerUrl(`/sync?${e}`),{
 Authorization:`Bearer ${t}`}))&&D(t,["next_batch","rooms","presence","account_data","to_device","device_lists",
 "device_one_time_keys_count"])&&p(null==t?void 0:t.next_batch)&&(v(null==t?void 0:t.rooms)||Pe(null==t?void 0:t.rooms)
 )&&(v(null==t?void 0:t.presence)||Fe(null==t?void 0:t.presence))&&(v(null==t?void 0:t.account_data)||Re(
@@ -1088,7 +1088,7 @@ null==t?void 0:t.device_one_time_keys_count))))throw Pl.debug("_sync: response n
 JSON.stringify(e,null,2)),new TypeError(`Response was not MatrixSyncResponseDTO: ${je(e)}`);return e}isAlreadyInTheRoom(
 e){if(He(e)){var t=null!==(t=null==e?void 0:e.errcode)&&void 0!==t?t:"";const r=null!==(e=null==e?void 0:e.error
 )&&void 0!==e?e:"";if(t===ja.M_FORBIDDEN&&0<=r.indexOf("already in the room"))return!0}return!1}_sendMatrixEventList(e,t
-){gs(e,e=>{this._sendMatrixEvent(e,t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(Ga.EVENT,t?S(S({},e),{},{
+){gs(e,e=>{this._sendMatrixEvent(e,t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(Ga.EVENT,t?m(m({},e),{},{
 room_id:t}):e)}_onTimeout(){if(this._syncing)Pl.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e
 )throw new TypeError("_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
 void 0!==this._timer&&(clearTimeout(this._timer),this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,
@@ -1132,10 +1132,10 @@ limit:0},timeline:{limit:0},state:{limit:1,include_redundant_members:!0,types:[t
 this._deletedType]}}},full_state:!0});Fl.debug("getAll: response = ",JSON.stringify(r,null,2));const n=null!==(
 e=null==r||null===(e=r.rooms)||void 0===e?void 0:e.join)&&void 0!==e?e:{};t=null!==(t=null==r||null===(t=r.rooms
 )||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=P(n);if(Fl.debug("joinedRooms = ",i),t=P(t),Fl.debug(
-"invitedRooms = ",t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug("Joining to rooms = ",t);let r=0;if(await bo(t,async(e
+"invitedRooms = ",t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug("Joining to rooms = ",t);let r=0;if(await Io(t,async(e
 ,t)=>{await e;try{Fl.debug("Joining to room = ",t),await this._client.joinRoom(t),r+=1}catch(e){Fl.warn(
 `Warning! Could not join client to room ${t}`)}},Promise.resolve()),1<=r)return Fl.debug(
-"Fetching results again after joining"),this.getAll()}return bo(i,(e,i)=>{var t=n[i],r=_s(null!==(r=null==t||null===(
+"Fetching results again after joining"),this.getAll()}return Io(i,(e,i)=>{var t=n[i],r=_s(null!==(r=null==t||null===(
 r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type)===this._stateType&&(
 null==e?void 0:e.state_key)===this._stateKey&&na(null==e||null===(t=e.content)||void 0===t?void 0:t.version)})
 ;return Zi(e,yi(r,e=>{var t=null!==(t=null==e||null===(t=e.content)||void 0===t?void 0:t.data)&&void 0!==t?t:{},
@@ -1151,7 +1151,7 @@ history_visibility:Ba.SHARED}},{type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content
 ;void 0!==n&&s.push({type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({
 type:$a.M_ROOM_MEMBERSHIP,room_id:e}))}}),Fl.debug("createItem: initialState = ",s),n=i.length?{invite:i}:{},Fl.debug(
 "createItem: inviteOptions = ",n);const a={[this._stateType]:0,[this._deletedType]:0};if(null!==(i=this._allowedEvents
-)&&void 0!==i&&i.length&&gs(this._allowedEvents,e=>{a[e]=0}),t=S(S({},n),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,
+)&&void 0!==i&&i.length&&gs(this._allowedEvents,e=>{a[e]=0}),t=m(m({},n),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,
 initial_state:s,room_version:"8",power_level_content_override:{events:a}}),t=await this._client.createRoom(t),Fl.debug(
 "createItem: response = ",t),t=t.room_id,Fl.debug("createItem: room_id = ",t),
 this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
@@ -1174,11 +1174,11 @@ this._serviceAccount){try{await this._serviceAccount.leaveRoom(t)}catch(e){Fl.wa
 await this._client.forgetRoom(t),Fl.debug("response = ",JSON.stringify(i,null,2)),{data:e.data,id:t,version:r,deleted:!0
 }}catch(e){if(e instanceof dl&&[401,403,404].includes(e.getStatusCode()))throw e;throw Fl.error(
 `Error in deleteById(${t}): `,e),new dl(500)}}async inviteToItem(r,e){let n;var t;this._serviceAccount&&(n=null===(
-t=this._serviceAccount)||void 0===t?void 0:t.getUserId(),n=n||await this._serviceAccount.whoami()),await bo(e,async(e,t
+t=this._serviceAccount)||void 0===t?void 0:t.getUserId(),n=n||await this._serviceAccount.whoami()),await Io(e,async(e,t
 )=>{if(await e,!n||t!==n)try{await this._client.inviteToRoom(r,t)}catch(e){if(this._client.isAlreadyInTheRoom(
 null==e?void 0:e.body))return;throw Fl.error(`Warning! Could not invite user ${t} to room ${r}: `,e),e}},
 Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}const kl=il.createLogger(
-"runMatrixRoomResource"),Ml=il.createLogger("main");il.setLogLevel(bu),async function(t=[]){var r,n,i,o;try{if(Ml.debug(
+"runMatrixRoomResource"),Ml=il.createLogger("main");il.setLogLevel(Iu),async function(t=[]){var r,n,i,o;try{if(Ml.debug(
 `Loglevel ${il.getLogLevelString()}`),r=el,t.shift(),!t.shift())return console.log(H(r)),ya.ARGUMENT_PARSE_ERROR;if(
 0===t.length)return console.log(H(r)),ya.ARGUMENT_PARSE_ERROR;let e=!0;do{if(n=t.shift(),e){switch(function(){switch(n){
 case"-h":case"--help":case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":case 2:return 2}}()){case 0:
@@ -1208,28 +1208,31 @@ e?n(e):r(t)})}catch(e){n(e)}}));var i,o;return p(t)?t:t.toString("utf8")}(t.path
 )return Ll.warn("Model was not valid: ",n),ya.RESOURCE_MODEL_INVALID;let e=Dl.createController(i);return Ll.info(
 `Running ${e.getName()} from ${t.path}`),await Dl.startAndWaitUntilFinished(e),Ll.info(
 `Successfully finished ${e.getName()} from ${t.path}`),ya.OK}catch(e){return Ll.error("Error: ",e),
-ya.LOCAL_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;case Aa.MATRIX:return Xu?async function(i){var o,s,a,u,l,c,d,h,_,E,v,p
-;try{kl.debug("runMatrixResource: ",i),d=i.authentication;let e;if(M(d))e=new Ul(`https://${i.homeserver}`,void 0,void 0
-,d.access_token);else{if(!$(d))return ya.UNKNOWN_AUTHENTICATION_TYPE;e=new Ul(`https://${i.homeserver}`),
-e=await e.login(d.username,d.password)}let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return kl.error(
-"Could not detect agent user ID"),ya.UNKNOWN_AGENT_ID;kl.info(`Agent user ID: ${t}`);const f=new $l(e,
-$a.FI_NOR_AGENT_DTO);if(0===(p=await f.getAll()).length)return kl.debug("Detected no pools available."),ya.OK;h=(
-1===p.length?(kl.debug("Detected single pool available. Picking it."),p[0]):(kl.debug(
-`Detected ${p.length} pools available. Picking one by random.`),p[Math.floor(Math.random()*p.length)])).id,kl.info(
-`Pool ID: ${h}`);const T=new $l(e,$a.FI_NOR_PIPELINE_RUN_DTO,"",void 0,$a.FI_NOR_PIPELINE_STATE,"",[h])
-;_=await T.getAll(),kl.debug("runList = ",_);let r;if(0===_.length)return kl.debug("Detected no work available."),ya.OK
-;r=1===_.length?(kl.debug("Detected single work available. Picking it."),_[0]):(kl.debug(
-`Detected ${_.length} work items available. Picking one by random.`),_[Math.floor(Math.random()*_.length)]);const g=r.id
-;if(kl.info(`Work ID: ${g}`),E=S(S({},r.data),{},{agentPoolId:h,agentAccountId:t}),await T.update(r.id,E),
-r=await T.findById(r.id),!r)return kl.warn("The work item disappeared while we were selecting it."),ya.WORK_CANCELLED
-;if(g!==r.id)return kl.error(`The work item ID conflict: ${g} !== ${r.id}`),ya.CONFLICT;if(h!==(null===(o=r
-)||void 0===o||null===(s=o.data)||void 0===s?void 0:s.agentPoolId)||t!==(null===(a=r)||void 0===a||null===(u=a.data
-)||void 0===u?void 0:u.agentAccountId))return kl.error(""),ya.CONFLICT;if(kl.debug(
-"Work item secured to us! We can start the job."),void 0===(v=X(null===(l=r)||void 0===l||null===(c=l.data
-)||void 0===c?void 0:c.model)))return kl.warn("Work item did not contain correct pipeline model: ",r),
-ya.RESOURCE_MODEL_INVALID;let n=Dl.createController(v);await Je(e,T,g,r,n);const A=n.onChanged(()=>{Je(e,T,g,r,n).catch(
-e=>{kl.error("Failed to save controller state: ",e)})});try{await Dl.startAndWaitUntilFinished(n)}finally{A(),await Je(e
-,T,g,r,n)}return ya.OK}catch(e){return kl.error("Error: ",e),ya.MATRIX_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;default:
+ya.LOCAL_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;case Aa.MATRIX:return Xu?async function(i){var o,s,a,u,l,c,d,h,_,E,v,p,
+f,T,g,A,S,R;try{kl.debug("runMatrixResource: ",i),f=i.authentication;let e;if(M(f))e=new Ul(`https://${i.homeserver}`,
+void 0,void 0,f.access_token);else{if(!$(f))return ya.UNKNOWN_AUTHENTICATION_TYPE;e=new Ul(`https://${i.homeserver}`),
+e=await e.login(f.username,f.password)}let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return kl.error(
+"Could not detect agent user ID"),ya.UNKNOWN_AGENT_ID;kl.info(`Agent user ID: ${t}`);const N=new $l(e,
+$a.FI_NOR_AGENT_DTO);if(0===(R=await N.getAll()).length)return kl.debug("Detected no pools available."),ya.OK;T=(
+1===R.length?(kl.debug("Detected single pool available. Picking it."),R[0]):(kl.debug(
+`Detected ${R.length} pools available. Picking one by random.`),R[Math.floor(Math.random()*R.length)])).id,kl.info(
+`Pool ID: ${T}`);const y=new $l(e,$a.FI_NOR_PIPELINE_RUN_DTO,"",void 0,$a.FI_NOR_PIPELINE_STATE,"",[T])
+;g=await y.getAll(),kl.debug("runList = ",g);let r;if(0===g.length)return kl.debug("Detected no work available."),ya.OK
+;r=1===g.length?(kl.debug("Detected single work available. Picking it."),g[0]):(kl.debug(
+`Detected ${g.length} work items available. Picking one by random.`),g[Math.floor(Math.random()*g.length)]);const w=r.id
+;if(void 0!==(null===(o=r)||void 0===o||null===(s=o.data)||void 0===s?void 0:s.agentPoolId)&&void 0!==(null===(a=r
+)||void 0===a||null===(u=a.data)||void 0===u?void 0:u.agentAccountId)&&void 0!==(null===(l=r)||void 0===l||null===(
+c=l.data)||void 0===c?void 0:c.state))return kl.warn(`Work ID was already running: ${w}`),ya.CONFLICT;if(kl.info(
+`Work ID: ${w}`),A=m(m({},r.data),{},{agentPoolId:T,agentAccountId:t}),await y.update(r.id,A),r=await y.findById(r.id),
+!r)return kl.warn("The work item disappeared while we were selecting it."),ya.WORK_CANCELLED;if(w!==r.id
+)return kl.error(`The work item ID conflict: ${w} !== ${r.id}`),ya.CONFLICT;if(T!==(null===(d=r)||void 0===d||null===(
+h=d.data)||void 0===h?void 0:h.agentPoolId)||t!==(null===(_=r)||void 0===_||null===(E=_.data
+)||void 0===E?void 0:E.agentAccountId))return kl.error(""),ya.CONFLICT;if(kl.debug(
+"Work item secured to us! We can start the job."),void 0===(S=X(null===(v=r)||void 0===v||null===(p=v.data
+)||void 0===p?void 0:p.model)))return kl.warn("Work item did not contain correct pipeline model: ",r),
+ya.RESOURCE_MODEL_INVALID;let n=Dl.createController(S);await Je(e,y,w,r,n);const C=n.onChanged(()=>{Je(e,y,w,r,n).catch(
+e=>{kl.error("Failed to save controller state: ",e)})});try{await Dl.startAndWaitUntilFinished(n)}finally{C(),await Je(e
+,y,w,r,n)}return ya.OK}catch(e){return kl.error("Error: ",e),ya.MATRIX_RESOURCE_FAILED}}(e):ya.UNBUILD_FEATURE;default:
 return ya.UNKNOWN_RESOURCE_TYPE}}(i))!==ya.OK)return o===ya.UNKNOWN_RESOURCE_TYPE?(Ml.error(`Error NorPP${o}: ${G(o
 )}: Resource type was unknown: ${i.type}`),console.log(H(r)),ya.UNKNOWN_RESOURCE_TYPE):(function(e){if(na(e)&&!(
 e<0||255<e)){if(Na.FATAL_SIGNAL_RANGE_START<=e&&e<=Na.FATAL_SIGNAL_RANGE_END)return 1;switch(e){case Na.OK:

@@ -160,6 +160,15 @@ export async function runMatrixResource (
         }
 
         const workId = work.id;
+
+        if ( work?.data?.agentPoolId !== undefined
+            && work?.data?.agentAccountId !== undefined
+            && work?.data?.state !== undefined
+        ) {
+            LOG.warn(`Work ID was already running: ${workId}`);
+            return RunnerExitStatus.CONFLICT;
+        }
+
         LOG.info(`Work ID: ${workId}`);
 
         // Let's take the job
