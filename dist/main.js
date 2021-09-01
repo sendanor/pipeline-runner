@@ -2,16 +2,16 @@
 "use strict";function n(t,e){var r,n=Object.keys(t);return Object.getOwnPropertySymbols&&(
 r=Object.getOwnPropertySymbols(t),e&&(r=r.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),
 n.push.apply(n,r)),n}function S(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
-Object(r),!0).forEach(function(e){a(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
+Object(r),!0).forEach(function(e){u(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
 Object.getOwnPropertyDescriptors(r)):n(Object(r)).forEach(function(e){Object.defineProperty(t,e,
-Object.getOwnPropertyDescriptor(r,e))});return t}function a(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
+Object.getOwnPropertyDescriptor(r,e))});return t}function u(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
 enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function e(e){return e&&"object"==typeof e&&"default"in e?e:{
 default:e}}function t(r){if(r&&r.__esModule)return r;var n=Object.create(null);return r&&Object.keys(r).forEach(
 function(e){var t;"default"!==e&&(t=Object.getOwnPropertyDescriptor(r,e),Object.defineProperty(n,e,t.get?t:{
 enumerable:!0,get:function(){return r[e]}}))}),n.default=r,Object.freeze(n)}function r(e){var t,r=-1,
 n=null==e?0:e.length;for(this.clear();++r<n;)t=e[r],this.set(t[0],t[1])}function i(e){var t,r=-1,n=null==e?0:e.length
 ;for(this.clear();++r<n;)t=e[r],this.set(t[0],t[1])}function o(e){var t,r=-1,n=null==e?0:e.length;for(this.clear(
-);++r<n;)t=e[r],this.set(t[0],t[1])}function s(e){e=this.__data__=new $t(e),this.size=e.size}function u(e){var t=-1,
+);++r<n;)t=e[r],this.set(t[0],t[1])}function s(e){e=this.__data__=new $t(e),this.size=e.size}function a(e){var t=-1,
 r=null==e?0:e.length;for(this.__data__=new kt;++t<r;)this.add(e[t])}function l(n,i){function o(){var e=arguments,
 t=i?i.apply(this,e):e[0],r=o.cache;return r.has(t)?r.get(t):(e=n.apply(this,e),o.cache=r.set(t,e)||r,e)}if(
 "function"!=typeof n||null!=i&&"function"!=typeof i)throw new TypeError(Cn);return o.cache=new(l.Cache||wn),o}
@@ -341,8 +341,8 @@ o.prototype.get=xu,o.prototype.has=mu,o.prototype.set=Xa,Ut=Uu,Ft=tu=o,$t=Pt=Va,
 ,n=this.__data__;if(n instanceof Pt){if(r=n.__data__,!Ut||r.length<199)return r.push([e,t]),this.size=++n.size,this
 ;n=this.__data__=new Ft(r)}return n.set(e,t),this.size=n.size,this},s.prototype.clear=za,s.prototype.delete=Po,
 s.prototype.get=Ns,s.prototype.has=cr,s.prototype.set=dr,zn=s,kt=tu,hr=function(e){return this.__data__.has(e)},
-u.prototype.add=u.prototype.push=function(e){return this.__data__.set(e,"__lodash_hash_undefined__"),this},
-u.prototype.has=hr,Gt=Mt=u,Ht=Wa=function(e,t){for(var r=-1,n=null==e?0:e.length;++r<n;)if(t(e[r],r,e))return!0;return!1
+a.prototype.add=a.prototype.push=function(e){return this.__data__.set(e,"__lodash_hash_undefined__"),this},
+a.prototype.has=hr,Gt=Mt=a,Ht=Wa=function(e,t){for(var r=-1,n=null==e?0:e.length;++r<n;)if(t(e[r],r,e))return!0;return!1
 },Bt=jt=function(e,t){return e.has(t)},ys=function(e,t,r,n,i,o){var s,a,u,l,c,d,h,_=1&r,E=e.length,v=t.length;if(
 E!=v&&!(_&&E<v))return!1;if(s=o.get(e),v=o.get(t),s&&v)return s==t&&v==e;for(a=-1,u=!0,l=2&r?new Gt:void 0,o.set(e,t),
 o.set(t,e);++a<E;){if(c=e[a],d=t[a],void 0!==(h=n?_?n(d,c,a,t,e,o):n(c,d,a,e,t,o):h)){if(h)continue;u=!1;break}if(l){if(
@@ -500,7 +500,7 @@ tu=Array.prototype,va=tu.join,pa=function(e,t){return null==e?"":va.call(e,t)},(
 eu[eu.INFO=1]="INFO",eu[eu.WARN=2]="WARN",eu[eu.ERROR=3]="ERROR",eu[eu.NONE=4]="NONE",Ta=fa;const Wu=null!==(Uu=L(
 "1.0.2"))&&void 0!==Uu?Uu:"?";Za=null!==(bu=L(""))&&void 0!==bu?bu:"io.nor.fi",eu=null!==(tu=L("")
 )&&void 0!==tu?tu:"nor-pipeline-runner",bu=null!==(Uu=L(""))&&void 0!==Uu?Uu:"",Uu=null!==(tu=L(""))&&void 0!==tu?tu:""
-;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T19:32:09.320Z")
+;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T19:42:15.059Z")
 )&&void 0!==tu?tu:"",Vu=null===(tu=O(""))||void 0===tu||tu,zu=null===(tu=O(""))||void 0===tu||tu,Xu=null===(tu=O("")
 )||void 0===tu||tu,Yu=null===(tu=O(""))||void 0===tu||tu;tu="production"===qu;const Qu="test"===qu,Zu=!tu&&!Qu
 ;bu=null!==(xe=function(e){if(e){if(function(){switch(e){case fa.DEBUG:case fa.INFO:case fa.WARN:case fa.ERROR:
@@ -512,7 +512,7 @@ case"OFF":case"QUIET":case"SILENT":case"NONE":return fa.NONE;default:return}}}(n
 )||void 0===We?void 0:We.PIPELINE_SERVER))&&void 0!==We?We:eu,tl=null!==(qe=function(e){if(void 0!==e)return`${e}`}(
 null===(eu=process)||void 0===eu||null===(qe=eu.env)||void 0===qe?void 0:qe.PIPELINE_AUTHENTICATION))&&void 0!==qe?qe:Uu
 ,rl=null!==(Ke=L(null===(Uu=process)||void 0===Uu||null===(Ke=Uu.env)||void 0===Ke?void 0:Ke.PIPELINE_SERVER)
-)&&void 0!==Ke?Ke:Za;class nl{constructor(e,t){a(this,"_logger",void 0),a(this,"name",void 0),this.name=e,this._logger=t
+)&&void 0!==Ke?Ke:Za;class nl{constructor(e,t){u(this,"_logger",void 0),u(this,"name",void 0),this.name=e,this._logger=t
 }debug(...e){this._logger.debug(`[${this.name}]`,...e)}info(...e){this._logger.info(`[${this.name}]`,...e)}warn(...e){
 this._logger.warn(`[${this.name}]`,...e)}error(...e){this._logger.error(`[${this.name}]`,...e)}}class il{
 static setLogLevel(e){this._level=e}static getLogLevel(){return this._level}static getLogLevelString(){return function(e
@@ -521,7 +521,7 @@ static setLogLevel(e){this._level=e}static getLogLevel(){return this._level}stat
 "The logger was not defined");this._logger=e}static debug(...e){this._level<=Ta.DEBUG&&this._logger.debug(...e)}
 static info(...e){this._level<=Ta.INFO&&this._logger.info(...e)}static warn(...e){
 this._level<=Ta.WARN&&this._logger.warn(...e)}static error(...e){this._level<=Ta.ERROR&&this._logger.error(...e)}
-static createLogger(e){return new nl(e,il)}}a(il,"_level",Ta.DEBUG),a(il,"_logger",console),(Za=ga={})[Za.HTTP=0]="HTTP"
+static createLogger(e){return new nl(e,il)}}u(il,"_level",Ta.DEBUG),u(il,"_logger",console),(Za=ga={})[Za.HTTP=0]="HTTP"
 ,Za[Za.LOCAL=1]="LOCAL",Za[Za.MATRIX=2]="MATRIX",Aa=ga,(Za=Sa={})[Za.NONE=0]="NONE",Za[Za.BASIC_AUTH=1]="BASIC_AUTH",
 Za[Za.BEARER_AUTH=2]="BEARER_AUTH",Ra=Sa;class ol{static parseRunnerAuthentication(e,t){var r;return void 0===t?null!==(
 r=j(e))&&void 0!==r?r:k(e):null!==(r=j(e,t))&&void 0!==r?r:k(e,t)}}const sl=il.createLogger("MatrixRunnerResource")
@@ -628,13 +628,13 @@ return"Not Implemented";case Ca.BadGateway:return"Bad Gateway";case Ca.ServiceUn
 ;case Ca.VariantAlsoNegotiates:return"Variant Also Negotiates";case Ca.InsufficientStorage:return"Insufficient Storage"
 ;case Ca.LoopDetected:return"Loop Detected";case Ca.BandwidthLimitExceeded:return"Bandwidth Limit Exceeded"
 ;case Ca.NotExtended:return"Not Extended";case Ca.NetworkAuthenticationRequired:return"Network Authentication Required"
-;default:return e<400?"HTTP Status":"HTTP Error"}}(e)),a(this,"status",void 0),a(this,"method",void 0),a(this,"url",
-void 0),a(this,"body",void 0),a(this,"__proto__",void 0),t=new.target.prototype,
+;default:return e<400?"HTTP Status":"HTTP Error"}}(e)),u(this,"status",void 0),u(this,"method",void 0),u(this,"url",
+void 0),u(this,"body",void 0),u(this,"__proto__",void 0),t=new.target.prototype,
 Object.setPrototypeOf?Object.setPrototypeOf(this,t):this.__proto__=t,this.status=e,this.method=r,this.url=n,this.body=i}
 valueOf(){return this.status}toString(){return`${this.status} ${this.message}`}toJSON(){return{type:ba.ERROR,
 status:this.status,message:this.message}}getStatusCode(){return this.status}getMethod(){return this.method}getUrl(){
 return this.url}getBody(){return this.body}}const hl=ll?require("fs").promises:void 0,_l=il.createLogger(
-"NodeRequestClient");class El{constructor(e,t){a(this,"_http",void 0),a(this,"_https",void 0),this._http=e,this._https=t
+"NodeRequestClient");class El{constructor(e,t){u(this,"_http",void 0),u(this,"_https",void 0),this._http=e,this._https=t
 }async jsonRequest(e,t,r,n){switch(e){case uu.GET:return this._getJson(t,r,n);case uu.POST:return this._postJson(t,r,n)
 ;case uu.PATCH:return this._patchJson(t,r,n);case uu.PUT:return this._putJson(t,r,n);case uu.DELETE:
 return this._deleteJson(t,r,n);default:throw new TypeError(`[Node]RequestClient: Unsupported method: ${e}`)}}
@@ -668,7 +668,7 @@ El._successResponse)}async _patchJson(e,t,r){const n={method:"PATCH",headers:{"C
 t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=S(S({},n.headers),t)),
 this._request(uu.DELETE,e,n,r).then(El._successResponse)}static _successResponse(e){var t=null==e?void 0:e.statusCode
 ;if(t<200||400<=t)throw _l.error(`Unsuccessful response with status ${t}: `,e),new dl(t,`Error ${t} for ${B(e.method
-)} ${e.url}`,e.method,e.url,e.body);return e.body}}class vl{constructor(e){a(this,"_fetch",void 0),this._fetch=e}
+)} ${e.url}`,e.method,e.url,e.body);return e.body}}class vl{constructor(e){u(this,"_fetch",void 0),this._fetch=e}
 jsonRequest(e,t,r,n){switch(e){case uu.GET:return this._getJson(t,r,n);case uu.POST:return this._postJson(t,r,n)
 ;case uu.PUT:return this._putJson(t,r,n);case uu.DELETE:return this._deleteJson(t,r,n);default:throw new TypeError(
 `[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",mode:"cors",cache:"no-cache",
@@ -690,8 +690,8 @@ this._client.jsonRequest(uu.PATCH,e,r,t)}static putJson(e,t,r){return Tl.debug("
 this._client.jsonRequest(uu.PUT,e,r,t)}static deleteJson(e,t,r){return Tl.debug(".deleteJson: ",e,r,t),
 this._client.jsonRequest(uu.DELETE,e,t,r)}static _initClient(){if(ul)return Tl.debug("Detected browser environment"),
 new vl(window.fetch.bind(window));if(ll)return new El(pl,fl);throw new TypeError(
-"Could not detect request client implementation")}}a(gl,"_client",gl._initClient());class Al{getName(){return this._name
-}constructor(e){a(this,"_name",void 0),a(this,"_callbacks",void 0),this._name=e,this._callbacks={}}destroy(){
+"Could not detect request client implementation")}}u(gl,"_client",gl._initClient());class Al{getName(){return this._name
+}constructor(e){u(this,"_name",void 0),u(this,"_callbacks",void 0),this._name=e,this._callbacks={}}destroy(){
 this._name=void 0,this._callbacks=void 0}hasCallbacks(e){return Js(this._callbacks,e)}triggerEvent(t,...r){var e
 ;this.hasCallbacks(t)?(e=this._callbacks[t],gs(e,e=>{try{e(t,...r)}catch(e){console.error(
 `Observer "${this._name}" and the event handler for "${t}" returned an exception: `,e)}})):console.warn(
@@ -709,9 +709,9 @@ nu.TASK="fi.nor.pipeline.task",nu.STEP="fi.nor.pipeline.step",nu.SCRIPT_STEP="fi
 ;const Sl=il.createLogger("JobController");(iu=Oa={}).JOB_CHANGED="JobController:jobChanged",
 iu.JOB_STARTED="JobController:jobStarted",iu.JOB_PAUSED="JobController:jobPaused",
 iu.JOB_RESUMED="JobController:jobResumed",iu.JOB_CANCELLED="JobController:jobCancelled",
-iu.JOB_FAILED="JobController:jobFailed",iu.JOB_FINISHED="JobController:jobFinished";class Rl{constructor(e,t=[]){if(a(
-this,"_observer",void 0),a(this,"_name",void 0),a(this,"_steps",void 0),a(this,"_changedCallback",void 0),a(this,
-"_state",void 0),a(this,"_stepDestructors",void 0),a(this,"_current",void 0),!J(e))throw new TypeError(
+iu.JOB_FAILED="JobController:jobFailed",iu.JOB_FINISHED="JobController:jobFinished";class Rl{constructor(e,t=[]){if(u(
+this,"_observer",void 0),u(this,"_name",void 0),u(this,"_steps",void 0),u(this,"_changedCallback",void 0),u(this,
+"_state",void 0),u(this,"_stepDestructors",void 0),u(this,"_current",void 0),!J(e))throw new TypeError(
 `Job name invalid: ${e}`);if(!d(t,Y,1))throw new TypeError(`Job#${e} must have at least one step`);this._current=0,
 this._name=e,this._steps=t,this._observer=new Al(`JobController#${this._name}`),this._state=Ia.CONSTRUCTED,
 this._changedCallback=this._onChanged.bind(this),this._stepDestructors=yi(t,e=>e.onChanged(this._changedCallback))}
@@ -760,13 +760,13 @@ Oa.JOB_FINISHED)&&this._observer.triggerEvent(Oa.JOB_FINISHED,this))),this._obse
 this._observer.hasCallbacks(Oa.JOB_PAUSED)&&this._observer.triggerEvent(Oa.JOB_PAUSED,this),this._observer.hasCallbacks(
 Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this)):i.isStarted()&&this.isPaused()&&(
 this._state=Ia.STARTED,this._observer.hasCallbacks(Oa.JOB_RESUMED)&&this._observer.triggerEvent(Oa.JOB_RESUMED,this),
-this._observer.hasCallbacks(Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this))}}a(Rl,"Event",Oa)
+this._observer.hasCallbacks(Oa.JOB_CHANGED)&&this._observer.triggerEvent(Oa.JOB_CHANGED,this))}}u(Rl,"Event",Oa)
 ;const Nl=il.createLogger("StageController");(iu=La={}).STAGE_STARTED="StageController:stageStarted",
 iu.STAGE_PAUSED="StageController:stagePaused",iu.STAGE_RESUMED="StageController:stageResumed",
 iu.STAGE_FINISHED="StageController:stageFinished",iu.STAGE_FAILED="StageController:stageFailed",
 iu.STAGE_CANCELLED="StageController:stageCancelled",iu.STAGE_CHANGED="StageController:stageChanged";class yl{
-constructor(e,t){if(a(this,"_observer",void 0),a(this,"_name",void 0),a(this,"_jobs",void 0),a(this,"_changedCallback",
-void 0),a(this,"_state",void 0),a(this,"_jobDestructors",void 0),!J(e))throw new TypeError(`Stage name invalid: ${e}`)
+constructor(e,t){if(u(this,"_observer",void 0),u(this,"_name",void 0),u(this,"_jobs",void 0),u(this,"_changedCallback",
+void 0),u(this,"_state",void 0),u(this,"_jobDestructors",void 0),!J(e))throw new TypeError(`Stage name invalid: ${e}`)
 ;if(!d(t,Q,1))throw new TypeError(`Stage#${e} must have at least one job`);this._state=Ia.CONSTRUCTED,this._name=e,
 this._jobs=t,this._observer=new Al(`StageController#${this._name}`),this._changedCallback=this._onChanged.bind(this),
 this._jobDestructors=yi(t,e=>e.onChanged(this._changedCallback))}getState(){return this._state}getName(){
@@ -827,13 +827,13 @@ this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.ST
 )&&this._observer.triggerEvent(La.STAGE_PAUSED,this),this._observer.hasCallbacks(La.STAGE_CHANGED
 )&&this._observer.triggerEvent(La.STAGE_CHANGED,this)):n||this._state!==Ia.PAUSED||(this._state=Ia.STARTED,
 this._observer.hasCallbacks(La.STAGE_RESUMED)&&this._observer.triggerEvent(La.STAGE_RESUMED,this),
-this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.STAGE_CHANGED,this))}}a(yl,"Event",La)
+this._observer.hasCallbacks(La.STAGE_CHANGED)&&this._observer.triggerEvent(La.STAGE_CHANGED,this))}}u(yl,"Event",La)
 ;const wl=il.createLogger("PipelineController");(iu=Pa={}).PIPELINE_STARTED="PipelineController:pipelineStarted",
 iu.PIPELINE_PAUSED="PipelineController:pipelinePaused",iu.PIPELINE_RESUMED="PipelineController:pipelineResumed",
 iu.PIPELINE_FINISHED="PipelineController:pipelineFinished",iu.PIPELINE_CANCELLED="PipelineController:pipelineCancelled",
 iu.PIPELINE_FAILED="PipelineController:pipelineFailed",iu.PIPELINE_CHANGED="PipelineController:pipelineChanged"
-;class Cl{constructor(e,t){if(a(this,"_name",void 0),a(this,"_stages",void 0),a(this,"_observer",void 0),a(this,
-"_changedCallback",void 0),a(this,"_state",void 0),a(this,"_stageDestructors",void 0),a(this,"_current",void 0),!J(e)
+;class Cl{constructor(e,t){if(u(this,"_name",void 0),u(this,"_stages",void 0),u(this,"_observer",void 0),u(this,
+"_changedCallback",void 0),u(this,"_state",void 0),u(this,"_stageDestructors",void 0),u(this,"_current",void 0),!J(e)
 )throw new TypeError(`Pipeline name invalid: ${e}`);if(!d(t,Z,1))throw new TypeError(
 `Pipeline#${e} must have at least one stage`);this._current=0,this._name=e,this._stages=t,this._observer=new Al(
 `PipelineController#${this._name}`),this._state=Ia.CONSTRUCTED,this._changedCallback=this._onChanged.bind(this),
@@ -886,14 +886,14 @@ Pa.PIPELINE_RESUMED)&&this._observer.triggerEvent(Pa.PIPELINE_RESUMED,this),wl.i
 )&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),wl.info(`Pipeline ${this._name} was paused`)):i.isStarted(
 )&&this.isPaused()&&(this._state=Ia.STARTED,this._observer.hasCallbacks(Pa.PIPELINE_RESUMED
 )&&this._observer.triggerEvent(Pa.PIPELINE_RESUMED,this),this._observer.hasCallbacks(Pa.PIPELINE_CHANGED
-)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),wl.info(`Pipeline ${this._name} was resumed`))}}a(Cl,"Event",Pa
+)&&this._observer.triggerEvent(Pa.PIPELINE_CHANGED,this),wl.info(`Pipeline ${this._name} was resumed`))}}u(Cl,"Event",Pa
 );const ml=il.createLogger("ScriptController");(iu=Ua={}).SCRIPT_STARTED="ScriptController:scriptStarted",
 iu.SCRIPT_PAUSED="ScriptController:scriptPaused",iu.SCRIPT_RESUMED="ScriptController:scriptResumed",
 iu.SCRIPT_CANCELLED="ScriptController:scriptCancelled",iu.SCRIPT_FAILED="ScriptController:scriptFailed",
 iu.SCRIPT_FINISHED="ScriptController:scriptFinished",iu.SCRIPT_CHANGED="ScriptController:scriptChanged";class bl{
-constructor(e,t,r=[],n={}){if(a(this,"_observer",void 0),a(this,"_name",void 0),a(this,"_command",void 0),a(this,"_args"
-,void 0),a(this,"_env",void 0),a(this,"_closeCallback",void 0),a(this,"_stdoutCallback",void 0),a(this,"_stderrCallback"
-,void 0),a(this,"_state",void 0),a(this,"_process",void 0),a(this,"_stdoutChunks",void 0),a(this,"_stderrChunks",void 0)
+constructor(e,t,r=[],n={}){if(u(this,"_observer",void 0),u(this,"_name",void 0),u(this,"_command",void 0),u(this,"_args"
+,void 0),u(this,"_env",void 0),u(this,"_closeCallback",void 0),u(this,"_stdoutCallback",void 0),u(this,"_stderrCallback"
+,void 0),u(this,"_state",void 0),u(this,"_process",void 0),u(this,"_stdoutChunks",void 0),u(this,"_stderrChunks",void 0)
 ,!J(e))throw new TypeError(`Script name invalid: ${e}`);if(!p(t))throw new TypeError(
 `Script#${e} must have a valid command: ${t}`);if(!d(r,p,0))throw new TypeError(
 `Script#${e} must have a valid args: ${JSON.stringify(r)}`);if(!w(n,p,p))throw new TypeError(
@@ -940,8 +940,8 @@ return Buffer.concat(this._stderrChunks).toString("utf8")}getOutputString(){retu
 this._observer.hasCallbacks(Ua.SCRIPT_FINISHED)&&this._observer.triggerEvent(Ua.SCRIPT_FINISHED,this)):(
 this._state=Ia.FAILED,this._observer.hasCallbacks(Ua.SCRIPT_FAILED)&&this._observer.triggerEvent(Ua.SCRIPT_FAILED,this))
 ,this._observer.hasCallbacks(Ua.SCRIPT_CHANGED)&&this._observer.triggerEvent(Ua.SCRIPT_CHANGED,this)}_onStdOut(e){
-this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),process.stderr.write(e)}}a(bl
-,"Event",Ua),a(bl,"State",Ia);const Il=il.createLogger("PipelineRunner");class Dl{static createStepController(e){if(x(e)
+this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),process.stderr.write(e)}}u(bl
+,"Event",Ua),u(bl,"State",Ia);const Il=il.createLogger("PipelineRunner");class Dl{static createStepController(e){if(x(e)
 )return new bl(e.name,e.command,e.args,e.env);throw new TypeError(`Unknown step type: ${e.name}`)}
 static createJobController(e){return new Rl(e.name,yi(e.steps,e=>this.createStepController(e)))}
 static createStageController(e){return new yl(e.name,yi(e.jobs,e=>this.createJobController(e)))}
@@ -967,10 +967,10 @@ iu[iu.AUTHENTICATED_AND_STARTING=3]="AUTHENTICATED_AND_STARTING",
 iu[iu.AUTHENTICATED_AND_STARTED=4]="AUTHENTICATED_AND_STARTED",(iu=Ma={}).M_USER_IN_USE="M_USER_IN_USE",
 iu.M_INVALID_USERNAME="M_INVALID_USERNAME",iu.M_EXCLUSIVE="M_EXCLUSIVE",iu.M_FORBIDDEN="M_FORBIDDEN",ja=Ma
 ;const Pl=il.createLogger("SimpleMatrixClient");(Ga=Ga||{}).EVENT="SimpleMatrixClient:event";class Ul{constructor(e,
-t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){a(this,"_observer",void 0),a(this,"_originalUrl",void 0),a(this,
-"_pollTimeout",void 0),a(this,"_pollWaitTime",void 0),a(this,"_timeoutCallback",void 0),a(this,"_state",void 0),a(this,
-"_homeServerUrl",void 0),a(this,"_identityServerUrl",void 0),a(this,"_accessToken",void 0),a(this,"_userId",void 0),a(
-this,"_nextBatch",void 0),a(this,"_timer",void 0),a(this,"_syncing",void 0),
+t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){u(this,"_observer",void 0),u(this,"_originalUrl",void 0),u(this,
+"_pollTimeout",void 0),u(this,"_pollWaitTime",void 0),u(this,"_timeoutCallback",void 0),u(this,"_state",void 0),u(this,
+"_homeServerUrl",void 0),u(this,"_identityServerUrl",void 0),u(this,"_accessToken",void 0),u(this,"_userId",void 0),u(
+this,"_nextBatch",void 0),u(this,"_timer",void 0),u(this,"_syncing",void 0),
 this._state=n?ka.AUTHENTICATED:ka.UNAUTHENTICATED,this._originalUrl=e,this._homeServerUrl=null!=t?t:e,
 this._identityServerUrl=null!=r?r:e,this._nextBatch=void 0,this._accessToken=n,this._userId=i,this._pollTimeout=o,
 this._pollWaitTime=s,this._syncing=!1,this._observer=new Al("SimpleMatrixClient"),
@@ -1116,44 +1116,45 @@ o=null==t||null===(o=t.rooms)||void 0===o?void 0:o.leave)&&void 0!==o?o:{};o=P(u
 null==t?void 0:t.state),fe(null==t?void 0:t.timeline),Se(null==t?void 0:t.account_data));this._sendMatrixEventList(t,e)}
 )}_resolveHomeServerUrl(e){var t=this._homeServerUrl
 ;return`${t}${"/"===t[t.length-1]?"":"/"}_matrix/client/r0${"/"===e[0]?"":"/"}${e}`}_resolveSynapseServerUrl(e){
-var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}a(Ul,
+var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}u(Ul,
 "Event",Ga),(iu=ou=ou||{}).PRIVATE_CHAT="private_chat",iu.PUBLIC_CHAT="public_chat",
 iu.TRUSTED_PRIVATE_CHAT="trusted_private_chat",Ha=ou,(ou=su=su||{}).INVITED="invited",ou.JOINED="joined",
 ou.SHARED="shared",ou.WORLD_READABLE="world_readable",Ba=su,(su=au=au||{}).PUBLIC="public",su.KNOCK="knock",
 su.INVITE="invite",su.PRIVATE="private",su.RESTRICTED="restricted",Ja=au,(au=su={}).CAN_JOIN="can_join",
 au.FORBIDDEN="forbidden",xa=su;const Fl=il.createLogger("MatrixCrudRepository");class $l{constructor(e,t,r=void 0,
-n=void 0,i=void 0,o=void 0,s=void 0){a(this,"_client",void 0),a(this,"_serviceAccount",void 0),a(this,"_stateType",
-void 0),a(this,"_stateKey",void 0),a(this,"_deletedType",void 0),a(this,"_deletedKey",void 0),a(this,"_allowedGroups",
-void 0),this._client=e,this._stateType=t,this._stateKey=null!=r?r:"",this._serviceAccount=null!=n?n:void 0,
-this._deletedType=null!==(i=L(i))&&void 0!==i?i:$a.FI_NOR_DELETED,this._deletedKey=null!=o?o:"",
-this._allowedGroups=void 0===s?void 0:[...s]}async getAll(){var e,t,r=await this._client.sync({filter:{presence:{limit:0
-},account_data:{limit:0},room:{account_data:{limit:0},ephemeral:{limit:0},timeline:{limit:0},state:{limit:1,
-include_redundant_members:!0,types:[this._stateType],not_types:[this._deletedType]}}},full_state:!0});Fl.debug(
-"getAll: response = ",JSON.stringify(r,null,2));const n=null!==(e=null==r||null===(e=r.rooms)||void 0===e?void 0:e.join
-)&&void 0!==e?e:{};t=null!==(t=null==r||null===(t=r.rooms)||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=P(n)
-;if(Fl.debug("joinedRooms = ",i),t=P(t),Fl.debug("invitedRooms = ",t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug(
-"Joining to rooms = ",t);let r=0;if(await bo(t,async(e,t)=>{await e;try{Fl.debug("Joining to room = ",t),
-await this._client.joinRoom(t),r+=1}catch(e){Fl.warn(`Warning! Could not join client to room ${t}`)}},Promise.resolve())
-,1<=r)return Fl.debug("Fetching results again after joining"),this.getAll()}return bo(i,(e,i)=>{var t=n[i],r=_s(null!==(
-r=null==t||null===(r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type
-)===this._stateType&&(null==e?void 0:e.state_key)===this._stateKey&&na(null==e||null===(t=e.content
-)||void 0===t?void 0:t.version)});return Zi(e,yi(r,e=>{var t=null!==(t=null==e||null===(t=e.content
-)||void 0===t?void 0:t.data)&&void 0!==t?t:{},r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(
-null==e||null===(n=e.content)||void 0===n||!n.deleted);return{data:t,id:i,version:r,deleted:n}}))},[])}
-async getAllByProperty(t,r){var e=await this.getAll();return yi(_s(e,e=>Bn(null==e?void 0:e.data,t)===r),e=>({id:e.id,
-version:e.version,data:e.data}))}async createItem(e,t){var r,n,i;const o=this._client.getUserId();Fl.debug(
-"createItem: clientUserId = ",o),r={data:e,version:1},Fl.debug("createItem: content = ",r),n=null===(
-i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),Fl.debug("createItem: serviceAccountId = ",n),i=_s(Bo(Zi(n?[n
-]:[],t||[])),e=>e!==o),Fl.debug("createItem: invitedMembers = ",i),n=this._allowedGroups,Fl.debug(
-"createItem: allowedGroups = ",n),t={[$a.M_FEDERATE]:!1};const s=[{type:this._stateType,state_key:this._stateKey,
-content:r},{type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{history_visibility:Ba.SHARED}},{
-type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:xa.FORBIDDEN}}];if(void 0!==n&&s.push({
-type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({type:$a.M_ROOM_MEMBERSHIP,
-room_id:e}))}}),Fl.debug("createItem: initialState = ",s),i=i.length?{invite:i}:{},Fl.debug(
-"createItem: inviteOptions = ",i),t=S(S({},i),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,initial_state:s,
-room_version:"8",power_level_content_override:{events:{[this._stateType]:0,[this._deletedType]:0}}}),
-t=await this._client.createRoom(t),Fl.debug("createItem: response = ",t),t=t.room_id,Fl.debug("createItem: room_id = ",t
-),this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
+n=void 0,i=void 0,o=void 0,s=void 0,a=void 0){u(this,"_client",void 0),u(this,"_serviceAccount",void 0),u(this,
+"_stateType",void 0),u(this,"_stateKey",void 0),u(this,"_deletedType",void 0),u(this,"_deletedKey",void 0),u(this,
+"_allowedGroups",void 0),u(this,"_allowedEvents",void 0),this._client=e,this._stateType=t,this._stateKey=null!=r?r:"",
+this._serviceAccount=null!=n?n:void 0,this._deletedType=null!==(i=L(i))&&void 0!==i?i:$a.FI_NOR_DELETED,
+this._deletedKey=null!=o?o:"",this._allowedEvents=a,this._allowedGroups=void 0===s?void 0:[...s]}async getAll(){var e,t,
+r=await this._client.sync({filter:{presence:{limit:0},account_data:{limit:0},room:{account_data:{limit:0},ephemeral:{
+limit:0},timeline:{limit:0},state:{limit:1,include_redundant_members:!0,types:[this._stateType],not_types:[
+this._deletedType]}}},full_state:!0});Fl.debug("getAll: response = ",JSON.stringify(r,null,2));const n=null!==(
+e=null==r||null===(e=r.rooms)||void 0===e?void 0:e.join)&&void 0!==e?e:{};t=null!==(t=null==r||null===(t=r.rooms
+)||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=P(n);if(Fl.debug("joinedRooms = ",i),t=P(t),Fl.debug(
+"invitedRooms = ",t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug("Joining to rooms = ",t);let r=0;if(await bo(t,async(e
+,t)=>{await e;try{Fl.debug("Joining to room = ",t),await this._client.joinRoom(t),r+=1}catch(e){Fl.warn(
+`Warning! Could not join client to room ${t}`)}},Promise.resolve()),1<=r)return Fl.debug(
+"Fetching results again after joining"),this.getAll()}return bo(i,(e,i)=>{var t=n[i],r=_s(null!==(r=null==t||null===(
+r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type)===this._stateType&&(
+null==e?void 0:e.state_key)===this._stateKey&&na(null==e||null===(t=e.content)||void 0===t?void 0:t.version)})
+;return Zi(e,yi(r,e=>{var t=null!==(t=null==e||null===(t=e.content)||void 0===t?void 0:t.data)&&void 0!==t?t:{},
+r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(null==e||null===(n=e.content)||void 0===n||!n.deleted)
+;return{data:t,id:i,version:r,deleted:n}}))},[])}async getAllByProperty(t,r){var e=await this.getAll();return yi(_s(e,
+e=>Bn(null==e?void 0:e.data,t)===r),e=>({id:e.id,version:e.version,data:e.data}))}async createItem(e,t){var r,n,i
+;const o=this._client.getUserId();Fl.debug("createItem: clientUserId = ",o),r={data:e,version:1},Fl.debug(
+"createItem: content = ",r),n=null===(i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),Fl.debug(
+"createItem: serviceAccountId = ",n),i=_s(Bo(Zi(n?[n]:[],t||[])),e=>e!==o),Fl.debug("createItem: invitedMembers = ",i),
+n=this._allowedGroups,Fl.debug("createItem: allowedGroups = ",n),t={[$a.M_FEDERATE]:!1};const s=[{type:this._stateType,
+state_key:this._stateKey,content:r},{type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{
+history_visibility:Ba.SHARED}},{type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:xa.FORBIDDEN}}]
+;void 0!==n&&s.push({type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({
+type:$a.M_ROOM_MEMBERSHIP,room_id:e}))}}),Fl.debug("createItem: initialState = ",s),n=i.length?{invite:i}:{},Fl.debug(
+"createItem: inviteOptions = ",n);const a={[this._stateType]:0,[this._deletedType]:0};if(null!==(i=this._allowedEvents
+)&&void 0!==i&&i.length&&gs(this._allowedEvents,e=>{a[e]=0}),t=S(S({},n),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,
+initial_state:s,room_version:"8",power_level_content_override:{events:a}}),t=await this._client.createRoom(t),Fl.debug(
+"createItem: response = ",t),t=t.room_id,Fl.debug("createItem: room_id = ",t),
+this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
 Fl.warn(`Warning! Could not join service account to room ${t}: `,e)}return{id:t,version:1,data:e,deleted:!1}}
 async findById(e,t){var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Fl.debug(
 "response = ",JSON.stringify(n,null,2)),!te(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`
