@@ -498,7 +498,7 @@ tu=Array.prototype,va=tu.join,pa=function(e,t){return null==e?"":va.call(e,t)},(
 eu[eu.INFO=1]="INFO",eu[eu.WARN=2]="WARN",eu[eu.ERROR=3]="ERROR",eu[eu.NONE=4]="NONE",Ta=fa;const Wu=null!==(Uu=L(
 "1.0.2"))&&void 0!==Uu?Uu:"?";Za=null!==(bu=L(""))&&void 0!==bu?bu:"io.nor.fi",eu=null!==(tu=L("")
 )&&void 0!==tu?tu:"nor-pipeline-runner",bu=null!==(Uu=L(""))&&void 0!==Uu?Uu:"",Uu=null!==(tu=L(""))&&void 0!==tu?tu:""
-;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T17:31:13.262Z")
+;const qu=null!==(tu=L("production"))&&void 0!==tu?tu:"development",Ku=null!==(tu=L("2021-09-01T18:12:12.777Z")
 )&&void 0!==tu?tu:"",Vu=null===(tu=O(""))||void 0===tu||tu,zu=null===(tu=O(""))||void 0===tu||tu,Xu=null===(tu=O("")
 )||void 0===tu||tu,Yu=null===(tu=O(""))||void 0===tu||tu;tu="production"===qu;const Qu="test"===qu,Zu=!tu&&!Qu
 ;bu=null!==(xe=function(e){if(e){if(function(){switch(e){case fa.DEBUG:case fa.INFO:case fa.WARN:case fa.ERROR:
@@ -1124,26 +1124,27 @@ this._allowedGroups=void 0===s?void 0:[...s]}async getAll(){var e,t,r=await this
 include_redundant_members:!0,types:[this._stateType],not_types:[this._deletedType]}}},full_state:!0});Fl.debug(
 "getAll: response = ",JSON.stringify(r,null,2));const n=null!==(e=null==r||null===(e=r.rooms)||void 0===e?void 0:e.join
 )&&void 0!==e?e:{};t=null!==(t=null==r||null===(t=r.rooms)||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=P(n)
-;if(t=P(t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug("Joining to rooms = ",t);let r=0;if(await bo(t,async(e,t)=>{
-await e;try{Fl.debug("Joining to room = ",t),await this._client.joinRoom(t),r+=1}catch(e){Fl.warn(
-`Warning! Could not join client to room ${t}`)}},Promise.resolve()),1<=r)return Fl.debug(
-"Fetching results again after joining"),this.getAll()}return bo(i,(e,i)=>{var t=n[i],r=_s(null!==(r=null==t||null===(
-r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type)===this._stateType&&(
-null==e?void 0:e.state_key)===this._stateKey&&na(null==e||null===(t=e.content)||void 0===t?void 0:t.version)})
-;return Zi(e,yi(r,e=>{var t=null!==(t=null==e||null===(t=e.content)||void 0===t?void 0:t.data)&&void 0!==t?t:{},
-r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(null==e||null===(n=e.content)||void 0===n||!n.deleted)
-;return{data:t,id:i,version:r,deleted:n}}))},[])}async getAllByProperty(t,r){var e=await this.getAll();return yi(_s(e,
-e=>Bn(null==e?void 0:e.data,t)===r),e=>({id:e.id,version:e.version,data:e.data}))}async createItem(e,t){var r={data:e,
-version:1},n=null===(i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),i=Bo(Zi(n?[n]:[],t||[])),
-n=this._allowedGroups,t={[$a.M_FEDERATE]:!1};const o=[{type:this._stateType,state_key:this._stateKey,content:r},{
-type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{history_visibility:Ba.SHARED}},{type:$a.M_ROOM_GUEST_ACCESS,
-state_key:"",content:{guest_access:xa.FORBIDDEN}}];return void 0!==n&&o.push({type:$a.M_ROOM_JOIN_RULES,state_key:"",
-content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({type:$a.M_ROOM_MEMBERSHIP,room_id:e}))}}),t=S(S({},i.length?{invite:i
-}:{}),{},{preset:Ha.PRIVATE_CHAT,creation_content:t,initial_state:o,room_version:"8"}),t=(await this._client.createRoom(
-t)).room_id,this._serviceAccount&&await this._serviceAccount.joinRoom(t),{id:t,version:1,data:e,deleted:!1}}
-async findById(e,t){var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Fl.debug(
-"response = ",JSON.stringify(n,null,2)),!te(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`
-);if(!E(n=null==n?void 0:n.version))throw new TypeError(`version was not integer: ${n}`);let i=void 0;if(t){
+;if(Fl.debug("joinedRooms = ",i),t=P(t),Fl.debug("invitedRooms = ",t),(t=_s(t,e=>!i.includes(e))).length){Fl.debug(
+"Joining to rooms = ",t);let r=0;if(await bo(t,async(e,t)=>{await e;try{Fl.debug("Joining to room = ",t),
+await this._client.joinRoom(t),r+=1}catch(e){Fl.warn(`Warning! Could not join client to room ${t}`)}},Promise.resolve())
+,1<=r)return Fl.debug("Fetching results again after joining"),this.getAll()}return bo(i,(e,i)=>{var t=n[i],r=_s(null!==(
+r=null==t||null===(r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type
+)===this._stateType&&(null==e?void 0:e.state_key)===this._stateKey&&na(null==e||null===(t=e.content
+)||void 0===t?void 0:t.version)});return Zi(e,yi(r,e=>{var t=null!==(t=null==e||null===(t=e.content
+)||void 0===t?void 0:t.data)&&void 0!==t?t:{},r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(
+null==e||null===(n=e.content)||void 0===n||!n.deleted);return{data:t,id:i,version:r,deleted:n}}))},[])}
+async getAllByProperty(t,r){var e=await this.getAll();return yi(_s(e,e=>Bn(null==e?void 0:e.data,t)===r),e=>({id:e.id,
+version:e.version,data:e.data}))}async createItem(e,t){var r={data:e,version:1},n=null===(i=this._serviceAccount
+)||void 0===i?void 0:i.getUserId(),i=Bo(Zi(n?[n]:[],t||[])),n=this._allowedGroups,t={[$a.M_FEDERATE]:!1};const o=[{
+type:this._stateType,state_key:this._stateKey,content:r},{type:$a.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{
+history_visibility:Ba.SHARED}},{type:$a.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:xa.FORBIDDEN}}]
+;return void 0!==n&&o.push({type:$a.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ja.RESTRICTED,allow:yi(n,e=>({
+type:$a.M_ROOM_MEMBERSHIP,room_id:e}))}}),t=S(S({},i.length?{invite:i}:{}),{},{preset:Ha.PRIVATE_CHAT,
+creation_content:t,initial_state:o,room_version:"8"}),t=(await this._client.createRoom(t)).room_id,
+this._serviceAccount&&await this._serviceAccount.joinRoom(t),{id:t,version:1,data:e,deleted:!1}}async findById(e,t){
+var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Fl.debug("response = ",
+JSON.stringify(n,null,2)),!te(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`);if(!E(
+n=null==n?void 0:n.version))throw new TypeError(`version was not integer: ${n}`);let i=void 0;if(t){
 const o=await this._client.getJoinedMembers(e);i=yi(P(o.joined),e=>{var t=o.joined[e];return{id:e,
 displayName:t.display_name,avatarUrl:null!=t&&t.avatar_url?t.avatar_url:void 0}})}return{data:r,id:e,version:n,members:i
 }}async update(e,t){var r,n;if(!te(t))throw new TypeError(`jsonData was not JsonObject: ${t}`);if(void 0===(
@@ -1199,8 +1200,8 @@ $a.FI_NOR_AGENT_DTO);if(0===(p=await f.getAll()).length)return kl.debug("Detecte
 1===p.length?(kl.debug("Detected single pool available. Picking it."),p[0]):(kl.debug(
 `Detected ${p.length} pools available. Picking one by random.`),p[Math.floor(Math.random()*p.length)])).id,kl.info(
 `Pool ID: ${h}`);const T=new $l(e,$a.FI_NOR_PIPELINE_RUN_DTO,"",void 0,$a.FI_NOR_PIPELINE_STATE,"",[h])
-;_=await T.getAll();let r;if(0===_.length)return kl.debug("Detected no work available."),ya.OK;r=1===_.length?(kl.debug(
-"Detected single work available. Picking it."),_[0]):(kl.debug(
+;_=await T.getAll(),kl.debug("runList = ",_);let r;if(0===_.length)return kl.debug("Detected no work available."),ya.OK
+;r=1===_.length?(kl.debug("Detected single work available. Picking it."),_[0]):(kl.debug(
 `Detected ${_.length} work items available. Picking one by random.`),_[Math.floor(Math.random()*_.length)]);const g=r.id
 ;if(kl.info(`Work ID: ${g}`),E=S(S({},r.data),{},{agentPoolId:h,agentAccountId:t}),await T.update(r.id,E),
 r=await T.findById(r.id),!r)return kl.warn("The work item disappeared while we were selecting it."),ya.WORK_CANCELLED

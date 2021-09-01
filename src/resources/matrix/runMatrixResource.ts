@@ -127,6 +127,8 @@ export async function runMatrixResource (
 
         const runList : RepositoryEntry<PipelineRunDTO>[] = await runRepository.getAll();
 
+        LOG.debug(`runList = `, runList);
+
         let work : RepositoryEntry<PipelineRunDTO> | undefined;
 
         if (runList.length === 0) {
