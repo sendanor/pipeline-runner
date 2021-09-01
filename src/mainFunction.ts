@@ -22,6 +22,8 @@ export async function main (
 
     try {
 
+        LOG.debug(`Loglevel ${LogService.getLogLevelString()}`);
+
         let script_name = PIPELINE_SCRIPT_NAME;
 
         args.shift();
@@ -43,20 +45,27 @@ export async function main (
 
             const argName : string | undefined = args.shift();
 
-            const argType : RunnerArgumentType = parseRunnerArgumentType(argName);
+            if (parsingArgs) {
 
-            switch(argType) {
+                const argType : RunnerArgumentType = parseRunnerArgumentType(argName);
 
-                case RunnerArgumentType.HELP:
-                    console.log(getMainUsage(script_name));
-                    return RunnerExitStatus.OK;
+                switch(argType) {
 
-                case RunnerArgumentType.VERSION:
-                    console.log(getMainVersion(script_name));
-                    return RunnerExitStatus.OK;
+                    case RunnerArgumentType.HELP:
+                        console.log(getMainUsage(script_name));
+                        return RunnerExitStatus.OK;
 
-                case RunnerArgumentType.DISABLE_ARGUMENT_PARSING:
-                    break;
+                    case RunnerArgumentType.VERSION:
+                        console.log(getMainVersion(script_name));
+                        return RunnerExitStatus.OK;
+
+                    case RunnerArgumentType.DISABLE_ARGUMENT_PARSING:
+                        parsingArgs = false;
+                        break;
+
+                }
+
+                if (!parsingArgs) continue;
 
             }
 

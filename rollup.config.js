@@ -12,17 +12,25 @@ import replace from '@rollup/plugin-replace';
 
 const BUILD_VERSION               = process?.env?.BUILD_VERSION                ?? pkg?.version ?? '';
 const BUILD_NODE_ENV              = process?.env?.BUILD_NODE_ENV ?? process?.env?.NODE_ENV ?? 'production';
-const BUILD_DATE                  = new Date().toISOString() ?? '';
+const BUILD_DATE                  = new Date().toISOString()                   ?? '';
 const BUILD_WITH_LOCAL_RESOURCES  = process?.env?.BUILD_WITH_LOCAL_RESOURCES   ?? '';
 const BUILD_WITH_HTTP_RESOURCES   = process?.env?.BUILD_WITH_HTTP_RESOURCES    ?? '';
 const BUILD_WITH_MATRIX_RESOURCES = process?.env?.BUILD_WITH_MATRIX_RESOURCES  ?? '';
 const BUILD_WITH_FULL_USAGE       = process?.env?.BUILD_WITH_FULL_USAGE        ?? '';
+const BUILD_MATRIX_SERVER         = process?.env?.BUILD_MATRIX_SERVER          ?? '';
+const BUILD_COMMAND_NAME          = process?.env?.BUILD_COMMAND_NAME           ?? '';
+const BUILD_AUTHENTICATION        = process?.env?.BUILD_AUTHENTICATION         ?? '';
+const BUILD_LOG_LEVEL             = process?.env?.BUILD_LOG_LEVEL              ?? '';
 
 console.log(`Building with options:
 
   BUILD_VERSION               = '${BUILD_VERSION}'
   BUILD_NODE_ENV              = '${BUILD_NODE_ENV}'
   BUILD_DATE                  = '${BUILD_DATE}'
+  BUILD_MATRIX_SERVER         = '${BUILD_MATRIX_SERVER}'
+  BUILD_COMMAND_NAME          = '${BUILD_COMMAND_NAME}'
+  BUILD_AUTHENTICATION        = '${BUILD_AUTHENTICATION}'
+  BUILD_LOG_LEVEL             = '${BUILD_LOG_LEVEL}'
   BUILD_WITH_LOCAL_RESOURCES  = '${BUILD_WITH_LOCAL_RESOURCES}'
   BUILD_WITH_HTTP_RESOURCES   = '${BUILD_WITH_HTTP_RESOURCES}'
   BUILD_WITH_MATRIX_RESOURCES = '${BUILD_WITH_MATRIX_RESOURCES}'
@@ -40,6 +48,10 @@ export default {
                 'BUILD_VERSION'                : BUILD_VERSION,
                 'BUILD_NODE_ENV'               : BUILD_NODE_ENV,
                 'BUILD_DATE'                   : BUILD_DATE,
+                'BUILD_MATRIX_SERVER'          : BUILD_MATRIX_SERVER,
+                'BUILD_COMMAND_NAME'           : BUILD_COMMAND_NAME,
+                'BUILD_AUTHENTICATION'         : BUILD_AUTHENTICATION,
+                'BUILD_LOG_LEVEL'              : BUILD_LOG_LEVEL,
                 'BUILD_WITH_LOCAL_RESOURCES'   : BUILD_WITH_LOCAL_RESOURCES,
                 'BUILD_WITH_HTTP_RESOURCES'    : BUILD_WITH_HTTP_RESOURCES,
                 'BUILD_WITH_MATRIX_RESOURCES'  : BUILD_WITH_MATRIX_RESOURCES,

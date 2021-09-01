@@ -5,9 +5,9 @@ import RunnerExitStatus from "../../types/RunnerExitStatus";
 import { readFileString } from "../../nor/pipeline/modules/fs";
 import Json from "../../nor/ts/Json";
 import { parsePipelineModel } from "../../nor/pipeline/types/PipelineModel";
-import Controller from "../../nor/pipeline/types/Controller";
 import PipelineRunner from "../../nor/pipeline/PipelineRunner";
 import LogService from "../../nor/ts/LogService";
+import Controller from "../../nor/pipeline/controllers/types/Controller";
 
 const LOG = LogService.createLogger('runLocalResource');
 

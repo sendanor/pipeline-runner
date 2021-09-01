@@ -41,28 +41,22 @@ export function getMainUsage (
     See also PIPELINE_AUTHENTICATION environment variable.
 ` : ''}${/* @__PURE__ */BUILD_WITH_MATRIX_RESOURCES ? `
 
-  Instructions from a Matrix room:
+  Instructions to fetch work from Sendanor's Pipeline CRUD repository (see https://lomake.net):
 
-      matrix:// [ USER:PASSWORD@ | [_bearer:]ACCESS_TOKEN@ ] HOMESERVER / ROOM
-      matrix:ROOM
-      ROOM
+      [matrix://] [ USER:PASSWORD@ | [_bearer:]ACCESS_TOKEN ] [@PIPELINE_SERVER] [/POOL]
+      [POOL]
       
-    The room will be looked up. 
+    Will look up work items to do from Matrix. 
     
-    When the room has a state event of type fi.nor.pipeline and has empty state_key with content 
-    as the data for pipeline, the pipeline will be executed in that room.
+    If the agent belongs to multiple pools (which are Matrix rooms), and no pool is defined, one 
+    will be picked up by random.
     
-    Otherwise, will look for state events of type fi.nor.pipeline with state_key as a Room ID 
-    type to execute.
+    If multiple work items are available, one will be picked by random.
     
-    The ROOM should be either in format !ID:HOMESERVER or #ALIAS:HOMESERVER and decoded correctly 
-    in the URL format.
+    Uses Bearer authentication with ACCESS_TOKEN by default. Optionally will log in Matrix using 
+    USER and PASSWORD.
     
-    Optionally will log in Matrix using USER and PASSWORD.
-    
-    Optionally uses Bearer authentication with ACCESS_TOKEN.
-    
-    See also PIPELINE_AUTHENTICATION environment variable.
+    See also PIPELINE_AUTHENTICATION and PIPELINE_SERVER environment variable.
 ` : ''}${/* @__PURE__ */BUILD_WITH_LOCAL_RESOURCES ? `
 
   Instructions from the local system:
@@ -74,6 +68,8 @@ export function getMainUsage (
 
   Environment variables:
 
+    PIPELINE_SERVER -- The default Matrix server. By default, io.nor.fi.
+    
     PIPELINE_AUTHENTICATION as one of:
     
       USER:PASSWORD

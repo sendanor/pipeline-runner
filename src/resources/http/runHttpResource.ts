@@ -7,9 +7,9 @@ import { isBasicRunnerAuthentication } from "../../types/BasicRunnerAuthenticati
 import JsonAny from "../../nor/ts/Json";
 import RequestClient from "../../nor/ts/RequestClient";
 import { parsePipelineModel } from "../../nor/pipeline/types/PipelineModel";
-import Controller from "../../nor/pipeline/types/Controller";
 import PipelineRunner from "../../nor/pipeline/PipelineRunner";
 import LogService from "../../nor/ts/LogService";
+import Controller from "../../nor/pipeline/controllers/types/Controller";
 
 const LOG = LogService.createLogger('runHttpResource');
 

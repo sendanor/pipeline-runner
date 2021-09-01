@@ -2,7 +2,7 @@
 
 import RunnerResource from "../types/RunnerResource";
 import { parseHttpRunnerResource } from "../types/HttpRunnerResource";
-import { parseMatrixRoomRunnerResource } from "../types/MatrixRoomRunnerResource";
+import { parseMatrixRunnerResource } from "../types/MatrixRunnerResource";
 import { parseLocalRunnerResource } from "../types/LocalRunnerResource";
 
 export class RunnerResourceUtils {
@@ -11,7 +11,7 @@ export class RunnerResourceUtils {
 
         return (
             parseHttpRunnerResource(value)
-            ?? parseMatrixRoomRunnerResource(value)
+            ?? parseMatrixRunnerResource(value)
             ?? parseLocalRunnerResource(value)
         );
 

@@ -24,6 +24,9 @@ export enum RunnerExitStatus {
     UNIMPLEMENTED_FEATURE           = 12,
     UNBUILD_FEATURE                 = 13,
     FATAL_ERROR                     = 14,
+    UNKNOWN_AGENT_ID                = 15,
+    WORK_CANCELLED                  = 16,
+    CONFLICT                        = 17,
 
     // From Linux sysexits.h
     USAGE                           = 64,      /* command line usage error */
@@ -109,6 +112,9 @@ export function isRunnerExitStatus (value: any): value is RunnerExitStatus {
         case RunnerExitStatus.FATAL_SIGNAL_RANGE_START:
         case RunnerExitStatus.FATAL_SIGNAL_RANGE_END:
         case RunnerExitStatus.EXIT_STATUS_OUT_OF_RANGE:
+        case RunnerExitStatus.UNKNOWN_AGENT_ID:
+        case RunnerExitStatus.WORK_CANCELLED:
+        case RunnerExitStatus.CONFLICT:
             return true;
 
         default:
@@ -168,6 +174,9 @@ export function stringifyRunnerExitStatus (value: RunnerExitStatus): string {
         case RunnerExitStatus.FATAL_SIGNAL_RANGE_START        : return 'FATAL_SIGNAL_RANGE_START';
         case RunnerExitStatus.FATAL_SIGNAL_RANGE_END          : return 'FATAL_SIGNAL_RANGE_END';
         case RunnerExitStatus.EXIT_STATUS_OUT_OF_RANGE        : return 'EXIT_STATUS_OUT_OF_RANGE';
+        case RunnerExitStatus.UNKNOWN_AGENT_ID        : return 'UNKNOWN_AGENT_ID';
+        case RunnerExitStatus.WORK_CANCELLED        : return 'WORK_CANCELLED';
+        case RunnerExitStatus.CONFLICT        : return 'CONFLICT';
 
     }
 
@@ -241,6 +250,9 @@ export function parseRunnerExitStatus (value: any): RunnerExitStatus | undefined
         case 'FATAL_SIGNAL_RANGE_START'        : return RunnerExitStatus.FATAL_SIGNAL_RANGE_START;
         case 'FATAL_SIGNAL_RANGE_END'          : return RunnerExitStatus.FATAL_SIGNAL_RANGE_END;
         case 'EXIT_STATUS_OUT_OF_RANGE'        : return RunnerExitStatus.EXIT_STATUS_OUT_OF_RANGE;
+        case 'UNKNOWN_AGENT_ID'        : return RunnerExitStatus.UNKNOWN_AGENT_ID;
+        case 'WORK_CANCELLED'        : return RunnerExitStatus.WORK_CANCELLED;
+        case 'CONFLICT'        : return RunnerExitStatus.CONFLICT;
 
         default:
             return undefined;

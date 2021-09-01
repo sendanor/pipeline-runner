@@ -16,17 +16,37 @@ export const BUILD_USAGE_URL = 'https://github.com/sendanor/pipeline-runner#usag
 /**
  * @__PURE__
  */
-export const BUILD_VERSION               : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_VERSION}')        ?? '?';
+export const BUILD_VERSION : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_VERSION}')        ?? '?';
 
 /**
  * @__PURE__
  */
-export const BUILD_NODE_ENV              : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_NODE_ENV}')       ?? 'development';
+export const BUILD_MATRIX_SERVER : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_MATRIX_SERVER}')        ?? 'io.nor.fi';
 
 /**
  * @__PURE__
  */
-export const BUILD_DATE                  : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_DATE}')           ?? '';
+export const BUILD_COMMAND_NAME : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_COMMAND_NAME}')        ?? 'nor-pipeline-runner';
+
+/**
+ * @__PURE__
+ */
+export const BUILD_LOG_LEVEL : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_LOG_LEVEL}')        ?? '';
+
+/**
+ * @__PURE__
+ */
+export const BUILD_AUTHENTICATION : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_AUTHENTICATION}')        ?? '';
+
+/**
+ * @__PURE__
+ */
+export const BUILD_NODE_ENV : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_NODE_ENV}')       ?? 'development';
+
+/**
+ * @__PURE__
+ */
+export const BUILD_DATE : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_DATE}')           ?? '';
 
 /**
  * @__PURE__
@@ -41,7 +61,7 @@ export const BUILD_WITH_HTTP_RESOURCES   : boolean = /* @__PURE__ */parseBoolean
 /**
  * @__PURE__
  */
-export const BUILD_WITH_MATRIX_RESOURCES : boolean = /* @__PURE__ */parseBoolean('%{BUILD_WITH_MATRIX_RESOURCES}') ?? false;
+export const BUILD_WITH_MATRIX_RESOURCES : boolean = /* @__PURE__ */parseBoolean('%{BUILD_WITH_MATRIX_RESOURCES}') ?? true;
 
 /**
  * @__PURE__

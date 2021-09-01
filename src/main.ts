@@ -2,7 +2,7 @@
 
 import { PIPELINE_LOG_LEVEL } from "./pipeline-runtime-constants";
 import LogService from "./nor/ts/LogService";
-LogService.setLogLevel(PIPELINE_LOG_LEVEL)
+LogService.setLogLevel(PIPELINE_LOG_LEVEL);
 
 import { default as main } from "./mainFunction";
 

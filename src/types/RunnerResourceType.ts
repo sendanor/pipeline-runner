@@ -3,7 +3,7 @@
 export enum RunnerResourceType {
     HTTP,
     LOCAL,
-    MATRIX_ROOM
+    MATRIX
 }
 
 /**
@@ -17,7 +17,7 @@ export function isRunnerResourceType (value: any): value is RunnerResourceType {
 
         case RunnerResourceType.HTTP:
         case RunnerResourceType.LOCAL:
-        case RunnerResourceType.MATRIX_ROOM:
+        case RunnerResourceType.MATRIX:
             return true;
 
         default:
@@ -36,7 +36,7 @@ export function stringifyRunnerResourceType (value: RunnerResourceType): string 
     switch (value) {
         case RunnerResourceType.HTTP         : return 'http';
         case RunnerResourceType.LOCAL        : return 'local';
-        case RunnerResourceType.MATRIX_ROOM  : return 'matrix';
+        case RunnerResourceType.MATRIX  : return 'matrix';
     }
     throw new TypeError(`Unsupported RunnerResourceType value: ${value}`);
 }
@@ -49,6 +49,8 @@ export function stringifyRunnerResourceType (value: RunnerResourceType): string 
  */
 export function parseRunnerResourceType (value: any): RunnerResourceType | undefined {
 
+    if (value === undefined) return undefined;
+
     switch (`${value}`.toUpperCase()) {
 
         case 'HTTPS' :
@@ -59,7 +61,7 @@ export function parseRunnerResourceType (value: any): RunnerResourceType | undef
 
         case 'MATRIX'      :
         case 'MATRIX_ROOM' :
-            return RunnerResourceType.MATRIX_ROOM;
+            return RunnerResourceType.MATRIX;
 
         default    :
             return undefined;

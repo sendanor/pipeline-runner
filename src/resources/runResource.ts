@@ -7,8 +7,8 @@ import runHttpResource from "./http/runHttpResource";
 import HttpRunnerResource from "../types/HttpRunnerResource";
 import runLocalResource from "./local/runLocalResource";
 import LocalRunnerResource from "../types/LocalRunnerResource";
-import runMatrixRoomResource from "./matrix/runMatrixRoomResource";
-import MatrixRoomRunnerResource from "../types/MatrixRoomRunnerResource";
+import runMatrixResource from "./matrix/runMatrixResource";
+import MatrixRunnerResource from "../types/MatrixRunnerResource";
 import {
     BUILD_WITH_HTTP_RESOURCES,
     BUILD_WITH_LOCAL_RESOURCES,
@@ -37,9 +37,9 @@ export async function runResource (
             }
         }
 
-        case RunnerResourceType.MATRIX_ROOM: {
+        case RunnerResourceType.MATRIX: {
             if (BUILD_WITH_MATRIX_RESOURCES) {
-                return await runMatrixRoomResource(resource as MatrixRoomRunnerResource);
+                return await runMatrixResource(resource as MatrixRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
