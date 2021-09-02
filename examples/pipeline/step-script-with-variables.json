@@ -1,0 +1,10 @@
+{
+  "variables": {
+    "message": "hello world"
+  },
+  "name": "Print_date",
+  "command": "echo",
+  "args": [
+    "${message}"
+  ]
+}

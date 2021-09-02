@@ -9,6 +9,7 @@ import {
 } from "../nor/ts/modules/lodash";
 import RunnerResource from "./RunnerResource";
 import RunnerResourceType from "./RunnerResourceType";
+import FS from 'fs';
 
 export interface LocalRunnerResource extends RunnerResource {
 
@@ -63,6 +64,8 @@ export function parseLocalRunnerResource (value: any): LocalRunnerResource | und
     }
 
     if (!value) return undefined;
+
+    if (!FS.existsSync(value)) return undefined;
 
     return {
         type: RunnerResourceType.LOCAL,

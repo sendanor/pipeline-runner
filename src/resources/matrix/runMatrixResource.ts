@@ -19,6 +19,11 @@ import AgentPoolDTO from "../../nor/pipeline/dto/AgentPoolDTO";
 import Controller from "../../nor/pipeline/controllers/types/Controller";
 import ControllerStateDTO from "../../nor/pipeline/controllers/types/ControllerStateDTO";
 import { JsonObject } from "../../nor/ts/Json";
+import PipelineContext from "../../nor/pipeline/PipelineContext";
+import {
+    PIPELINE_VARIABLE_PREFIX,
+    PIPELINE_VARIABLE_SUFFIX
+} from "../../pipeline-runtime-constants";
 
 const LOG = LogService.createLogger('runMatrixRoomResource');
 
@@ -209,7 +214,17 @@ export async function runMatrixResource (
             return RunnerExitStatus.RESOURCE_MODEL_INVALID;
         }
 
-        let controller : Controller = PipelineRunner.createController(model);
+        const parameters = model?.parameters;
+        const variables  = model?.variables;
+
+        const context : PipelineContext = new PipelineContext(
+            parameters,
+            variables,
+            PIPELINE_VARIABLE_PREFIX,
+            PIPELINE_VARIABLE_SUFFIX
+        );
+
+        let controller : Controller = PipelineRunner.createController(model, context);
 
         await updateControllerState(matrixClient, runRepository, workId, work, controller);
 

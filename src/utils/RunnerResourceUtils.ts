@@ -11,8 +11,8 @@ export class RunnerResourceUtils {
 
         return (
             parseHttpRunnerResource(value)
-            ?? parseMatrixRunnerResource(value)
             ?? parseLocalRunnerResource(value)
+            ?? parseMatrixRunnerResource(value)
         );
 
     }

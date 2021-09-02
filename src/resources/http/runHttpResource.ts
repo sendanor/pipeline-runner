@@ -10,6 +10,11 @@ import { parsePipelineModel } from "../../nor/pipeline/types/PipelineModel";
 import PipelineRunner from "../../nor/pipeline/PipelineRunner";
 import LogService from "../../nor/ts/LogService";
 import Controller from "../../nor/pipeline/controllers/types/Controller";
+import PipelineContext from "../../nor/pipeline/PipelineContext";
+import {
+    PIPELINE_VARIABLE_PREFIX,
+    PIPELINE_VARIABLE_SUFFIX
+} from "../../pipeline-runtime-constants";
 
 const LOG = LogService.createLogger('runHttpResource');
 
@@ -46,7 +51,16 @@ export async function runHttpResource (
             return RunnerExitStatus.RESOURCE_MODEL_INVALID;
         }
 
-        let controller: Controller = PipelineRunner.createController(model);
+        const parameters = model?.parameters;
+        const variables  = model?.variables;
+        const context : PipelineContext = new PipelineContext(
+            parameters,
+            variables,
+            PIPELINE_VARIABLE_PREFIX,
+            PIPELINE_VARIABLE_SUFFIX
+        );
+
+        let controller: Controller = PipelineRunner.createController(model, context);
 
         LOG.info(`Running ${controller.getName()} from ${resource.url}`);
 

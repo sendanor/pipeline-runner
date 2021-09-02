@@ -51,6 +51,16 @@ export const BUILD_DATE : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_
 /**
  * @__PURE__
  */
+export const BUILD_VARIABLE_PREFIX : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_VARIABLE_PREFIX}')           ?? '${';
+
+/**
+ * @__PURE__
+ */
+export const BUILD_VARIABLE_SUFFIX : string  = /* @__PURE__ */parseNonEmptyString('%{BUILD_VARIABLE_SUFFIX}')           ?? '}';
+
+/**
+ * @__PURE__
+ */
 export const BUILD_WITH_LOCAL_RESOURCES  : boolean = /* @__PURE__ */parseBoolean('%{BUILD_WITH_LOCAL_RESOURCES}')  ?? true;
 
 /**

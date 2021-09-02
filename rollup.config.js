@@ -21,6 +21,8 @@ const BUILD_MATRIX_SERVER         = process?.env?.BUILD_MATRIX_SERVER          ?
 const BUILD_COMMAND_NAME          = process?.env?.BUILD_COMMAND_NAME           ?? '';
 const BUILD_AUTHENTICATION        = process?.env?.BUILD_AUTHENTICATION         ?? '';
 const BUILD_LOG_LEVEL             = process?.env?.BUILD_LOG_LEVEL              ?? '';
+const BUILD_VARIABLE_PREFIX       = process?.env?.BUILD_VARIABLE_PREFIX        ?? '';
+const BUILD_VARIABLE_SUFFIX       = process?.env?.BUILD_VARIABLE_SUFFIX        ?? '';
 
 console.log(`Building with options:
 
@@ -31,6 +33,8 @@ console.log(`Building with options:
   BUILD_COMMAND_NAME          = '${BUILD_COMMAND_NAME}'
   BUILD_AUTHENTICATION        = '${BUILD_AUTHENTICATION}'
   BUILD_LOG_LEVEL             = '${BUILD_LOG_LEVEL}'
+  BUILD_VARIABLE_PREFIX       = '${BUILD_VARIABLE_PREFIX}'
+  BUILD_VARIABLE_SUFFIX       = '${BUILD_VARIABLE_SUFFIX}'
   BUILD_WITH_LOCAL_RESOURCES  = '${BUILD_WITH_LOCAL_RESOURCES}'
   BUILD_WITH_HTTP_RESOURCES   = '${BUILD_WITH_HTTP_RESOURCES}'
   BUILD_WITH_MATRIX_RESOURCES = '${BUILD_WITH_MATRIX_RESOURCES}'
@@ -52,6 +56,8 @@ export default {
                 'BUILD_COMMAND_NAME'           : BUILD_COMMAND_NAME,
                 'BUILD_AUTHENTICATION'         : BUILD_AUTHENTICATION,
                 'BUILD_LOG_LEVEL'              : BUILD_LOG_LEVEL,
+                'BUILD_VARIABLE_PREFIX'        : BUILD_VARIABLE_PREFIX,
+                'BUILD_VARIABLE_SUFFIX'        : BUILD_VARIABLE_SUFFIX,
                 'BUILD_WITH_LOCAL_RESOURCES'   : BUILD_WITH_LOCAL_RESOURCES,
                 'BUILD_WITH_HTTP_RESOURCES'    : BUILD_WITH_HTTP_RESOURCES,
                 'BUILD_WITH_MATRIX_RESOURCES'  : BUILD_WITH_MATRIX_RESOURCES,
