@@ -1,8 +1,45 @@
 # @sendanor/pipeline-runner
 
-Our Pipeline Processor for NodeJS v8 and newer.
+Pipeline Processor for NodeJS v8 and newer.
 
 For the library, check out [@sendanor/pipeline](https://github.com/sendanor/pipeline).
+
+### What are pipelines?
+
+Minimal pipeline step is just a single instruction to run a command:
+
+```json
+{
+  "name": "Print_date",
+  "command": "date"
+}
+```
+
+This step runs a `date` command.
+
+Full pipeline may contain multiple stages, jobs and steps:
+
+```json
+{
+  "name": "TestPipeline",
+  "stages": [
+     {
+      "name": "Print_stuff_1",
+      "jobs": [
+        {
+          "name": "Print_date",
+          "steps": [
+            {
+              "name": "Print_date",
+              "command": "date"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### Install the command line tool
 
