@@ -1,5 +1,13 @@
 #!/bin/bash
 # Push git and submodules to upstream
+
+if git status|grep -qF 'nothing to commit, working tree clean'; then
+  :
+else
+  git status
+  exit 1
+fi
+
 (
   set -e
   set -x
