@@ -13,11 +13,13 @@ import {
     PIPELINE_VARIABLE_PREFIX,
     PIPELINE_VARIABLE_SUFFIX
 } from "../../pipeline-runtime-constants";
+import System from "../../nor/pipeline/systems/types/System";
 
 const LOG = LogService.createLogger('runLocalResource');
 
 export async function runLocalResource (
-    resource: LocalRunnerResource
+    system   : System,
+    resource : LocalRunnerResource
 ): Promise<RunnerExitStatus> {
 
     try {
@@ -36,6 +38,7 @@ export async function runLocalResource (
         const parameters = model?.parameters;
         const variables  = model?.variables;
         const context : PipelineContext = new PipelineContext(
+            system,
             parameters,
             variables,
             PIPELINE_VARIABLE_PREFIX,

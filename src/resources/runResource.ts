@@ -14,8 +14,10 @@ import {
     BUILD_WITH_LOCAL_RESOURCES,
     BUILD_WITH_MATRIX_RESOURCES
 } from "../pipeline-build-constants";
+import System from "../nor/pipeline/systems/types/System";
 
 export async function runResource (
+    system   : System,
     resource : RunnerResource
 ) : Promise<RunnerExitStatus> {
 
@@ -23,7 +25,7 @@ export async function runResource (
 
         case RunnerResourceType.HTTP: {
             if (BUILD_WITH_HTTP_RESOURCES) {
-                return await runHttpResource(resource as HttpRunnerResource);
+                return await runHttpResource(system, resource as HttpRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
@@ -31,7 +33,7 @@ export async function runResource (
 
         case RunnerResourceType.LOCAL: {
             if (BUILD_WITH_LOCAL_RESOURCES) {
-                return await runLocalResource(resource as LocalRunnerResource);
+                return await runLocalResource(system, resource as LocalRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
@@ -39,7 +41,7 @@ export async function runResource (
 
         case RunnerResourceType.MATRIX: {
             if (BUILD_WITH_MATRIX_RESOURCES) {
-                return await runMatrixResource(resource as MatrixRunnerResource);
+                return await runMatrixResource(system, resource as MatrixRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }

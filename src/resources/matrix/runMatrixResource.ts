@@ -24,6 +24,7 @@ import {
     PIPELINE_VARIABLE_PREFIX,
     PIPELINE_VARIABLE_SUFFIX
 } from "../../pipeline-runtime-constants";
+import System from "../../nor/pipeline/systems/types/System";
 
 const LOG = LogService.createLogger('runMatrixRoomResource');
 
@@ -52,7 +53,8 @@ async function updateControllerState (
 }
 
 export async function runMatrixResource (
-    resource: MatrixRunnerResource
+    system   : System,
+    resource : MatrixRunnerResource
 ): Promise<RunnerExitStatus> {
 
     try {
@@ -218,6 +220,7 @@ export async function runMatrixResource (
         const variables  = model?.variables;
 
         const context : PipelineContext = new PipelineContext(
+            system,
             parameters,
             variables,
             PIPELINE_VARIABLE_PREFIX,

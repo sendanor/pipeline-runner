@@ -13,6 +13,7 @@ import runResource from "./resources/runResource";
 import { stringifyRunnerResourceType } from "./types/RunnerResourceType";
 import RunnerArgumentType, { parseRunnerArgumentType } from "./types/RunnerArgumentType";
 import getMainVersion from "./getMainVersion";
+import NodeSystem from "./systems/node/NodeSystem";
 
 const LOG = LogService.createLogger('main');
 
@@ -70,14 +71,15 @@ export async function main (
             }
 
             const resource : RunnerResource | undefined = RunnerResourceUtils.parseRunnerResource( argName );
-
             if ( resource === undefined ) {
                 LOG.error(`Unsupported argument: ${argName}`);
                 console.log( getMainUsage(script_name) );
                 return RunnerExitStatus.UNKNOWN_ARGUMENT;
             }
 
-            const result : RunnerExitStatus = await runResource(resource);
+            const system = new NodeSystem();
+
+            const result : RunnerExitStatus = await runResource(system, resource);
 
             if (result !== RunnerExitStatus.OK) {
 
