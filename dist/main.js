@@ -21,7 +21,7 @@ function E(e){return void 0===e}function c(e){return rr(e)}function d(e,t=void 0
 return!!e&&c(e)&&S(e,p)}function v(e){return ya(e)}function g(e){return E(e)||ya(e)}function T(e,t){return Hi(e,t)}
 function S(e,t){return Ki(e,t)}function A(e,t){return ht(e)&&S(Fa(e),t)}function y(e,t=p,r=void 0){return!(
 void 0!==r&&!A(e,r))&&(t=void 0!==t?t:p,ht(e)&&S(L(e),t))}function R(e){return!!ht(e)&&!(e instanceof Date)&&!Et(e)&&!c(
-e)&&y(e,p,void 0)}function N(e,t=p,r=void 0){return!!ht(e)&&!(e instanceof Date)&&!Et(e)&&!c(e)&&y(e,t,r)}function m(e,
+e)&&y(e,p,void 0)}function N(e,t=p,r=void 0){return ht(e)&&!(e instanceof Date)&&!Et(e)&&!c(e)&&y(e,t,r)}function m(e,
 t=void 0,r=void 0,n=void 0,i=void 0){if(t=void 0===t?p:t,!ht(e))throw new TypeError("value was not object");if(
 e instanceof Date)throw new TypeError("value was Date");if(Et(e))throw new TypeError("value was Function");if(c(e)
 )throw new TypeError("value was array");!function(e,t=void 0,r=void 0,n=void 0,i=void 0){const o=void 0===t?p:t;if(
@@ -145,7 +145,7 @@ null==t?void 0:t.default)||R(t=e)&&I(t,["type","name","displayName","default"])&
 null==t?void 0:t.name)&&f(null==t?void 0:t.displayName)&&f(null==t?void 0:t.default)||R(e)&&I(e,["type","name",
 "displayName","default"])&&(null==e?void 0:e.type)===Ul.JSON&&p(null==e?void 0:e.name)&&f(null==e?void 0:e.displayName
 )&&(E(null==e?void 0:e.default)||K(null==e?void 0:e.default));var t,r}function Q(e){return R(e)&&(E(
-null==e?void 0:e.parameters)||N(null==e?void 0:e.parameters,p,Y))&&(E(null==e?void 0:e.variables)||q(
+null==e?void 0:e.parameters)||d(null==e?void 0:e.parameters,Y))&&(E(null==e?void 0:e.variables)||q(
 null==e?void 0:e.variables))}function Z(e){return Q(e)&&x(null==e?void 0:e.name)&&p(null==e?void 0:e.command)&&(r=p,(
 i=n=void 0)===(t=null==e?void 0:e.args)||d(t,r,n,i))&&(i=n=p,void 0===(r=null==e?void 0:e.env)||N(r,n,i))&&I(e,Xu);var t
 ,r,n,i}function ee(e){return!(!Q(e)||!Z(e)&&!(Q(e)&&R(e)&&x(null==e?void 0:e.name)))}function te(e){return Q(e)&&x(
@@ -518,7 +518,7 @@ return null==e?[]:Ua(e,$a(e))},ml=Array.prototype,ka=ml.join,Ma=function(e,t){re
 )[fu.DEBUG=0]="DEBUG",fu[fu.INFO=1]="INFO",fu[fu.WARN=2]="WARN",fu[fu.ERROR=3]="ERROR",fu[fu.NONE=4]="NONE",Ga=ja
 ;const Tu=null!==(Nl=P("1.0.3"))&&void 0!==Nl?Nl:"?";lu=null!==(Rl=P(""))&&void 0!==Rl?Rl:"io.nor.fi",yl=null!==(ru=P(""
 ))&&void 0!==ru?ru:"nor-pipeline-runner",fu=null!==(ml=P(""))&&void 0!==ml?ml:"",Rl=null!==(Nl=P(""))&&void 0!==Nl?Nl:""
-;const Su=null!==(ru=P("production"))&&void 0!==ru?ru:"development",Au=null!==(ml=P("2021-09-04T08:25:16.591Z")
+;const Su=null!==(ru=P("production"))&&void 0!==ru?ru:"development",Au=null!==(ml=P("2021-09-04T10:51:33.842Z")
 )&&void 0!==ml?ml:"";ru=null!==(Nl=P(""))&&void 0!==Nl?Nl:"${",Nl=null!==(ml=P(""))&&void 0!==ml?ml:"}"
 ;const yu=null===(ml=D(""))||void 0===ml||ml,Ru=null===(ml=D(""))||void 0===ml||ml,Nu=null===(ml=D(""))||void 0===ml||ml
 ,mu=null===(ml=D(""))||void 0===ml||ml;ml="production"===Su;const wu="test"===Su,bu=!ml&&!wu;fu=null!==(Xe=function(e){
@@ -917,28 +917,28 @@ Dl.SCRIPT_FAILED="ScriptController:scriptFailed",Dl.SCRIPT_FINISHED="ScriptContr
 Dl.SCRIPT_CHANGED="ScriptController:scriptChanged";class lc{constructor(e,t,r,n=[],i={}){if(l(this,"_context",void 0),l(
 this,"_observer",void 0),l(this,"_name",void 0),l(this,"_command",void 0),l(this,"_args",void 0),l(this,"_env",void 0),
 l(this,"_closeCallback",void 0),l(this,"_compiledCommand",void 0),l(this,"_compiledArgs",void 0),l(this,"_compiledEnv",
-void 0),l(this,"_state",void 0),l(this,"_systemProcess",void 0),!x(t))throw new TypeError(`Script name invalid: ${t}`)
+void 0),l(this,"_systemProcess",void 0),l(this,"_state",void 0),!x(t))throw new TypeError(`Script name invalid: ${t}`)
 ;if(!p(r))throw new TypeError(`Script#${t} must have a valid command: ${r}`);if(!d(n,p,0))throw new TypeError(
 `Script#${t} must have a valid args: ${JSON.stringify(n)}`);if(!N(i,p,p))throw new TypeError(
 `Script#${t} must have a valid env: ${JSON.stringify(i)}`);this._context=e,this._state=Ya.CONSTRUCTED,this._name=t,
 this._command=r,this._args=n,this._env=i,this._observer=new ec(`ScriptController#${t}`),
 this._closeCallback=this._onClose.bind(this),this._compiledCommand=void 0,this._compiledArgs=void 0,
-this._compiledEnv=void 0}destroy(){this._observer.destroy(),this.isPaused()?this.resume().stop():this.isRunning(
-)&&this.stop()}getContext(){return this._context}getState(){return this._state}getName(){return this._name}on(e,t){
-return this._observer.listenEvent(e,t)}toString(){return`ScriptController#${this._name}`}getStateDTO(){return{
-type:Qa.SCRIPT_STEP,state:this._state,name:this._name}}toJSON(){return this.getStateDTO()}isRunning(){switch(this._state
-){case Ya.STARTED:return!0;case Ya.PAUSED:case Ya.CONSTRUCTED:case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!1
-}}isStarted(){switch(this._state){case Ya.STARTED:case Ya.PAUSED:return!0;case Ya.CONSTRUCTED:case Ya.CANCELLED:
-case Ya.FINISHED:case Ya.FAILED:return!1}}isPaused(){switch(this._state){case Ya.PAUSED:return!0;case Ya.CONSTRUCTED:
-case Ya.STARTED:case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!1}}isFinished(){switch(this._state){
-case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!0;case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.PAUSED:return!1}}
-isSuccessful(){switch(this._state){case Ya.FINISHED:return!0;case Ya.FAILED:case Ya.CANCELLED:case Ya.CONSTRUCTED:
-case Ya.STARTED:case Ya.PAUSED:return!1}}isCancelled(){switch(this._state){case Ya.CANCELLED:return!0;case Ya.FINISHED:
-case Ya.FAILED:case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.PAUSED:return!1}}isFailed(){switch(this._state){
-case Ya.FAILED:return!0;case Ya.CANCELLED:case Ya.FINISHED:case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.PAUSED:return!1}}
-start(){var e,t,r;if(this._state!==Ya.CONSTRUCTED)throw new Error(`Script#${this._name} was already started`);if(
-ac.info(`Starting command "${this._command} ${this._args.join(" ")}"`),this._state=Ya.STARTED,!p(
-e=this._context.compileModel(this._command)))throw new Error(
+this._compiledEnv=void 0,this._systemProcess=void 0}destroy(){this._observer.destroy(),this.isPaused()?this.resume(
+).stop():this.isRunning()&&this.stop()}getContext(){return this._context}getState(){return this._state}getName(){
+return this._name}on(e,t){return this._observer.listenEvent(e,t)}toString(){return`ScriptController#${this._name}`}
+getStateDTO(){return{type:Qa.SCRIPT_STEP,state:this._state,name:this._name}}toJSON(){return this.getStateDTO()}
+isRunning(){switch(this._state){case Ya.STARTED:return!0;case Ya.PAUSED:case Ya.CONSTRUCTED:case Ya.CANCELLED:
+case Ya.FINISHED:case Ya.FAILED:return!1}}isStarted(){switch(this._state){case Ya.STARTED:case Ya.PAUSED:return!0
+;case Ya.CONSTRUCTED:case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!1}}isPaused(){switch(this._state){
+case Ya.PAUSED:return!0;case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!1}}
+isFinished(){switch(this._state){case Ya.CANCELLED:case Ya.FINISHED:case Ya.FAILED:return!0;case Ya.CONSTRUCTED:
+case Ya.STARTED:case Ya.PAUSED:return!1}}isSuccessful(){switch(this._state){case Ya.FINISHED:return!0;case Ya.FAILED:
+case Ya.CANCELLED:case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.PAUSED:return!1}}isCancelled(){switch(this._state){
+case Ya.CANCELLED:return!0;case Ya.FINISHED:case Ya.FAILED:case Ya.CONSTRUCTED:case Ya.STARTED:case Ya.PAUSED:return!1}}
+isFailed(){switch(this._state){case Ya.FAILED:return!0;case Ya.CANCELLED:case Ya.FINISHED:case Ya.CONSTRUCTED:
+case Ya.STARTED:case Ya.PAUSED:return!1}}start(){var e,t,r;if(this._state!==Ya.CONSTRUCTED)throw new Error(
+`Script#${this._name} was already started`);if(ac.info(`Starting command "${this._command} ${this._args.join(" ")}"`),
+this._state=Ya.STARTED,!p(e=this._context.compileModel(this._command)))throw new Error(
 `Script#${this._name} failed to compile the command: ${this._command}`);if(this._compiledCommand=e,!d(
 t=this._context.compileModel(this._args),p))throw new Error(
 `Script#${this._name} failed to compile args: ${this._args.join(" ")}`);if(this._compiledArgs=t,!N(
@@ -964,8 +964,8 @@ nl.SCRIPT_CANCELLED,this),this._observer.hasCallbacks(nl.SCRIPT_CHANGED)&&this._
 this),this}onStarted(e){return this.on(nl.SCRIPT_STARTED,e)}onPaused(e){return this.on(nl.SCRIPT_PAUSED,e)}onResumed(e){
 return this.on(nl.SCRIPT_RESUMED,e)}onCancelled(e){return this.on(nl.SCRIPT_CANCELLED,e)}onFailed(e){return this.on(
 nl.SCRIPT_FAILED,e)}onFinished(e){return this.on(nl.SCRIPT_FINISHED,e)}onChanged(e){return this.on(nl.SCRIPT_CHANGED,e)}
-getErrorString(){return this._systemProcess.getErrorString()}getOutputString(){
-return this._systemProcess.getOutputString()}_onClose(e,t){t=t.getExitStatus(),ac.debug(
+getErrorString(){return this._systemProcess?this._systemProcess.getErrorString():""}getOutputString(){
+return this._systemProcess?this._systemProcess.getOutputString():""}_onClose(e,t){t=t.getExitStatus(),ac.debug(
 `Child process stopped with exit status ${t}`),0===t?(this._state=Ya.FINISHED,this._observer.hasCallbacks(
 nl.SCRIPT_FINISHED)&&this._observer.triggerEvent(nl.SCRIPT_FINISHED,this)):(this._state=Ya.FAILED,
 this._observer.hasCallbacks(nl.SCRIPT_FAILED)&&this._observer.triggerEvent(nl.SCRIPT_FAILED,this)),
@@ -981,26 +981,25 @@ static createController(e,t){return ie(e)?(uc.debug(`Starting pipeline ${e.name}
 static async startAndWaitUntilFinished(n){return new Promise((e,t)=>{let r;try{r=n.onChanged(()=>{try{n.isFinished()?(
 uc.debug(`Controller ${n.toString()} finished`),r&&(r(),r=void 0),e()):uc.debug(`Controller ${n.toString(
 )} state changed`)}catch(e){r&&(r(),r=void 0),t(e)}}),n.start(),uc.debug(`Controller ${n.toString()} started`)}catch(e){
-r&&(r(),r=void 0),t(e)}})}}const dc=Uu.createLogger("StringUtils"),hc="qwertyuiopasdfghjklzxcvbnm. \n\t1234567890_"
-;class _c{static toString(...e){return Di(e,e=>da(e)?"null":`${e}`).join("")}static processVariables(n,i,o,s,a=void 0){
-return X(n)?Di(n,e=>_c.processVariables(e,i,o,s,a)):z(n)?Wo(L(n),(e,t)=>{var r=n[t];return e[`${_c.processVariables(t,i,
-o,s,a)}`]=_c.processVariables(r,i,o,s,a),e},{}):p(n)?_c.processVariablesInString(n,i,o,s,a):n}
-static processVariablesInString(t,r,n,i,o=void 0){var s,e,a,l,u,c;if(0===t.length)return"";let d;if(d=Et(r)?r:e=>zn(r,e,
-o),ba(t,n)&&Pa(t,i)){let e=t.substr(n.length,t.length-n.length-i.length);if(e.indexOf(n)<0&&(e=ra(e),S(e,e=>hc.includes(
-e))))return s=d(e),dc.debug(`Variable "${e}" resolved as `,s),s}let h="",_=0;for(;0<=_&&_<t.length;)if(e=_,_=t.indexOf(n
-,e),_<0)h+=t.substr(e),_=t.length;else{if(a=_,l=_+n.length,(u=t.indexOf(i,l))<0)throw new TypeError(
-`Parse error near "${t.substr(a).substr(0,20)}". End of variable not detected.`);c=u+i.length,u=ra(t.substr(l,u-l)),_=(
-S(u,e=>hc.includes(e))?(l=d(u),dc.debug(`Variable "${u}" at ${a}-${c} resolved as "${l}": `,l),h+=`${t.substr(e,a-e
-)}${l}`):h+=`${t.substr(e,c-e)}`,c)}return h}}class vc{constructor(e,t=void 0,r=void 0,n="${",i="}"){l(this,"_system",
-void 0),l(this,"_variables",void 0),l(this,"_parameters",void 0),l(this,"_variablePrefix",void 0),l(this,
-"_variableSuffix",void 0),l(this,"_lookupVariable",void 0),this._system=e,this._variables=r,this._parameters=t,
+r&&(r(),r=void 0),t(e)}})}}const dc="qwertyuiopasdfghjklzxcvbnm. \n\t1234567890_";class hc{static toString(...e){
+return Di(e,e=>da(e)?"null":`${e}`).join("")}static processVariables(n,i,o,s,a=void 0){return X(n)?Di(n,
+e=>hc.processVariables(e,i,o,s,a)):z(n)?Wo(L(n),(e,t)=>{var r=n[t];return e[`${hc.processVariables(t,i,o,s,a
+)}`]=hc.processVariables(r,i,o,s,a),e},{}):p(n)?hc.processVariablesInString(n,i,o,s,a):n}
+static processVariablesInString(t,r,n,i,o=void 0){var e,s,a,l,u;if(0===t.length)return"";let c;if(c=Et(r)?r:e=>zn(r,e,o)
+,ba(t,n)&&Pa(t,i)){let e=t.substr(n.length,t.length-n.length-i.length);if(e.indexOf(n)<0&&(e=ra(e),S(e,e=>dc.includes(e)
+)))return c(e)}let d="",h=0;for(;0<=h&&h<t.length;)if(e=h,h=t.indexOf(n,e),h<0)d+=t.substr(e),h=t.length;else{if(s=h,
+a=h+n.length,(l=t.indexOf(i,a))<0)throw new TypeError(`Parse error near "${t.substr(s).substr(0,20
+)}". End of variable not detected.`);u=l+i.length,a=ra(t.substr(a,l-a)),h=(S(a,e=>dc.includes(e))?(a=c(a),
+d+=`${t.substr(e,s-e)}${a}`):d+=`${t.substr(e,u-e)}`,u)}return d}}class _c{constructor(e,t=void 0,r=void 0,n="${",i="}"
+){l(this,"_system",void 0),l(this,"_variables",void 0),l(this,"_parameters",void 0),l(this,"_variablePrefix",void 0),l(
+this,"_variableSuffix",void 0),l(this,"_lookupVariable",void 0),this._system=e,this._variables=r,this._parameters=t,
 this._variablePrefix=n,this._variableSuffix=i,this._lookupVariable=this.getVariable.bind(this)}getSystem(){
-return this._system}compileModel(e){return _c.processVariables(e,this._lookupVariable,this._variablePrefix,
+return this._system}compileModel(e){return hc.processVariables(e,this._lookupVariable,this._variablePrefix,
 this._variableSuffix)}getParametersModel(){var e;return null!==(e=this._parameters)&&void 0!==e?e:{}}getVariablesModel(
 ){var e;return null!==(e=this._variables)&&void 0!==e?e:{}}getVariable(e){return zn(this._variables,e)}setVariable(e,t){
 return so(this._variables,e,t),this}toString(){return"PipelineContext"}toJSON(){return{type:"fi.nor.pipeline.context",
 variables:function(e){try{return JSON.parse(e)}catch(e){return}}(JSON.stringify(this._variables))}}}
-const Ec=Uu.createLogger("runHttpResource"),pc=Uu.createLogger("runLocalResource");(Dl=il={}
+const vc=Uu.createLogger("runHttpResource"),Ec=Uu.createLogger("runLocalResource");(Dl=il={}
 ).M_ROOM_POWER_LEVELS="m.room.power_levels",Dl.M_ROOM_JOIN_RULES="m.room.join_rules",
 Dl.M_ROOM_MEMBERSHIP="m.room.membership",Dl.M_ROOM_HISTORY_VISIBILITY="m.room.history_visibility",
 Dl.M_ROOM_GUEST_ACCESS="m.room.guest_access",Dl.M_ROOM_CREATE="m.room.create",Dl.M_FEDERATE="m.federate",
@@ -1014,7 +1013,7 @@ Dl[Dl.AUTHENTICATING=1]="AUTHENTICATING",Dl[Dl.AUTHENTICATED=2]="AUTHENTICATED",
 Dl[Dl.AUTHENTICATED_AND_STARTING=3]="AUTHENTICATED_AND_STARTING",
 Dl[Dl.AUTHENTICATED_AND_STARTED=4]="AUTHENTICATED_AND_STARTED",(Dl=al={}).M_USER_IN_USE="M_USER_IN_USE",
 Dl.M_INVALID_USERNAME="M_INVALID_USERNAME",Dl.M_EXCLUSIVE="M_EXCLUSIVE",Dl.M_FORBIDDEN="M_FORBIDDEN",ll=al
-;const fc=Uu.createLogger("SimpleMatrixClient");(ul=ul||{}).EVENT="SimpleMatrixClient:event";class gc{constructor(e,
+;const pc=Uu.createLogger("SimpleMatrixClient");(ul=ul||{}).EVENT="SimpleMatrixClient:event";class fc{constructor(e,
 t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){l(this,"_observer",void 0),l(this,"_originalUrl",void 0),l(this,
 "_pollTimeout",void 0),l(this,"_pollWaitTime",void 0),l(this,"_timeoutCallback",void 0),l(this,"_state",void 0),l(this,
 "_homeServerUrl",void 0),l(this,"_identityServerUrl",void 0),l(this,"_accessToken",void 0),l(this,"_userId",void 0),l(
@@ -1024,15 +1023,15 @@ this._identityServerUrl=null!=r?r:e,this._nextBatch=void 0,this._accessToken=n,t
 this._pollWaitTime=s,this._syncing=!1,this._observer=new ec("SimpleMatrixClient"),
 this._timeoutCallback=this._onTimeout.bind(this)}getState(){return this._state}destroy(){this._observer.destroy(),
 this.stop()}on(e,t){return this._observer.listenEvent(e,t)}start(){void 0!==this._timer&&(clearTimeout(this._timer),
-this._timer=void 0),this._initSync().catch(e=>{fc.error("SYNC ERROR: ",e)})}stop(){void 0!==this._timer&&(clearTimeout(
+this._timer=void 0),this._initSync().catch(e=>{pc.error("SYNC ERROR: ",e)})}stop(){void 0!==this._timer&&(clearTimeout(
 this._timer),this._timer=void 0)}getAccessToken(){return this._accessToken}getUserId(){return this._userId}
 getHomeServerName(){return new URL(this._homeServerUrl).hostname}async register(e,t=void 0,r){var n,i,o,s,a;try{if(
-fc.debug("Registering user:",e,t),o=null!==(n=null!==(i=null==this?void 0:this._accessToken)&&void 0!==i?i:r
+pc.debug("Registering user:",e,t),o=null!==(n=null!==(i=null==this?void 0:this._accessToken)&&void 0!==i?i:r
 )&&void 0!==n?n:void 0,!(R(a=s=await zu.postJson(this._resolveHomeServerUrl("/register")+(t?`?kind=${Ke(t)}`:""),e,o?{
 Authorization:`Bearer ${o}`}:void 0))&&I(a,["user_id","access_token","home_server","device_id"])&&p(
 null==a?void 0:a.user_id)&&f(null==a?void 0:a.access_token)&&f(null==a?void 0:a.home_server)&&f(
-null==a?void 0:a.device_id)))throw fc.debug("Invalid response received: ",s),new TypeError(
-"register: Response was invalid");return fc.debug("RegisterResponseDTO received: ",s),s}catch(e){if(fc.debug(
+null==a?void 0:a.device_id)))throw pc.debug("Invalid response received: ",s),new TypeError(
+"register: Response was invalid");return pc.debug("RegisterResponseDTO received: ",s),s}catch(e){if(pc.debug(
 "Could not register user: ",e),!(e instanceof Hu))throw new Hu(za.InternalServerError,"Failed to register user");if(
 400!==(s=null==e?void 0:e.getStatusCode()))throw 401===s?new Hu(za.Unauthorized):403===s?new Hu(za.Forbidden
 ):429===s?new Hu(429):new Hu(za.InternalServerError,"Failed to register user");if(!Ve(s=null==e?void 0:e.getBody())
@@ -1041,20 +1040,20 @@ za.Conflict,"User already exists");case ll.M_INVALID_USERNAME:throw new Hu(za.Ba
 ;case ll.M_EXCLUSIVE:throw new Hu(za.Conflict,"User name conflicts with exclusive namespace");default:throw new Hu(
 za.InternalServerError,"Failed to register user")}}}async whoami(){var e,t,r,n,i,o;try{if(!(t=this._accessToken)
 )throw new TypeError("whoami: Client did not have access token");return r=this._resolveHomeServerUrl("/account/whoami"),
-fc.debug("whoami: Fetching account whoami... ",r),n=await zu.getJson(r,{Authorization:`Bearer ${t}`}),fc.debug(
-"whoami: response = ",n),i=null!==(e=null==n?void 0:n.user_id)&&void 0!==e?e:void 0,fc.debug("whoami: user_id = ",i),
-o=p(i)?i:void 0,this._userId=o}catch(e){return void fc.error("whoami: Could not fetch user_id: ",e)}}
-async getRegisterNonce(){var e,t,r,n;try{if(fc.debug("Fetching nonce for registration..."),
+pc.debug("whoami: Fetching account whoami... ",r),n=await zu.getJson(r,{Authorization:`Bearer ${t}`}),pc.debug(
+"whoami: response = ",n),i=null!==(e=null==n?void 0:n.user_id)&&void 0!==e?e:void 0,pc.debug("whoami: user_id = ",i),
+o=p(i)?i:void 0,this._userId=o}catch(e){return void pc.error("whoami: Could not fetch user_id: ",e)}}
+async getRegisterNonce(){var e,t,r,n;try{if(pc.debug("Fetching nonce for registration..."),
 t=this._resolveSynapseServerUrl("/register"),!(n=null!==(e=null==(r=await zu.getJson(t))?void 0:r.nonce
-)&&void 0!==e?e:void 0))throw new TypeError("No nonce detected");return n}catch(e){throw fc.debug(
+)&&void 0!==e?e:void 0))throw new TypeError("No nonce detected");return n}catch(e){throw pc.debug(
 "Could not fetch nonce for registration: ",e),new TypeError(
 "Could not fetch nonce for the register request. Is it Synapse?")}}async registerWithSharedSecret(e){var t,r,n;try{if(
-fc.debug("registerWithSharedSecret: Registering user:",e),t=this._resolveSynapseServerUrl("/register"),!(R(
+pc.debug("registerWithSharedSecret: Registering user:",e),t=this._resolveSynapseServerUrl("/register"),!(R(
 n=r=await zu.postJson(t,e))&&I(n,["access_token","user_id","home_server","device_id"])&&p(null==n?void 0:n.access_token
-)&&p(null==n?void 0:n.user_id)&&p(null==n?void 0:n.home_server)&&p(null==n?void 0:n.device_id)))throw fc.debug(
+)&&p(null==n?void 0:n.user_id)&&p(null==n?void 0:n.home_server)&&p(null==n?void 0:n.device_id)))throw pc.debug(
 "registerWithSharedSecret: Invalid response received: ",r),new TypeError(
-"registerWithSharedSecret: Response was invalid");return fc.debug(
-"registerWithSharedSecret: RegisterResponseDTO received: ",r),r}catch(e){if(fc.debug(
+"registerWithSharedSecret: Response was invalid");return pc.debug(
+"registerWithSharedSecret: RegisterResponseDTO received: ",r),r}catch(e){if(pc.debug(
 "registerWithSharedSecret: Could not register user: ",e),!(e instanceof Hu))throw new Hu(za.InternalServerError,
 "Failed to register user");if(400!==(r=null==e?void 0:e.getStatusCode()))throw 401===r?new Hu(za.Unauthorized
 ):403===r?new Hu(za.Forbidden):429===r?new Hu(429):new Hu(za.InternalServerError,"Failed to register user");if(!Ve(
@@ -1063,65 +1062,65 @@ case ll.M_USER_IN_USE:throw new Hu(za.Conflict,"User already exists");case ll.M_
 za.BadRequest,"Username invalid");case ll.M_EXCLUSIVE:throw new Hu(za.Conflict,
 "User name conflicts with exclusive namespace");default:throw new Hu(za.InternalServerError,"Failed to register user")}}
 }async login(r,n){var i,o,s,a,l,u,c,d,h,_,v;try{if(i={type:il.M_LOGIN_PASSWORD,identifier:{type:il.M_ID_USER,user:r},
-password:n},fc.debug("Sending login with userId:",r),!(R(h=o=await zu.postJson(this._resolveHomeServerUrl("/login"),i)
+password:n},pc.debug("Sending login with userId:",r),!(R(h=o=await zu.postJson(this._resolveHomeServerUrl("/login"),i)
 )&&I(h,["user_id","access_token","home_server","device_id","well_known"])&&p(null==h?void 0:h.user_id)&&p(
 null==h?void 0:h.access_token)&&f(null==h?void 0:h.home_server)&&f(null==h?void 0:h.device_id)&&(E(
 null==h?void 0:h.MatrixWellKnownDTO)||R(_=h)&&I(_,["m.homeserver","m.identity_server"])&&R(v=_["m.homeserver"])&&I(v,[
 "base_url"])&&p(null==v?void 0:v.base_url)&&(E(_["m.identity_server"])||R(_=_["m.identity_server"])&&I(_,["base_url"]
-)&&p(null==_?void 0:_.base_url)))))throw fc.debug("Invalid response received: ",o),new TypeError(
-"login: Response was invalid");fc.debug("Login response received: ",o),u=this._originalUrl;let e=this._homeServerUrl,t
+)&&p(null==_?void 0:_.base_url)))))throw pc.debug("Invalid response received: ",o),new TypeError(
+"login: Response was invalid");pc.debug("Login response received: ",o),u=this._originalUrl;let e=this._homeServerUrl,t
 ;if(t=null!=o&&o.well_known?(l=null===(s=o.well_known["m.homeserver"])||void 0===s?void 0:s.base_url,e=l||u,(null===(
 a=o.well_known["m.identity_server"])||void 0===a?void 0:a.base_url)||e):e=u,!(c=null==o?void 0:o.access_token)
 )throw new TypeError("Response did not have access_token");if(!(d=null==o?void 0:o.user_id))throw new TypeError(
-"Response did not have user_id");return new gc(u,e,t,c,d,this._pollTimeout,this._pollWaitTime)}catch(e){throw fc.debug(
+"Response did not have user_id");return new fc(u,e,t,c,d,this._pollTimeout,this._pollWaitTime)}catch(e){throw pc.debug(
 "Could not login: ",e),new Hu(za.Forbidden,"Access denied")}}async resolveRoomId(e){var t,r,n;try{if(
 t=this._normalizeRoomName(e),!(R(n=r=await zu.getJson(this._resolveHomeServerUrl(`/directory/room/${Ke(t)}`)))&&I(n,[
-"room_id","servers"])&&p(null==n?void 0:n.room_id)&&_(null==n?void 0:n.servers)))throw fc.debug(
+"room_id","servers"])&&p(null==n?void 0:n.room_id)&&_(null==n?void 0:n.servers)))throw pc.debug(
 "resolveRoomId: response was not GetDirectoryRoomAliasResponseDTO: ",r),new TypeError(
-`Response was not GetDirectoryRoomAliasResponseDTO: ${r}`);return fc.debug("resolveRoomId: received: ",r),r.room_id
+`Response was not GetDirectoryRoomAliasResponseDTO: ${r}`);return pc.debug("resolveRoomId: received: ",r),r.room_id
 }catch(e){if(e instanceof Hu&&e.getStatusCode()===za.NotFound)return;throw e}}async getJoinedMembers(e){
 var t=this._accessToken;if(!t)throw new TypeError("getRoomStateByType: Client did not have access token");if(!(R(
 t=e=await zu.getJson(this._resolveHomeServerUrl(`/rooms/${Ke(e)}/joined_members`),{Authorization:`Bearer ${t}`}))&&I(t,[
-"joined"])&&N(null==t?void 0:t.joined,he,qe)))throw fc.debug(
+"joined"])&&N(null==t?void 0:t.joined,he,qe)))throw pc.debug(
 "getJoinedMembers: response was not MatrixRoomJoinedMembersDTO: ",e),new TypeError(
-`Response was not MatrixRoomJoinedMembersDTO: ${e}`);return fc.debug("getJoinedMembers: received: ",e),e}
+`Response was not MatrixRoomJoinedMembersDTO: ${e}`);return pc.debug("getJoinedMembers: received: ",e),e}
 async getRoomStateByType(e,t,r){var n,i;try{if(!(n=this._accessToken))throw new TypeError(
 "getRoomStateByType: Client did not have access token");if(!q(i=await zu.getJson(this._resolveHomeServerUrl(
-`/rooms/${Ke(e)}/state/${Ke(t)}/${Ke(r)}`),{Authorization:`Bearer ${n}`})))throw fc.debug(
+`/rooms/${Ke(e)}/state/${Ke(t)}/${Ke(r)}`),{Authorization:`Bearer ${n}`})))throw pc.debug(
 "resolveRoomId: response was not JsonObject: ",i),new TypeError(`Response was not JsonObject: ${JSON.stringify(i)}`)
-;return fc.debug("resolveRoomId: received: ",i),i}catch(e){if(e instanceof Hu&&e.getStatusCode()===za.NotFound)return
+;return pc.debug("resolveRoomId: received: ",i),i}catch(e){if(e instanceof Hu&&e.getStatusCode()===za.NotFound)return
 ;throw e}}async setRoomStateByType(e,t,r,n){var i,o,s;try{if(!(i=this._accessToken))throw new TypeError(
 "setRoomStateByType: Client did not have access token");if(!(R(s=o=await zu.putJson(this._resolveHomeServerUrl(
 `/rooms/${Ke(e)}/state/${Ke(t)}/${Ke(r)}`),n,{Authorization:`Bearer ${i}`}))&&I(s,["event_id"])&&p(
-null==s?void 0:s.event_id)))throw fc.debug("setRoomStateByType: response was not PutRoomStateWithEventTypeDTO: ",o),
-new TypeError(`Response was not PutRoomStateWithEventTypeDTO: ${JSON.stringify(o)}`);return fc.debug(
-"setRoomStateByType: received: ",o),o}catch(e){throw fc.error("setRoomStateByType: Passing on error: ",e),e}}
+null==s?void 0:s.event_id)))throw pc.debug("setRoomStateByType: response was not PutRoomStateWithEventTypeDTO: ",o),
+new TypeError(`Response was not PutRoomStateWithEventTypeDTO: ${JSON.stringify(o)}`);return pc.debug(
+"setRoomStateByType: received: ",o),o}catch(e){throw pc.error("setRoomStateByType: Passing on error: ",e),e}}
 async forgetRoom(e){var t,r;try{if(!(t=this._accessToken))throw new TypeError(
 "forgetRoom: Client did not have access token");r=await zu.postJson(this._resolveHomeServerUrl(`/rooms/${Ke(e)}/forget`)
-,{},{Authorization:`Bearer ${t}`}),fc.debug("forgetRoom: received: ",r)}catch(e){throw fc.error(
+,{},{Authorization:`Bearer ${t}`}),pc.debug("forgetRoom: received: ",r)}catch(e){throw pc.error(
 "forgetRoom: Passing on error: ",e),e}}async leaveRoom(e){var t,r;try{if(!(t=this._accessToken))throw new TypeError(
 "leaveRoom: Client did not have access token");r=await zu.postJson(this._resolveHomeServerUrl(`/rooms/${Ke(e)}/leave`),
-{},{Authorization:`Bearer ${t}`}),fc.debug("leaveRoom: received: ",r)}catch(e){throw fc.error(
+{},{Authorization:`Bearer ${t}`}),pc.debug("leaveRoom: received: ",r)}catch(e){throw pc.error(
 "leaveRoom: Passing on error: ",e),e}}async inviteToRoom(e,t){var r,n;try{if(!ue(e))throw new TypeError(
-`roomId invalid: ${e}`);if(!he(t))throw new TypeError(`userId invalid: ${t}`);if(fc.info(`Inviting user ${t} to ${e}`),
+`roomId invalid: ${e}`);if(!he(t))throw new TypeError(`userId invalid: ${t}`);if(pc.info(`Inviting user ${t} to ${e}`),
 !(r=this._accessToken))throw new TypeError("inviteToRoom: Client did not have access token");n=await zu.postJson(
-this._resolveHomeServerUrl(`/rooms/${Ke(e)}/invite`),{user_id:t},{Authorization:`Bearer ${r}`}),fc.debug(
-"inviteToRoom: received: ",n)}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return;throw fc.error(
+this._resolveHomeServerUrl(`/rooms/${Ke(e)}/invite`),{user_id:t},{Authorization:`Bearer ${r}`}),pc.debug(
+"inviteToRoom: received: ",n)}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return;throw pc.error(
 "inviteToRoom: Passing on error: ",e),e}}async sendTextMessage(e,t){var r=this._accessToken;if(!r)throw new TypeError(
-"sendTextMessage: Client did not have access token");t={msgtype:"m.text",body:t},fc.debug("Sending message with body:",t
+"sendTextMessage: Client did not have access token");t={msgtype:"m.text",body:t},pc.debug("Sending message with body:",t
 ),r=await zu.postJson(this._resolveHomeServerUrl(`/rooms/${Ke(e)}/send/m.room.message`),t,{Authorization:`Bearer ${r}`})
-,fc.debug("sendTextMessage response received: ",r)}async createRoom(e){var t=this._accessToken;if(!t
-)throw new TypeError("createRoom: Client did not have access token");if(fc.debug("Creating room with body:",e),!(R(
+,pc.debug("sendTextMessage response received: ",r)}async createRoom(e){var t=this._accessToken;if(!t
+)throw new TypeError("createRoom: Client did not have access token");if(pc.debug("Creating room with body:",e),!(R(
 e=t=await zu.postJson(this._resolveHomeServerUrl("/createRoom"),e,{Authorization:`Bearer ${t}`}))&&I(e,["room_id",
 "room_alias"])&&ue(null==e?void 0:e.room_id)&&(E(null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias
-)&&e&&"#"===e[0])))throw fc.debug("response = ",t),new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t)
-;return fc.debug("Create room response received: ",t),t}async joinRoom(t,e=void 0){var r,n,i;try{if(!(
-r=this._accessToken))throw new TypeError("createRoom: Client did not have access token");if(fc.debug(
+)&&e&&"#"===e[0])))throw pc.debug("response = ",t),new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t)
+;return pc.debug("Create room response received: ",t),t}async joinRoom(t,e=void 0){var r,n,i;try{if(!(
+r=this._accessToken))throw new TypeError("createRoom: Client did not have access token");if(pc.debug(
 `Joining to room ${t} with body:`,e),!(R(i=n=await zu.postJson(this._resolveHomeServerUrl(`/rooms/${Ke(t)}/join`),
-null!=e?e:{},{Authorization:`Bearer ${r}`}))&&I(i,["room_id"])&&ue(null==i?void 0:i.room_id)))throw fc.debug(
+null!=e?e:{},{Authorization:`Bearer ${r}`}))&&I(i,["room_id"])&&ue(null==i?void 0:i.room_id)))throw pc.debug(
 "response = ",n),new TypeError(`Could not join to ${t}: Response was not MatrixJoinRoomResponseDTO: `+n)
-;return fc.debug(`Joined to room ${t}: `,n),n}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{
-room_id:t};throw fc.debug(`Could not join to room ${t}: `,e),e}}async sync(e){var t;if(fc.info("sync with ",e),!(
+;return pc.debug(`Joined to room ${t}: `,n),n}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{
+room_id:t};throw pc.debug(`Could not join to room ${t}: `,e),e}}async sync(e){var t;if(pc.info("sync with ",e),!(
 t=this._accessToken))throw new TypeError(`sync: Client ${this._userId} did not have access token`);var{filter:r,since:n,
 full_state:i,set_presence:o,timeout:e}=e;const s={};if(void 0!==r)if(p(r))s.filter=r;else{if(!q(r))throw new TypeError(
 `Invalid value for filter option: ${r}`);s.filter=JSON.stringify(r)}if(void 0!==n&&(s.since=n),void 0!==i&&(
@@ -1132,25 +1131,25 @@ Authorization:`Bearer ${t}`}))&&I(t,["next_batch","rooms","presence","account_da
 )&&(E(null==t?void 0:t.presence)||He(null==t?void 0:t.presence))&&(E(null==t?void 0:t.account_data)||Ce(
 null==t?void 0:t.account_data))&&(E(null==t?void 0:t.to_device)||Be(null==t?void 0:t.to_device))&&(E(
 null==t?void 0:t.device_lists)||xe(null==t?void 0:t.device_lists))&&(E(null==t?void 0:t.device_one_time_keys_count)||Je(
-null==t?void 0:t.device_one_time_keys_count))))throw fc.debug("_sync: response not MatrixSyncResponseDTO: ",
+null==t?void 0:t.device_one_time_keys_count))))throw pc.debug("_sync: response not MatrixSyncResponseDTO: ",
 JSON.stringify(e,null,2)),new TypeError(`Response was not MatrixSyncResponseDTO: ${We(e)}`);return e}isAlreadyInTheRoom(
 e){if(Ve(e)){var t=null!==(t=null==e?void 0:e.errcode)&&void 0!==t?t:"";const r=null!==(e=null==e?void 0:e.error
 )&&void 0!==e?e:"";if(t===ll.M_FORBIDDEN&&0<=r.indexOf("already in the room"))return!0}return!1}_sendMatrixEventList(e,t
 ){ks(e,e=>{this._sendMatrixEvent(e,t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(ul.EVENT,t?O(O({},e),{},{
-room_id:t}):e)}_onTimeout(){if(this._syncing)fc.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e
+room_id:t}):e)}_onTimeout(){if(this._syncing)pc.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e
 )throw new TypeError("_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
 void 0!==this._timer&&(clearTimeout(this._timer),this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,
-this._pollWaitTime)},e=>{this._syncing=!1,fc.error("ERROR: ",e),void 0!==this._timer&&(clearTimeout(this._timer),
+this._pollWaitTime)},e=>{this._syncing=!1,pc.error("ERROR: ",e),void 0!==this._timer&&(clearTimeout(this._timer),
 this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,this._pollWaitTime)})}}_normalizeRoomName(e){if(!e||!p(
 e))throw new TypeError(`_normalizeRoomName: name is invalid: ${e}`);return(e="#"!==e[0]?`#${e}`:e).indexOf(":"
-)<0?`${e}:${this.getHomeServerName()}`:e}async _initSync(){var e,t;if(fc.info("Initial sync request started"),
+)<0?`${e}:${this.getHomeServerName()}`:e}async _initSync(){var e,t;if(pc.info("Initial sync request started"),
 this._state!==sl.AUTHENTICATED)throw new TypeError("_initSync: Client was not authenticated");if(!this._accessToken
 )throw new TypeError("_initSync: Client did not have access token");this._state=sl.AUTHENTICATED_AND_STARTING,
-e=this.sync({filter:{room:{timeline:{limit:1}}}}),fc.info("Initial sync response received"),(t=e.next_batch
-)?this._nextBatch=t:fc.error("No next_batch in the response: ",e),this._timer=setTimeout(this._timeoutCallback,
-this._pollWaitTime),fc.info("Timer started..."),this._state=sl.AUTHENTICATED_AND_STARTED}async _syncSince(e){var t,r,n,i
+e=this.sync({filter:{room:{timeline:{limit:1}}}}),pc.info("Initial sync response received"),(t=e.next_batch
+)?this._nextBatch=t:pc.error("No next_batch in the response: ",e),this._timer=setTimeout(this._timeoutCallback,
+this._pollWaitTime),pc.info("Timer started..."),this._state=sl.AUTHENTICATED_AND_STARTED}async _syncSince(e){var t,r,n,i
 ,o;if(!this._accessToken)throw new TypeError("_syncSince: Client did not have access token");(e=(t=await this.sync({
-since:e,timeout:this._pollTimeout})).next_batch)?this._nextBatch=e:fc.error("No next_batch in the response: ",t),r=fo(
+since:e,timeout:this._pollTimeout})).next_batch)?this._nextBatch=e:pc.error("No next_batch in the response: ",t),r=fo(
 null!=t&&t.presence&&null!==(e=null==(e=null==t?void 0:t.presence)?void 0:e.events)&&void 0!==e?e:[],
 null!=t&&t.account_data?be(null==t?void 0:t.account_data):[],null!=t&&t.to_device&&null!==(r=null==(
 r=null==t?void 0:t.to_device)?void 0:r.events)&&void 0!==r?r:[]),this._sendMatrixEventList(r,void 0);const s=null!==(
@@ -1164,12 +1163,12 @@ o=null==t||null===(o=t.rooms)||void 0===o?void 0:o.leave)&&void 0!==o?o:{};o=L(l
 null==t?void 0:t.state),Re(null==t?void 0:t.timeline),be(null==t?void 0:t.account_data));this._sendMatrixEventList(t,e)}
 )}_resolveHomeServerUrl(e){var t=this._homeServerUrl
 ;return`${t}${"/"===t[t.length-1]?"":"/"}_matrix/client/r0${"/"===e[0]?"":"/"}${e}`}_resolveSynapseServerUrl(e){
-var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}l(gc,
+var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}l(fc,
 "Event",ul),(Dl=Ol=Ol||{}).PRIVATE_CHAT="private_chat",Dl.PUBLIC_CHAT="public_chat",
 Dl.TRUSTED_PRIVATE_CHAT="trusted_private_chat",cl=Ol,(Ol=Pl=Pl||{}).INVITED="invited",Ol.JOINED="joined",
 Ol.SHARED="shared",Ol.WORLD_READABLE="world_readable",dl=Pl,(Pl=Ll=Ll||{}).PUBLIC="public",Pl.KNOCK="knock",
 Pl.INVITE="invite",Pl.PRIVATE="private",Pl.RESTRICTED="restricted",hl=Ll,(Ll=Pl={}).CAN_JOIN="can_join",
-Ll.FORBIDDEN="forbidden",_l=Pl;const Tc=Uu.createLogger("MatrixCrudRepository");class Sc{constructor(e,t,r=void 0,
+Ll.FORBIDDEN="forbidden",_l=Pl;const gc=Uu.createLogger("MatrixCrudRepository");class Tc{constructor(e,t,r=void 0,
 n=void 0,i=void 0,o=void 0,s=void 0,a=void 0){l(this,"_client",void 0),l(this,"_serviceAccount",void 0),l(this,
 "_stateType",void 0),l(this,"_stateKey",void 0),l(this,"_deletedType",void 0),l(this,"_deletedKey",void 0),l(this,
 "_allowedGroups",void 0),l(this,"_allowedEvents",void 0),this._client=e,this._stateType=t,this._stateKey=null!=r?r:"",
@@ -1177,12 +1176,12 @@ this._serviceAccount=null!=n?n:void 0,this._deletedType=null!==(i=P(i))&&void 0!
 this._deletedKey=null!=o?o:"",this._allowedEvents=a,this._allowedGroups=void 0===s?void 0:[...s]}async getAll(){var e,t,
 r=await this._client.sync({filter:{presence:{limit:0},account_data:{limit:0},room:{account_data:{limit:0},ephemeral:{
 limit:0},timeline:{limit:0},state:{limit:1,include_redundant_members:!0,types:[this._stateType],not_types:[
-this._deletedType]}}},full_state:!0});Tc.debug("getAll: response = ",JSON.stringify(r,null,2));const n=null!==(
+this._deletedType]}}},full_state:!0});gc.debug("getAll: response = ",JSON.stringify(r,null,2));const n=null!==(
 e=null==r||null===(e=r.rooms)||void 0===e?void 0:e.join)&&void 0!==e?e:{};t=null!==(t=null==r||null===(t=r.rooms
-)||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=L(n);if(Tc.debug("joinedRooms = ",i),t=L(t),Tc.debug(
-"invitedRooms = ",t),(t=Os(t,e=>!i.includes(e))).length){Tc.debug("Joining to rooms = ",t);let r=0;if(await Wo(t,async(e
-,t)=>{await e;try{Tc.debug("Joining to room = ",t),await this._client.joinRoom(t),r+=1}catch(e){Tc.warn(
-`Warning! Could not join client to room ${t}`)}},Promise.resolve()),1<=r)return Tc.debug(
+)||void 0===t?void 0:t.invite)&&void 0!==t?t:{};const i=L(n);if(gc.debug("joinedRooms = ",i),t=L(t),gc.debug(
+"invitedRooms = ",t),(t=Os(t,e=>!i.includes(e))).length){gc.debug("Joining to rooms = ",t);let r=0;if(await Wo(t,async(e
+,t)=>{await e;try{gc.debug("Joining to room = ",t),await this._client.joinRoom(t),r+=1}catch(e){gc.warn(
+`Warning! Could not join client to room ${t}`)}},Promise.resolve()),1<=r)return gc.debug(
 "Fetching results again after joining"),this.getAll()}return Wo(i,(e,i)=>{var t=n[i],r=Os(null!==(r=null==t||null===(
 r=t.state)||void 0===r?void 0:r.events)&&void 0!==r?r:[],e=>{var t;return(null==e?void 0:e.type)===this._stateType&&(
 null==e?void 0:e.state_key)===this._stateKey&&Sa(null==e||null===(t=e.content)||void 0===t?void 0:t.version)})
@@ -1190,43 +1189,43 @@ null==e?void 0:e.state_key)===this._stateKey&&Sa(null==e||null===(t=e.content)||
 r=null==e||null===(r=e.content)||void 0===r?void 0:r.version,n=!(null==e||null===(n=e.content)||void 0===n||!n.deleted)
 ;return{data:t,id:i,version:r,deleted:n}}))},[])}async getAllByProperty(t,r){var e=await this.getAll();return Di(Os(e,
 e=>zn(null==e?void 0:e.data,t)===r),e=>({id:e.id,version:e.version,data:e.data}))}async createItem(e,t){var r,n,i
-;const o=this._client.getUserId();Tc.debug("createItem: clientUserId = ",o),r={data:e,version:1},Tc.debug(
-"createItem: content = ",r),n=null===(i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),Tc.debug(
-"createItem: serviceAccountId = ",n),i=Os(ss(fo(n?[n]:[],t||[])),e=>e!==o),Tc.debug("createItem: invitedMembers = ",i),
-n=this._allowedGroups,Tc.debug("createItem: allowedGroups = ",n),t={[ol.M_FEDERATE]:!1};const s=[{type:this._stateType,
+;const o=this._client.getUserId();gc.debug("createItem: clientUserId = ",o),r={data:e,version:1},gc.debug(
+"createItem: content = ",r),n=null===(i=this._serviceAccount)||void 0===i?void 0:i.getUserId(),gc.debug(
+"createItem: serviceAccountId = ",n),i=Os(ss(fo(n?[n]:[],t||[])),e=>e!==o),gc.debug("createItem: invitedMembers = ",i),
+n=this._allowedGroups,gc.debug("createItem: allowedGroups = ",n),t={[ol.M_FEDERATE]:!1};const s=[{type:this._stateType,
 state_key:this._stateKey,content:r},{type:ol.M_ROOM_HISTORY_VISIBILITY,state_key:"",content:{
 history_visibility:dl.SHARED}},{type:ol.M_ROOM_GUEST_ACCESS,state_key:"",content:{guest_access:_l.FORBIDDEN}}]
 ;void 0!==n&&s.push({type:ol.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:hl.RESTRICTED,allow:Di(n,e=>({
-type:ol.M_ROOM_MEMBERSHIP,room_id:e}))}}),Tc.debug("createItem: initialState = ",s),n=i.length?{invite:i}:{},Tc.debug(
+type:ol.M_ROOM_MEMBERSHIP,room_id:e}))}}),gc.debug("createItem: initialState = ",s),n=i.length?{invite:i}:{},gc.debug(
 "createItem: inviteOptions = ",n);const a={[this._stateType]:0,[this._deletedType]:0};if(null!==(i=this._allowedEvents
 )&&void 0!==i&&i.length&&ks(this._allowedEvents,e=>{a[e]=0}),t=O(O({},n),{},{preset:cl.PRIVATE_CHAT,creation_content:t,
-initial_state:s,room_version:"8",power_level_content_override:{events:a}}),t=await this._client.createRoom(t),Tc.debug(
-"createItem: response = ",t),t=t.room_id,Tc.debug("createItem: room_id = ",t),
+initial_state:s,room_version:"8",power_level_content_override:{events:a}}),t=await this._client.createRoom(t),gc.debug(
+"createItem: response = ",t),t=t.room_id,gc.debug("createItem: room_id = ",t),
 this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
-Tc.warn(`Warning! Could not join service account to room ${t}: `,e)}return{id:t,version:1,data:e,deleted:!1}}
-async findById(e,t){var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(Tc.debug(
+gc.warn(`Warning! Could not join service account to room ${t}: `,e)}return{id:t,version:1,data:e,deleted:!1}}
+async findById(e,t){var r,n=await this._client.getRoomStateByType(e,this._stateType,this._stateKey);if(gc.debug(
 "response = ",JSON.stringify(n,null,2)),!q(r=null==n?void 0:n.data))throw new TypeError(`data was not JsonObject: ${r}`)
 ;if(!v(n=null==n?void 0:n.version))throw new TypeError(`version was not integer: ${n}`);let i=void 0;if(t){
 const o=await this._client.getJoinedMembers(e);i=Di(L(o.joined),e=>{var t=o.joined[e];return{id:e,
 displayName:t.display_name,avatarUrl:null!=t&&t.avatar_url?t.avatar_url:void 0}})}return{data:r,id:e,version:n,members:i
 }}async update(e,t){var r,n;if(!q(t))throw new TypeError(`jsonData was not JsonObject: ${t}`);if(void 0===(
 r=await this.findById(e)))throw new Hu(404);if(!v(n=r.version+1))throw new TypeError(`newVersion was not integer: ${n}`)
-;return r=await this._client.setRoomStateByType(e,this._stateType,this._stateKey,{data:t,version:n}),Tc.debug(
+;return r=await this._client.setRoomStateByType(e,this._stateType,this._stateKey,{data:t,version:n}),gc.debug(
 "response = ",JSON.stringify(r,null,2)),{data:t,id:e,version:n,deleted:!1}}async deleteById(t){var e,r,n,i;try{if(
 void 0===(e=await this.findById(t)))throw new Hu(404);if(!v(r=e.version+1))throw new TypeError(
 `newVersion was not integer: ${r}`);if(n={data:e.data,version:r,deleted:!0},i=await this._client.setRoomStateByType(t,
 this._stateType,this._stateKey,n),await this._client.setRoomStateByType(t,this._deletedType,this._deletedKey,{}),
-this._serviceAccount){try{await this._serviceAccount.leaveRoom(t)}catch(e){Tc.warn(
+this._serviceAccount){try{await this._serviceAccount.leaveRoom(t)}catch(e){gc.warn(
 `Warning! Service account could not leave from the room ${t}: `,e)}try{await this._serviceAccount.forgetRoom(t)}catch(e
-){Tc.warn(`Warning! Service account could not forget the room ${t}: `,e)}}return await this._client.leaveRoom(t),
-await this._client.forgetRoom(t),Tc.debug("response = ",JSON.stringify(i,null,2)),{data:e.data,id:t,version:r,deleted:!0
-}}catch(e){if(e instanceof Hu&&[401,403,404].includes(e.getStatusCode()))throw e;throw Tc.error(
+){gc.warn(`Warning! Service account could not forget the room ${t}: `,e)}}return await this._client.leaveRoom(t),
+await this._client.forgetRoom(t),gc.debug("response = ",JSON.stringify(i,null,2)),{data:e.data,id:t,version:r,deleted:!0
+}}catch(e){if(e instanceof Hu&&[401,403,404].includes(e.getStatusCode()))throw e;throw gc.error(
 `Error in deleteById(${t}): `,e),new Hu(500)}}async inviteToItem(r,e){let n;var t;this._serviceAccount&&(n=null===(
 t=this._serviceAccount)||void 0===t?void 0:t.getUserId(),n=n||await this._serviceAccount.whoami()),await Wo(e,async(e,t
 )=>{if(await e,!n||t!==n)try{await this._client.inviteToRoom(r,t)}catch(e){if(this._client.isAlreadyInTheRoom(
-null==e?void 0:e.body))return;throw Tc.error(`Warning! Could not invite user ${t} to room ${r}: `,e),e}},
-Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}const Ac=Uu.createLogger(
-"runMatrixRoomResource"),yc=Uu.createLogger("NodeSystemProcess");class Rc{constructor(e,t,r,n=!0){l(this,"_command",
+null==e?void 0:e.body))return;throw gc.error(`Warning! Could not invite user ${t} to room ${r}: `,e),e}},
+Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}const Sc=Uu.createLogger(
+"runMatrixRoomResource"),Ac=Uu.createLogger("NodeSystemProcess");class yc{constructor(e,t,r,n=!0){l(this,"_command",
 void 0),l(this,"_args",void 0),l(this,"_env",void 0),l(this,"_stdoutCallback",void 0),l(this,"_stderrCallback",void 0),
 l(this,"_closeCallback",void 0),l(this,"_observer",void 0),l(this,"_process",void 0),l(this,"_printToParentProcess",
 void 0),l(this,"_stdoutChunks",void 0),l(this,"_stderrChunks",void 0),l(this,"_exitStatus",void 0),
@@ -1242,10 +1241,10 @@ getErrorString(){return Buffer.concat(this._stderrChunks).toString("utf8")}getOu
 this._stdoutChunks).toString("utf8")}destroy(){this._observer.destroy()}on(e,t){return this._observer.listenEvent(e,t)}
 _onStdOut(e){this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),
 process.stderr.write(e)}_onClose(e){this._exitStatus=e,this._observer.hasCallbacks(rl.ON_EXIT
-)?this._observer.triggerEvent(rl.ON_EXIT,e):yc.debug(
-`Child process stopped with exit status ${e} -- no listeners detected`)}}l(Rc,"Event",rl);class Nc{constructor(){}
-toString(){return"NodeSystem"}toJSON(){return{type:"NodeSystem"}}createProcess(e,t,r){return new Rc(e,t,r)}}
-const mc=Uu.createLogger("main");Uu.setLogLevel(fu),async function(t=[]){var r,n,i,o;try{if(mc.debug(
+)?this._observer.triggerEvent(rl.ON_EXIT,e):Ac.debug(
+`Child process stopped with exit status ${e} -- no listeners detected`)}}l(yc,"Event",rl);class Rc{constructor(){}
+toString(){return"NodeSystem"}toJSON(){return{type:"NodeSystem"}}createProcess(e,t,r){return new yc(e,t,r)}}
+const Nc=Uu.createLogger("main");Uu.setLogLevel(fu),async function(t=[]){var r,n,i,o;try{if(Nc.debug(
 `Loglevel ${Uu.getLogLevelString()}`),r=Cu,t.shift(),!t.shift())return console.log(H(r)),qa.ARGUMENT_PARSE_ERROR;if(
 0===t.length)return console.log(H(r)),qa.ARGUMENT_PARSE_ERROR;let e=!0;do{if(n=t.shift(),e){switch(function(){switch(n){
 case"-h":case"--help":case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":case 2:return 2}}()){case 0:
@@ -1260,50 +1259,50 @@ Built with options:
   BUILD_WITH_LOCAL_RESOURCES  = '${yu}'
   BUILD_WITH_HTTP_RESOURCES   = '${Ru}'
   BUILD_WITH_MATRIX_RESOURCES = '${Nu}'
-`}(r)),qa.OK;case 2:e=!1}if(!e)continue}if(void 0===(i=ku.parseRunnerResource(n)))return mc.error(
+`}(r)),qa.OK;case 2:e=!1}if(!e)continue}if(void 0===(i=ku.parseRunnerResource(n)))return Nc.error(
 `Unsupported argument: ${n}`),console.log(H(r)),qa.UNKNOWN_ARGUMENT;if((o=await async function(e,t){switch(t.type){
 case Ba.HTTP:return Ru?async function(t,r){var n,i,o,s,a,l,u;try{const c={};if(r.authentication&&(M(r.authentication)&&(
 c.Authorization=`Bearer ${r.authentication.access_token}`),F(r.authentication)&&(n=r.authentication.username,
 i=r.authentication.password,c.Authorization=`Basic ${new Buffer(n+":"+i).toString("base64")}`)),void 0===(
-o=await zu.getJson(r.url,c)))return Ec.error(`Failed to load URL "${r.url}": `,o),qa.RESOURCE_LOAD_FAILED;if(void 0===(
-s=oe(o)))return Ec.error(`Model from URL "${r.url}" was not valid: `,o),qa.RESOURCE_MODEL_INVALID
-;a=null==s?void 0:s.parameters,l=null==s?void 0:s.variables,u=new vc(t,a,l,Ou,Pu);let e=cc.createController(s,u)
-;return Ec.info(`Running ${e.getName()} from ${r.url}`),await cc.startAndWaitUntilFinished(e),Ec.info(
-`Successfully finished ${e.getName()} from ${r.url}`),qa.OK}catch(e){return Ec.error("Error: ",e),
+o=await zu.getJson(r.url,c)))return vc.error(`Failed to load URL "${r.url}": `,o),qa.RESOURCE_LOAD_FAILED;if(void 0===(
+s=oe(o)))return vc.error(`Model from URL "${r.url}" was not valid: `,o),qa.RESOURCE_MODEL_INVALID
+;a=null==s?void 0:s.parameters,l=null==s?void 0:s.variables,u=new _c(t,a,l,Ou,Pu);let e=cc.createController(s,u)
+;return vc.info(`Running ${e.getName()} from ${r.url}`),await cc.startAndWaitUntilFinished(e),vc.info(
+`Successfully finished ${e.getName()} from ${r.url}`),qa.OK}catch(e){return vc.error("Error: ",e),
 qa.HTTP_RESOURCE_FAILED}}(e,t):qa.UNBUILD_FEATURE;case Ba.LOCAL:return yu?async function(t,r){var n,i,o,s,a,l;try{if(
 n=await async function(e){const t=(i=e,o={encoding:"utf8"},await new Promise((r,n)=>{try{ql.readFile(i,o,(e,t)=>{e?n(e
 ):r(t)})}catch(e){n(e)}}));var i,o;return p(t)?t:t.toString("utf8")}(r.path),void 0===(o=oe(i=JSON.parse(n)))
-)return pc.warn("Model was not valid: ",i),qa.RESOURCE_MODEL_INVALID;s=null==o?void 0:o.parameters,
-a=null==o?void 0:o.variables,l=new vc(t,s,a,Ou,Pu);let e=cc.createController(o,l);return pc.info(`Running ${e.getName(
-)} from ${r.path}`),await cc.startAndWaitUntilFinished(e),pc.info(`Successfully finished ${e.getName()} from ${r.path}`)
-,qa.OK}catch(e){return pc.error("Error: ",e),qa.LOCAL_RESOURCE_FAILED}}(e,t):qa.UNBUILD_FEATURE;case Ba.MATRIX:
-return Nu?async function(i,o){var s,a,l,u,c,d,h,_,v,E,p,f,g,T,S,A,y,R,N,m,w;try{Ac.debug("runMatrixResource: ",o),
-g=o.authentication;let e;if(M(g))e=new gc(`https://${o.homeserver}`,void 0,void 0,g.access_token);else{if(!F(g)
-)return qa.UNKNOWN_AUTHENTICATION_TYPE;e=new gc(`https://${o.homeserver}`),e=await e.login(g.username,g.password)}
-let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return Ac.error("Could not detect agent user ID"),qa.UNKNOWN_AGENT_ID
-;Ac.info(`Agent user ID: ${t}`);const b=new Sc(e,ol.FI_NOR_AGENT_DTO);if(0===(w=await b.getAll()).length
-)return Ac.debug("Detected no pools available."),qa.OK;T=(1===w.length?(Ac.debug(
-"Detected single pool available. Picking it."),w[0]):(Ac.debug(
-`Detected ${w.length} pools available. Picking one by random.`),w[Math.floor(Math.random()*w.length)])).id,Ac.info(
-`Pool ID: ${T}`);const C=new Sc(e,ol.FI_NOR_PIPELINE_RUN_DTO,"",void 0,ol.FI_NOR_PIPELINE_STATE,"",[T])
-;S=await C.getAll(),Ac.debug("runList = ",S);let r;if(0===S.length)return Ac.debug("Detected no work available."),qa.OK
-;r=1===S.length?(Ac.debug("Detected single work available. Picking it."),S[0]):(Ac.debug(
+)return Ec.warn("Model was not valid: ",i),qa.RESOURCE_MODEL_INVALID;s=null==o?void 0:o.parameters,
+a=null==o?void 0:o.variables,l=new _c(t,s,a,Ou,Pu);let e=cc.createController(o,l);return Ec.info(`Running ${e.getName(
+)} from ${r.path}`),await cc.startAndWaitUntilFinished(e),Ec.info(`Successfully finished ${e.getName()} from ${r.path}`)
+,qa.OK}catch(e){return Ec.error("Error: ",e),qa.LOCAL_RESOURCE_FAILED}}(e,t):qa.UNBUILD_FEATURE;case Ba.MATRIX:
+return Nu?async function(i,o){var s,a,l,u,c,d,h,_,v,E,p,f,g,T,S,A,y,R,N,m,w;try{Sc.debug("runMatrixResource: ",o),
+g=o.authentication;let e;if(M(g))e=new fc(`https://${o.homeserver}`,void 0,void 0,g.access_token);else{if(!F(g)
+)return qa.UNKNOWN_AUTHENTICATION_TYPE;e=new fc(`https://${o.homeserver}`),e=await e.login(g.username,g.password)}
+let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return Sc.error("Could not detect agent user ID"),qa.UNKNOWN_AGENT_ID
+;Sc.info(`Agent user ID: ${t}`);const b=new Tc(e,ol.FI_NOR_AGENT_DTO);if(0===(w=await b.getAll()).length
+)return Sc.debug("Detected no pools available."),qa.OK;T=(1===w.length?(Sc.debug(
+"Detected single pool available. Picking it."),w[0]):(Sc.debug(
+`Detected ${w.length} pools available. Picking one by random.`),w[Math.floor(Math.random()*w.length)])).id,Sc.info(
+`Pool ID: ${T}`);const C=new Tc(e,ol.FI_NOR_PIPELINE_RUN_DTO,"",void 0,ol.FI_NOR_PIPELINE_STATE,"",[T])
+;S=await C.getAll(),Sc.debug("runList = ",S);let r;if(0===S.length)return Sc.debug("Detected no work available."),qa.OK
+;r=1===S.length?(Sc.debug("Detected single work available. Picking it."),S[0]):(Sc.debug(
 `Detected ${S.length} work items available. Picking one by random.`),S[Math.floor(Math.random()*S.length)]);const I=r.id
 ;if(void 0!==(null===(s=r)||void 0===s||null===(a=s.data)||void 0===a?void 0:a.agentPoolId)&&void 0!==(null===(l=r
 )||void 0===l||null===(u=l.data)||void 0===u?void 0:u.agentAccountId)&&void 0!==(null===(c=r)||void 0===c||null===(
-d=c.data)||void 0===d?void 0:d.state))return Ac.warn(`Work ID was already running: ${I}`),qa.CONFLICT;if(Ac.info(
+d=c.data)||void 0===d?void 0:d.state))return Sc.warn(`Work ID was already running: ${I}`),qa.CONFLICT;if(Sc.info(
 `Work ID: ${I}`),A=O(O({},r.data),{},{agentPoolId:T,agentAccountId:t}),await C.update(r.id,A),r=await C.findById(r.id),
-!r)return Ac.warn("The work item disappeared while we were selecting it."),qa.WORK_CANCELLED;if(I!==r.id
-)return Ac.error(`The work item ID conflict: ${I} !== ${r.id}`),qa.CONFLICT;if(T!==(null===(h=r)||void 0===h||null===(
+!r)return Sc.warn("The work item disappeared while we were selecting it."),qa.WORK_CANCELLED;if(I!==r.id
+)return Sc.error(`The work item ID conflict: ${I} !== ${r.id}`),qa.CONFLICT;if(T!==(null===(h=r)||void 0===h||null===(
 _=h.data)||void 0===_?void 0:_.agentPoolId)||t!==(null===(v=r)||void 0===v||null===(E=v.data
-)||void 0===E?void 0:E.agentAccountId))return Ac.error(""),qa.CONFLICT;if(Ac.debug(
+)||void 0===E?void 0:E.agentAccountId))return Sc.error(""),qa.CONFLICT;if(Sc.debug(
 "Work item secured to us! We can start the job."),void 0===(y=oe(null===(p=r)||void 0===p||null===(f=p.data
-)||void 0===f?void 0:f.model)))return Ac.warn("Work item did not contain correct pipeline model: ",r),
-qa.RESOURCE_MODEL_INVALID;R=null==y?void 0:y.parameters,N=null==y?void 0:y.variables,m=new vc(i,R,N,Ou,Pu)
-;let n=cc.createController(y,m);await ze(e,C,I,r,n);const D=n.onChanged(()=>{ze(e,C,I,r,n).catch(e=>{Ac.error(
+)||void 0===f?void 0:f.model)))return Sc.warn("Work item did not contain correct pipeline model: ",r),
+qa.RESOURCE_MODEL_INVALID;R=null==y?void 0:y.parameters,N=null==y?void 0:y.variables,m=new _c(i,R,N,Ou,Pu)
+;let n=cc.createController(y,m);await ze(e,C,I,r,n);const D=n.onChanged(()=>{ze(e,C,I,r,n).catch(e=>{Sc.error(
 "Failed to save controller state: ",e)})});try{await cc.startAndWaitUntilFinished(n)}finally{D(),await ze(e,C,I,r,n)}
-return qa.OK}catch(e){return Ac.error("Error: ",e),qa.MATRIX_RESOURCE_FAILED}}(e,t):qa.UNBUILD_FEATURE;default:
-return qa.UNKNOWN_RESOURCE_TYPE}}(new Nc,i))!==qa.OK)return o===qa.UNKNOWN_RESOURCE_TYPE?(mc.error(
+return qa.OK}catch(e){return Sc.error("Error: ",e),qa.MATRIX_RESOURCE_FAILED}}(e,t):qa.UNBUILD_FEATURE;default:
+return qa.UNKNOWN_RESOURCE_TYPE}}(new Rc,i))!==qa.OK)return o===qa.UNKNOWN_RESOURCE_TYPE?(Nc.error(
 `Error NorPP${o}: ${G(o)}: Resource type was unknown: ${i.type}`),console.log(H(r)),qa.UNKNOWN_RESOURCE_TYPE):(function(
 e){if(Sa(e)&&!(e<0||255<e)){if(Wa.FATAL_SIGNAL_RANGE_START<=e&&e<=Wa.FATAL_SIGNAL_RANGE_END)return 1;switch(e){
 case Wa.OK:case Wa.GENERAL_ERRORS:case Wa.MISUSE_OF_SHELL_BUILTINS:case Wa.ARGUMENT_PARSE_ERROR:
@@ -1314,7 +1313,7 @@ case Wa.DATAERR:case Wa.NOINPUT:case Wa.NOUSER:case Wa.NOHOST:case Wa.UNAVAILABL
 case Wa.OSFILE:case Wa.CANTCREAT:case Wa.IOERR:case Wa.TEMPFAIL:case Wa.PROTOCOL:case Wa.NOPERM:case Wa.CONFIG:
 case Wa.COMMAND_INVOKED_CANNOT_EXECUTE:case Wa.COMMAND_NOT_FOUND:case Wa.INVALID_ARGUMENT_TO_EXIT:
 case Wa.FATAL_SIGNAL_RANGE_START:case Wa.FATAL_SIGNAL_RANGE_END:case Wa.EXIT_STATUS_OUT_OF_RANGE:
-case Wa.UNKNOWN_AGENT_ID:case Wa.WORK_CANCELLED:case Wa.CONFLICT:return 1;default:return}}}(o)?mc.error(
-`Error EX-${o}: ${G(o)}: for ${U(i.type)} resource ${n}`):mc.error(`Error: Exit status ${o}: for ${U(i.type
-)} resource ${n}`),o)}while(1<=t.length);return qa.OK}catch(e){return mc.error("Fatal error: ",e),qa.FATAL_ERROR}}(
+case Wa.UNKNOWN_AGENT_ID:case Wa.WORK_CANCELLED:case Wa.CONFLICT:return 1;default:return}}}(o)?Nc.error(
+`Error EX-${o}: ${G(o)}: for ${U(i.type)} resource ${n}`):Nc.error(`Error: Exit status ${o}: for ${U(i.type
+)} resource ${n}`),o)}while(1<=t.length);return qa.OK}catch(e){return Nc.error("Fatal error: ",e),qa.FATAL_ERROR}}(
 process.argv).then(e=>{process.exit(e)}).catch(e=>{console.error("Error: ",e),process.exit(1)});

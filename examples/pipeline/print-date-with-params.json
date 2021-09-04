@@ -1,0 +1,15 @@
+{
+  "parameters": [
+    {
+      "type": "string",
+      "name": "format",
+      "displayName": "Date Format",
+      "default": "%s"
+    }
+  ],
+  "name": "Print_date_with_params",
+  "command": "date"
+  "args": [
+    "+${{format}}"
+  ]
+}
