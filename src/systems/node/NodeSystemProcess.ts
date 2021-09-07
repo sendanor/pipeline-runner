@@ -143,7 +143,7 @@ export class NodeSystemProcess implements SystemProcess {
         this._exitStatus = code;
 
         if (this._observer.hasCallbacks(SystemProcessEvent.ON_EXIT)) {
-            this._observer.triggerEvent(SystemProcessEvent.ON_EXIT, code);
+            this._observer.triggerEvent(SystemProcessEvent.ON_EXIT, this);
         } else {
             LOG.debug(`Child process stopped with exit status ${code} -- no listeners detected`);
         }
