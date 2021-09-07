@@ -518,7 +518,7 @@ return null==e?[]:Ua(e,$a(e))},ml=Array.prototype,ka=ml.join,Ma=function(e,t){re
 )[fu.DEBUG=0]="DEBUG",fu[fu.INFO=1]="INFO",fu[fu.WARN=2]="WARN",fu[fu.ERROR=3]="ERROR",fu[fu.NONE=4]="NONE",Ga=ja
 ;const Tu=null!==(Nl=P("1.0.3"))&&void 0!==Nl?Nl:"?";lu=null!==(Rl=P(""))&&void 0!==Rl?Rl:"io.nor.fi",yl=null!==(ru=P(""
 ))&&void 0!==ru?ru:"nor-pipeline-runner",fu=null!==(ml=P(""))&&void 0!==ml?ml:"",Rl=null!==(Nl=P(""))&&void 0!==Nl?Nl:""
-;const Su=null!==(ru=P("production"))&&void 0!==ru?ru:"development",Au=null!==(ml=P("2021-09-04T10:51:33.842Z")
+;const Su=null!==(ru=P("production"))&&void 0!==ru?ru:"development",Au=null!==(ml=P("2021-09-07T18:18:03.230Z")
 )&&void 0!==ml?ml:"";ru=null!==(Nl=P(""))&&void 0!==Nl?Nl:"${",Nl=null!==(ml=P(""))&&void 0!==ml?ml:"}"
 ;const yu=null===(ml=D(""))||void 0===ml||ml,Ru=null===(ml=D(""))||void 0===ml||ml,Nu=null===(ml=D(""))||void 0===ml||ml
 ,mu=null===(ml=D(""))||void 0===ml||ml;ml="production"===Su;const wu="test"===Su,bu=!ml&&!wu;fu=null!==(Xe=function(e){
@@ -995,7 +995,7 @@ d+=`${t.substr(e,s-e)}${a}`):d+=`${t.substr(e,u-e)}`,u)}return d}}class _c{const
 this,"_variableSuffix",void 0),l(this,"_lookupVariable",void 0),this._system=e,this._variables=r,this._parameters=t,
 this._variablePrefix=n,this._variableSuffix=i,this._lookupVariable=this.getVariable.bind(this)}getSystem(){
 return this._system}compileModel(e){return hc.processVariables(e,this._lookupVariable,this._variablePrefix,
-this._variableSuffix)}getParametersModel(){var e;return null!==(e=this._parameters)&&void 0!==e?e:{}}getVariablesModel(
+this._variableSuffix)}getParametersArray(){var e;return null!==(e=this._parameters)&&void 0!==e?e:[]}getVariablesModel(
 ){var e;return null!==(e=this._variables)&&void 0!==e?e:{}}getVariable(e){return zn(this._variables,e)}setVariable(e,t){
 return so(this._variables,e,t),this}toString(){return"PipelineContext"}toJSON(){return{type:"fi.nor.pipeline.context",
 variables:function(e){try{return JSON.parse(e)}catch(e){return}}(JSON.stringify(this._variables))}}}
@@ -1241,7 +1241,7 @@ getErrorString(){return Buffer.concat(this._stderrChunks).toString("utf8")}getOu
 this._stdoutChunks).toString("utf8")}destroy(){this._observer.destroy()}on(e,t){return this._observer.listenEvent(e,t)}
 _onStdOut(e){this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){this._stderrChunks.push(e),
 process.stderr.write(e)}_onClose(e){this._exitStatus=e,this._observer.hasCallbacks(rl.ON_EXIT
-)?this._observer.triggerEvent(rl.ON_EXIT,e):Ac.debug(
+)?this._observer.triggerEvent(rl.ON_EXIT,this):Ac.debug(
 `Child process stopped with exit status ${e} -- no listeners detected`)}}l(yc,"Event",rl);class Rc{constructor(){}
 toString(){return"NodeSystem"}toJSON(){return{type:"NodeSystem"}}createProcess(e,t,r){return new yc(e,t,r)}}
 const Nc=Uu.createLogger("main");Uu.setLogLevel(fu),async function(t=[]){var r,n,i,o;try{if(Nc.debug(
