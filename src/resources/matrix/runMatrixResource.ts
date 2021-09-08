@@ -26,7 +26,7 @@ import {
 } from "../../pipeline-runtime-constants";
 import System from "../../nor/pipeline/systems/types/System";
 
-const LOG = LogService.createLogger('runMatrixRoomResource');
+const LOG = LogService.createLogger('runMatrixResource');
 
 async function updateControllerState (
     matrixClient  : SimpleMatrixClient,
@@ -173,6 +173,13 @@ export async function runMatrixResource (
             && work?.data?.state !== undefined
         ) {
             LOG.warn(`Work ID was already running: ${workId}`);
+
+            LOG.debug(`We'll stop listening the work item: ${workId}`);
+            await matrixClient.leaveRoom(workId);
+
+            LOG.debug(`We'll forget the work item now: ${workId}`);
+            await matrixClient.forgetRoom(workId);
+
             return RunnerExitStatus.CONFLICT;
         }
 
@@ -248,6 +255,13 @@ export async function runMatrixResource (
             await updateControllerState(matrixClient, runRepository, workId, work, controller);
 
         }
+
+        LOG.debug(`We'll stop listening the work item now: ${workId}`);
+        await matrixClient.leaveRoom(workId);
+
+        LOG.debug(`We'll forget the work item now: ${workId}`);
+        await matrixClient.forgetRoom(workId);
+
         return RunnerExitStatus.OK;
 
     } catch (err) {
