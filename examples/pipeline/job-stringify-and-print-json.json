@@ -1,0 +1,16 @@
+{
+  "name": "Stringify_and_print",
+  "steps": [
+    {
+      "name": "stringify_json",
+      "json": {"foo":"bar"},
+      "action": "stringify",
+      "output": "jsonString"
+    },
+    {
+      "name": "Print_output",
+      "command": "echo",
+      "args": ["${jsonString}"]
+    }
+  ]
+}
