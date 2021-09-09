@@ -1,0 +1,49 @@
+{
+  "name": "submit_object",
+  "parameters": [
+    {
+      "type": "json",
+      "name": "objectInput",
+      "displayName": "Object Input"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Prepare_tempdir",
+      "file": "mkdir",
+      "output": "tempDir"
+    },
+    {
+      "name": "Prepare_input",
+      "json": "${objectInput}",
+      "action": "stringify",
+      "output": "jsonString"
+    },
+    {
+      "name": "Set_workdir",
+      "set": "workDir",
+      "value": "${tempDir}/git"
+    },
+    {
+      "name": "Prepare_git",
+      "git": "clone",
+      "url": "git@github.com:sendanor/pipeline-agent-test.git",
+      "target": "${workDir}"
+    },
+    {
+      "name": "Process_input",
+      "command": "${workDir}/custom-json-processor.py",
+      "args": [
+        "${jsonString}"
+      ],
+      "output": "output"
+    },
+    {
+      "name": "Process_output",
+      "file": "${tempDir}/${__agent.hash}.json",
+      "args": [
+        "${output}"
+      ]
+    }
+  ]
+}

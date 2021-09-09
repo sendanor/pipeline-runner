@@ -7,9 +7,8 @@ import SystemProcess, {
 } from "../../nor/pipeline/systems/types/SystemProcess";
 import Json from "../../nor/ts/Json";
 import { ChildProcessWithoutNullStreams, spawn, SpawnOptions } from "child_process";
-import PipelineContext from "../../nor/pipeline/PipelineContext";
 import LogService from "../../nor/ts/LogService";
-import Observer, { ObserverCallback, ObserverDestructor } from "../../nor/ts/Observer";
+import Observer from "../../nor/ts/Observer";
 import { SystemArgumentList, SystemEnvironment } from "../../nor/pipeline/systems/types/System";
 
 const LOG = LogService.createLogger('NodeSystemProcess');

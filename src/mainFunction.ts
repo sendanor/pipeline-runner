@@ -14,6 +14,8 @@ import { stringifyRunnerResourceType } from "./types/RunnerResourceType";
 import RunnerArgumentType, { parseRunnerArgumentType } from "./types/RunnerArgumentType";
 import getMainVersion from "./getMainVersion";
 import NodeSystem from "./systems/node/NodeSystem";
+import PipelineDefaults from "./nor/pipeline/PipelineDefaults";
+import System from "./nor/pipeline/systems/types/System";
 
 const LOG = LogService.createLogger('main');
 
@@ -21,7 +23,11 @@ export async function main (
     args: string[] = []
 ) : Promise<RunnerExitStatus> {
 
+    let system : System | undefined;
+
     try {
+
+        PipelineDefaults.registerControllers();
 
         LOG.debug(`Loglevel ${LogService.getLogLevelString()}`);
 
@@ -77,7 +83,7 @@ export async function main (
                 return RunnerExitStatus.UNKNOWN_ARGUMENT;
             }
 
-            const system = new NodeSystem();
+            system = new NodeSystem();
 
             const result : RunnerExitStatus = await runResource(system, resource);
 
@@ -107,6 +113,10 @@ export async function main (
     } catch (err) {
         LOG.error(`Fatal error: `, err);
         return RunnerExitStatus.FATAL_ERROR;
+    } finally {
+        if (system) {
+            system.destroy();
+        }
     }
 
 }

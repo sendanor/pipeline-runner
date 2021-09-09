@@ -1,0 +1,10 @@
+{
+  "name": "mkdir_example",
+  "steps": [
+    {
+      "name": "Prepare_tempdir",
+      "file": "mkdir",
+      "output": "tempDir"
+    }
+  ]
+}
