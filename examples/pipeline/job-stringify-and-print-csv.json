@@ -1,0 +1,21 @@
+{
+  "name": "Stringify_and_print",
+  "steps": [
+    {
+      "name": "stringify_csv",
+      "csv": [
+        ["foo1", "bar1"],
+        ["foo2", "bar2"],
+        ["foo,2", "bar,2"],
+        ["\"foo\",2", "bar,2"]
+      ],
+      "action": "stringify",
+      "output": "csvString"
+    },
+    {
+      "name": "Print_output",
+      "command": "echo",
+      "args": ["${csvString}"]
+    }
+  ]
+}
