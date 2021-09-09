@@ -21,8 +21,8 @@
     },
     {
       "name": "Set_workdir",
-      "set": "workDir",
-      "value": "${tempDir}/git"
+      "variable": "workDir",
+      "set": "${tempDir}/git"
     },
     {
       "name": "Prepare_git",

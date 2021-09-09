@@ -1,0 +1,15 @@
+{
+  "name": "variable_test",
+  "steps": [
+    {
+      "name": "Prepare_tempdir",
+      "file": "mkdir",
+      "output": "tempDir"
+    },
+    {
+      "name": "Set_variable",
+      "variable": "gitDir",
+      "set": "${tempDir}/git"
+    }
+  ]
+}
