@@ -27,7 +27,7 @@
     {
       "name": "Prepare_git",
       "git": "clone",
-      "url": "git@github.com:sendanor/pipeline-agent-test.git",
+      "url": "https://github.com/sendanor/pipeline-agent-test.git",
       "target": "${workDir}"
     },
     {

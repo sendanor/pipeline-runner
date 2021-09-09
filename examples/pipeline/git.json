@@ -1,0 +1,21 @@
+{
+  "name": "variable_test",
+  "steps": [
+    {
+      "name": "Prepare_tempdir",
+      "file": "mkdir",
+      "output": "tempDir"
+    },
+    {
+      "name": "Set_variable",
+      "variable": "gitDir",
+      "set": "${tempDir}/git"
+    },
+    {
+      "name": "Prepare_git",
+      "git": "clone",
+      "url": "https://github.com/sendanor/pipeline-agent-test.git",
+      "target": "${gitDir}"
+    }
+  ]
+}
