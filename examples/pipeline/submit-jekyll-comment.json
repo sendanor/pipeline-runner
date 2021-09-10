@@ -70,6 +70,20 @@
       "target": "${gitDir}"
     },
     {
+      "name": "Configure_git_email",
+      "git": "config",
+      "set": "user.email",
+      "value": "agent1@c40",
+      "cwd": "${gitDir}"
+    },
+    {
+      "name": "Configure_git_name",
+      "git": "config",
+      "set": "user.name",
+      "value": "Pipeline Agent",
+      "cwd": "${gitDir}"
+    },
+    {
       "name": "Read_or_create_comment_file",
       "file": "read/create",
       "target": "${commentFile}",
@@ -106,7 +120,7 @@
       "name": "Write_comment_file",
       "file": "write",
       "target": "${commentFile}",
-      "content": "commentListString"
+      "content": "${commentListString}"
     },
     {
       "name": "Add_to_git",
@@ -118,6 +132,11 @@
       "name": "Commit_to_git",
       "git": "commit",
       "message": "Blog comment from pipeline",
+      "cwd": "${gitDir}"
+    },
+    {
+      "name": "Push_to_git",
+      "git": "push",
       "cwd": "${gitDir}"
     }
   ]
