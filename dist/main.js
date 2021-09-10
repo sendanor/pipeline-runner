@@ -608,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T07:55:14.710Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T08:04:38.470Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -776,26 +776,27 @@ this._request(au.PUT,e,n,r).then(Cc._successResponse)}async _postJson(e,t,r){con
 Cc._successResponse)}async _patchJson(e,t,r){const n={method:"PATCH",headers:{"Content-Type":"application/json"}}
 ;return t&&(n.headers=D(D({},n.headers),t)),this._request(au.PATCH,e,n,r).then(Cc._successResponse)}async _deleteJson(e,
 t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=D(D({},n.headers),t)),
-this._request(au.DELETE,e,n,r).then(Cc._successResponse)}static _successResponse(e){var t=null==e?void 0:e.statusCode
-;if(t<200||400<=t)throw Rc.error(`Unsuccessful response with status ${t}: `,e),new Nc(t,`Error ${t} for ${J(e.method
-)} ${e.url}`,e.method,e.url,e.body);return e.body}}class bc{constructor(e){u(this,"_fetch",void 0),this._fetch=e}
-jsonRequest(e,t,r,n){switch(e){case au.GET:return this._getJson(t,r,n);case au.POST:return this._postJson(t,r,n)
-;case au.PUT:return this._putJson(t,r,n);case au.DELETE:return this._deleteJson(t,r,n);default:throw new TypeError(
-`[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",mode:"cors",cache:"no-cache",
-headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(
-n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.GET))}_putJson(e,t,r){const n={method:"PUT",
+this._request(au.DELETE,e,n,r).then(Cc._successResponse)}static async _successResponse(e){
+var t=null==e?void 0:e.statusCode;if(t<200||400<=t)throw Rc.error(`Unsuccessful response with status ${t}: `,e),new Nc(t
+,`Error ${t} for ${J(e.method)} ${e.url}`,e.method,e.url,e.body);return e.body}}class bc{constructor(e){u(this,"_fetch",
+void 0),this._fetch=e}jsonRequest(e,t,r,n){switch(e){case au.GET:return this._getJson(t,r,n);case au.POST:
+return this._postJson(t,r,n);case au.PUT:return this._putJson(t,r,n);case au.DELETE:return this._deleteJson(t,r,n)
+;default:throw new TypeError(`[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",
 mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(
-n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.PUT))}
-_postJson(e,t,r){const n={method:"POST",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},
+n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.GET))}
+_putJson(e,t,r){const n={method:"PUT",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},
 credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n
-).then(e=>bc._successResponse(e,au.POST))}_deleteJson(e,t,r){const n={method:"DELETE",mode:"cors",cache:"no-cache",
-headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(
-n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.DELETE))}static _successResponse(e,t){
-const r=e.status;if(!e.ok||r<200||400<=r){const n=e.url,i=`${r} ${e.statusText} for ${J(t)} ${n}`;return e.json().then(
-e=>{throw new Nc(r,i,t,n,e)})}return e.json()}}const Ic=Ac?require("http"):void 0,Dc=Ac?require("https"):void 0,
-Oc=fc.createLogger("RequestClient");class Lc{static jsonRequest(e,t,r,n){return this._client.jsonRequest(e,t,r,n)}
-static getJson(e,t){return this._client.jsonRequest(au.GET,e,t)}static postJson(e,t,r){return Oc.debug(".postJson: ",e,t
-,r),this._client.jsonRequest(au.POST,e,r,t)}static patchJson(e,t,r){return Oc.debug(".patchJson: ",e,t,r),
+).then(e=>bc._successResponse(e,au.PUT))}_postJson(e,t,r){const n={method:"POST",mode:"cors",cache:"no-cache",headers:{
+"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(
+n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.POST))}_deleteJson(e,t,r){const n={
+method:"DELETE",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},credentials:"same-origin"}
+;return t&&(n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e
+,au.DELETE))}static _successResponse(e,t){const r=e.status;if(!e.ok||r<200||400<=r){const n=e.url,
+i=`${r} ${e.statusText} for ${J(t)} ${n}`;return e.json().then(e=>{throw new Nc(r,i,t,n,e)})}return e.json()}}
+const Ic=Ac?require("http"):void 0,Dc=Ac?require("https"):void 0,Oc=fc.createLogger("RequestClient");class Lc{
+static jsonRequest(e,t,r,n){return this._client.jsonRequest(e,t,r,n)}static getJson(e,t){
+return this._client.jsonRequest(au.GET,e,t)}static postJson(e,t,r){return Oc.debug(".postJson: ",e,t,r),
+this._client.jsonRequest(au.POST,e,r,t)}static patchJson(e,t,r){return Oc.debug(".patchJson: ",e,t,r),
 this._client.jsonRequest(au.PATCH,e,r,t)}static putJson(e,t,r){return Oc.debug(".putJson: ",e,t,r),
 this._client.jsonRequest(au.PUT,e,r,t)}static deleteJson(e,t,r){return Oc.debug(".deleteJson: ",e,r,t),
 this._client.jsonRequest(au.DELETE,e,t,r)}static _initClient(){if(yc)return Oc.debug("Detected browser environment"),
