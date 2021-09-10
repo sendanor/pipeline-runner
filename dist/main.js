@@ -608,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T10:39:24.279Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T10:44:20.778Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -1471,8 +1471,8 @@ jl.SCRIPT_FINISHED)&&this._observer.triggerEvent(jl.SCRIPT_FINISHED,this)):(this
 this._observer.hasCallbacks(jl.SCRIPT_FAILED)&&this._observer.triggerEvent(jl.SCRIPT_FAILED,this)),
 this._observer.hasCallbacks(jl.SCRIPT_CHANGED)&&this._observer.triggerEvent(jl.SCRIPT_CHANGED,this)}}u(pd,"Event",jl),u(
 pd,"State",yl);class fd extends pd{static parseControllerModel(e){if(rt(e))return e}static isControllerModel(e){
-return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env)}constructor(e,t,r,n=[],i={}){
-super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i)}}(vu=Hl=Hl||{}).MKDIR="mkdir",vu.READ="read",
+return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env)}constructor(e,t,r,n=[],i={},
+o=void 0){super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i,o)}}(vu=Hl=Hl||{}).MKDIR="mkdir",vu.READ="read",
 vu.READ_OR_CREATE="read/create",vu.WRITE="write";const gd=Do(fu,["name","file","target","content","output","default"]),
 Td=fc.createLogger("FileController");class Sd extends ad{static parseControllerModel(e){if(nt(e))return e}
 static isControllerModel(e){return nt(e)}static createController(e,t){return new Sd(e,t.name,t,t.file,t.output)}
@@ -1504,10 +1504,10 @@ var r,n,i;if(t.git===Jl.CLONE)return r=t.target,n=t.url,new wd(e,t.name,"git",["
 GIT_ASKPASS:"/bin/echo"});if(t.git===Jl.ADD)return i=null==t?void 0:t.target,new wd(e,t.name,"git",["add",i],{
 GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"});if(t.git!==Jl.COMMIT)throw new TypeError(
 `Unknown git action: ${t.git}`);return i=null!==(i=null==t?void 0:t.message)&&void 0!==i?i:"Pipeline commit",new wd(e,
-t.name,"git",["commit","-m",i],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"})}constructor(e,t,r,n=[],i={}){
-var o=null===(o=process.env)||void 0===o?void 0:o.SSH_AUTH_SOCK;!o||null!=i&&i.SSH_AUTH_SOCK||(i=D(D({},i),{},{
-SSH_AUTH_SOCK:o})),super(e,Al.GIT,"GitController","git",t,r,n,i)}}const Rd=Do(fu,["name","assert","equals","output"]);(
-Wl=Wl||{}).EQUALS="equals",Vl=Wl;const Cd=fc.createLogger("AssertController");class bd extends ad{
+t.name,"git",["commit","-m",i],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"})}constructor(e,t,r,n=[],i={},o=void 0){
+var s=null===(s=process.env)||void 0===s?void 0:s.SSH_AUTH_SOCK;!s||null!=i&&i.SSH_AUTH_SOCK||(i=D(D({},i),{},{
+SSH_AUTH_SOCK:s})),super(e,Al.GIT,"GitController","git",t,r,n,i,o)}}const Rd=Do(fu,["name","assert","equals","output"])
+;(Wl=Wl||{}).EQUALS="equals",Vl=Wl;const Cd=fc.createLogger("AssertController");class bd extends ad{
 static parseControllerModel(e){if(st(e))return e}static isControllerModel(e){return st(e)}static createController(e,t){
 return new bd(e,t.name,t,Vl.EQUALS,t.output)}constructor(e,t,r,n=void 0,i=void 0){super(e,Al.VARIABLE,
 `AssertController#${t}`,`assert#${t}`,t,r,n,i)}run(e,t){if(e!==Wl.EQUALS)throw Cd.debug("run: action = ",e),
