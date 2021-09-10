@@ -608,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T08:44:56.244Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T08:59:09.541Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -794,11 +794,11 @@ method:"DELETE",mode:"cors",cache:"no-cache",headers:{"Content-Type":"applicatio
 ,au.DELETE))}static _successResponse(e,t){const r=e.status;if(!e.ok||r<200||400<=r){const n=e.url,
 i=`${r} ${e.statusText} for ${x(t)} ${n}`;return e.json().then(e=>{throw new Nc(r,i,t,n,e)})}return e.json()}}
 const Ic=Ac?require("http"):void 0,Dc=Ac?require("https"):void 0,Oc=fc.createLogger("RequestClient");class Lc{
-static jsonRequest(e,t,r,n){return this._client.jsonRequest(e,t,r,n)}static getJson(e,t){
-return this._client.jsonRequest(au.GET,e,t)}static postJson(e,t,r){return Oc.debug(".postJson: ",e,t,r),
-this._client.jsonRequest(au.POST,e,r,t)}static patchJson(e,t,r){return Oc.debug(".patchJson: ",e,t,r),
-this._client.jsonRequest(au.PATCH,e,r,t)}static putJson(e,t,r){return Oc.debug(".putJson: ",e,t,r),
-this._client.jsonRequest(au.PUT,e,r,t)}static deleteJson(e,t,r){return Oc.debug(".deleteJson: ",e,r,t),
+static async jsonRequest(e,t,r,n){return this._client.jsonRequest(e,t,r,n)}static async getJson(e,t){
+return this._client.jsonRequest(au.GET,e,t)}static async postJson(e,t,r){return Oc.debug(".postJson: ",e,t,r),
+this._client.jsonRequest(au.POST,e,r,t)}static async patchJson(e,t,r){return Oc.debug(".patchJson: ",e,t,r),
+this._client.jsonRequest(au.PATCH,e,r,t)}static async putJson(e,t,r){return Oc.debug(".putJson: ",e,t,r),
+this._client.jsonRequest(au.PUT,e,r,t)}static async deleteJson(e,t,r){return Oc.debug(".deleteJson: ",e,r,t),
 this._client.jsonRequest(au.DELETE,e,t,r)}static _initClient(){if(yc)return Oc.debug("Detected browser environment"),
 new bc(window.fetch.bind(window));if(Ac)return new Cc(Ic,Dc);throw new TypeError(
 "Could not detect request client implementation")}}u(Lc,"_client",Lc._initClient()),(fu=uu=uu||{}).JSON="json",
@@ -1176,20 +1176,23 @@ null==t?void 0:t.device_one_time_keys_count))))throw Yc.debug("_sync: response n
 JSON.stringify(e,null,2)),new TypeError(`Response was not MatrixSyncResponseDTO: ${Ve(e)}`);return e}isAlreadyInTheRoom(
 e){if(Ke(e)){var t=null!==(t=null==e?void 0:e.errcode)&&void 0!==t?t:"";const r=null!==(e=null==e?void 0:e.error
 )&&void 0!==e?e:"";if(t===Dl.M_FORBIDDEN&&0<=r.indexOf("already in the room"))return!0}return!1}async _retryLater(r,n){
-return new Promise((e,t)=>{try{Yc.debug(`_retryLater: Waiting for a moment (${n})`),setTimeout(()=>{try{Yc.debug(
-"_retryLater: Restoring now"),e(r())}catch(e){t(e)}},n)}catch(e){t(e)}})}async _postJson(t,r,n){try{return Yc.debug(
-`Executing POST request ${t} with `,r,n),Lc.postJson(t,r,n)}catch(e){var i=null!==(i=null==e?void 0:e.getBody()
-)&&void 0!==i?i:null==e?void 0:e.body;if(i){if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
+let i;return new Promise((e,t)=>{try{Yc.debug(`_retryLater: Waiting for a moment (${n})`),i=setTimeout(()=>{i=void 0
+;try{Yc.debug("_retryLater: Restoring now"),e(r())}catch(e){t(e)}},n)}catch(e){i&&(clearTimeout(i),i=void 0),t(e)}})}
+async _postJson(t,r,n){var i;try{return Yc.debug(`Executing POST request ${t} with `,r,n),i=await Lc.postJson(t,r,n),
+Yc.debug(`Response received for POST request ${t} as `,i),i}catch(e){if(i=null!==(i=null==e?void 0:e.getBody()
+)&&void 0!==i?i:null==e?void 0:e.body){if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
 i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,Yc.error("Limit reached: ",i,t,r,n),this._retryLater(async()=>(
 Yc.error("Calling again: ",t,r,n),this._postJson(t,r,n)),i);Yc.error("Error did not have body: ",e)}else Yc.error(
-"Error did not have body: ",e);throw e}}async _putJson(t,r,n){try{return Yc.debug(`Executing PUT request ${t} with `,r,n
-),Lc.putJson(t,r,n)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody()
-)&&void 0!==i?i:null==e?void 0:e.body;if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
+"Error did not have body: ",e);throw e}}async _putJson(t,r,n){var i;try{return Yc.debug(
+`Executing PUT request ${t} with `,r,n),i=await Lc.putJson(t,r,n),Yc.debug(`Response received for PUT request ${t} as `,
+i),i}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){if((null==(i=null!==(i=null==e?void 0:e.getBody()
+)&&void 0!==i?i:null==e?void 0:e.body)?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
 i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,Yc.error("Limit reached: ",i,t,r,n),this._retryLater(async()=>(
 Yc.error("Calling again: ",t,r,n),this._putJson(t,r,n)),i);Yc.error("Error did not have body: ",e)}else Yc.error(
-"Error did not have body: ",e);throw e}}async _getJson(t,r){try{return Yc.debug(`Executing GET request ${t} with `,r),
-Lc.getJson(t,r)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var n=null!==(n=null==e?void 0:e.getBody()
-)&&void 0!==n?n:null==e?void 0:e.body;if((null==n?void 0:n.errcode)===Dl.M_LIMIT_EXCEEDED)return n=null!==(
+"Error did not have body: ",e);throw e}}async _getJson(t,r){var n;try{return Yc.debug(`Executing GET request ${t} with `
+,r),n=await Lc.getJson(t,r),Yc.debug(`Response received for PUT request ${t} as `,n),n}catch(e){if(
+null!=e&&e.getBody||null!=e&&e.body){if((null==(n=null!==(n=null==e?void 0:e.getBody()
+)&&void 0!==n?n:null==e?void 0:e.body)?void 0:n.errcode)===Dl.M_LIMIT_EXCEEDED)return n=null!==(
 n=null==n?void 0:n.retry_after_ms)&&void 0!==n?n:1e3,Yc.error("Limit reached: ",n,t,r),this._retryLater(async()=>(
 Yc.error("Calling again: ",t,r),this._getJson(t,r)),n);Yc.error("Error did not have body: ",e)}else Yc.error(
 "Error did not have body: ",e);throw e}}_sendMatrixEventList(e,t){Xs(e,e=>{this._sendMatrixEvent(e,t)})}
