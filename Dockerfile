@@ -4,7 +4,7 @@ ENV LANG en_US.utf8
 ENV PIPELINE_LOG_LEVEL INFO
 ENV PIPELINE_AUTHENTICATION ''
 
-RUN apt-get update && apt-get install -y \
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y \
     nodejs \
     npm \
     git \
