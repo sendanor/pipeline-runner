@@ -6,6 +6,9 @@ ENV PIPELINE_AUTHENTICATION ''
 
 RUN apt-get update && apt-get install -y \
     nodejs \
+    npm \
+    git \
+    ssh \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./dist /app
