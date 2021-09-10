@@ -607,7 +607,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T07:17:23.888Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T07:25:23.411Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -1151,22 +1151,24 @@ this._resolveHomeServerUrl(`/rooms/${ze(e)}/invite`),{user_id:t},{Authorization:
 ),r=await this._postJson(this._resolveHomeServerUrl(`/rooms/${ze(e)}/send/m.room.message`),t,{
 Authorization:`Bearer ${r}`}),Yc.debug("sendTextMessage response received: ",r)}async _postJson(t,r,n){try{
 return Lc.postJson(t,r,n)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody()
-)&&void 0!==i?i:null==e?void 0:e.body;if(Ke(i)&&i.errcode===Dl.M_LIMIT_EXCEEDED)return i=null==i?void 0:i.retry_after_ms
-,this._retryLater(async()=>this._postJson(t,r,n),i)}throw e}}async _putJson(t,r,n){try{return Lc.putJson(t,r,n)}catch(e
-){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody()
-)&&void 0!==i?i:null==e?void 0:e.body;if(Ke(i)&&i.errcode===Dl.M_LIMIT_EXCEEDED)return i=null==i?void 0:i.retry_after_ms
-,this._retryLater(async()=>this._putJson(t,r,n),i)}throw e}}async _getJson(t,r){try{return Lc.getJson(t,r)}catch(e){if(
-null!=e&&e.getBody||null!=e&&e.body){var n=null!==(n=null==e?void 0:e.getBody())&&void 0!==n?n:null==e?void 0:e.body;if(
-Ke(n)&&(null==n?void 0:n.errcode)===Dl.M_LIMIT_EXCEEDED)return n=null==n?void 0:n.retry_after_ms,this._retryLater(async(
-)=>this._getJson(t,r),n)}throw e}}async createRoom(e){var t=this._accessToken;if(!t)throw new TypeError(
-"createRoom: Client did not have access token");if(Yc.debug("Creating room with body:",e),!(m(e=t=await this._postJson(
-this._resolveHomeServerUrl("/createRoom"),e,{Authorization:`Bearer ${t}`}))&&I(e,["room_id","room_alias"])&&ue(
-null==e?void 0:e.room_id)&&(v(null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias)&&e&&"#"===e[0]))
-)throw Yc.debug("response = ",t),new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t);return Yc.debug(
-"Create room response received: ",t),t}async joinRoom(t,e=void 0){var r,n,i;try{if(!(r=this._accessToken)
-)throw new TypeError("createRoom: Client did not have access token");if(Yc.debug(`Joining to room ${t} with body:`,e),!(
-m(i=n=await this._postJson(this._resolveHomeServerUrl(`/rooms/${ze(t)}/join`),null!=e?e:{},{Authorization:`Bearer ${r}`}
-))&&I(i,["room_id"])&&ue(null==i?void 0:i.room_id)))throw Yc.debug("response = ",n),new TypeError(
+)&&void 0!==i?i:null==e?void 0:e.body;if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
+i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,this._retryLater(async()=>this._postJson(t,r,n),i)}throw e}}
+async _putJson(t,r,n){try{return Lc.putJson(t,r,n)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(
+i=null==e?void 0:e.getBody())&&void 0!==i?i:null==e?void 0:e.body;if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED
+)return i=null!==(i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,this._retryLater(async()=>this._putJson(t,r,n),i)
+;Yc.debug("Error did not have body: ",e)}else Yc.debug("Error did not have body: ",e);throw e}}async _getJson(t,r){try{
+return Lc.getJson(t,r)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var n=null!==(n=null==e?void 0:e.getBody()
+)&&void 0!==n?n:null==e?void 0:e.body;if((null==n?void 0:n.errcode)===Dl.M_LIMIT_EXCEEDED)return n=null!==(
+n=null==n?void 0:n.retry_after_ms)&&void 0!==n?n:1e3,this._retryLater(async()=>this._getJson(t,r),n)}throw e}}
+async createRoom(e){var t=this._accessToken;if(!t)throw new TypeError("createRoom: Client did not have access token")
+;if(Yc.debug("Creating room with body:",e),!(m(e=t=await this._postJson(this._resolveHomeServerUrl("/createRoom"),e,{
+Authorization:`Bearer ${t}`}))&&I(e,["room_id","room_alias"])&&ue(null==e?void 0:e.room_id)&&(v(
+null==e?void 0:e.room_alias)||p(e=null==e?void 0:e.room_alias)&&e&&"#"===e[0])))throw Yc.debug("response = ",t),
+new TypeError("Response was not MatrixCreateRoomResponseDTO: "+t);return Yc.debug("Create room response received: ",t),t
+}async joinRoom(t,e=void 0){var r,n,i;try{if(!(r=this._accessToken))throw new TypeError(
+"createRoom: Client did not have access token");if(Yc.debug(`Joining to room ${t} with body:`,e),!(m(
+i=n=await this._postJson(this._resolveHomeServerUrl(`/rooms/${ze(t)}/join`),null!=e?e:{},{Authorization:`Bearer ${r}`})
+)&&I(i,["room_id"])&&ue(null==i?void 0:i.room_id)))throw Yc.debug("response = ",n),new TypeError(
 `Could not join to ${t}: Response was not MatrixJoinRoomResponseDTO: `+n);return Yc.debug(`Joined to room ${t}: `,n),n
 }catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{room_id:t};throw Yc.debug(
 `Could not join to room ${t}: `,e),e}}async sync(e){var t;if(Yc.info("sync with ",e),!(t=this._accessToken)
