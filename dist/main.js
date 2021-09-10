@@ -371,19 +371,20 @@ pl.MATRIX_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;default:return pl.UNKNOWN_RE
 function Ze(e){return d(e,p)}function et(e){return d(e,Ze)}function tt(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
 null==e?void 0:e.csv)&&f(null==e?void 0:e.action)&&f(null==e?void 0:e.output)&&I(e,dd)}function rt(e){return Z(e)&&J(
 null==e?void 0:e.name)&&p(null==e?void 0:e.command)&&(r=p,(i=n=void 0)===(t=null==e?void 0:e.args)||d(t,r,n,i))&&(i=n=p,
-void 0===(r=null==e?void 0:e.env)||N(r,n,i))&&I(e,Ed);var t,r,n,i}function nt(e){return Z(e)&&J(null==e?void 0:e.name
-)&&z(null==e?void 0:e.file)&&(v(null==e?void 0:e.content)||z(null==e?void 0:e.content))&&f(null==e?void 0:e.target)&&f(
-null==e?void 0:e.output)&&f(null==e?void 0:e.default)&&I(e,gd)}function it(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
-null==e?void 0:e.set)&&f(null==e?void 0:e.variable)&&I(e,yd)}function ot(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
-null==e?void 0:e.git)&&f(null==e?void 0:e.url)&&f(null==e?void 0:e.target)&&f(null==e?void 0:e.message)&&f(
-null==e?void 0:e.cwd)&&I(e,Nd)}function st(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.assert)&&(v(
-null==e?void 0:e.equals)||z(null==e?void 0:e.equals))&&I(e,Rd)}function at(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
-null==e?void 0:e.concat)&&I(e,Id)}async function lt(e,t){t=t.id,Ld.info(`Pool ID: ${t}`);const r=new ed(e,
-Cl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,Cl.FI_NOR_PIPELINE_STATE,"",[t]);return t=await r.getAll(),Ld.debug("runList = ",t)
-,0!==t.length?(Ld.debug("Detected work available."),pl.OK):(Ld.debug("No work available."),pl.NO_WORK_AVAILABLE)}
-async function ut(r,e){return 0===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected no pools available."),
-pl.NO_WORK_AVAILABLE):1===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected single pool available. Checking it."),lt(r
-,e[0])):(Ld.debug(`checkIfAnyPoolHasWork: Detected ${e.length} pools available.`),is(e,async(e,t)=>(e=await e,Ld.debug(
+void 0===(r=null==e?void 0:e.env)||N(r,n,i))&&f(null==e?void 0:e.cwd)&&I(e,Ed);var t,r,n,i}function nt(e){return Z(e
+)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.file)&&(v(null==e?void 0:e.content)||z(null==e?void 0:e.content))&&f(
+null==e?void 0:e.target)&&f(null==e?void 0:e.output)&&f(null==e?void 0:e.default)&&I(e,gd)}function it(e){return Z(e
+)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.set)&&f(null==e?void 0:e.variable)&&I(e,yd)}function ot(e){return Z(e
+)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.git)&&f(null==e?void 0:e.url)&&f(null==e?void 0:e.target)&&f(
+null==e?void 0:e.message)&&f(null==e?void 0:e.cwd)&&I(e,Nd)}function st(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
+null==e?void 0:e.assert)&&(v(null==e?void 0:e.equals)||z(null==e?void 0:e.equals))&&I(e,Rd)}function at(e){return Z(e
+)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.concat)&&I(e,Id)}async function lt(e,t){t=t.id,Ld.info(`Pool ID: ${t}`)
+;const r=new ed(e,Cl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,Cl.FI_NOR_PIPELINE_STATE,"",[t]);return t=await r.getAll(),
+Ld.debug("runList = ",t),0!==t.length?(Ld.debug("Detected work available."),pl.OK):(Ld.debug("No work available."),
+pl.NO_WORK_AVAILABLE)}async function ut(r,e){return 0===e.length?(Ld.debug(
+"checkIfAnyPoolHasWork: Detected no pools available."),pl.NO_WORK_AVAILABLE):1===e.length?(Ld.debug(
+"checkIfAnyPoolHasWork: Detected single pool available. Checking it."),lt(r,e[0])):(Ld.debug(
+`checkIfAnyPoolHasWork: Detected ${e.length} pools available.`),is(e,async(e,t)=>(e=await e,Ld.debug(
 `checkIfAnyPoolHasWork: Result: ${e}`),e===pl.OK?pl.OK:(Ld.debug(`checkIfAnyPoolHasWork: Checking pool ${t.id}`),lt(r,t)
 )),Promise.resolve(pl.NO_WORK_AVAILABLE)))}var ct,dt,ht,_t,Et,vt,pt,ft,gt,Tt,St,yt,At,mt,Nt,wt,Rt,Ct,bt,It,Dt,Ot,Lt,Pt,
 Ut,$t,Ft,Mt,kt,Gt,jt,Ht,Bt,xt,Jt,Wt,Vt,qt,Kt,zt,Xt,Yt,Qt,Zt,er,tr,rr,nr,ir,or,sr,ar,lr,ur,cr,dr,hr,_r,Er,vr,pr,fr,gr,Tr,
@@ -608,7 +609,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T10:44:20.778Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T10:49:05.842Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -1402,7 +1403,7 @@ new TypeError(`Unimplemented action: ${e}`);if(!p(t))throw hd.debug("run: input 
 'The quote must be exactly 1 character long: "');if(Ze(t))return t;p(t)||(t=`${t}`);let r=[],n=0;for(;n<t.length;){
 var i=t.indexOf(",",n);if(i<0){r.push(t.substr(n)),n=r.length;break}let e=t.substr(n,i-n);2<=e.length&&Ya(e,'"')&&rl(e,
 '"')&&(e=e.substr(1,e.length-2).split(e+e).join(e)),r.push(e),n=i+1}return r}(e))),!et(t))throw new TypeError(
-`[csv#${this.getName()}] Result was not csv: ${t}`);return t}}const Ed=Do(fu,["name","command","args","env"]),
+`[csv#${this.getName()}] Result was not csv: ${t}`);return t}}const Ed=Do(fu,["name","command","args","env","cwd"]),
 vd=fc.createLogger("BaseScriptController");(vu=jl={}).SCRIPT_STARTED="BaseScriptController:scriptStarted",
 vu.SCRIPT_PAUSED="BaseScriptController:scriptPaused",vu.SCRIPT_RESUMED="BaseScriptController:scriptResumed",
 vu.SCRIPT_CANCELLED="BaseScriptController:scriptCancelled",vu.SCRIPT_FAILED="BaseScriptController:scriptFailed",
@@ -1471,8 +1472,8 @@ jl.SCRIPT_FINISHED)&&this._observer.triggerEvent(jl.SCRIPT_FINISHED,this)):(this
 this._observer.hasCallbacks(jl.SCRIPT_FAILED)&&this._observer.triggerEvent(jl.SCRIPT_FAILED,this)),
 this._observer.hasCallbacks(jl.SCRIPT_CHANGED)&&this._observer.triggerEvent(jl.SCRIPT_CHANGED,this)}}u(pd,"Event",jl),u(
 pd,"State",yl);class fd extends pd{static parseControllerModel(e){if(rt(e))return e}static isControllerModel(e){
-return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env)}constructor(e,t,r,n=[],i={},
-o=void 0){super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i,o)}}(vu=Hl=Hl||{}).MKDIR="mkdir",vu.READ="read",
+return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env,t.cwd)}constructor(e,t,r,n=[],
+i={},o=void 0){super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i,o)}}(vu=Hl=Hl||{}).MKDIR="mkdir",vu.READ="read",
 vu.READ_OR_CREATE="read/create",vu.WRITE="write";const gd=Do(fu,["name","file","target","content","output","default"]),
 Td=fc.createLogger("FileController");class Sd extends ad{static parseControllerModel(e){if(nt(e))return e}
 static isControllerModel(e){return nt(e)}static createController(e,t){return new Sd(e,t.name,t,t.file,t.output)}
@@ -1501,12 +1502,12 @@ new TypeError(`Unimplemented action: ${e}`);if(!z(t))throw new TypeError(`variab
 "target","message","cwd"]);(vu=Eu={}).CLONE="clone",vu.COMMIT="commit",vu.ADD="add",Jl=Eu;class wd extends pd{
 static parseControllerModel(e){if(ot(e))return e}static isControllerModel(e){return ot(e)}static createController(e,t){
 var r,n,i;if(t.git===Jl.CLONE)return r=t.target,n=t.url,new wd(e,t.name,"git",["clone",n,r],{GIT_TERMINAL_PROMPT:"0",
-GIT_ASKPASS:"/bin/echo"});if(t.git===Jl.ADD)return i=null==t?void 0:t.target,new wd(e,t.name,"git",["add",i],{
-GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"});if(t.git!==Jl.COMMIT)throw new TypeError(
+GIT_ASKPASS:"/bin/echo"},t.cwd);if(t.git===Jl.ADD)return i=null==t?void 0:t.target,new wd(e,t.name,"git",["add",i],{
+GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"},t.cwd);if(t.git!==Jl.COMMIT)throw new TypeError(
 `Unknown git action: ${t.git}`);return i=null!==(i=null==t?void 0:t.message)&&void 0!==i?i:"Pipeline commit",new wd(e,
-t.name,"git",["commit","-m",i],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"})}constructor(e,t,r,n=[],i={},o=void 0){
-var s=null===(s=process.env)||void 0===s?void 0:s.SSH_AUTH_SOCK;!s||null!=i&&i.SSH_AUTH_SOCK||(i=D(D({},i),{},{
-SSH_AUTH_SOCK:s})),super(e,Al.GIT,"GitController","git",t,r,n,i,o)}}const Rd=Do(fu,["name","assert","equals","output"])
+t.name,"git",["commit","-m",i],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"},t.cwd)}constructor(e,t,r,n=[],i={},
+o=void 0){var s=null===(s=process.env)||void 0===s?void 0:s.SSH_AUTH_SOCK;!s||null!=i&&i.SSH_AUTH_SOCK||(i=D(D({},i),{},
+{SSH_AUTH_SOCK:s})),super(e,Al.GIT,"GitController","git",t,r,n,i,o)}}const Rd=Do(fu,["name","assert","equals","output"])
 ;(Wl=Wl||{}).EQUALS="equals",Vl=Wl;const Cd=fc.createLogger("AssertController");class bd extends ad{
 static parseControllerModel(e){if(st(e))return e}static isControllerModel(e){return st(e)}static createController(e,t){
 return new bd(e,t.name,t,Vl.EQUALS,t.output)}constructor(e,t,r,n=void 0,i=void 0){super(e,Al.VARIABLE,
