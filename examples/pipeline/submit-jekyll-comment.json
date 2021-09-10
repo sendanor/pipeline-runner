@@ -1,5 +1,5 @@
 {
-  "name": "submit_comment",
+  "name": "submit_jekyll_comment",
   "parameters": [
     {
       "type": "string",
@@ -34,14 +34,6 @@
       "equals": 5
     },
     {
-      "name": "Ensure_github_is_known",
-      "command": "sh",
-      "args": [
-        "-c",
-        "ssh-keyscan github.com >> ~/.ssh/known_hosts"
-      ]
-    },
-    {
       "name": "Prepare_temp_dir",
       "file": "mkdir",
       "output": "tempDir"
@@ -57,9 +49,24 @@
       "set": "${tempDir}/git"
     },
     {
+      "name": "Prepare_ssh_dir",
+      "file": "mkdir",
+      "target": "/root/.ssh",
+      "output": "sshConfigDir"
+    },
+    {
+      "name": "Ensure_github_is_known",
+      "command": "sh",
+      "args": [
+        "-l",
+        "-c",
+        "ssh-keyscan github.com >> /root/.ssh/known_hosts"
+      ]
+    },
+    {
       "name": "Prepare_git",
       "git": "clone",
-      "url": "https://github.com/sendanor/jhh.me.git",
+      "url": "git@github.com:sendanor/jhh.me.git",
       "target": "${gitDir}"
     },
     {
@@ -79,11 +86,13 @@
       "name": "Append_comment",
       "concat": [
         "${commentList}",
-        [{
-          "name": "${{nick}}",
-          "comment": "${{comment}}",
-          "email": "${{email}}"
-        }]
+        [
+          {
+            "name": "${{nick}}",
+            "comment": "${{comment}}",
+            "email": "${{email}}"
+          }
+        ]
       ],
       "output": "commentList"
     },

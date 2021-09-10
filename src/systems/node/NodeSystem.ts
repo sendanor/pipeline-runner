@@ -115,6 +115,7 @@ export class NodeSystem implements System {
 
     /**
      *
+     * @fixme Change name as createDirectoryIfMissing
      * @fixme Convert this as asynchronous. Maybe create generic SystemAction interface to return,
      *     which has optional cancelation support.
      * @param target
@@ -122,6 +123,9 @@ export class NodeSystem implements System {
     public createDirectory (
         target : string
     ) : System {
+        if (this.pathExists(target) && this.isDirectory(target)) {
+            return this;
+        }
         FS.mkdirSync(target);
         return this;
     }

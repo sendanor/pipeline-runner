@@ -608,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T09:27:07.345Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T10:19:17.420Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -1314,22 +1314,23 @@ const t=Uu.default.statSync(e);return t.isDirectory()}deleteFile(e){this.pathExi
 )?this.deleteDirectory(e):Uu.default.unlinkSync(e):id.warn(`deleteFile: Path did not exist: ${e}`)}deleteDirectory(e){
 this.pathExists(e)?Uu.default.rmdirSync(e,{maxRetries:30,retryDelay:100}):id.warn(
 `deleteDirectory: Path did not exist: ${e}`)}createProcess(e,t,r,n){return new nd(e,t,r,n)}createDirectory(e){
-return Uu.default.mkdirSync(e),this}readFile(e){return Uu.default.readFileSync(e,{encoding:"utf8"})}writeFile(e,t){
-return Uu.default.writeFileSync(e,t,{encoding:"utf8"}),this}getWorkingDirectory(){return process.cwd()}
-createTemporaryFile(){let e="";do{var t=ku.default.randomBytes(20).toString("hex")}while(e=Mu.default.join(
-this.getWorkingDirectory(),`${t}.tmp`),Uu.default.existsSync(e));if(!e)throw new TypeError("Could not create temp file")
-;return this._tempFileNames.push(e),e}}(vu=Ml=Ml||{}).STRINGIFY="stringify",vu.PARSE="parse";const sd=fc.createLogger(
-"BaseStepController");(vu=kl={}).JSON_STARTED="BaseStepController:scriptStarted",
-vu.JSON_PAUSED="BaseStepController:scriptPaused",vu.JSON_RESUMED="BaseStepController:scriptResumed",
-vu.JSON_CANCELLED="BaseStepController:scriptCancelled",vu.JSON_FAILED="BaseStepController:scriptFailed",
-vu.JSON_FINISHED="BaseStepController:scriptFinished",vu.JSON_CHANGED="BaseStepController:scriptChanged";class ad{
-constructor(e,t,r,n,i,o=void 0,s=void 0,a=void 0){if(u(this,"_context",void 0),u(this,"_observer",void 0),u(this,
-"_controllerType",void 0),u(this,"_controllerName",void 0),u(this,"_stepName",void 0),u(this,"_name",void 0),u(this,
-"_action",void 0),u(this,"_input",void 0),u(this,"_output",void 0),u(this,"_state",void 0),u(this,"_compiledAction",
-void 0),u(this,"_compiledInput",void 0),u(this,"_compiledOutput",void 0),u(this,"_successResult",void 0),u(this,
-"_errorResult",void 0),!p(r))throw new TypeError(`[${r}] invalid controller identifier: ${r}`);if(!p(n)
-)throw new TypeError(`[${n}] invalid step identifier: ${n}`);if(!J(i))throw new TypeError(`[${n}] invalid name: ${i}`)
-;if(!p(s))throw new TypeError(`[${n}] must have a valid string: ${s}`);if(!v(o)&&!z(o))throw new TypeError(
+return this.pathExists(e)&&this.isDirectory(e)||Uu.default.mkdirSync(e),this}readFile(e){return Uu.default.readFileSync(
+e,{encoding:"utf8"})}writeFile(e,t){return Uu.default.writeFileSync(e,t,{encoding:"utf8"}),this}getWorkingDirectory(){
+return process.cwd()}createTemporaryFile(){let e="";do{var t=ku.default.randomBytes(20).toString("hex")}while(
+e=Mu.default.join(this.getWorkingDirectory(),`${t}.tmp`),Uu.default.existsSync(e));if(!e)throw new TypeError(
+"Could not create temp file");return this._tempFileNames.push(e),e}}(vu=Ml=Ml||{}).STRINGIFY="stringify",
+vu.PARSE="parse";const sd=fc.createLogger("BaseStepController");(vu=kl={}
+).JSON_STARTED="BaseStepController:scriptStarted",vu.JSON_PAUSED="BaseStepController:scriptPaused",
+vu.JSON_RESUMED="BaseStepController:scriptResumed",vu.JSON_CANCELLED="BaseStepController:scriptCancelled",
+vu.JSON_FAILED="BaseStepController:scriptFailed",vu.JSON_FINISHED="BaseStepController:scriptFinished",
+vu.JSON_CHANGED="BaseStepController:scriptChanged";class ad{constructor(e,t,r,n,i,o=void 0,s=void 0,a=void 0){if(u(this,
+"_context",void 0),u(this,"_observer",void 0),u(this,"_controllerType",void 0),u(this,"_controllerName",void 0),u(this,
+"_stepName",void 0),u(this,"_name",void 0),u(this,"_action",void 0),u(this,"_input",void 0),u(this,"_output",void 0),u(
+this,"_state",void 0),u(this,"_compiledAction",void 0),u(this,"_compiledInput",void 0),u(this,"_compiledOutput",void 0),
+u(this,"_successResult",void 0),u(this,"_errorResult",void 0),!p(r))throw new TypeError(
+`[${r}] invalid controller identifier: ${r}`);if(!p(n))throw new TypeError(`[${n}] invalid step identifier: ${n}`);if(
+!J(i))throw new TypeError(`[${n}] invalid name: ${i}`);if(!p(s))throw new TypeError(
+`[${n}] must have a valid string: ${s}`);if(!v(o)&&!z(o))throw new TypeError(
 `[${n}] must have a valid input property: ${JSON.stringify(o)}`);if(!v(a)&&!p(a))throw new TypeError(
 `[${n}] must have a valid output property: ${JSON.stringify(a)}`);this._controllerType=t,this._controllerName=r,
 this._stepName=n,this._name=i,this._context=e,this._state=yl.CONSTRUCTED,this._action=s,this._input=o,this._output=a,
