@@ -133,7 +133,62 @@ By default, `io.nor.fi`.
  * `WARN`
  * `ERROR`
  * `NONE`
- 
+
+### Installing as an agent using Docker
+
+Build the container image:
+
+```shell
+git clone https://github.com/sendanor/pipeline-runner.git pipeline-runner
+cd pipeline-runner
+docker build -t pipeline-runner .
+```
+
+Next create a local environment file, for example `~/.nor-pipeline/agent1.env`, and save your 
+agent's access token in it:
+
+```
+PIPELINE_AUTHENTICATION=auth-token-from-lomake-app
+```
+
+Make sure file permissions are secure:
+
+```shell
+chmod 700 ~/.nor-pipeline
+chmod 600 ~/.nor-pipeline/agent1.env
+```
+
+Then start an agent container named `agent-1`:
+
+```shell
+docker run \
+  --detach \
+  --name=agent-1 \
+  --restart=always \
+  --env-file ~/.nor-pipeline/agent1.env \
+  pipeline-runner
+```
+
+Stop & remove the `agent-1` container:
+
+```shell
+docker update --restart=no agent-1
+docker stop agent-1
+docker rm agent-1
+```
+
+Check which containers are running: 
+
+```shell
+docker ps
+```
+
+You can also attach to the container:
+
+```shell
+docker attach agent-1
+```
+
 ### It's MIT licenced
 
 ### It doesn't have any runtime dependencies

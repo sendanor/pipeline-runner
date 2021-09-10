@@ -1,0 +1,12 @@
+# syntax=docker/dockerfile:1
+FROM ubuntu:20.04
+ENV LANG en_US.utf8
+ENV PIPELINE_LOG_LEVEL INFO
+ENV PIPELINE_AUTHENTICATION ''
+
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY ./dist /app
+CMD node /app/main.js --wait matrix://
