@@ -169,6 +169,19 @@ docker run \
   pipeline-runner
 ```
 
+If you also need access to your local SSH key (using `ssh-agent`), then add `--volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent`:
+
+```shell
+docker run \
+  --detach \
+  --name=agent-1 \
+  --volume $SSH_AUTH_SOCK:/ssh-agent \
+  --env SSH_AUTH_SOCK=/ssh-agent \
+  --restart=always \
+  --env-file ~/.nor-pipeline/agent1.env \
+  pipeline-runner
+```
+
 Stop & remove the `agent-1` container:
 
 ```shell
