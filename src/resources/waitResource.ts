@@ -3,11 +3,8 @@
 import RunnerExitStatus from "../types/RunnerExitStatus";
 import RunnerResource from "../types/RunnerResource";
 import RunnerResourceType from "../types/RunnerResourceType";
-import runHttpResource from "./http/runHttpResource";
 import HttpRunnerResource from "./http/HttpRunnerResource";
-import runLocalResource from "./local/runLocalResource";
 import LocalRunnerResource from "./local/LocalRunnerResource";
-import runMatrixResource from "./matrix/runMatrixResource";
 import MatrixRunnerResource from "./matrix/MatrixRunnerResource";
 import {
     BUILD_WITH_HTTP_RESOURCES,
@@ -15,8 +12,11 @@ import {
     BUILD_WITH_MATRIX_RESOURCES
 } from "../pipeline-build-constants";
 import System from "../nor/pipeline/systems/types/System";
+import waitHttpResource from "./http/waitHttpResource";
+import waitLocalResource from "./local/waitLocalResource";
+import waitMatrixResource from "./matrix/waitMatrixResource";
 
-export async function runResource (
+export async function waitResource (
     system   : System,
     resource : RunnerResource
 ) : Promise<RunnerExitStatus> {
@@ -25,7 +25,7 @@ export async function runResource (
 
         case RunnerResourceType.HTTP: {
             if (BUILD_WITH_HTTP_RESOURCES) {
-                return await runHttpResource(system, resource as HttpRunnerResource);
+                return await waitHttpResource(system, resource as HttpRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
@@ -33,7 +33,7 @@ export async function runResource (
 
         case RunnerResourceType.LOCAL: {
             if (BUILD_WITH_LOCAL_RESOURCES) {
-                return await runLocalResource(system, resource as LocalRunnerResource);
+                return await waitLocalResource(system, resource as LocalRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
@@ -41,7 +41,7 @@ export async function runResource (
 
         case RunnerResourceType.MATRIX: {
             if (BUILD_WITH_MATRIX_RESOURCES) {
-                return await runMatrixResource(system, resource as MatrixRunnerResource);
+                return await waitMatrixResource(system, resource as MatrixRunnerResource);
             } else {
                 return RunnerExitStatus.UNBUILD_FEATURE;
             }
@@ -54,4 +54,4 @@ export async function runResource (
 
 }
 
-export default runResource;
+export default waitResource;

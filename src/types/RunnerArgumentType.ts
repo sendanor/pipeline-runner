@@ -1,20 +1,23 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
 export const enum RunnerShortArgument {
-    HELP    = '-h',
-    VERSION = '-v'
+    HELP          = '-h',
+    WAIT_FOR_WORK = '-w',
+    VERSION       = '-v'
 }
 
 export const enum RunnerLongArgument {
     HELP                     = '--help',
     VERSION                  = '--version',
+    WAIT_FOR_WORK            = '--wait',
     DISABLE_ARGUMENT_PARSING = '--'
 }
 
 export const enum RunnerArgumentType {
     HELP,
     VERSION,
-    DISABLE_ARGUMENT_PARSING
+    DISABLE_ARGUMENT_PARSING,
+    WAIT_FOR_WORK
 }
 
 /**
@@ -40,6 +43,11 @@ export function parseRunnerArgumentType (value : any) : RunnerArgumentType | und
         case RunnerLongArgument.DISABLE_ARGUMENT_PARSING:
         case RunnerArgumentType.DISABLE_ARGUMENT_PARSING:
             return RunnerArgumentType.DISABLE_ARGUMENT_PARSING;
+
+        case RunnerShortArgument.WAIT_FOR_WORK:
+        case RunnerLongArgument.WAIT_FOR_WORK:
+        case RunnerArgumentType.WAIT_FOR_WORK:
+            return RunnerArgumentType.WAIT_FOR_WORK;
 
     }
 

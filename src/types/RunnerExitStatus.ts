@@ -27,6 +27,7 @@ export enum RunnerExitStatus {
     UNKNOWN_AGENT_ID                = 15,
     WORK_CANCELLED                  = 16,
     CONFLICT                        = 17,
+    NO_WORK_AVAILABLE               = 18,
 
     // From Linux sysexits.h
     USAGE                           = 64,      /* command line usage error */

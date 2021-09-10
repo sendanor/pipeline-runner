@@ -1,6 +1,6 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
-import HttpRunnerResource from "../../types/HttpRunnerResource";
+import HttpRunnerResource from "./HttpRunnerResource";
 import RunnerExitStatus from "../../types/RunnerExitStatus";
 import { isBearerRunnerAuthentication } from "../../types/BearerRunnerAuthentication";
 import { isBasicRunnerAuthentication } from "../../types/BasicRunnerAuthentication";

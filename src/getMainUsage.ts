@@ -66,6 +66,13 @@ export function getMainUsage (
     The resource will be loaded from the local filesystem and executed.
 ` : ''}
 
+...and OPT is one of:
+
+    -h --help          Print help
+    -v --version       Print version
+    -w --wait          Waits for work to appear if no work is available
+    --                 Disables option parsing
+
   Environment variables:
 
     PIPELINE_SERVER -- The default Matrix server. By default, io.nor.fi.

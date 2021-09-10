@@ -16,6 +16,7 @@ import getMainVersion from "./getMainVersion";
 import NodeSystem from "./systems/node/NodeSystem";
 import PipelineDefaults from "./nor/pipeline/PipelineDefaults";
 import System from "./nor/pipeline/systems/types/System";
+import waitResource from "./resources/waitResource";
 
 const LOG = LogService.createLogger('main');
 
@@ -46,6 +47,7 @@ export async function main (
             return RunnerExitStatus.ARGUMENT_PARSE_ERROR;
         }
 
+        let waitForWork : boolean = false;
         let parsingArgs : boolean = true;
 
         do {
@@ -54,9 +56,11 @@ export async function main (
 
             if (parsingArgs) {
 
+                let notResource : boolean = false;
+
                 const argType : RunnerArgumentType = parseRunnerArgumentType(argName);
 
-                switch(argType) {
+                switch (argType) {
 
                     case RunnerArgumentType.HELP:
                         console.log(getMainUsage(script_name));
@@ -66,13 +70,19 @@ export async function main (
                         console.log(getMainVersion(script_name));
                         return RunnerExitStatus.OK;
 
+                    case RunnerArgumentType.WAIT_FOR_WORK:
+                        waitForWork = true;
+                        notResource = true;
+                        break;
+
                     case RunnerArgumentType.DISABLE_ARGUMENT_PARSING:
                         parsingArgs = false;
+                        notResource = true;
                         break;
 
                 }
 
-                if (!parsingArgs) continue;
+                if ( !parsingArgs || notResource ) continue;
 
             }
 
@@ -85,7 +95,15 @@ export async function main (
 
             system = new NodeSystem();
 
-            const result : RunnerExitStatus = await runResource(system, resource);
+            let result : RunnerExitStatus = await runResource(system, resource);
+
+            if ( waitForWork && result === RunnerExitStatus.NO_WORK_AVAILABLE ) {
+
+                await waitResource(system, resource);
+
+                result = await runResource(system, resource);
+
+            }
 
             if (result !== RunnerExitStatus.OK) {
 

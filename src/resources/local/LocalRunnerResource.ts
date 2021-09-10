@@ -6,9 +6,9 @@ import {
     isString,
     startsWith,
     trim
-} from "../nor/ts/modules/lodash";
-import RunnerResource from "./RunnerResource";
-import RunnerResourceType from "./RunnerResourceType";
+} from "../../nor/ts/modules/lodash";
+import RunnerResource from "../../types/RunnerResource";
+import RunnerResourceType from "../../types/RunnerResourceType";
 import FS from 'fs';
 
 export interface LocalRunnerResource extends RunnerResource {

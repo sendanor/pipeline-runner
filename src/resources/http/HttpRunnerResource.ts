@@ -5,12 +5,12 @@ import {
     isRegularObject,
     isString,
     isUndefined, startsWith, trim
-} from "../nor/ts/modules/lodash";
-import RunnerResource from "./RunnerResource";
-import RunnerResourceType from "./RunnerResourceType";
-import RunnerAuthentication, { isRunnerAuthentication } from "./RunnerAuthentication";
-import RunnerAuthenticationUtils from "../utils/RunnerAuthenticationUtils";
-import { PIPELINE_AUTHENTICATION } from "../pipeline-runtime-constants";
+} from "../../nor/ts/modules/lodash";
+import RunnerResource from "../../types/RunnerResource";
+import RunnerResourceType from "../../types/RunnerResourceType";
+import RunnerAuthentication, { isRunnerAuthentication } from "../../types/RunnerAuthentication";
+import RunnerAuthenticationUtils from "../../utils/RunnerAuthenticationUtils";
+import { PIPELINE_AUTHENTICATION } from "../../pipeline-runtime-constants";
 
 export interface HttpRunnerResource extends RunnerResource {
 

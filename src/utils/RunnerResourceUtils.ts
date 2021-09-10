@@ -1,9 +1,9 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
 import RunnerResource from "../types/RunnerResource";
-import { parseHttpRunnerResource } from "../types/HttpRunnerResource";
-import { parseMatrixRunnerResource } from "../types/MatrixRunnerResource";
-import { parseLocalRunnerResource } from "../types/LocalRunnerResource";
+import { parseHttpRunnerResource } from "../resources/http/HttpRunnerResource";
+import { parseMatrixRunnerResource } from "../resources/matrix/MatrixRunnerResource";
+import { parseLocalRunnerResource } from "../resources/local/LocalRunnerResource";
 
 export class RunnerResourceUtils {
 

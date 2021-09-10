@@ -1,6 +1,6 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
-import MatrixRunnerResource from "../../types/MatrixRunnerResource";
+import MatrixRunnerResource from "./MatrixRunnerResource";
 import RunnerExitStatus from "../../types/RunnerExitStatus";
 import LogService from "../../nor/ts/LogService";
 import SimpleMatrixClient from "../../nor/matrix/SimpleMatrixClient";
@@ -113,7 +113,7 @@ export async function runMatrixResource (
         if (poolList.length === 0) {
 
             LOG.debug(`Detected no pools available.`);
-            return RunnerExitStatus.OK;
+            return RunnerExitStatus.NO_WORK_AVAILABLE;
 
         } else if (poolList.length === 1) {
 
@@ -151,7 +151,7 @@ export async function runMatrixResource (
         if (runList.length === 0) {
 
             LOG.debug(`Detected no work available.`);
-            return RunnerExitStatus.OK;
+            return RunnerExitStatus.NO_WORK_AVAILABLE;
 
         } else if (runList.length === 1) {
 

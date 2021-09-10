@@ -1,6 +1,6 @@
 // Copyright (c) 2021. Sendanor <info@sendanor.fi>. All rights reserved.
 
-import LocalRunnerResource from "../../types/LocalRunnerResource";
+import LocalRunnerResource from "./LocalRunnerResource";
 import RunnerExitStatus from "../../types/RunnerExitStatus";
 import { readFileString } from "../../nor/pipeline/modules/fs";
 import Json from "../../nor/ts/Json";

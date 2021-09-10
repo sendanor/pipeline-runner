@@ -5,13 +5,13 @@ import {
     isRegularObject,
     isString, isStringOrUndefined,
     isUndefined, startsWith, trim
-} from "../nor/ts/modules/lodash";
-import RunnerResource from "./RunnerResource";
-import RunnerResourceType from "./RunnerResourceType";
-import RunnerAuthentication, { isRunnerAuthentication } from "./RunnerAuthentication";
-import RunnerAuthenticationUtils from "../utils/RunnerAuthenticationUtils";
-import { PIPELINE_AUTHENTICATION, PIPELINE_SERVER } from "../pipeline-runtime-constants";
-import LogService from "../nor/ts/LogService";
+} from "../../nor/ts/modules/lodash";
+import RunnerResource from "../../types/RunnerResource";
+import RunnerResourceType from "../../types/RunnerResourceType";
+import RunnerAuthentication, { isRunnerAuthentication } from "../../types/RunnerAuthentication";
+import RunnerAuthenticationUtils from "../../utils/RunnerAuthenticationUtils";
+import { PIPELINE_AUTHENTICATION, PIPELINE_SERVER } from "../../pipeline-runtime-constants";
+import LogService from "../../nor/ts/LogService";
 
 const LOG = LogService.createLogger('MatrixRunnerResource');
 
