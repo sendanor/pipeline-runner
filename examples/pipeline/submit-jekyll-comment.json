@@ -89,7 +89,7 @@
       "name": "Write_comment_file",
       "file": "write",
       "target": "${commentFile}",
-      "input": "commentListString"
+      "content": "commentListString"
     },
     {
       "name": "Add_to_git",
