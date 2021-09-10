@@ -297,42 +297,43 @@ null==e?void 0:e.join,ue,De,ce,Oe)}`);if(!v(null==e?void 0:e.invite)&&!N(null==e
 null==e?void 0:e.leave)&&!N(null==e?void 0:e.leave,ue,ke))throw new TypeError('Property "leave" was invalid')}(e),
 "No errors detected"}catch(e){return e.message}}function He(e){return m(e)&&I(e,["events"])&&d(null==e?void 0:e.events,
 _e)}function Be(e){return m(e)&&I(e,["events"])&&d(null==e?void 0:e.events,_e)}function Je(e){return m(e)&&I(e,[
-"changed","left"])&&d(null==e?void 0:e.changed,he)&&d(null==e?void 0:e.left,he)}function xe(e){try{return function(e){
-if(!m(e))throw new TypeError(`Value not regular object: ${e}`);if(!I(e,["changed","left"]))throw new TypeError(
-`Value properties not right: ${P(e)}`);if(!d(null==e?void 0:e.changed,he))throw new TypeError(
-`Property "changed" not valid: ${null==e?void 0:e.changed}`);if(!d(null==e?void 0:e.left,he))throw new TypeError(
-`Property "left" not valid: ${null==e?void 0:e.left}`)}(e),"No errors detected"}catch(e){return e.message}}function We(e
-){return N(e,p,E)}function Ve(e){try{return function(e){if(!m(e))throw new TypeError("value not RegularObject");if(!I(e,
-["next_batch","rooms","presence","account_data","to_device","device_lists","device_one_time_keys_count"])
-)throw new TypeError("value has additional keys");if(!p(null==e?void 0:e.next_batch))throw new TypeError(
-'Property "next_batch" was not string');if(!v(null==e?void 0:e.rooms)&&!Ge(null==e?void 0:e.rooms))throw new TypeError(
-`Property "rooms" was invalid: ${je(null==e?void 0:e.rooms)}`);if(!v(null==e?void 0:e.presence)&&!He(
-null==e?void 0:e.presence))throw new TypeError('Property "presence" was invalid');if(!v(null==e?void 0:e.account_data
-)&&!be(null==e?void 0:e.account_data))throw new TypeError('Property "account_data" was invalid');if(!v(
-null==e?void 0:e.to_device)&&!Be(null==e?void 0:e.to_device))throw new TypeError('Property "to_device" was invalid');if(
-!v(null==e?void 0:e.device_lists)&&!Je(null==e?void 0:e.device_lists))throw new TypeError(
-`Property "device_lists" was invalid: ${xe(null==e?void 0:e.device_lists)}`);if(!v(
-null==e?void 0:e.device_one_time_keys_count)&&!We(null==e?void 0:e.device_one_time_keys_count))throw new TypeError(
-'Property "device_one_time_keys_count" was invalid')}(e),"No errors detected"}catch(e){return e.message}}function qe(e){
-return m(e)&&I(e,["display_name","avatar_url"])&&p(null==e?void 0:e.display_name)&&(p(null==e?void 0:e.avatar_url)||$a(
-null==e?void 0:e.avatar_url))}function Ke(e){return m(e)&&I(e,["errcode","error","retry_after_ms"])&&function(){switch(
-null==e?void 0:e.errcode){case Il.M_USER_IN_USE:case Il.M_INVALID_USERNAME:case Il.M_EXCLUSIVE:case Il.M_FORBIDDEN:
-case Il.M_LIMIT_EXCEEDED:return 1;default:return}}()&&p(null==e?void 0:e.error)&&h(null==e?void 0:e.retry_after_ms)}
-function ze(e){return encodeURIComponent(e)}async function Xe(e,t,r,n,i){n=D(D({},n.data),{},{state:i.getStateDTO()}),
-await t.update(r,n),await e.setRoomStateByType(r,Cl.FI_NOR_PIPELINE_STATE,"",i.toJSON())}async function Ye(e,t){switch(
-t.type){case hl.HTTP:return sc?async function(t,r){var n,i,o,s,a,l,u;try{const c={};if(r.authentication&&(k(
-r.authentication)&&(c.Authorization=`Bearer ${r.authentication.access_token}`),F(r.authentication)&&(
-n=r.authentication.username,i=r.authentication.password,c.Authorization=`Basic ${new Buffer(n+":"+i).toString("base64"
-)}`)),void 0===(o=await Lc.getJson(r.url,c)))return zc.error(`Failed to load URL "${r.url}": `,o),
-pl.RESOURCE_LOAD_FAILED;if(void 0===(s=oe(o)))return zc.error(`Model from URL "${r.url}" was not valid: `,o),
-pl.RESOURCE_MODEL_INVALID;a=null==s?void 0:s.parameters,l=null==s?void 0:s.variables,u=new Kc(t,a,l,Ec,vc)
-;let e=Wc.createController(s,u);return zc.info(`Running ${e.getName()} from ${r.url}`),
-await Wc.startAndWaitUntilFinished(e),zc.info(`Successfully finished ${e.getName()} from ${r.url}`),pl.OK}catch(e){
-return zc.error("Error: ",e),pl.HTTP_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;case hl.LOCAL:return oc?async function(t,
-r){var n,i,o,s,a,l;try{if(n=await async function(e){const t=(i=e,o={encoding:"utf8"},await new Promise((r,n)=>{try{
-bu.readFile(i,o,(e,t)=>{e?n(e):r(t)})}catch(e){n(e)}}));var i,o;return p(t)?t:t.toString("utf8")}(r.path),void 0===(
-o=oe(i=JSON.parse(n))))return Xc.warn("Model was not valid: ",i),pl.RESOURCE_MODEL_INVALID;s=null==o?void 0:o.parameters
-,a=null==o?void 0:o.variables,l=new Kc(t,s,a,Ec,vc);let e=Wc.createController(o,l);return Xc.info(`Running ${e.getName(
+"changed","left"])&&d(null==e?void 0:e.changed,he)&&(v(null==e?void 0:e.left)||d(null==e?void 0:e.left,he))}function xe(
+e){try{return function(e){if(!m(e))throw new TypeError(`Value not regular object: ${e}`);if(!I(e,["changed","left"])
+)throw new TypeError(`Value properties not right: ${P(e)}`);if(!d(null==e?void 0:e.changed,he))throw new TypeError(
+`Property "changed" not valid: ${null==e?void 0:e.changed}`);if(!v(null==e?void 0:e.left)&&!d(null==e?void 0:e.left,he)
+)throw new TypeError(`Property "left" not valid: ${null==e?void 0:e.left}`)}(e),"No errors detected"}catch(e){
+return e.message}}function We(e){return N(e,p,E)}function Ve(e){try{return function(e){if(!m(e))throw new TypeError(
+"value not RegularObject");if(!I(e,["next_batch","rooms","presence","account_data","to_device","device_lists",
+"device_one_time_keys_count"]))throw new TypeError("value has additional keys");if(!p(null==e?void 0:e.next_batch)
+)throw new TypeError('Property "next_batch" was not string');if(!v(null==e?void 0:e.rooms)&&!Ge(null==e?void 0:e.rooms)
+)throw new TypeError(`Property "rooms" was invalid: ${je(null==e?void 0:e.rooms)}`);if(!v(null==e?void 0:e.presence
+)&&!He(null==e?void 0:e.presence))throw new TypeError('Property "presence" was invalid');if(!v(
+null==e?void 0:e.account_data)&&!be(null==e?void 0:e.account_data))throw new TypeError(
+'Property "account_data" was invalid');if(!v(null==e?void 0:e.to_device)&&!Be(null==e?void 0:e.to_device)
+)throw new TypeError('Property "to_device" was invalid');if(!v(null==e?void 0:e.device_lists)&&!Je(
+null==e?void 0:e.device_lists))throw new TypeError(`Property "device_lists" was invalid: ${xe(
+null==e?void 0:e.device_lists)}`);if(!v(null==e?void 0:e.device_one_time_keys_count)&&!We(
+null==e?void 0:e.device_one_time_keys_count))throw new TypeError('Property "device_one_time_keys_count" was invalid')}(e
+),"No errors detected"}catch(e){return e.message}}function qe(e){return m(e)&&I(e,["display_name","avatar_url"])&&p(
+null==e?void 0:e.display_name)&&(p(null==e?void 0:e.avatar_url)||$a(null==e?void 0:e.avatar_url))}function Ke(e){
+return m(e)&&I(e,["errcode","error","retry_after_ms"])&&function(){switch(null==e?void 0:e.errcode){
+case Il.M_USER_IN_USE:case Il.M_INVALID_USERNAME:case Il.M_EXCLUSIVE:case Il.M_FORBIDDEN:case Il.M_LIMIT_EXCEEDED:
+return 1;default:return}}()&&p(null==e?void 0:e.error)&&h(null==e?void 0:e.retry_after_ms)}function ze(e){
+return encodeURIComponent(e)}async function Xe(e,t,r,n,i){n=D(D({},n.data),{},{state:i.getStateDTO()}),await t.update(r,
+n),await e.setRoomStateByType(r,Cl.FI_NOR_PIPELINE_STATE,"",i.toJSON())}async function Ye(e,t){switch(t.type){
+case hl.HTTP:return sc?async function(t,r){var n,i,o,s,a,l,u;try{const c={};if(r.authentication&&(k(r.authentication)&&(
+c.Authorization=`Bearer ${r.authentication.access_token}`),F(r.authentication)&&(n=r.authentication.username,
+i=r.authentication.password,c.Authorization=`Basic ${new Buffer(n+":"+i).toString("base64")}`)),void 0===(
+o=await Lc.getJson(r.url,c)))return zc.error(`Failed to load URL "${r.url}": `,o),pl.RESOURCE_LOAD_FAILED;if(void 0===(
+s=oe(o)))return zc.error(`Model from URL "${r.url}" was not valid: `,o),pl.RESOURCE_MODEL_INVALID
+;a=null==s?void 0:s.parameters,l=null==s?void 0:s.variables,u=new Kc(t,a,l,Ec,vc);let e=Wc.createController(s,u)
+;return zc.info(`Running ${e.getName()} from ${r.url}`),await Wc.startAndWaitUntilFinished(e),zc.info(
+`Successfully finished ${e.getName()} from ${r.url}`),pl.OK}catch(e){return zc.error("Error: ",e),
+pl.HTTP_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;case hl.LOCAL:return oc?async function(t,r){var n,i,o,s,a,l;try{if(
+n=await async function(e){const t=(i=e,o={encoding:"utf8"},await new Promise((r,n)=>{try{bu.readFile(i,o,(e,t)=>{e?n(e
+):r(t)})}catch(e){n(e)}}));var i,o;return p(t)?t:t.toString("utf8")}(r.path),void 0===(o=oe(i=JSON.parse(n)))
+)return Xc.warn("Model was not valid: ",i),pl.RESOURCE_MODEL_INVALID;s=null==o?void 0:o.parameters,
+a=null==o?void 0:o.variables,l=new Kc(t,s,a,Ec,vc);let e=Wc.createController(o,l);return Xc.info(`Running ${e.getName(
 )} from ${r.path}`),await Wc.startAndWaitUntilFinished(e),Xc.info(`Successfully finished ${e.getName()} from ${r.path}`)
 ,pl.OK}catch(e){return Xc.error("Error: ",e),pl.LOCAL_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;case hl.MATRIX:
 return ac?async function(n,i){var o,s,a,l,u,c,d,h,_,E,v,p,f,g,T,S,y,A,m,N,w;try{td.debug("runMatrixResource: ",i),
@@ -607,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T07:38:18.715Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T07:43:45.184Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
