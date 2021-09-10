@@ -20,7 +20,7 @@ export function getMainUsage (
 
     /* @__PURE__ */if ( /* @__PURE__ */BUILD_WITH_FULL_USAGE ) {
 
-        return `USAGE: ${/* @__PURE__ */scriptName} ARG(1) [...ARG(N)]
+        return `USAGE: ${/* @__PURE__ */scriptName} [OPT(s)] ARG(1) [...ARG(N)]
 
   Executes instructions from various sources.
   

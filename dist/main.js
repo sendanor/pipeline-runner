@@ -73,7 +73,7 @@ return"IOERR";case hl.TEMPFAIL:return"TEMPFAIL";case hl.PROTOCOL:return"PROTOCOL
 ;case hl.FATAL_SIGNAL_RANGE_START:return"FATAL_SIGNAL_RANGE_START";case hl.FATAL_SIGNAL_RANGE_END:
 return"FATAL_SIGNAL_RANGE_END";case hl.EXIT_STATUS_OUT_OF_RANGE:return"EXIT_STATUS_OUT_OF_RANGE"
 ;case hl.UNKNOWN_AGENT_ID:return"UNKNOWN_AGENT_ID";case hl.WORK_CANCELLED:return"WORK_CANCELLED";case hl.CONFLICT:
-return"CONFLICT"}throw new TypeError(`Unsupported RunnerExitStatus value: ${e}`)}function B(e){return rc?`USAGE: ${e} ARG(1) [...ARG(N)]
+return"CONFLICT"}throw new TypeError(`Unsupported RunnerExitStatus value: ${e}`)}function B(e){return rc?`USAGE: ${e} [OPT(s)] ARG(1) [...ARG(N)]
 
   Executes instructions from various sources.
   
@@ -597,7 +597,7 @@ qu=sl={})[qu.DEBUG=0]="DEBUG",qu[qu.INFO=1]="INFO",qu[qu.WARN=2]="WARN",qu[qu.ER
 al=sl;const Xu=null!==(Zl=L("1.0.4"))&&void 0!==Zl?Zl:"?";ju=null!==(Ql=L(""))&&void 0!==Ql?Ql:"io.nor.fi",Yl=null!==(
 Uu=L(""))&&void 0!==Uu?Uu:"nor-pipeline-runner",qu=null!==(eu=L(""))&&void 0!==eu?eu:"",Ql=null!==(Zl=L("")
 )&&void 0!==Zl?Zl:"";const Yu=null!==(Uu=L("production"))&&void 0!==Uu?Uu:"development",Qu=null!==(eu=L(
-"2021-09-10T00:38:31.202Z"))&&void 0!==eu?eu:"";Uu=null!==(Zl=L(""))&&void 0!==Zl?Zl:"${",Zl=null!==(eu=L("")
+"2021-09-10T00:45:42.601Z"))&&void 0!==eu?eu:"";Uu=null!==(Zl=L(""))&&void 0!==Zl?Zl:"${",Zl=null!==(eu=L("")
 )&&void 0!==eu?eu:"}";const Zu=null===(eu=D(""))||void 0===eu||eu,ec=null===(eu=D(""))||void 0===eu||eu,tc=null===(eu=D(
 ""))||void 0===eu||eu,rc=null===(eu=D(""))||void 0===eu||eu;eu="production"===Yu;const nc="test"===Yu,ic=!eu&&!nc
 ;qu=null!==(at=function(e){if(e){if(function(){switch(e){case sl.DEBUG:case sl.INFO:case sl.WARN:case sl.ERROR:
