@@ -25,6 +25,8 @@ import {
     PIPELINE_VARIABLE_SUFFIX
 } from "../../pipeline-runtime-constants";
 import System from "../../nor/pipeline/systems/types/System";
+import ControllerType from "../../nor/pipeline/controllers/types/ControllerType";
+import ControllerState from "../../nor/pipeline/controllers/types/ControllerState";
 
 const LOG = LogService.createLogger('runMatrixResource');
 
@@ -234,25 +236,42 @@ export async function runMatrixResource (
             PIPELINE_VARIABLE_SUFFIX
         );
 
-        let controller : Controller = PipelineRunner.createController(model, context);
-
-        await updateControllerState(matrixClient, runRepository, workId, work, controller);
-
-        const listener = controller.onChanged(() => {
-            updateControllerState(matrixClient, runRepository, workId, work, controller).catch(err => {
-                LOG.error(`Failed to save controller state: `, err);
-            });
-        });
-
         try {
 
-            await PipelineRunner.startAndWaitUntilFinished(controller);
+            let controller : Controller = PipelineRunner.createController(model, context);
+
+            await updateControllerState(matrixClient, runRepository, workId, work, controller);
+
+            const listener = controller.onChanged(() => {
+                updateControllerState(matrixClient, runRepository, workId, work, controller).catch(err => {
+                    LOG.error(`Failed to save controller state: `, err);
+                });
+            });
+
+            try {
+
+                await PipelineRunner.startAndWaitUntilFinished(controller);
+
+            } finally {
+
+                listener();
+
+                await updateControllerState(matrixClient, runRepository, workId, work, controller);
+
+            }
 
         } finally {
 
-            listener();
-
-            await updateControllerState(matrixClient, runRepository, workId, work, controller);
+            await updateControllerState(
+                matrixClient,
+                runRepository,
+                workId,
+                work,
+                {
+                    getStateDTO: () => ({type:ControllerType.NONE, name:'none', state: ControllerState.UNCONSTRUCTED}),
+                    toJSON: () =>  ({type:'none'})
+                } as unknown as Controller
+            );
 
         }
 
