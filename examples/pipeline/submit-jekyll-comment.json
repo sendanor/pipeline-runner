@@ -34,6 +34,14 @@
       "equals": 5
     },
     {
+      "name": "Ensure_github_is_known",
+      "command": "sh",
+      "args": [
+        "-c",
+        "ssh-keyscan github.com >> ~/.ssh/known_hosts"
+      ]
+    },
+    {
       "name": "Prepare_temp_dir",
       "file": "mkdir",
       "output": "tempDir"
