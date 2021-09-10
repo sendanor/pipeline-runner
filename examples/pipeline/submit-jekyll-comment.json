@@ -1,0 +1,107 @@
+{
+  "name": "submit_comment",
+  "parameters": [
+    {
+      "type": "string",
+      "name": "slug",
+      "displayName": "Post slug"
+    },
+    {
+      "type": "string",
+      "name": "nick",
+      "displayName": "Nick"
+    },
+    {
+      "type": "string",
+      "name": "comment",
+      "displayName": "Comment"
+    },
+    {
+      "type": "string",
+      "name": "email",
+      "displayName": "email"
+    },
+    {
+      "type": "number",
+      "name": "humanTest",
+      "displayName": "Human Test (should be 5)"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Test_if_human",
+      "assert": "${{humanTest}}",
+      "equals": 5
+    },
+    {
+      "name": "Prepare_temp_dir",
+      "file": "mkdir",
+      "output": "tempDir"
+    },
+    {
+      "name": "Set_comment_file",
+      "variable": "commentFile",
+      "set": "${tempDir}/git/docs/_data/comments/${{slug}}.json"
+    },
+    {
+      "name": "Set_variable",
+      "variable": "gitDir",
+      "set": "${tempDir}/git"
+    },
+    {
+      "name": "Prepare_git",
+      "git": "clone",
+      "url": "https://github.com/sendanor/jhh.me.git",
+      "target": "${gitDir}"
+    },
+    {
+      "name": "Read_or_create_comment_file",
+      "file": "read/create",
+      "target": "${commentFile}",
+      "output": "commentListString",
+      "default": "[]\n"
+    },
+    {
+      "name": "Parse_comment_file",
+      "json": "${commentListString}",
+      "action": "parse",
+      "output": "commentList"
+    },
+    {
+      "name": "Append_comment",
+      "concat": [
+        "${commentList}",
+        [{
+          "name": "${{nick}}",
+          "comment": "${{comment}}",
+          "email": "${{email}}"
+        }]
+      ],
+      "output": "commentList"
+    },
+    {
+      "name": "Stringify_comment_file",
+      "json": "${commentList}",
+      "action": "stringify",
+      "output": "commentListString"
+    },
+    {
+      "name": "Write_comment_file",
+      "file": "write",
+      "target": "${commentFile}",
+      "input": "commentListString"
+    },
+    {
+      "name": "Add_to_git",
+      "git": "add",
+      "target": "${commentFile}",
+      "cwd": "${gitDir}"
+    },
+    {
+      "name": "Commit_to_git",
+      "git": "commit",
+      "message": "Blog comment from pipeline",
+      "cwd": "${gitDir}"
+    }
+  ]
+}

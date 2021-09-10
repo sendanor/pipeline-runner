@@ -1,0 +1,19 @@
+{
+  "name": "assert_example",
+  "steps": [
+    {
+      "name": "Set_var",
+      "variable": "humanTest",
+      "set": 4
+    },
+    {
+      "name": "Test_if_human",
+      "assert": "${humanTest}",
+      "equals": 5
+    },
+    {
+      "name": "Print_date",
+      "command": "date"
+    }
+  ]
+}

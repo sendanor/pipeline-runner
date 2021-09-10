@@ -42,16 +42,24 @@ export class NodeSystem implements System {
     }
 
     public pathExists (path: string) : boolean {
-        const stats = FS.statSync(path);
-        return (
-            stats.isFile()
-            || stats.isDirectory()
-            || stats.isSocket()
-            || stats.isBlockDevice()
-            || stats.isCharacterDevice()
-            || stats.isFIFO()
-            || stats.isSymbolicLink()
-        );
+        try {
+            const stats = FS.statSync(path);
+            return (
+                stats.isFile()
+                || stats.isDirectory()
+                || stats.isSocket()
+                || stats.isBlockDevice()
+                || stats.isCharacterDevice()
+                || stats.isFIFO()
+                || stats.isSymbolicLink()
+            );
+        } catch (err) {
+            if (err?.code === 'ENOENT') {
+                return false;
+            } else {
+                throw err;
+            }
+        }
     }
 
     public isFile (path: string) : boolean {
@@ -94,13 +102,15 @@ export class NodeSystem implements System {
      * @param command
      * @param args
      * @param env
+     * @param cwd
      */
     public createProcess (
         command : string,
         args    : readonly string[] | undefined,
-        env     : {[p: string]: string} | undefined
+        env     : {[p: string]: string} | undefined,
+        cwd     : string | undefined
     ): SystemProcess {
-        return new NodeSystemProcess(command, args, env);
+        return new NodeSystemProcess(command, args, env, cwd);
     }
 
     /**
@@ -114,6 +124,42 @@ export class NodeSystem implements System {
     ) : System {
         FS.mkdirSync(target);
         return this;
+    }
+
+    /**
+     *
+     * @fixme Convert this as asynchronous. Maybe create generic SystemAction interface to return,
+     *     which has optional cancelation support.
+     * @param target
+     */
+    public readFile (
+        target : string
+    ) : string {
+
+        return FS.readFileSync(target, {
+            encoding: 'utf8'
+        });
+
+    }
+
+    /**
+     *
+     * @fixme Convert this as asynchronous. Maybe create generic SystemAction interface to return,
+     *     which has optional cancelation support.
+     * @param target
+     * @param content
+     */
+    public writeFile (
+        target  : string,
+        content : string
+    ) : System {
+
+        FS.writeFileSync(target, content, {
+            encoding: 'utf8'
+        });
+
+        return this;
+
     }
 
     public getWorkingDirectory () : string {

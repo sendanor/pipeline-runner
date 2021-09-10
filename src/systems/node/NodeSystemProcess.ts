@@ -18,6 +18,7 @@ export class NodeSystemProcess implements SystemProcess {
     private readonly _command        : string;
     private readonly _args           : SystemArgumentList;
     private readonly _env            : SystemEnvironment;
+    private readonly _cwd            : string | undefined;
     private readonly _stdoutCallback : ((data: Buffer) => void);
     private readonly _stderrCallback : ((data: Buffer) => void);
     private readonly _closeCallback  : ((close: number) => void);
@@ -35,11 +36,13 @@ export class NodeSystemProcess implements SystemProcess {
      * @param args
      * @param env
      * @param printToParentProcess
+     * @param cwd
      */
     public constructor (
         command              : string,
         args                 : SystemArgumentList | undefined,
         env                  : SystemEnvironment  | undefined,
+        cwd                  : string | undefined = undefined,
         printToParentProcess : boolean = true
     ) {
 
@@ -48,6 +51,7 @@ export class NodeSystemProcess implements SystemProcess {
         this._command              = command;
         this._args                 = args;
         this._env                  = env;
+        this._cwd                  = cwd;
         this._printToParentProcess = printToParentProcess;
         this._closeCallback        = this._onClose.bind(this);
         this._stdoutCallback       = this._onStdOut.bind(this);
@@ -64,6 +68,10 @@ export class NodeSystemProcess implements SystemProcess {
 
         if (this._env) {
             options.env = this._env;
+        }
+
+        if (this._cwd) {
+            options.cwd = this._cwd;
         }
 
         this._process = spawn(this._command, this._args, options);

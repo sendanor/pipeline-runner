@@ -1,0 +1,47 @@
+{
+  "name": "create_file",
+  "steps": [
+    {
+      "name": "Prepare_temp_dir",
+      "file": "mkdir",
+      "output": "tempDir"
+    },
+    {
+      "name": "Read_or_create_file",
+      "file": "read/create",
+      "target": "${tempDir}/test.json",
+      "output": "commentListString",
+      "default": "[]\n"
+    },
+    {
+      "name": "Parse_comment_file",
+      "json": "${commentListString}",
+      "action": "parse",
+      "output": "commentList"
+    },
+    {
+      "name": "Append_comment",
+      "concat": [
+        "${commentList}",
+        [{
+          "name": "John",
+          "comment": "Hello world",
+          "email": "john@example.com"
+        }]
+      ],
+      "output": "commentList"
+    },
+    {
+      "name": "Stringify_comment_file",
+      "json": "${commentList}",
+      "action": "stringify",
+      "output": "commentListString"
+    },
+    {
+      "name": "Write_comment_file",
+      "file": "write",
+      "target": "${tempDir}/test.json",
+      "content": "${commentListString}"
+    }
+  ]
+}
