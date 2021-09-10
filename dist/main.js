@@ -304,10 +304,10 @@ e){try{return function(e){if(!m(e))throw new TypeError(`Value not regular object
 )throw new TypeError(`Property "left" not valid: ${null==e?void 0:e.left}`)}(e),"No errors detected"}catch(e){
 return e.message}}function We(e){return N(e,p,E)}function Ve(e){try{return function(e){if(!m(e))throw new TypeError(
 "value not RegularObject");if(!I(e,["next_batch","rooms","presence","account_data","to_device","device_lists",
-"device_one_time_keys_count"]))throw new TypeError("value has additional keys");if(!p(null==e?void 0:e.next_batch)
-)throw new TypeError('Property "next_batch" was not string');if(!v(null==e?void 0:e.rooms)&&!Ge(null==e?void 0:e.rooms)
-)throw new TypeError(`Property "rooms" was invalid: ${je(null==e?void 0:e.rooms)}`);if(!v(null==e?void 0:e.presence
-)&&!He(null==e?void 0:e.presence))throw new TypeError('Property "presence" was invalid');if(!v(
+"device_one_time_keys_count"]))throw new TypeError(`value has additional keys: ${P(e)}`);if(!p(
+null==e?void 0:e.next_batch))throw new TypeError('Property "next_batch" was not string');if(!v(null==e?void 0:e.rooms
+)&&!Ge(null==e?void 0:e.rooms))throw new TypeError(`Property "rooms" was invalid: ${je(null==e?void 0:e.rooms)}`);if(!v(
+null==e?void 0:e.presence)&&!He(null==e?void 0:e.presence))throw new TypeError('Property "presence" was invalid');if(!v(
 null==e?void 0:e.account_data)&&!be(null==e?void 0:e.account_data))throw new TypeError(
 'Property "account_data" was invalid');if(!v(null==e?void 0:e.to_device)&&!Be(null==e?void 0:e.to_device)
 )throw new TypeError('Property "to_device" was invalid');if(!v(null==e?void 0:e.device_lists)&&!xe(
@@ -608,7 +608,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T08:59:09.541Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T09:22:51.088Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
