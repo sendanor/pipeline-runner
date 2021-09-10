@@ -607,7 +607,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.5"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-10T07:30:00.653Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-10T07:38:18.715Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -1178,19 +1178,21 @@ return new Promise((e,t)=>{try{Yc.debug(`_retryLater: Waiting for a moment (${n}
 "_retryLater: Restoring now"),e(r())}catch(e){t(e)}},n)}catch(e){t(e)}})}async _postJson(t,r,n){try{return Lc.postJson(t
 ,r,n)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody()
 )&&void 0!==i?i:null==e?void 0:e.body;if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
-i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,this._retryLater(async()=>this._postJson(t,r,n),i);Yc.debug(
-"Error did not have body: ",e)}else Yc.debug("Error did not have body: ",e);throw e}}async _putJson(t,r,n){try{
-return Lc.putJson(t,r,n)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody()
-)&&void 0!==i?i:null==e?void 0:e.body;if((null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(
-i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,this._retryLater(async()=>this._putJson(t,r,n),i);Yc.debug(
-"Error did not have body: ",e)}else Yc.debug("Error did not have body: ",e);throw e}}async _getJson(t,r){try{
+i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,Yc.debug("Limit reached: ",i,t,r,n),this._retryLater(async()=>(
+Yc.debug("Calling again: ",t,r,n),this._postJson(t,r,n)),i);Yc.debug("Error did not have body: ",e)}else Yc.debug(
+"Error did not have body: ",e);throw e}}async _putJson(t,r,n){try{return Lc.putJson(t,r,n)}catch(e){if(
+null!=e&&e.getBody||null!=e&&e.body){var i=null!==(i=null==e?void 0:e.getBody())&&void 0!==i?i:null==e?void 0:e.body;if(
+(null==i?void 0:i.errcode)===Dl.M_LIMIT_EXCEEDED)return i=null!==(i=null==i?void 0:i.retry_after_ms)&&void 0!==i?i:1e3,
+Yc.debug("Limit reached: ",i,t,r,n),this._retryLater(async()=>(Yc.debug("Calling again: ",t,r,n),this._putJson(t,r,n)),i
+);Yc.debug("Error did not have body: ",e)}else Yc.debug("Error did not have body: ",e);throw e}}async _getJson(t,r){try{
 return Lc.getJson(t,r)}catch(e){if(null!=e&&e.getBody||null!=e&&e.body){var n=null!==(n=null==e?void 0:e.getBody()
 )&&void 0!==n?n:null==e?void 0:e.body;if((null==n?void 0:n.errcode)===Dl.M_LIMIT_EXCEEDED)return n=null!==(
-n=null==n?void 0:n.retry_after_ms)&&void 0!==n?n:1e3,this._retryLater(async()=>this._getJson(t,r),n);Yc.debug(
-"Error did not have body: ",e)}else Yc.debug("Error did not have body: ",e);throw e}}_sendMatrixEventList(e,t){Xs(e,e=>{
-this._sendMatrixEvent(e,t)})}_sendMatrixEvent(e,t){this._observer.triggerEvent(Ol.EVENT,t?D(D({},e),{},{room_id:t}):e)}
-_onTimeout(){if(this._syncing)Yc.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e
-)throw new TypeError("_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
+n=null==n?void 0:n.retry_after_ms)&&void 0!==n?n:1e3,Yc.debug("Limit reached: ",n,t,r),this._retryLater(async()=>(
+Yc.debug("Calling again: ",t,r),this._getJson(t,r)),n);Yc.debug("Error did not have body: ",e)}else Yc.debug(
+"Error did not have body: ",e);throw e}}_sendMatrixEventList(e,t){Xs(e,e=>{this._sendMatrixEvent(e,t)})}
+_sendMatrixEvent(e,t){this._observer.triggerEvent(Ol.EVENT,t?D(D({},e),{},{room_id:t}):e)}_onTimeout(){if(this._syncing
+)Yc.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e)throw new TypeError(
+"_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
 void 0!==this._timer&&(clearTimeout(this._timer),this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,
 this._pollWaitTime)},e=>{this._syncing=!1,Yc.error("ERROR: ",e),void 0!==this._timer&&(clearTimeout(this._timer),
 this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,this._pollWaitTime)})}}_normalizeRoomName(e){if(!e||!p(
