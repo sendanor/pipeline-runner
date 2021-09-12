@@ -4,6 +4,8 @@ Pipeline Processor for NodeJS v8 and newer.
 
 For the library, check out [@sendanor/pipeline](https://github.com/sendanor/pipeline).
 
+For the documentation about our pipeline format, see [Getting started with Pipeline model](https://www.sendanor.com/pipelines/model/).
+
 ### What are pipelines?
 
 Minimal pipeline step is just a single instruction to run a command:
