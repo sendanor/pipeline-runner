@@ -210,7 +210,7 @@ docker attach agent-1
 
 Except *NodeJS LTS v8 or newer*.
 
-### It compiles as a single standalone 136 kB script
+### It compiles as a single standalone 164 kB script
 
 Including all the dependencies as well!
 
