@@ -8,7 +8,7 @@
     }
   ],
   "name": "Print_date_with_params",
-  "command": "date"
+  "command": "date",
   "args": [
     "+${{format}}"
   ]
