@@ -20,7 +20,7 @@ export enum RunnerExitStatus {
     RESOURCE_MODEL_INVALID          = 8,
     LOCAL_RESOURCE_FAILED           = 9,
     HTTP_RESOURCE_FAILED            = 10,
-    MATRIX_RESOURCE_FAILED          = 11 ,
+    MATRIX_RESOURCE_FAILED          = 11,
     UNIMPLEMENTED_FEATURE           = 12,
     UNBUILD_FEATURE                 = 13,
     FATAL_ERROR                     = 14,

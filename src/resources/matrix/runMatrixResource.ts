@@ -236,9 +236,8 @@ export async function runMatrixResource (
             PIPELINE_VARIABLE_SUFFIX
         );
 
+        let controller : Controller = PipelineRunner.createController(model, context);
         try {
-
-            let controller : Controller = PipelineRunner.createController(model, context);
 
             await updateControllerState(matrixClient, runRepository, workId, work, controller);
 
@@ -249,30 +248,13 @@ export async function runMatrixResource (
             });
 
             try {
-
                 await PipelineRunner.startAndWaitUntilFinished(controller);
-
             } finally {
-
                 listener();
-
-                await updateControllerState(matrixClient, runRepository, workId, work, controller);
-
             }
 
         } finally {
-
-            await updateControllerState(
-                matrixClient,
-                runRepository,
-                workId,
-                work,
-                {
-                    getStateDTO: () => ({type:ControllerType.NONE, name:'none', state: ControllerState.UNCONSTRUCTED}),
-                    toJSON: () =>  ({type:'none'})
-                } as unknown as Controller
-            );
-
+            await updateControllerState(matrixClient, runRepository, workId, work, controller);
         }
 
         LOG.debug(`We'll stop listening the work item now: ${workId}`);
