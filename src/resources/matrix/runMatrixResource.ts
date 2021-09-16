@@ -26,7 +26,7 @@ import {
 } from "../../pipeline-runtime-constants";
 import System from "../../nor/pipeline/systems/types/System";
 import ControllerType from "../../nor/pipeline/controllers/types/ControllerType";
-import ControllerState from "../../nor/pipeline/controllers/types/ControllerState";
+import ControllerState, { stringifyControllerState } from "../../nor/pipeline/controllers/types/ControllerState";
 
 const LOG = LogService.createLogger('runMatrixResource');
 
@@ -254,7 +254,14 @@ export async function runMatrixResource (
             }
 
         } finally {
+
+            if (controller.isStarted()) {
+                LOG.warn(`Warning! Controller wasn't stopped (${stringifyControllerState(controller.getState())}). Stopping it now.`);
+                await controller.stop();
+            }
+
             await updateControllerState(matrixClient, runRepository, workId, work, controller);
+
         }
 
         LOG.debug(`We'll stop listening the work item now: ${workId}`);
