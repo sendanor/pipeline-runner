@@ -2,9 +2,9 @@
 "use strict";function n(t,e){var r,n=Object.keys(t);return Object.getOwnPropertySymbols&&(
 r=Object.getOwnPropertySymbols(t),e&&(r=r.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),
 n.push.apply(n,r)),n}function D(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
-Object(r),!0).forEach(function(e){u(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
+Object(r),!0).forEach(function(e){c(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
 Object.getOwnPropertyDescriptors(r)):n(Object(r)).forEach(function(e){Object.defineProperty(t,e,
-Object.getOwnPropertyDescriptor(r,e))});return t}function u(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
+Object.getOwnPropertyDescriptor(r,e))});return t}function c(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
 enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function e(e){return e&&"object"==typeof e&&"default"in e?e:{
 default:e}}function t(r){if(r&&r.__esModule)return r;var n=Object.create(null);return r&&Object.keys(r).forEach(
 function(e){var t;"default"!==e&&(t=Object.getOwnPropertyDescriptor(r,e),Object.defineProperty(n,e,t.get?t:{
@@ -15,15 +15,15 @@ n=null==e?0:e.length;for(this.clear();++r<n;)t=e[r],this.set(t[0],t[1])}function
 r=null==e?0:e.length;for(this.__data__=new ir;++t<r;)this.add(e[t])}function l(n,i){function o(){var e=arguments,
 t=i?i.apply(this,e):e[0],r=o.cache;return r.has(t)?r.get(t):(e=n.apply(this,e),o.cache=r.set(t,e)||r,e)}if(
 "function"!=typeof n||null!=i&&"function"!=typeof i)throw new TypeError(Vn);return o.cache=new(l.Cache||Wn),o}
-function v(e){return void 0===e}function c(e){return pr(e)}function d(e,t=void 0,r=void 0,n=void 0){if(!pr(e))return!1
+function v(e){return void 0===e}function u(e){return pr(e)}function d(e,t=void 0,r=void 0,n=void 0){if(!pr(e))return!1
 ;var i=null!==(i=null==e?void 0:e.length)&&void 0!==i?i:0;return!(void 0!==r&&i<r)&&!(void 0!==n&&n<i)&&(void 0===t||S(e
 ,t))}function h(e){return v(e)||Ja(e)}function p(e){return ja(e)}function f(e){return v(e)||p(e)}function _(e){
-return!!e&&c(e)&&S(e,p)}function E(e){return Va(e)}function g(e){return v(e)||Va(e)}function T(e,t){return eo(e,t)}
+return!!e&&u(e)&&S(e,p)}function E(e){return Va(e)}function g(e){return v(e)||Va(e)}function T(e,t){return eo(e,t)}
 function S(e,t){return ao(e,t)}function N(e,t){return wt(e)&&S(sl(e),t)}function A(e,t=p,r=void 0){return!(
-void 0!==r&&!N(e,r))&&(t=void 0!==t?t:p,wt(e)&&S(P(e),t))}function y(e){return!!wt(e)&&!(e instanceof Date)&&!It(e)&&!c(
-e)&&A(e,p,void 0)}function m(e,t=p,r=void 0){return!!wt(e)&&!(e instanceof Date)&&!It(e)&&!c(e)&&A(e,t,r)}function C(e,
+void 0!==r&&!N(e,r))&&(t=void 0!==t?t:p,wt(e)&&S(P(e),t))}function y(e){return!!wt(e)&&!(e instanceof Date)&&!It(e)&&!u(
+e)&&A(e,p,void 0)}function m(e,t=p,r=void 0){return!!wt(e)&&!(e instanceof Date)&&!It(e)&&!u(e)&&A(e,t,r)}function C(e,
 t=void 0,r=void 0,n=void 0,i=void 0){if(t=void 0===t?p:t,!wt(e))throw new TypeError("value was not object");if(
-e instanceof Date)throw new TypeError("value was Date");if(It(e))throw new TypeError("value was Function");if(c(e)
+e instanceof Date)throw new TypeError("value was Date");if(It(e))throw new TypeError("value was Function");if(u(e)
 )throw new TypeError("value was array");!function(e,t=void 0,r=void 0,n=void 0,i=void 0){const o=void 0===t?p:t;if(
 void 0===r||N(e,e=>r(e)))throw e=Qo(P(e),e=>!o(e)),n?new TypeError(`Property "${e}": key was not correct: ${n(e)}`
 ):new TypeError(`Property "${e}": key was not correct: ${JSON.stringify(e,null,2)}`);var s=sl(e),n=Yo(s,e=>!r(e)),t=P(e
@@ -32,7 +32,7 @@ void 0===r||N(e,e=>r(e)))throw e=Qo(P(e),e=>!o(e)),n?new TypeError(`Property "${
 i=void 0){try{return C(e,t,r,n,i),"No errors detected"}catch(e){return null!==(i=null==e?void 0:e.message
 )&&void 0!==i?i:`${e}`}}function R(...e){return t=>T(e,e=>e(t))}function b(e){return wt(e)}function I(e,t){return b(e
 )&&0===(r=t,Js(P(e),e=>!r.includes(e)).length);var r}function O(e){if(void 0!==e&&""!==e)return Ua(e)?e:["true","t","on"
-,"1","enabled"].includes(`${e}`.toLowerCase())}function L(e){if(void 0!==e&&""!==e)return`${e}`}function P(e,t=p){if(c(e
+,"1","enabled"].includes(`${e}`.toLowerCase())}function L(e){if(void 0!==e&&""!==e)return`${e}`}function P(e,t=p){if(u(e
 )){var r=xi(e,(e,t)=>t);return Js(r,e=>t(e))}return b(e)?(e=Reflect.ownKeys(e),Js(e,e=>t(e))):[]}function U(e){switch(e
 ){case dl.HTTP:return"http";case dl.LOCAL:return"local";case dl.MATRIX:return"matrix"}throw new TypeError(
 `Unsupported RunnerResourceType value: ${e}`)}function $(e){return y(e)&&function(){switch(null==e?void 0:e.type){
@@ -371,20 +371,20 @@ pl.MATRIX_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;default:return pl.UNKNOWN_RE
 function Ze(e){return d(e,p)}function et(e){return d(e,Ze)}function tt(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
 null==e?void 0:e.csv)&&f(null==e?void 0:e.action)&&f(null==e?void 0:e.output)&&I(e,dd)}function rt(e){return Z(e)&&J(
 null==e?void 0:e.name)&&p(null==e?void 0:e.command)&&(r=p,(i=n=void 0)===(t=null==e?void 0:e.args)||d(t,r,n,i))&&(i=n=p,
-void 0===(r=null==e?void 0:e.env)||m(r,n,i))&&f(null==e?void 0:e.cwd)&&I(e,Ed);var t,r,n,i}function nt(e){return Z(e
-)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.file)&&(v(null==e?void 0:e.content)||z(null==e?void 0:e.content))&&f(
-null==e?void 0:e.target)&&f(null==e?void 0:e.output)&&f(null==e?void 0:e.default)&&I(e,gd)}function it(e){return Z(e
-)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.set)&&f(null==e?void 0:e.variable)&&I(e,Nd)}function ot(e){return Z(e
-)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.git)&&f(null==e?void 0:e.url)&&f(null==e?void 0:e.target)&&f(
-null==e?void 0:e.message)&&f(null==e?void 0:e.cwd)&&f(null==e?void 0:e.set)&&f(null==e?void 0:e.value)&&I(e,md)}
-function st(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.assert)&&(v(null==e?void 0:e.equals)||z(
-null==e?void 0:e.equals))&&I(e,wd)}function at(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.concat)&&I(e
-,Id)}async function lt(e,t){t=t.id,Ld.info(`Pool ID: ${t}`);const r=new ed(e,Rl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,
-Rl.FI_NOR_PIPELINE_STATE,"",[t]);return t=await r.getAll(),Ld.debug("runList = ",t),0!==t.length?(Ld.debug(
-"Detected work available."),pl.OK):(Ld.debug("No work available."),pl.NO_WORK_AVAILABLE)}async function ut(r,e){
-return 0===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected no pools available."),pl.NO_WORK_AVAILABLE
-):1===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected single pool available. Checking it."),lt(r,e[0])):(Ld.debug(
-`checkIfAnyPoolHasWork: Detected ${e.length} pools available.`),is(e,async(e,t)=>(e=await e,Ld.debug(
+void 0===(r=null==e?void 0:e.env)||m(r,n,i))&&f(null==e?void 0:e.cwd)&&f(null==e?void 0:e.output)&&I(e,Ed);var t,r,n,i}
+function nt(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.file)&&(v(null==e?void 0:e.content)||z(
+null==e?void 0:e.content))&&f(null==e?void 0:e.target)&&f(null==e?void 0:e.output)&&f(null==e?void 0:e.default)&&I(e,gd)
+}function it(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.set)&&f(null==e?void 0:e.variable)&&I(e,Nd)}
+function ot(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.git)&&f(null==e?void 0:e.url)&&f(
+null==e?void 0:e.target)&&f(null==e?void 0:e.message)&&f(null==e?void 0:e.cwd)&&f(null==e?void 0:e.set)&&f(
+null==e?void 0:e.value)&&I(e,md)}function st(e){return Z(e)&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.assert)&&(v(
+null==e?void 0:e.equals)||z(null==e?void 0:e.equals))&&I(e,wd)}function at(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
+null==e?void 0:e.concat)&&I(e,Id)}async function lt(e,t){t=t.id,Ld.info(`Pool ID: ${t}`);const r=new ed(e,
+Rl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,Rl.FI_NOR_PIPELINE_STATE,"",[t]);return t=await r.getAll(),Ld.debug("runList = ",t)
+,0!==t.length?(Ld.debug("Detected work available."),pl.OK):(Ld.debug("No work available."),pl.NO_WORK_AVAILABLE)}
+async function ut(r,e){return 0===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected no pools available."),
+pl.NO_WORK_AVAILABLE):1===e.length?(Ld.debug("checkIfAnyPoolHasWork: Detected single pool available. Checking it."),lt(r
+,e[0])):(Ld.debug(`checkIfAnyPoolHasWork: Detected ${e.length} pools available.`),is(e,async(e,t)=>(e=await e,Ld.debug(
 `checkIfAnyPoolHasWork: Result: ${e}`),e===pl.OK?pl.OK:(Ld.debug(`checkIfAnyPoolHasWork: Checking pool ${t.id}`),lt(r,t)
 )),Promise.resolve(pl.NO_WORK_AVAILABLE)))}var ct,dt,ht,_t,Et,vt,pt,ft,gt,Tt,St,Nt,At,yt,mt,Ct,wt,Rt,bt,It,Dt,Ot,Lt,Pt,
 Ut,$t,Ft,Mt,kt,Gt,jt,Ht,Bt,xt,Jt,Wt,Vt,Kt,qt,zt,Xt,Yt,Qt,Zt,er,tr,rr,nr,ir,or,sr,ar,lr,ur,cr,dr,hr,_r,Er,vr,pr,fr,gr,Tr,
@@ -609,7 +609,7 @@ ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ER
 cl=ul;const rc=null!==(ou=L("1.0.6"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-12T01:56:08.064Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+"2021-09-16T11:53:53.344Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
 )&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
 ""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
@@ -624,7 +624,7 @@ null===(nu=process)||void 0===nu||null===(ht=nu.env)||void 0===ht?void 0:ht.PIPE
 )&&void 0!==_t?_t:Vu,Ec=null!==(Et=L(null===(Vu=process)||void 0===Vu||null===(Et=Vu.env
 )||void 0===Et?void 0:Et.PIPELINE_VARIABLE_PREFIX))&&void 0!==Et?Et:ju,vc=null!==(vt=L(null===(ju=process
 )||void 0===ju||null===(vt=ju.env)||void 0===vt?void 0:vt.PIPELINE_VARIABLE_SUFFIX))&&void 0!==vt?vt:ou;class pc{
-constructor(e,t){u(this,"_logger",void 0),u(this,"name",void 0),this.name=e,this._logger=t}debug(...e){
+constructor(e,t){c(this,"_logger",void 0),c(this,"name",void 0),this.name=e,this._logger=t}debug(...e){
 this._logger.debug(`[${this.name}]`,...e)}info(...e){this._logger.info(`[${this.name}]`,...e)}warn(...e){
 this._logger.warn(`[${this.name}]`,...e)}error(...e){this._logger.error(`[${this.name}]`,...e)}}class fc{
 static setLogLevel(e){this._level=e}static getLogLevel(){return this._level}static getLogLevelString(){return function(e
@@ -633,7 +633,7 @@ static setLogLevel(e){this._level=e}static getLogLevel(){return this._level}stat
 "The logger was not defined");this._logger=e}static debug(...e){this._level<=cl.DEBUG&&this._logger.debug(...e)}
 static info(...e){this._level<=cl.INFO&&this._logger.info(...e)}static warn(...e){
 this._level<=cl.WARN&&this._logger.warn(...e)}static error(...e){this._level<=cl.ERROR&&this._logger.error(...e)}
-static createLogger(e){return new pc(e,fc)}}u(fc,"Level",cl),u(fc,"_level",cl.DEBUG),u(fc,"_logger",console),(ou=dl={}
+static createLogger(e){return new pc(e,fc)}}c(fc,"Level",cl),c(fc,"_level",cl.DEBUG),c(fc,"_logger",console),(ou=dl={}
 )[ou.HTTP=0]="HTTP",ou[ou.LOCAL=1]="LOCAL",ou[ou.MATRIX=2]="MATRIX",hl=dl,(ou=_l={})[ou.NONE=0]="NONE",
 ou[ou.BASIC_AUTH=1]="BASIC_AUTH",ou[ou.BEARER_AUTH=2]="BEARER_AUTH",El=_l;class gc{static parseRunnerAuthentication(e,t
 ){var r;return void 0===t?null!==(r=G(e))&&void 0!==r?r:M(e):null!==(r=G(e,t))&&void 0!==r?r:M(e,t)}}
@@ -739,13 +739,13 @@ return"Not Implemented";case gl.BadGateway:return"Bad Gateway";case gl.ServiceUn
 ;case gl.VariantAlsoNegotiates:return"Variant Also Negotiates";case gl.InsufficientStorage:return"Insufficient Storage"
 ;case gl.LoopDetected:return"Loop Detected";case gl.BandwidthLimitExceeded:return"Bandwidth Limit Exceeded"
 ;case gl.NotExtended:return"Not Extended";case gl.NetworkAuthenticationRequired:return"Network Authentication Required"
-;default:return e<400?"HTTP Status":"HTTP Error"}}(e)),u(this,"status",void 0),u(this,"method",void 0),u(this,"url",
-void 0),u(this,"body",void 0),u(this,"__proto__",void 0),t=new.target.prototype,
+;default:return e<400?"HTTP Status":"HTTP Error"}}(e)),c(this,"status",void 0),c(this,"method",void 0),c(this,"url",
+void 0),c(this,"body",void 0),c(this,"__proto__",void 0),t=new.target.prototype,
 Object.setPrototypeOf?Object.setPrototypeOf(this,t):this.__proto__=t,this.status=e,this.method=r,this.url=n,this.body=i}
 valueOf(){return this.status}toString(){return`${this.status} ${this.message}`}toJSON(){return{type:Sl.ERROR,
 status:this.status,message:this.message}}getStatusCode(){return this.status}getMethod(){return this.method}getUrl(){
 return this.url}getBody(){return this.body}}const Cc=Ac?require("fs").promises:void 0,wc=fc.createLogger(
-"NodeRequestClient");class Rc{constructor(e,t){u(this,"_http",void 0),u(this,"_https",void 0),this._http=e,this._https=t
+"NodeRequestClient");class Rc{constructor(e,t){c(this,"_http",void 0),c(this,"_https",void 0),this._http=e,this._https=t
 }async jsonRequest(e,t,r,n){switch(e){case au.GET:return this._getJson(t,r,n);case au.POST:return this._postJson(t,r,n)
 ;case au.PATCH:return this._patchJson(t,r,n);case au.PUT:return this._putJson(t,r,n);case au.DELETE:
 return this._deleteJson(t,r,n);default:throw new TypeError(`[Node]RequestClient: Unsupported method: ${e}`)}}
@@ -779,7 +779,7 @@ Rc._successResponse)}async _patchJson(e,t,r){const n={method:"PATCH",headers:{"C
 t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=D(D({},n.headers),t)),
 this._request(au.DELETE,e,n,r).then(Rc._successResponse)}static async _successResponse(e){
 var t=null==e?void 0:e.statusCode;if(t<200||400<=t)throw wc.error(`Unsuccessful response with status ${t}: `,e),new mc(t
-,`Error ${t} for ${x(e.method)} ${e.url}`,e.method,e.url,e.body);return e.body}}class bc{constructor(e){u(this,"_fetch",
+,`Error ${t} for ${x(e.method)} ${e.url}`,e.method,e.url,e.body);return e.body}}class bc{constructor(e){c(this,"_fetch",
 void 0),this._fetch=e}jsonRequest(e,t,r,n){switch(e){case au.GET:return this._getJson(t,r,n);case au.POST:
 return this._postJson(t,r,n);case au.PUT:return this._putJson(t,r,n);case au.DELETE:return this._deleteJson(t,r,n)
 ;default:throw new TypeError(`[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",
@@ -802,13 +802,13 @@ this._client.jsonRequest(au.PATCH,e,r,t)}static async putJson(e,t,r){return Oc.d
 this._client.jsonRequest(au.PUT,e,r,t)}static async deleteJson(e,t,r){return Oc.debug(".deleteJson: ",e,r,t),
 this._client.jsonRequest(au.DELETE,e,t,r)}static _initClient(){if(Nc)return Oc.debug("Detected browser environment"),
 new bc(window.fetch.bind(window));if(Ac)return new Rc(Ic,Dc);throw new TypeError(
-"Could not detect request client implementation")}}u(Lc,"_client",Lc._initClient()),(fu=uu=uu||{}).JSON="json",
+"Could not detect request client implementation")}}c(Lc,"_client",Lc._initClient()),(fu=uu=uu||{}).JSON="json",
 fu.STRING="string",fu.BOOLEAN="boolean",fu.NUMBER="number",fu.INTEGER="integer",pu=uu,fu=["name","parameters",
 "variables"];class Pc{static registerController(e){this._stepControllers.push(e)}static findController(t){return Qo(
 this._stepControllers,e=>e.isControllerModel(t))}static parseControllerModel(r){return is(this._stepControllers,(e,t
-)=>void 0!==e?e:t.parseControllerModel(r),void 0)}}u(Pc,"_stepControllers",[]);const Uc=Do(fu,["name","steps"]),$c=Do(fu
-,["name","jobs"]),Fc=Do(fu,["name","stages"]);class Mc{getName(){return this._name}constructor(e){u(this,"_name",void 0)
-,u(this,"_callbacks",void 0),this._name=e,this._callbacks={}}destroy(){this._name=void 0,this._callbacks=void 0}
+)=>void 0!==e?e:t.parseControllerModel(r),void 0)}}c(Pc,"_stepControllers",[]);const Uc=Do(fu,["name","steps"]),$c=Do(fu
+,["name","jobs"]),Fc=Do(fu,["name","stages"]);class Mc{getName(){return this._name}constructor(e){c(this,"_name",void 0)
+,c(this,"_callbacks",void 0),this._name=e,this._callbacks={}}destroy(){this._name=void 0,this._callbacks=void 0}
 hasCallbacks(e){return Da(this._callbacks,e)}triggerEvent(t,...r){var e;this.hasCallbacks(t)?(e=this._callbacks[t],Xs(e,
 e=>{try{e(t,...r)}catch(e){console.error(
 `Observer "${this._name}" and the event handler for "${t}" returned an exception: `,e)}})):console.warn(
@@ -828,9 +828,9 @@ cu.JSON="fi.nor.pipeline.step.json",cu.CSV="fi.nor.pipeline.step.csv",cu.GIT="fi
 ;const kc=fc.createLogger("JobController");(du=yl={}).JOB_CHANGED="JobController:jobChanged",
 du.JOB_STARTED="JobController:jobStarted",du.JOB_PAUSED="JobController:jobPaused",
 du.JOB_RESUMED="JobController:jobResumed",du.JOB_CANCELLED="JobController:jobCancelled",
-du.JOB_FAILED="JobController:jobFailed",du.JOB_FINISHED="JobController:jobFinished";class Gc{constructor(e,t,r=[]){if(u(
-this,"_context",void 0),u(this,"_observer",void 0),u(this,"_name",void 0),u(this,"_steps",void 0),u(this,
-"_changedCallback",void 0),u(this,"_state",void 0),u(this,"_stepDestructors",void 0),u(this,"_current",void 0),!J(t)
+du.JOB_FAILED="JobController:jobFailed",du.JOB_FINISHED="JobController:jobFinished";class Gc{constructor(e,t,r=[]){if(c(
+this,"_context",void 0),c(this,"_observer",void 0),c(this,"_name",void 0),c(this,"_steps",void 0),c(this,
+"_changedCallback",void 0),c(this,"_state",void 0),c(this,"_stepDestructors",void 0),c(this,"_current",void 0),!J(t)
 )throw new TypeError(`Job name invalid: ${t}`);if(!d(r,se,1))throw new TypeError(`Job#${t} must have at least one step`)
 ;this._context=e,this._current=0,this._name=t,this._steps=r,this._observer=new Mc(`JobController#${this._name}`),
 this._state=Nl.CONSTRUCTED,this._changedCallback=this._onChanged.bind(this),this._stepDestructors=xi(r,e=>e.onChanged(
@@ -881,13 +881,13 @@ this._state=Nl.FINISHED,this._observer.hasCallbacks(yl.JOB_FINISHED)&&this._obse
 yl.JOB_PAUSED,this),this._observer.hasCallbacks(yl.JOB_CHANGED)&&this._observer.triggerEvent(yl.JOB_CHANGED,this)
 ):i.isStarted()&&this.isPaused()&&(this._state=Nl.STARTED,this._observer.hasCallbacks(yl.JOB_RESUMED
 )&&this._observer.triggerEvent(yl.JOB_RESUMED,this),this._observer.hasCallbacks(yl.JOB_CHANGED
-)&&this._observer.triggerEvent(yl.JOB_CHANGED,this))}}u(Gc,"Event",yl);const jc=fc.createLogger("StageController");(
+)&&this._observer.triggerEvent(yl.JOB_CHANGED,this))}}c(Gc,"Event",yl);const jc=fc.createLogger("StageController");(
 du=ml={}).STAGE_STARTED="StageController:stageStarted",du.STAGE_PAUSED="StageController:stagePaused",
 du.STAGE_RESUMED="StageController:stageResumed",du.STAGE_FINISHED="StageController:stageFinished",
 du.STAGE_FAILED="StageController:stageFailed",du.STAGE_CANCELLED="StageController:stageCancelled",
-du.STAGE_CHANGED="StageController:stageChanged";class Hc{constructor(e,t,r){if(u(this,"_context",void 0),u(this,
-"_observer",void 0),u(this,"_name",void 0),u(this,"_jobs",void 0),u(this,"_changedCallback",void 0),u(this,"_state",
-void 0),u(this,"_jobDestructors",void 0),!J(t))throw new TypeError(`Stage name invalid: ${t}`);if(!d(r,ae,1)
+du.STAGE_CHANGED="StageController:stageChanged";class Hc{constructor(e,t,r){if(c(this,"_context",void 0),c(this,
+"_observer",void 0),c(this,"_name",void 0),c(this,"_jobs",void 0),c(this,"_changedCallback",void 0),c(this,"_state",
+void 0),c(this,"_jobDestructors",void 0),!J(t))throw new TypeError(`Stage name invalid: ${t}`);if(!d(r,ae,1)
 )throw new TypeError(`Stage#${t} must have at least one job`);this._context=e,this._state=Nl.CONSTRUCTED,this._name=t,
 this._jobs=r,this._observer=new Mc(`StageController#${this._name}`),this._changedCallback=this._onChanged.bind(this),
 this._jobDestructors=xi(r,e=>e.onChanged(this._changedCallback))}getContext(){return this._context}getState(){
@@ -949,13 +949,13 @@ this._observer.hasCallbacks(ml.STAGE_CHANGED)&&this._observer.triggerEvent(ml.ST
 )&&this._observer.triggerEvent(ml.STAGE_PAUSED,this),this._observer.hasCallbacks(ml.STAGE_CHANGED
 )&&this._observer.triggerEvent(ml.STAGE_CHANGED,this)):n||this._state!==Nl.PAUSED||(this._state=Nl.STARTED,
 this._observer.hasCallbacks(ml.STAGE_RESUMED)&&this._observer.triggerEvent(ml.STAGE_RESUMED,this),
-this._observer.hasCallbacks(ml.STAGE_CHANGED)&&this._observer.triggerEvent(ml.STAGE_CHANGED,this))}}u(Hc,"Event",ml)
+this._observer.hasCallbacks(ml.STAGE_CHANGED)&&this._observer.triggerEvent(ml.STAGE_CHANGED,this))}}c(Hc,"Event",ml)
 ;const Bc=fc.createLogger("PipelineController");(du=Cl={}).PIPELINE_STARTED="PipelineController:pipelineStarted",
 du.PIPELINE_PAUSED="PipelineController:pipelinePaused",du.PIPELINE_RESUMED="PipelineController:pipelineResumed",
 du.PIPELINE_FINISHED="PipelineController:pipelineFinished",du.PIPELINE_CANCELLED="PipelineController:pipelineCancelled",
 du.PIPELINE_FAILED="PipelineController:pipelineFailed",du.PIPELINE_CHANGED="PipelineController:pipelineChanged"
-;class xc{constructor(e,t,r){if(u(this,"_context",void 0),u(this,"_name",void 0),u(this,"_stages",void 0),u(this,
-"_observer",void 0),u(this,"_changedCallback",void 0),u(this,"_state",void 0),u(this,"_stageDestructors",void 0),u(this,
+;class xc{constructor(e,t,r){if(c(this,"_context",void 0),c(this,"_name",void 0),c(this,"_stages",void 0),c(this,
+"_observer",void 0),c(this,"_changedCallback",void 0),c(this,"_state",void 0),c(this,"_stageDestructors",void 0),c(this,
 "_current",void 0),!J(t))throw new TypeError(`Pipeline name invalid: ${t}`);if(!d(r,le,1))throw new TypeError(
 `Pipeline#${t} must have at least one stage`);this._context=e,this._current=0,this._name=t,this._stages=r,
 this._observer=new Mc(`PipelineController#${this._name}`),this._state=Nl.CONSTRUCTED,
@@ -1011,7 +1011,7 @@ Cl.PIPELINE_RESUMED)&&this._observer.triggerEvent(Cl.PIPELINE_RESUMED,this),Bc.i
 )&&this._observer.triggerEvent(Cl.PIPELINE_CHANGED,this),Bc.info(`Pipeline ${this._name} was paused`)):i.isStarted(
 )&&this.isPaused()&&(this._state=Nl.STARTED,this._observer.hasCallbacks(Cl.PIPELINE_RESUMED
 )&&this._observer.triggerEvent(Cl.PIPELINE_RESUMED,this),this._observer.hasCallbacks(Cl.PIPELINE_CHANGED
-)&&this._observer.triggerEvent(Cl.PIPELINE_CHANGED,this),Bc.info(`Pipeline ${this._name} was resumed`))}}u(xc,"Event",Cl
+)&&this._observer.triggerEvent(Cl.PIPELINE_CHANGED,this),Bc.info(`Pipeline ${this._name} was resumed`))}}c(xc,"Event",Cl
 );const Jc=fc.createLogger("PipelineRunner");class Wc{static registerController(e){Pc.registerController(e)}
 static createStepController(e,t){const r=Pc.findController(e);if(void 0===r)throw Jc.debug("step = ",e),new TypeError(
 `Unknown step type: ${e.name}`);return r.createController(t,e)}static createJobController(e,t){return new Gc(t,e.name,
@@ -1034,9 +1034,9 @@ n.length,t.length-n.length-i.length);if(e.indexOf(n)<0&&(e=wa(e),Vc.isValidKeywo
 ;0<=h&&h<t.length;)if(e=h,h=t.indexOf(n,e),h<0)d+=t.substr(e),h=t.length;else{if(s=h,a=h+n.length,(l=t.indexOf(i,a))<0
 )throw new TypeError(`Parse error near "${t.substr(s).substr(0,20)}". End of variable not detected.`);u=l+i.length,a=wa(
 t.substr(a,l-a)),h=(Vc.isValidKeyword(a)?(a=c(a),d+=`${t.substr(e,s-e)}${a}`):d+=`${t.substr(e,u-e)}`,u)}return d}}
-const Kc=fc.createLogger("PipelineContext");class qc{constructor(e,t=void 0,r=void 0,n="${",i="}"){u(this,"_system",
-void 0),u(this,"_parameters",void 0),u(this,"_variablePrefix",void 0),u(this,"_variableSuffix",void 0),u(this,
-"_lookupVariable",void 0),u(this,"_variables",void 0),this._system=e,this._variables=null!=r?r:{},this._parameters=t,
+const Kc=fc.createLogger("PipelineContext");class qc{constructor(e,t=void 0,r=void 0,n="${",i="}"){c(this,"_system",
+void 0),c(this,"_parameters",void 0),c(this,"_variablePrefix",void 0),c(this,"_variableSuffix",void 0),c(this,
+"_lookupVariable",void 0),c(this,"_variables",void 0),this._system=e,this._variables=null!=r?r:{},this._parameters=t,
 this._variablePrefix=n,this._variableSuffix=i,this._lookupVariable=this._onLookupVariable.bind(this)}getSystem(){
 return this._system}compileModel(e){return Kc.debug("Compiling model using: ",e,this._variablePrefix,
 this._variableSuffix),e=Vc.processVariables(e,this._lookupVariable,this._variablePrefix,this._variableSuffix),Kc.debug(
@@ -1060,10 +1060,10 @@ du[du.AUTHENTICATED_AND_STARTING=3]="AUTHENTICATED_AND_STARTING",
 du[du.AUTHENTICATED_AND_STARTED=4]="AUTHENTICATED_AND_STARTED",(du=Il={}).M_USER_IN_USE="M_USER_IN_USE",
 du.M_INVALID_USERNAME="M_INVALID_USERNAME",du.M_EXCLUSIVE="M_EXCLUSIVE",du.M_FORBIDDEN="M_FORBIDDEN",
 du.M_LIMIT_EXCEEDED="M_LIMIT_EXCEEDED",Dl=Il;const Yc=fc.createLogger("SimpleMatrixClient");(Ol=Ol||{}
-).EVENT="SimpleMatrixClient:event";class Qc{constructor(e,t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){u(this,
-"_observer",void 0),u(this,"_originalUrl",void 0),u(this,"_pollTimeout",void 0),u(this,"_pollWaitTime",void 0),u(this,
-"_timeoutCallback",void 0),u(this,"_state",void 0),u(this,"_homeServerUrl",void 0),u(this,"_identityServerUrl",void 0),
-u(this,"_accessToken",void 0),u(this,"_userId",void 0),u(this,"_nextBatch",void 0),u(this,"_timer",void 0),u(this,
+).EVENT="SimpleMatrixClient:event";class Qc{constructor(e,t=void 0,r=void 0,n=void 0,i=void 0,o=3e4,s=1e3){c(this,
+"_observer",void 0),c(this,"_originalUrl",void 0),c(this,"_pollTimeout",void 0),c(this,"_pollWaitTime",void 0),c(this,
+"_timeoutCallback",void 0),c(this,"_state",void 0),c(this,"_homeServerUrl",void 0),c(this,"_identityServerUrl",void 0),
+c(this,"_accessToken",void 0),c(this,"_userId",void 0),c(this,"_nextBatch",void 0),c(this,"_timer",void 0),c(this,
 "_syncing",void 0),this._state=n?bl.AUTHENTICATED:bl.UNAUTHENTICATED,this._originalUrl=e,this._homeServerUrl=null!=t?t:e
 ,this._identityServerUrl=null!=r?r:e,this._nextBatch=void 0,this._accessToken=n,this._userId=i,this._pollTimeout=o,
 this._pollWaitTime=s,this._syncing=!1,this._observer=new Mc("SimpleMatrixClient"),
@@ -1231,15 +1231,15 @@ o=null==t||null===(o=t.rooms)||void 0===o?void 0:o.leave)&&void 0!==o?o:{};o=P(l
 null==t?void 0:t.state),ye(null==t?void 0:t.timeline),Re(null==t?void 0:t.account_data));this._sendMatrixEventList(t,e)}
 )}_resolveHomeServerUrl(e){var t=this._homeServerUrl
 ;return`${t}${"/"===t[t.length-1]?"":"/"}_matrix/client/r0${"/"===e[0]?"":"/"}${e}`}_resolveSynapseServerUrl(e){
-var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}u(Qc,
+var t=this._homeServerUrl;return`${t}${"/"===t[t.length-1]?"":"/"}_synapse/admin/v1${"/"===e[0]?"":"/"}${e}`}}c(Qc,
 "Event",Ol),(du=hu=hu||{}).PRIVATE_CHAT="private_chat",du.PUBLIC_CHAT="public_chat",
 du.TRUSTED_PRIVATE_CHAT="trusted_private_chat",Ll=hu,(hu=_u=_u||{}).INVITED="invited",hu.JOINED="joined",
 hu.SHARED="shared",hu.WORLD_READABLE="world_readable",Pl=_u,(_u=Eu=Eu||{}).PUBLIC="public",_u.KNOCK="knock",
 _u.INVITE="invite",_u.PRIVATE="private",_u.RESTRICTED="restricted",Ul=Eu,(Eu=vu=vu||{}).CAN_JOIN="can_join",
 Eu.FORBIDDEN="forbidden",$l=vu;const Zc=fc.createLogger("MatrixCrudRepository");class ed{constructor(e,t,r=void 0,
-n=void 0,i=void 0,o=void 0,s=void 0,a=void 0){u(this,"_client",void 0),u(this,"_serviceAccount",void 0),u(this,
-"_stateType",void 0),u(this,"_stateKey",void 0),u(this,"_deletedType",void 0),u(this,"_deletedKey",void 0),u(this,
-"_allowedGroups",void 0),u(this,"_allowedEvents",void 0),this._client=e,this._stateType=t,this._stateKey=null!=r?r:"",
+n=void 0,i=void 0,o=void 0,s=void 0,a=void 0){c(this,"_client",void 0),c(this,"_serviceAccount",void 0),c(this,
+"_stateType",void 0),c(this,"_stateKey",void 0),c(this,"_deletedType",void 0),c(this,"_deletedKey",void 0),c(this,
+"_allowedGroups",void 0),c(this,"_allowedEvents",void 0),this._client=e,this._stateType=t,this._stateKey=null!=r?r:"",
 this._serviceAccount=null!=n?n:void 0,this._deletedType=null!==(i=L(i))&&void 0!==i?i:Rl.FI_NOR_DELETED,
 this._deletedKey=null!=o?o:"",this._allowedEvents=a,this._allowedGroups=void 0===s?void 0:[...s]}async getAll(){var e,t,
 r=await this._client.sync({filter:{presence:{limit:0},account_data:{limit:0},room:{account_data:{limit:0},ephemeral:{
@@ -1294,10 +1294,10 @@ t=this._serviceAccount)||void 0===t?void 0:t.getUserId(),n=n||await this._servic
 null==e?void 0:e.body))return;throw Zc.error(`Warning! Could not invite user ${t} to room ${r}: `,e),e}},
 Promise.resolve())}async subscribeToItem(e){await this._client.joinRoom(e)}}const td=fc.createLogger("runMatrixResource"
 );(Fl=Fl||{}).ON_EXIT="NodeSystemProcess:onExit";const rd=fc.createLogger("NodeSystemProcess");class nd{constructor(e,t,
-r,n=void 0,i=!0){u(this,"_command",void 0),u(this,"_args",void 0),u(this,"_env",void 0),u(this,"_cwd",void 0),u(this,
-"_stdoutCallback",void 0),u(this,"_stderrCallback",void 0),u(this,"_closeCallback",void 0),u(this,"_observer",void 0),u(
-this,"_process",void 0),u(this,"_printToParentProcess",void 0),u(this,"_stdoutChunks",void 0),u(this,"_stderrChunks",
-void 0),u(this,"_exitStatus",void 0),this._observer=new Mc("NodeSystemProcess"),this._process=void 0,this._command=e,
+r,n=void 0,i=!0){c(this,"_command",void 0),c(this,"_args",void 0),c(this,"_env",void 0),c(this,"_cwd",void 0),c(this,
+"_stdoutCallback",void 0),c(this,"_stderrCallback",void 0),c(this,"_closeCallback",void 0),c(this,"_observer",void 0),c(
+this,"_process",void 0),c(this,"_printToParentProcess",void 0),c(this,"_stdoutChunks",void 0),c(this,"_stderrChunks",
+void 0),c(this,"_exitStatus",void 0),this._observer=new Mc("NodeSystemProcess"),this._process=void 0,this._command=e,
 this._args=t,this._env=r,this._cwd=n,this._printToParentProcess=i,this._closeCallback=this._onClose.bind(this),
 this._stdoutCallback=this._onStdOut.bind(this),this._stderrCallback=this._onStdErr.bind(this),this._stdoutChunks=[],
 this._stderrChunks=[],this._exitStatus=void 0}start(){const e={};return this._env&&(e.env=this._env),this._cwd&&(
@@ -1310,8 +1310,8 @@ getOutputString(){return Buffer.concat(this._stdoutChunks).toString("utf8")}dest
 return this._observer.listenEvent(e,t)}_onStdOut(e){this._stdoutChunks.push(e),process.stdout.write(e)}_onStdErr(e){
 this._stderrChunks.push(e),process.stderr.write(e)}_onClose(e){this._exitStatus=e,this._observer.hasCallbacks(Fl.ON_EXIT
 )?this._observer.triggerEvent(Fl.ON_EXIT,this):rd.debug(
-`Child process stopped with exit status ${e} -- no listeners detected`)}}u(nd,"Event",Fl);const id=fc.createLogger(
-"NodeSystem");class od{constructor(){u(this,"_tempFileNames",[])}toString(){return"NodeSystem"}toJSON(){return{
+`Child process stopped with exit status ${e} -- no listeners detected`)}}c(nd,"Event",Fl);const id=fc.createLogger(
+"NodeSystem");class od{constructor(){c(this,"_tempFileNames",[])}toString(){return"NodeSystem"}toJSON(){return{
 type:"NodeSystem"}}destroy(){Xs(this._tempFileNames,e=>{id.debug(`destroy: Deleting temporary file: ${e}`),
 this.deleteFile(e)})}pathExists(e){try{const t=Uu.default.statSync(e);return t.isFile()||t.isDirectory()||t.isSocket(
 )||t.isBlockDevice()||t.isCharacterDevice()||t.isFIFO()||t.isSymbolicLink()}catch(e){if("ENOENT"===(
@@ -1329,11 +1329,11 @@ vu.PARSE="parse";const sd=fc.createLogger("BaseStepController");(vu=kl={}
 ).JSON_STARTED="BaseStepController:scriptStarted",vu.JSON_PAUSED="BaseStepController:scriptPaused",
 vu.JSON_RESUMED="BaseStepController:scriptResumed",vu.JSON_CANCELLED="BaseStepController:scriptCancelled",
 vu.JSON_FAILED="BaseStepController:scriptFailed",vu.JSON_FINISHED="BaseStepController:scriptFinished",
-vu.JSON_CHANGED="BaseStepController:scriptChanged";class ad{constructor(e,t,r,n,i,o=void 0,s=void 0,a=void 0){if(u(this,
-"_context",void 0),u(this,"_observer",void 0),u(this,"_controllerType",void 0),u(this,"_controllerName",void 0),u(this,
-"_stepName",void 0),u(this,"_name",void 0),u(this,"_action",void 0),u(this,"_input",void 0),u(this,"_output",void 0),u(
-this,"_state",void 0),u(this,"_compiledAction",void 0),u(this,"_compiledInput",void 0),u(this,"_compiledOutput",void 0),
-u(this,"_successResult",void 0),u(this,"_errorResult",void 0),!p(r))throw new TypeError(
+vu.JSON_CHANGED="BaseStepController:scriptChanged";class ad{constructor(e,t,r,n,i,o=void 0,s=void 0,a=void 0){if(c(this,
+"_context",void 0),c(this,"_observer",void 0),c(this,"_controllerType",void 0),c(this,"_controllerName",void 0),c(this,
+"_stepName",void 0),c(this,"_name",void 0),c(this,"_action",void 0),c(this,"_input",void 0),c(this,"_output",void 0),c(
+this,"_state",void 0),c(this,"_compiledAction",void 0),c(this,"_compiledInput",void 0),c(this,"_compiledOutput",void 0),
+c(this,"_successResult",void 0),c(this,"_errorResult",void 0),!p(r))throw new TypeError(
 `[${r}] invalid controller identifier: ${r}`);if(!p(n))throw new TypeError(`[${n}] invalid step identifier: ${n}`);if(
 !J(i))throw new TypeError(`[${n}] invalid name: ${i}`);if(!p(s))throw new TypeError(
 `[${n}] must have a valid string: ${s}`);if(!v(o)&&!z(o))throw new TypeError(
@@ -1381,8 +1381,8 @@ this._successResult=e,this._state=Nl.FINISHED,this._observer.hasCallbacks(kl.JSO
 )&&this._observer.triggerEvent(kl.JSON_FINISHED,this),this._observer.hasCallbacks(kl.JSON_CHANGED
 )&&this._observer.triggerEvent(kl.JSON_CHANGED,this)}_errorCloseAction(e){sd.error("Action failed: ",e),
 this._errorResult=e,this._state=Nl.FAILED,this._observer.hasCallbacks(kl.JSON_FAILED)&&this._observer.triggerEvent(
-kl.JSON_FAILED,this),this._observer.hasCallbacks(kl.JSON_CHANGED)&&this._observer.triggerEvent(kl.JSON_CHANGED,this)}}u(
-ad,"Event",kl),u(ad,"State",Nl);const ld=Do(fu,["name","json","action","output"]),ud=fc.createLogger("JsonController")
+kl.JSON_FAILED,this),this._observer.hasCallbacks(kl.JSON_CHANGED)&&this._observer.triggerEvent(kl.JSON_CHANGED,this)}}c(
+ad,"Event",kl),c(ad,"State",Nl);const ld=Do(fu,["name","json","action","output"]),ud=fc.createLogger("JsonController")
 ;class cd extends ad{static parseControllerModel(e){if(Qe(e))return e}static isControllerModel(e){return Qe(e)}
 static createController(e,t){return new cd(e,t.name,t.json,t.action,t.output)}constructor(e,t,r,n=Ml.STRINGIFY,i=void 0
 ){super(e,Al.JSON,`JsonController#${t}`,`json#${t}`,t,r,null!=n?n:Ml.STRINGIFY,i)}run(e,t){if(!function(){switch(e){
@@ -1409,23 +1409,24 @@ new TypeError(`Unimplemented action: ${e}`);if(!p(t))throw hd.debug("run: input 
 'The quote must be exactly 1 character long: "');if(Ze(t))return t;p(t)||(t=`${t}`);let r=[],n=0;for(;n<t.length;){
 var i=t.indexOf(",",n);if(i<0){r.push(t.substr(n)),n=r.length;break}let e=t.substr(n,i-n);2<=e.length&&Ya(e,'"')&&rl(e,
 '"')&&(e=e.substr(1,e.length-2).split(e+e).join(e)),r.push(e),n=i+1}return r}(e))),!et(t))throw new TypeError(
-`[csv#${this.getName()}] Result was not csv: ${t}`);return t}}const Ed=Do(fu,["name","command","args","env","cwd"]),
-vd=fc.createLogger("BaseScriptController");(vu=jl={}).SCRIPT_STARTED="BaseScriptController:scriptStarted",
+`[csv#${this.getName()}] Result was not csv: ${t}`);return t}}const Ed=Do(fu,["name","command","args","env","output",
+"cwd"]),vd=fc.createLogger("BaseScriptController");(vu=jl={}).SCRIPT_STARTED="BaseScriptController:scriptStarted",
 vu.SCRIPT_PAUSED="BaseScriptController:scriptPaused",vu.SCRIPT_RESUMED="BaseScriptController:scriptResumed",
 vu.SCRIPT_CANCELLED="BaseScriptController:scriptCancelled",vu.SCRIPT_FAILED="BaseScriptController:scriptFailed",
 vu.SCRIPT_FINISHED="BaseScriptController:scriptFinished",vu.SCRIPT_CHANGED="BaseScriptController:scriptChanged"
-;class pd{constructor(e,t,r,n,i,o,s=[],a={},l=void 0){if(u(this,"_context",void 0),u(this,"_observer",void 0),u(this,
-"_controllerType",void 0),u(this,"_controllerName",void 0),u(this,"_stepName",void 0),u(this,"_name",void 0),u(this,
-"_command",void 0),u(this,"_cwd",void 0),u(this,"_args",void 0),u(this,"_env",void 0),u(this,"_closeCallback",void 0),u(
-this,"_compiledCwd",void 0),u(this,"_compiledCommand",void 0),u(this,"_compiledArgs",void 0),u(this,"_compiledEnv",
-void 0),u(this,"_systemProcess",void 0),u(this,"_state",void 0),!p(r))throw new TypeError(
-`[${n}] invalid controller identifier: ${r}`);if(!p(n))throw new TypeError(`[${n}] invalid step identifier: ${n}`);if(
-!J(i))throw new TypeError(`[${n}] name invalid: ${i}`);if(!p(o))throw new TypeError(
-`[${n}#${i}] must have a valid command: ${o}`);if(!d(s,p,0))throw new TypeError(
+;class pd{constructor(e,t,r,n,i,o,s=[],a={},l=void 0,u=void 0){if(c(this,"_context",void 0),c(this,"_observer",void 0),
+c(this,"_controllerType",void 0),c(this,"_controllerName",void 0),c(this,"_stepName",void 0),c(this,"_name",void 0),c(
+this,"_command",void 0),c(this,"_cwd",void 0),c(this,"_outputVariable",void 0),c(this,"_args",void 0),c(this,"_env",
+void 0),c(this,"_closeCallback",void 0),c(this,"_compiledCwd",void 0),c(this,"_compiledCommand",void 0),c(this,
+"_compiledArgs",void 0),c(this,"_compiledEnv",void 0),c(this,"_systemProcess",void 0),c(this,"_state",void 0),!p(r)
+)throw new TypeError(`[${n}] invalid controller identifier: ${r}`);if(!p(n))throw new TypeError(
+`[${n}] invalid step identifier: ${n}`);if(!J(i))throw new TypeError(`[${n}] name invalid: ${i}`);if(!p(o)
+)throw new TypeError(`[${n}#${i}] must have a valid command: ${o}`);if(!d(s,p,0))throw new TypeError(
 `[${n}#${i}] must have a valid args: ${JSON.stringify(s)}`);if(!m(a,p,p))throw new TypeError(
 `[${n}#${i}] must have a valid env: ${JSON.stringify(a)}`);if(!f(l))throw new TypeError(`[${n}#${i}] invalid cwd: ${l}`)
-;this._controllerType=t,this._controllerName=r,this._stepName=n,this._context=e,this._state=Nl.CONSTRUCTED,this._name=i,
-this._cwd=l,this._command=o,this._args=s,this._env=a,this._observer=new Mc(`BaseScriptController#${i}`),
+;if(!f(u))throw new TypeError(`[${n}#${i}] invalid output variable name: ${u}`);this._controllerType=t,
+this._controllerName=r,this._stepName=n,this._context=e,this._state=Nl.CONSTRUCTED,this._name=i,this._cwd=l,
+this._outputVariable=u,this._command=o,this._args=s,this._env=a,this._observer=new Mc(`BaseScriptController#${i}`),
 this._closeCallback=this._onClose.bind(this),this._compiledCommand=void 0,this._compiledArgs=void 0,
 this._compiledEnv=void 0,this._systemProcess=void 0}destroy(){this._observer.destroy(),this.isPaused()?this.resume(
 ).stop():this.isRunning()&&this.stop()}getContext(){return this._context}getState(){return this._state}getName(){
@@ -1476,16 +1477,17 @@ jl.SCRIPT_RESUMED,e)}onCancelled(e){return this.on(jl.SCRIPT_CANCELLED,e)}onFail
 return this._systemProcess?this._systemProcess.getErrorString():""}getOutputString(){
 return this._systemProcess?this._systemProcess.getOutputString():""}_onClose(e,t){t=t.getExitStatus(),vd.debug(
 `Child process stopped with exit status ${t}`),0===t?(this._state=Nl.FINISHED,this._observer.hasCallbacks(
-jl.SCRIPT_FINISHED)&&this._observer.triggerEvent(jl.SCRIPT_FINISHED,this)):(this._state=Nl.FAILED,
-this._observer.hasCallbacks(jl.SCRIPT_FAILED)&&this._observer.triggerEvent(jl.SCRIPT_FAILED,this)),
-this._observer.hasCallbacks(jl.SCRIPT_CHANGED)&&this._observer.triggerEvent(jl.SCRIPT_CHANGED,this)}}u(pd,"Event",jl),u(
-pd,"State",Nl);class fd extends pd{static parseControllerModel(e){if(rt(e))return e}static isControllerModel(e){
-return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env,t.cwd)}constructor(e,t,r,n=[],
-i={},o=void 0){super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i,o)}}(vu=Hl=Hl||{}).MKDIR="mkdir",vu.READ="read",
-vu.READ_OR_CREATE="read/create",vu.WRITE="write";const gd=Do(fu,["name","file","target","content","output","default"]),
-Td=fc.createLogger("FileController");class Sd extends ad{static parseControllerModel(e){if(nt(e))return e}
-static isControllerModel(e){return nt(e)}static createController(e,t){return new Sd(e,t.name,t,t.file,t.output)}
-constructor(e,t,r,n,i=void 0){super(e,Al.FILE,`FileController#${t}`,`file#${t}`,t,r,n,i)}run(e,t){
+jl.SCRIPT_FINISHED)&&this._observer.triggerEvent(jl.SCRIPT_FINISHED,this),
+void 0!==this._outputVariable&&this._context.setVariable(this._outputVariable,this.getOutputString())):(
+this._state=Nl.FAILED,this._observer.hasCallbacks(jl.SCRIPT_FAILED)&&this._observer.triggerEvent(jl.SCRIPT_FAILED,this))
+,this._observer.hasCallbacks(jl.SCRIPT_CHANGED)&&this._observer.triggerEvent(jl.SCRIPT_CHANGED,this)}}c(pd,"Event",jl),
+c(pd,"State",Nl);class fd extends pd{static parseControllerModel(e){if(rt(e))return e}static isControllerModel(e){
+return rt(e)}static createController(e,t){return new fd(e,t.name,t.command,t.args,t.env,t.cwd,t.output)}constructor(e,t,
+r,n=[],i={},o=void 0,s=void 0){super(e,Al.SCRIPT,"ScriptController","command",t,r,n,i,o,s)}}(vu=Hl=Hl||{}).MKDIR="mkdir"
+,vu.READ="read",vu.READ_OR_CREATE="read/create",vu.WRITE="write";const gd=Do(fu,["name","file","target","content",
+"output","default"]),Td=fc.createLogger("FileController");class Sd extends ad{static parseControllerModel(e){if(nt(e)
+)return e}static isControllerModel(e){return nt(e)}static createController(e,t){return new Sd(e,t.name,t,t.file,t.output
+)}constructor(e,t,r,n,i=void 0){super(e,Al.FILE,`FileController#${t}`,`file#${t}`,t,r,n,i)}run(e,t){
 const r=this.getContext(),n=r.getSystem();if(!function(){switch(e){case Hl.MKDIR:case Hl.READ:case Hl.READ_OR_CREATE:
 case Hl.WRITE:return 1}}())throw Td.debug("run: action = ",e),new TypeError(`[file#${this.getName(
 )}] failed to compile the action property: ${Vc.toString(e)}`);if(!nt(t))throw Td.debug("run: input = ",t),
@@ -1540,7 +1542,7 @@ return new Od(e,t.name,t,ql.CONCAT,t.output)}constructor(e,t,r,n=void 0,i=void 0
 new TypeError(`[concat#${this.getName()}] failed to compile the action property: ${Vc.toString(e)}`);if(e!==ql.CONCAT
 )throw Dd.debug("run: action = ",e),new TypeError(`Unimplemented action: ${e}`);{if(!at(t))throw new TypeError(
 `[concat#${this.getName()}] failed to compile the input property as variable: ${Vc.toString(t)}`)
-;const r=null==t?void 0:t.concat;return d(r,Y)?Do([],...r):d(r,X)?is(r,(e,t)=>D(D({},e),t),{}):c(r)?r.join(""):[r]}}}
+;const r=null==t?void 0:t.concat;return d(r,Y)?Do([],...r):d(r,X)?is(r,(e,t)=>D(D({},e),t),{}):u(r)?r.join(""):[r]}}}
 fc.createLogger("waitHttpResource"),fc.createLogger("waitLocalResource");const Ld=fc.createLogger("waitMatrixResource"),
 Pd=fc.createLogger("main");fc.setLogLevel(ec),async function(n=[]){var i,o,s;let a;try{if(class{
 static registerControllers(){Wc.registerController(Od),Wc.registerController(bd),Wc.registerController(yd),
