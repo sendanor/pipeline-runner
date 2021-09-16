@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";function n(t,e){var r,n=Object.keys(t);return Object.getOwnPropertySymbols&&(
 r=Object.getOwnPropertySymbols(t),e&&(r=r.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),
-n.push.apply(n,r)),n}function D(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
+n.push.apply(n,r)),n}function O(t){for(var r,e=1;e<arguments.length;e++)r=null!=arguments[e]?arguments[e]:{},e%2?n(
 Object(r),!0).forEach(function(e){c(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,
 Object.getOwnPropertyDescriptors(r)):n(Object(r)).forEach(function(e){Object.defineProperty(t,e,
 Object.getOwnPropertyDescriptor(r,e))});return t}function c(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,
@@ -31,7 +31,7 @@ void 0===r||N(e,e=>r(e)))throw e=Qo(P(e),e=>!o(e)),n?new TypeError(`Property "${
 `Property "${t}": value not correct: ${JSON.stringify(n,null,2)}`)}(e,t,r,n,i)}function w(e,t=void 0,r=void 0,n=void 0,
 i=void 0){try{return C(e,t,r,n,i),"No errors detected"}catch(e){return null!==(i=null==e?void 0:e.message
 )&&void 0!==i?i:`${e}`}}function R(...e){return t=>T(e,e=>e(t))}function b(e){return wt(e)}function I(e,t){return b(e
-)&&0===(r=t,Js(P(e),e=>!r.includes(e)).length);var r}function O(e){if(void 0!==e&&""!==e)return Ua(e)?e:["true","t","on"
+)&&0===(r=t,Js(P(e),e=>!r.includes(e)).length);var r}function D(e){if(void 0!==e&&""!==e)return Ua(e)?e:["true","t","on"
 ,"1","enabled"].includes(`${e}`.toLowerCase())}function L(e){if(void 0!==e&&""!==e)return`${e}`}function P(e,t=p){if(u(e
 )){var r=xi(e,(e,t)=>t);return Js(r,e=>t(e))}return b(e)?(e=Reflect.ownKeys(e),Js(e,e=>t(e))):[]}function U(e){switch(e
 ){case dl.HTTP:return"http";case dl.LOCAL:return"local";case dl.MATRIX:return"matrix"}throw new TypeError(
@@ -319,7 +319,7 @@ return y(e)&&I(e,["display_name","avatar_url"])&&p(null==e?void 0:e.display_name
 null==e?void 0:e.avatar_url))}function qe(e){return y(e)&&I(e,["errcode","error","retry_after_ms"])&&function(){switch(
 null==e?void 0:e.errcode){case Il.M_USER_IN_USE:case Il.M_INVALID_USERNAME:case Il.M_EXCLUSIVE:case Il.M_FORBIDDEN:
 case Il.M_LIMIT_EXCEEDED:return 1;default:return}}()&&p(null==e?void 0:e.error)&&h(null==e?void 0:e.retry_after_ms)}
-function ze(e){return encodeURIComponent(e)}async function Xe(e,t,r,n,i){n=D(D({},n.data),{},{state:i.getStateDTO()}),
+function ze(e){return encodeURIComponent(e)}async function Xe(e,t,r,n,i){n=O(O({},n.data),{},{state:i.getStateDTO()}),
 await t.update(r,n),await e.setRoomStateByType(r,Rl.FI_NOR_PIPELINE_STATE,"",i.toJSON())}async function Ye(e,t){switch(
 t.type){case hl.HTTP:return sc?async function(t,r){var n,i,o,s,a,l,u;try{const c={};if(r.authentication&&(k(
 r.authentication)&&(c.Authorization=`Bearer ${r.authentication.access_token}`),F(r.authentication)&&(
@@ -336,36 +336,35 @@ o=oe(i=JSON.parse(n))))return Xc.warn("Model was not valid: ",i),pl.RESOURCE_MOD
 ,a=null==o?void 0:o.variables,l=new qc(t,s,a,Ec,vc);let e=Wc.createController(o,l);return Xc.info(`Running ${e.getName(
 )} from ${r.path}`),await Wc.startAndWaitUntilFinished(e),Xc.info(`Successfully finished ${e.getName()} from ${r.path}`)
 ,pl.OK}catch(e){return Xc.error("Error: ",e),pl.LOCAL_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;case hl.MATRIX:
-return ac?async function(n,i){var o,s,a,l,u,c,d,h,_,E,v,p,f,g,T,S,N,A,y,m,C;try{td.debug("runMatrixResource: ",i),
-f=i.authentication;let t;if(k(f))t=new Qc(`https://${i.homeserver}`,void 0,void 0,f.access_token);else{if(!F(f)
-)return pl.UNKNOWN_AUTHENTICATION_TYPE;t=new Qc(`https://${i.homeserver}`),t=await t.login(f.username,f.password)}
-let e=t.getUserId();if(!e&&(e=await t.whoami(),!e))return td.error("Could not detect agent user ID"),pl.UNKNOWN_AGENT_ID
-;td.info(`Agent user ID: ${e}`);const w=new ed(t,Rl.FI_NOR_AGENT_DTO);if(0===(C=await w.getAll()).length
-)return td.debug("Detected no pools available."),pl.NO_WORK_AVAILABLE;g=(1===C.length?(td.debug(
-"Detected single pool available. Picking it."),C[0]):(td.debug(
-`Detected ${C.length} pools available. Picking one by random.`),C[Math.floor(Math.random()*C.length)])).id,td.info(
-`Pool ID: ${g}`);const R=new ed(t,Rl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,Rl.FI_NOR_PIPELINE_STATE,"",[g])
-;T=await R.getAll(),td.debug("runList = ",T);let r;if(0===T.length)return td.debug("Detected no work available."),
-pl.NO_WORK_AVAILABLE;r=1===T.length?(td.debug("Detected single work available. Picking it."),T[0]):(td.debug(
-`Detected ${T.length} work items available. Picking one by random.`),T[Math.floor(Math.random()*T.length)]);const b=r.id
-;if(void 0!==(null===(o=r)||void 0===o||null===(s=o.data)||void 0===s?void 0:s.agentPoolId)&&void 0!==(null===(a=r
-)||void 0===a||null===(l=a.data)||void 0===l?void 0:l.agentAccountId)&&void 0!==(null===(u=r)||void 0===u||null===(
-c=u.data)||void 0===c?void 0:c.state))return td.warn(`Work ID was already running: ${b}`),td.debug(
-`We'll stop listening the work item: ${b}`),await t.leaveRoom(b),td.debug(`We'll forget the work item now: ${b}`),
-await t.forgetRoom(b),pl.CONFLICT;if(td.info(`Work ID: ${b}`),S=D(D({},r.data),{},{agentPoolId:g,agentAccountId:e}),
-await R.update(r.id,S),r=await R.findById(r.id),!r)return td.warn(
-"The work item disappeared while we were selecting it."),pl.WORK_CANCELLED;if(b!==r.id)return td.error(
-`The work item ID conflict: ${b} !== ${r.id}`),pl.CONFLICT;if(g!==(null===(d=r)||void 0===d||null===(h=d.data
-)||void 0===h?void 0:h.agentPoolId)||e!==(null===(_=r)||void 0===_||null===(E=_.data
-)||void 0===E?void 0:E.agentAccountId))return td.error(""),pl.CONFLICT;if(td.debug(
-"Work item secured to us! We can start the job."),void 0===(N=oe(null===(v=r)||void 0===v||null===(p=v.data
-)||void 0===p?void 0:p.model)))return td.warn("Work item did not contain correct pipeline model: ",r),
-pl.RESOURCE_MODEL_INVALID;A=null==N?void 0:N.parameters,y=null==N?void 0:N.variables,m=new qc(n,A,y,Ec,vc);try{
-let e=Wc.createController(N,m);await Xe(t,R,b,r,e);const I=e.onChanged(()=>{Xe(t,R,b,r,e).catch(e=>{td.error(
-"Failed to save controller state: ",e)})});try{await Wc.startAndWaitUntilFinished(e)}finally{I(),await Xe(t,R,b,r,e)}
-}finally{await Xe(t,R,b,r,{getStateDTO:()=>({type:Al.NONE,name:"none",state:Nl.UNCONSTRUCTED}),toJSON:()=>({type:"none"}
-)})}return td.debug(`We'll stop listening the work item now: ${b}`),await t.leaveRoom(b),td.debug(
-`We'll forget the work item now: ${b}`),await t.forgetRoom(b),pl.OK}catch(e){return td.error("Error: ",e),
+return ac?async function(i,o){var s,a,l,u,c,d,h,_,E,v,p,f,g,T,S,N,A,y,m,C,w;try{td.debug("runMatrixResource: ",o),
+g=o.authentication;let e;if(k(g))e=new Qc(`https://${o.homeserver}`,void 0,void 0,g.access_token);else{if(!F(g)
+)return pl.UNKNOWN_AUTHENTICATION_TYPE;e=new Qc(`https://${o.homeserver}`),e=await e.login(g.username,g.password)}
+let t=e.getUserId();if(!t&&(t=await e.whoami(),!t))return td.error("Could not detect agent user ID"),pl.UNKNOWN_AGENT_ID
+;td.info(`Agent user ID: ${t}`);const R=new ed(e,Rl.FI_NOR_AGENT_DTO);if(0===(w=await R.getAll()).length
+)return td.debug("Detected no pools available."),pl.NO_WORK_AVAILABLE;T=(1===w.length?(td.debug(
+"Detected single pool available. Picking it."),w[0]):(td.debug(
+`Detected ${w.length} pools available. Picking one by random.`),w[Math.floor(Math.random()*w.length)])).id,td.info(
+`Pool ID: ${T}`);const b=new ed(e,Rl.FI_NOR_PIPELINE_RUN_DTO,"",void 0,Rl.FI_NOR_PIPELINE_STATE,"",[T])
+;S=await b.getAll(),td.debug("runList = ",S);let r;if(0===S.length)return td.debug("Detected no work available."),
+pl.NO_WORK_AVAILABLE;r=1===S.length?(td.debug("Detected single work available. Picking it."),S[0]):(td.debug(
+`Detected ${S.length} work items available. Picking one by random.`),S[Math.floor(Math.random()*S.length)]);const I=r.id
+;if(void 0!==(null===(s=r)||void 0===s||null===(a=s.data)||void 0===a?void 0:a.agentPoolId)&&void 0!==(null===(l=r
+)||void 0===l||null===(u=l.data)||void 0===u?void 0:u.agentAccountId)&&void 0!==(null===(c=r)||void 0===c||null===(
+d=c.data)||void 0===d?void 0:d.state))return td.warn(`Work ID was already running: ${I}`),td.debug(
+`We'll stop listening the work item: ${I}`),await e.leaveRoom(I),td.debug(`We'll forget the work item now: ${I}`),
+await e.forgetRoom(I),pl.CONFLICT;if(td.info(`Work ID: ${I}`),N=O(O({},r.data),{},{agentPoolId:T,agentAccountId:t}),
+await b.update(r.id,N),r=await b.findById(r.id),!r)return td.warn(
+"The work item disappeared while we were selecting it."),pl.WORK_CANCELLED;if(I!==r.id)return td.error(
+`The work item ID conflict: ${I} !== ${r.id}`),pl.CONFLICT;if(T!==(null===(h=r)||void 0===h||null===(_=h.data
+)||void 0===_?void 0:_.agentPoolId)||t!==(null===(E=r)||void 0===E||null===(v=E.data
+)||void 0===v?void 0:v.agentAccountId))return td.error(""),pl.CONFLICT;if(td.debug(
+"Work item secured to us! We can start the job."),void 0===(A=oe(null===(p=r)||void 0===p||null===(f=p.data
+)||void 0===f?void 0:f.model)))return td.warn("Work item did not contain correct pipeline model: ",r),
+pl.RESOURCE_MODEL_INVALID;y=null==A?void 0:A.parameters,m=null==A?void 0:A.variables,C=new qc(i,y,m,Ec,vc)
+;let n=Wc.createController(A,C);try{await Xe(e,b,I,r,n);const D=n.onChanged(()=>{Xe(e,b,I,r,n).catch(e=>{td.error(
+"Failed to save controller state: ",e)})});try{await Wc.startAndWaitUntilFinished(n)}finally{D()}}finally{await Xe(e,b,I
+,r,n)}return td.debug(`We'll stop listening the work item now: ${I}`),await e.leaveRoom(I),td.debug(
+`We'll forget the work item now: ${I}`),await e.forgetRoom(I),pl.OK}catch(e){return td.error("Error: ",e),
 pl.MATRIX_RESOURCE_FAILED}}(e,t):pl.UNBUILD_FEATURE;default:return pl.UNKNOWN_RESOURCE_TYPE}}function Qe(e){return Z(e
 )&&J(null==e?void 0:e.name)&&z(null==e?void 0:e.json)&&f(null==e?void 0:e.action)&&f(null==e?void 0:e.output)&&I(e,ld)}
 function Ze(e){return d(e,p)}function et(e){return d(e,Ze)}function tt(e){return Z(e)&&J(null==e?void 0:e.name)&&z(
@@ -606,12 +605,12 @@ t=qa(t),e.slice(r,r+t.length)==t},Qa=Ka=function(e,t,r){return e==e&&(void 0!==r
 ,n),0<=(r-=t.length)&&e.slice(r,n)==t},nl=ju,il=function(t,e){return nl(e,function(e){return t[e]})},ol=nu,sl=function(e
 ){return null==e?[]:il(e,ol(e))},su=Array.prototype,al=su.join,ll=function(e,t){return null==e?"":al.call(e,t)},(
 ec=ul={})[ec.DEBUG=0]="DEBUG",ec[ec.INFO=1]="INFO",ec[ec.WARN=2]="WARN",ec[ec.ERROR=3]="ERROR",ec[ec.NONE=4]="NONE",
-cl=ul;const rc=null!==(ou=L("1.0.6"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
+cl=ul;const rc=null!==(ou=L("1.0.7"))&&void 0!==ou?ou:"?";Vu=null!==(iu=L(""))&&void 0!==iu?iu:"io.nor.fi",nu=null!==(
 ju=L(""))&&void 0!==ju?ju:"nor-pipeline-runner",ec=null!==(su=L(""))&&void 0!==su?su:"",iu=null!==(ou=L("")
 )&&void 0!==ou?ou:"";const nc=null!==(ju=L("production"))&&void 0!==ju?ju:"development",ic=null!==(su=L(
-"2021-09-16T11:53:53.344Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
-)&&void 0!==su?su:"}";const oc=null===(su=O(""))||void 0===su||su,sc=null===(su=O(""))||void 0===su||su,ac=null===(su=O(
-""))||void 0===su||su,lc=null===(su=O(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
+"2021-09-16T20:39:34.040Z"))&&void 0!==su?su:"";ju=null!==(ou=L(""))&&void 0!==ou?ou:"${",ou=null!==(su=L("")
+)&&void 0!==su?su:"}";const oc=null===(su=D(""))||void 0===su||su,sc=null===(su=D(""))||void 0===su||su,ac=null===(su=D(
+""))||void 0===su||su,lc=null===(su=D(""))||void 0===su||su;su="production"===nc;const uc="test"===nc,cc=!su&&!uc
 ;ec=null!==(ct=function(e){if(e){if(function(){switch(e){case ul.DEBUG:case ul.INFO:case ul.WARN:case ul.ERROR:
 case ul.NONE:return 1;default:return}}())return e;switch(e=`${e}`.toUpperCase()){case"ALL":case"DEBUG":return ul.DEBUG
 ;case"INFO":return ul.INFO;case"WARN":case"WARNING":return ul.WARN;case"ERR":case"ERROR":return ul.ERROR;case"FALSE":
@@ -758,9 +757,9 @@ l=new Fu.default.URL(o);let u;const c=null!==(t=null===l||void 0===l?void 0:l.pr
 "unix:"===c||"socket:"===c){const r=null!==l&&void 0!==l&&l.pathname?null===l||void 0===l?void 0:l.pathname:"/";if(
 "/"===r)throw new TypeError(`No socket path found for unix protocol URL: ${o}`);if(!(e=await this._findSocketFile(r))
 )throw new TypeError(`No socket path found for unix protocol URL: ${o}`);var t=`${e.length<r.length?r.substr(e.length
-):""}${"?"!==l.search?l.search:""}`;s=D(D({},s),{},{socketPath:e,path:t}),o="",u=this._http
+):""}${"?"!==l.search?l.search:""}`;s=O(O({},s),{},{socketPath:e,path:t}),o="",u=this._http
 }else u="https:"===c?this._https:this._http;return new Promise((t,r)=>{let n=!1;try{if(!u)throw new Error(
-"HTTP module not defined. This error should not happen.");var i;let e;o&&(s=D(D({},s),{},{hostname:l.hostname,
+"HTTP module not defined. This error should not happen.");var i;let e;o&&(s=O(O({},s),{},{hostname:l.hostname,
 port:null!==(i=null!==l&&void 0!==l&&l.port?parseInt(l.port,10):void 0)&&void 0!==i?i:"https:"===c?443:80,
 path:l.pathname+l.search})),e=u.request(s,e=>{n?wc.warn(
 "Warning! Request had already ended when the response was received."):(n=!0,t(e))}),e.on("error",e=>{n?(wc.warn(
@@ -770,13 +769,13 @@ path:l.pathname+l.search})),e=u.request(s,e=>{n?wc.warn(
 "Passing on error: ",e),n=!0,r(e))}})}async _request(e,t,r,n){return r=await this._httpRequest(t,r,n),
 n=await yc.getRequestDataAsJson(r),{method:e,url:t,statusCode:null!==(t=null==r?void 0:r.statusCode)&&void 0!==t?t:0,
 headers:r.headers,body:n}}async _getJson(e,t,r){const n={method:"GET",headers:{"Content-Type":"application/json"}}
-;return t&&(n.headers=D(D({},n.headers),t)),this._request(au.GET,e,n,r).then(Rc._successResponse)}async _putJson(e,t,r){
-const n={method:"PUT",headers:{"Content-Type":"application/json"}};return t&&(n.headers=D(D({},n.headers),t)),
+;return t&&(n.headers=O(O({},n.headers),t)),this._request(au.GET,e,n,r).then(Rc._successResponse)}async _putJson(e,t,r){
+const n={method:"PUT",headers:{"Content-Type":"application/json"}};return t&&(n.headers=O(O({},n.headers),t)),
 this._request(au.PUT,e,n,r).then(Rc._successResponse)}async _postJson(e,t,r){const n={method:"POST",headers:{
-"Content-Type":"application/json"}};return t&&(n.headers=D(D({},n.headers),t)),this._request(au.POST,e,n,r).then(
+"Content-Type":"application/json"}};return t&&(n.headers=O(O({},n.headers),t)),this._request(au.POST,e,n,r).then(
 Rc._successResponse)}async _patchJson(e,t,r){const n={method:"PATCH",headers:{"Content-Type":"application/json"}}
-;return t&&(n.headers=D(D({},n.headers),t)),this._request(au.PATCH,e,n,r).then(Rc._successResponse)}async _deleteJson(e,
-t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=D(D({},n.headers),t)),
+;return t&&(n.headers=O(O({},n.headers),t)),this._request(au.PATCH,e,n,r).then(Rc._successResponse)}async _deleteJson(e,
+t,r){const n={method:"DELETE",headers:{"Content-Type":"application/json"}};return t&&(n.headers=O(O({},n.headers),t)),
 this._request(au.DELETE,e,n,r).then(Rc._successResponse)}static async _successResponse(e){
 var t=null==e?void 0:e.statusCode;if(t<200||400<=t)throw wc.error(`Unsuccessful response with status ${t}: `,e),new mc(t
 ,`Error ${t} for ${x(e.method)} ${e.url}`,e.method,e.url,e.body);return e.body}}class bc{constructor(e){c(this,"_fetch",
@@ -784,14 +783,14 @@ void 0),this._fetch=e}jsonRequest(e,t,r,n){switch(e){case au.GET:return this._ge
 return this._postJson(t,r,n);case au.PUT:return this._putJson(t,r,n);case au.DELETE:return this._deleteJson(t,r,n)
 ;default:throw new TypeError(`[Fetch]RequestClient: Unsupported method: ${e}`)}}_getJson(e,t,r){const n={method:"GET",
 mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},credentials:"same-origin"};return t&&(
-n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.GET))}
+n.headers=O(O({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.GET))}
 _putJson(e,t,r){const n={method:"PUT",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},
-credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n
+credentials:"same-origin"};return t&&(n.headers=O(O({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n
 ).then(e=>bc._successResponse(e,au.PUT))}_postJson(e,t,r){const n={method:"POST",mode:"cors",cache:"no-cache",headers:{
-"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=D(D({},n.headers),t)),r&&(
+"Content-Type":"application/json"},credentials:"same-origin"};return t&&(n.headers=O(O({},n.headers),t)),r&&(
 n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e,au.POST))}_deleteJson(e,t,r){const n={
 method:"DELETE",mode:"cors",cache:"no-cache",headers:{"Content-Type":"application/json"},credentials:"same-origin"}
-;return t&&(n.headers=D(D({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e
+;return t&&(n.headers=O(O({},n.headers),t)),r&&(n.body=JSON.stringify(r)),this._fetch(e,n).then(e=>bc._successResponse(e
 ,au.DELETE))}static _successResponse(e,t){const r=e.status;if(!e.ok||r<200||400<=r){const n=e.url,
 i=`${r} ${e.statusText} for ${x(t)} ${n}`;return e.json().then(e=>{throw new mc(r,i,t,n,e)})}return e.json()}}
 const Ic=Ac?require("http"):void 0,Dc=Ac?require("https"):void 0,Oc=fc.createLogger("RequestClient");class Lc{
@@ -1203,7 +1202,7 @@ null!=e&&e.getBody||null!=e&&e.body){if((null==(n=null!==(n=null==e?void 0:e.get
 n=null==n?void 0:n.retry_after_ms)&&void 0!==n?n:1e3,Yc.error("Limit reached: ",n,t,r),this._retryLater(async()=>(
 Yc.error("Calling again: ",t,r),this._getJson(t,r)),n);Yc.error("Error did not have body: ",e)}else Yc.error(
 "Error did not have body: ",e);throw e}}_sendMatrixEventList(e,t){Xs(e,e=>{this._sendMatrixEvent(e,t)})}
-_sendMatrixEvent(e,t){this._observer.triggerEvent(Ol.EVENT,t?D(D({},e),{},{room_id:t}):e)}_onTimeout(){if(this._syncing
+_sendMatrixEvent(e,t){this._observer.triggerEvent(Ol.EVENT,t?O(O({},e),{},{room_id:t}):e)}_onTimeout(){if(this._syncing
 )Yc.warn("Warning! Already syncing...");else{var e=this._nextBatch;if(!e)throw new TypeError(
 "_onTimeout: No nextBatch defined");this._syncing=!0,this._syncSince(e).then(()=>{this._syncing=!1,
 void 0!==this._timer&&(clearTimeout(this._timer),this._timer=void 0),this._timer=setTimeout(this._timeoutCallback,
@@ -1266,7 +1265,7 @@ history_visibility:Pl.SHARED}},{type:Rl.M_ROOM_GUEST_ACCESS,state_key:"",content
 ;void 0!==n&&s.push({type:Rl.M_ROOM_JOIN_RULES,state_key:"",content:{join_rule:Ul.RESTRICTED,allow:xi(n,e=>({
 type:Rl.M_ROOM_MEMBERSHIP,room_id:e}))}}),Zc.debug("createItem: initialState = ",s),n=i.length?{invite:i}:{},Zc.debug(
 "createItem: inviteOptions = ",n);const a={[this._stateType]:0,[this._deletedType]:0};if(null!==(i=this._allowedEvents
-)&&void 0!==i&&i.length&&Xs(this._allowedEvents,e=>{a[e]=0}),t=D(D({},n),{},{preset:Ll.PRIVATE_CHAT,creation_content:t,
+)&&void 0!==i&&i.length&&Xs(this._allowedEvents,e=>{a[e]=0}),t=O(O({},n),{},{preset:Ll.PRIVATE_CHAT,creation_content:t,
 initial_state:s,room_version:"8",power_level_content_override:{events:a}}),t=await this._client.createRoom(t),Zc.debug(
 "createItem: response = ",t),t=t.room_id,Zc.debug("createItem: room_id = ",t),
 this._serviceAccount&&o&&o!==this._serviceAccount.getUserId())try{await this._serviceAccount.joinRoom(t)}catch(e){
@@ -1524,7 +1523,7 @@ s=null==t?void 0:t.set)&&void 0!==s?s:"",s=null!==(s=null==t?void 0:t.value)&&vo
 "config",o,s],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"},t.cwd);if(t.git!==Jl.COMMIT)throw new TypeError(
 `Unknown git action: ${t.git}`);return s=null!==(s=null==t?void 0:t.message)&&void 0!==s?s:"Pipeline commit",new Cd(e,
 t.name,"git",["commit","-m",s],{GIT_TERMINAL_PROMPT:"0",GIT_ASKPASS:"/bin/echo"},t.cwd)}constructor(e,t,r,n=[],i={},
-o=void 0){var s=null===(s=process.env)||void 0===s?void 0:s.SSH_AUTH_SOCK;!s||null!=i&&i.SSH_AUTH_SOCK||(i=D(D({},i),{},
+o=void 0){var s=null===(s=process.env)||void 0===s?void 0:s.SSH_AUTH_SOCK;!s||null!=i&&i.SSH_AUTH_SOCK||(i=O(O({},i),{},
 {SSH_AUTH_SOCK:s})),super(e,Al.GIT,"GitController","git",t,r,n,i,o)}}const wd=Do(fu,["name","assert","equals","output"])
 ;(Wl=Wl||{}).EQUALS="equals",Vl=Wl;const Rd=fc.createLogger("AssertController");class bd extends ad{
 static parseControllerModel(e){if(st(e))return e}static isControllerModel(e){return st(e)}static createController(e,t){
@@ -1542,7 +1541,7 @@ return new Od(e,t.name,t,ql.CONCAT,t.output)}constructor(e,t,r,n=void 0,i=void 0
 new TypeError(`[concat#${this.getName()}] failed to compile the action property: ${Vc.toString(e)}`);if(e!==ql.CONCAT
 )throw Dd.debug("run: action = ",e),new TypeError(`Unimplemented action: ${e}`);{if(!at(t))throw new TypeError(
 `[concat#${this.getName()}] failed to compile the input property as variable: ${Vc.toString(t)}`)
-;const r=null==t?void 0:t.concat;return d(r,Y)?Do([],...r):d(r,X)?is(r,(e,t)=>D(D({},e),t),{}):u(r)?r.join(""):[r]}}}
+;const r=null==t?void 0:t.concat;return d(r,Y)?Do([],...r):d(r,X)?is(r,(e,t)=>O(O({},e),t),{}):u(r)?r.join(""):[r]}}}
 fc.createLogger("waitHttpResource"),fc.createLogger("waitLocalResource");const Ld=fc.createLogger("waitMatrixResource"),
 Pd=fc.createLogger("main");fc.setLogLevel(ec),async function(n=[]){var i,o,s;let a;try{if(class{
 static registerControllers(){Wc.registerController(Od),Wc.registerController(bd),Wc.registerController(yd),
