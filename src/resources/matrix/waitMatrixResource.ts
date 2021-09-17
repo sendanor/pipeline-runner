@@ -52,7 +52,7 @@ export async function waitMatrixResource (
 
             try {
 
-                await waitForEvents(matrixClient, [
+                await matrixClient.waitForEvents([
                     MatrixType.M_ROOM_CREATE,
                     MatrixType.M_ROOM_JOIN_RULES,
                     MatrixType.M_ROOM_MEMBER
@@ -213,60 +213,6 @@ async function checkIfAnyPoolHasWork (
         );
 
     }
-
-}
-
-async function waitForEvents (
-    matrixClient : SimpleMatrixClient,
-    events       : string[]
-) : Promise<void> {
-
-    return await new Promise((resolve, reject) => {
-        let listener : any;
-        try {
-
-            function onEvent (
-                event : SimpleMatrixClientEvent,
-                data  : MatrixSyncResponseAnyEventDTO & {room_id?: string}
-            ) {
-
-                const type   = data?.type;
-                const roomId = data?.room_id;
-
-                LOG.debug(`waitForEvents: Event: `, type, roomId, data);
-
-                if ( type && events.includes(type) ) {
-
-                    if (listener) {
-                        listener();
-                        listener = undefined;
-                    }
-
-                    matrixClient.stop();
-
-                    resolve();
-
-                }
-
-            }
-
-            listener = matrixClient.on(SimpleMatrixClientEvent.EVENT, onEvent);
-
-            matrixClient.start();
-
-        } catch (err) {
-
-            if (listener) {
-                listener();
-                listener = undefined;
-            }
-
-            matrixClient.stop();
-
-            reject(err);
-
-        }
-    });
 
 }
 
