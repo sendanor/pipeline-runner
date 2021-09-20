@@ -613,10 +613,10 @@ t=za(t),e.slice(r,r+t.length)==t},Za=Ka=function(e,t,r){return e==e&&(void 0!==r
 ,n),0<=(r-=t.length)&&e.slice(r,n)==t},il=ju,ol=function(t,e){return il(e,function(e){return t[e]})},sl=ou,al=function(e
 ){return null==e?[]:ol(e,sl(e))},lu=Array.prototype,ll=lu.join,ul=function(e,t){return null==e?"":ll.call(e,t)},(
 tc=cl={})[tc.DEBUG=0]="DEBUG",tc[tc.INFO=1]="INFO",tc[tc.WARN=2]="WARN",tc[tc.ERROR=3]="ERROR",tc[tc.NONE=4]="NONE",
-dl=cl;const nc=null!==(au=U("1.0.8"))&&void 0!==au?au:"?";qu=null!==(su=U(""))&&void 0!==su?su:"io.nor.fi",ou=null!==(
+dl=cl;const nc=null!==(au=U("1.0.9"))&&void 0!==au?au:"?";qu=null!==(su=U(""))&&void 0!==su?su:"io.nor.fi",ou=null!==(
 ju=U(""))&&void 0!==ju?ju:"nor-pipeline-runner",tc=null!==(lu=U(""))&&void 0!==lu?lu:"",su=null!==(au=U("")
 )&&void 0!==au?au:"";const ic=null!==(ju=U("production"))&&void 0!==ju?ju:"development",oc=null!==(lu=U(
-"2021-09-20T13:53:20.531Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
+"2021-09-20T14:02:08.018Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
 )&&void 0!==lu?lu:"}";const sc=null===(lu=b(""))||void 0===lu||lu,ac=null===(lu=b(""))||void 0===lu||lu,lc=null===(lu=b(
 ""))||void 0===lu||lu,uc=null===(lu=b(""))||void 0===lu||lu;lu="production"===ic;const cc="test"===ic,dc=!lu&&!cc
 ;tc=null!==(dt=function(e){if(e){if(function(){switch(e){case cl.DEBUG:case cl.INFO:case cl.WARN:case cl.ERROR:
