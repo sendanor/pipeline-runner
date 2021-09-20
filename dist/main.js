@@ -616,7 +616,7 @@ tc=cl={})[tc.DEBUG=0]="DEBUG",tc[tc.INFO=1]="INFO",tc[tc.WARN=2]="WARN",tc[tc.ER
 dl=cl;const nc=null!==(au=U("1.0.9"))&&void 0!==au?au:"?";qu=null!==(su=U(""))&&void 0!==su?su:"io.nor.fi",ou=null!==(
 ju=U(""))&&void 0!==ju?ju:"nor-pipeline-runner",tc=null!==(lu=U(""))&&void 0!==lu?lu:"",su=null!==(au=U("")
 )&&void 0!==au?au:"";const ic=null!==(ju=U("production"))&&void 0!==ju?ju:"development",oc=null!==(lu=U(
-"2021-09-20T14:02:08.018Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
+"2021-09-20T14:56:39.958Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
 )&&void 0!==lu?lu:"}";const sc=null===(lu=b(""))||void 0===lu||lu,ac=null===(lu=b(""))||void 0===lu||lu,lc=null===(lu=b(
 ""))||void 0===lu||lu,uc=null===(lu=b(""))||void 0===lu||lu;lu="production"===ic;const cc="test"===ic,dc=!lu&&!cc
 ;tc=null!==(dt=function(e){if(e){if(function(){switch(e){case cl.DEBUG:case cl.INFO:case cl.WARN:case cl.ERROR:
@@ -1624,15 +1624,16 @@ new TypeError(`[concat#${this.getName()}] failed to compile the action property:
 `[concat#${this.getName()}] failed to compile the input property as variable: ${qc.toString(t)}`)
 ;const r=null==t?void 0:t.concat;return d(r,Y)?Oo([],...r):d(r,X)?os(r,(e,t)=>O(O({},e),t),{}):u(r)?r.join(""):[r]}}}
 gc.createLogger("waitHttpResource"),gc.createLogger("waitLocalResource");const Ld=gc.createLogger("waitMatrixResource"),
-Pd=gc.createLogger("main");gc.setLogLevel(tc),async function(n=[]){var i,o,s;let a;try{if(class{
-static registerControllers(){Vc.registerController(Ud),Vc.registerController(Dd),Vc.registerController(Cd),
-Vc.registerController(Rd),Vc.registerController(Nd),Vc.registerController(dd),Vc.registerController(Ed),
-Vc.registerController(gd)}}.registerControllers(),Pd.debug(`Loglevel ${gc.getLogLevelString()}`),i=hc,n.shift(),
-!n.shift())return console.log(x(i)),pl.ARGUMENT_PARSE_ERROR;if(0===n.length)return console.log(x(i)),
-pl.ARGUMENT_PARSE_ERROR;let t=!1,r=!0;do{if(o=n.shift(),r){let e=!1;switch(function(){switch(o){case"-h":case"--help":
-case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":case 2:return 2;case"-w":case"--wait":case 3:return 3}
-}()){case 0:return console.log(x(i)),pl.OK;case 1:return console.log(function(e){const t=Ws([sc?"LOCAL":"",ac?"HTTP":"",
-lc?"MATRIX":"",cc?"TEST":"",dc?"DEV":""],e=>!!e);return`${e} v${nc} [${t.join("|")}]
+Pd=gc.createLogger("main");gc.setLogLevel(tc),async function(n=[]){var i,o,s;let a;try{if(Lc.setLogLevel(dl.INFO),
+Zc.setLogLevel(dl.INFO),td.setLogLevel(dl.INFO),class{static registerControllers(){Vc.registerController(Ud),
+Vc.registerController(Dd),Vc.registerController(Cd),Vc.registerController(Rd),Vc.registerController(Nd),
+Vc.registerController(dd),Vc.registerController(Ed),Vc.registerController(gd)}}.registerControllers(),Pd.debug(
+`Loglevel ${gc.getLogLevelString()}`),i=hc,n.shift(),!n.shift())return console.log(x(i)),pl.ARGUMENT_PARSE_ERROR;if(
+0===n.length)return console.log(x(i)),pl.ARGUMENT_PARSE_ERROR;let t=!1,r=!0;do{if(o=n.shift(),r){let e=!1;switch(
+function(){switch(o){case"-h":case"--help":case 0:return 0;case"-v":case"--version":case 1:return 1;case"--":case 2:
+return 2;case"-w":case"--wait":case 3:return 3}}()){case 0:return console.log(x(i)),pl.OK;case 1:return console.log(
+function(e){const t=Ws([sc?"LOCAL":"",ac?"HTTP":"",lc?"MATRIX":"",cc?"TEST":"",dc?"DEV":""],e=>!!e)
+;return`${e} v${nc} [${t.join("|")}]
     
 Built with options:
 

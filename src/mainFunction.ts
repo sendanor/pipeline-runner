@@ -17,6 +17,10 @@ import NodeSystem from "./systems/node/NodeSystem";
 import PipelineDefaults from "./nor/pipeline/PipelineDefaults";
 import System from "./nor/pipeline/systems/types/System";
 import waitResource from "./resources/waitResource";
+import LogLevel from "./nor/ts/types/LogLevel";
+import SimpleMatrixClient from "./nor/matrix/SimpleMatrixClient";
+import RequestClient from "./nor/ts/RequestClient";
+import MatrixCrudRepository from "./nor/matrix/MatrixCrudRepository";
 
 const LOG = LogService.createLogger('main');
 
@@ -27,6 +31,10 @@ export async function main (
     let system : System | undefined;
 
     try {
+
+        RequestClient.setLogLevel(LogLevel.INFO);
+        SimpleMatrixClient.setLogLevel(LogLevel.INFO);
+        MatrixCrudRepository.setLogLevel(LogLevel.INFO);
 
         PipelineDefaults.registerControllers();
 
