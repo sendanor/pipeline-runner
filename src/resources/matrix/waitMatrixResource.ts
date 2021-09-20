@@ -56,7 +56,8 @@ export async function waitMatrixResource (
                     MatrixType.M_ROOM_CREATE,
                     MatrixType.M_ROOM_JOIN_RULES,
                     MatrixType.M_ROOM_MEMBER
-                ]);
+                ],
+                    );
 
             } catch (err) {
 

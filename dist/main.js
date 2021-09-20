@@ -616,7 +616,7 @@ tc=cl={})[tc.DEBUG=0]="DEBUG",tc[tc.INFO=1]="INFO",tc[tc.WARN=2]="WARN",tc[tc.ER
 dl=cl;const nc=null!==(au=U("1.0.8"))&&void 0!==au?au:"?";qu=null!==(su=U(""))&&void 0!==su?su:"io.nor.fi",ou=null!==(
 ju=U(""))&&void 0!==ju?ju:"nor-pipeline-runner",tc=null!==(lu=U(""))&&void 0!==lu?lu:"",su=null!==(au=U("")
 )&&void 0!==au?au:"";const ic=null!==(ju=U("production"))&&void 0!==ju?ju:"development",oc=null!==(lu=U(
-"2021-09-20T09:40:26.783Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
+"2021-09-20T13:53:20.531Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
 )&&void 0!==lu?lu:"}";const sc=null===(lu=b(""))||void 0===lu||lu,ac=null===(lu=b(""))||void 0===lu||lu,lc=null===(lu=b(
 ""))||void 0===lu||lu,uc=null===(lu=b(""))||void 0===lu||lu;lu="production"===ic;const cc="test"===ic,dc=!lu&&!cc
 ;tc=null!==(dt=function(e){if(e){if(function(){switch(e){case cl.DEBUG:case cl.INFO:case cl.WARN:case cl.ERROR:
@@ -1209,10 +1209,10 @@ null==t?void 0:t.to_device))&&(v(null==t?void 0:t.device_lists)||Be(null==t?void
 null==t?void 0:t.device_one_time_keys_count)||We(null==t?void 0:t.device_one_time_keys_count))))throw Qc.debug(
 "_sync: response not MatrixSyncResponseDTO: ",JSON.stringify(e,null,2)),new TypeError(
 `Response was not MatrixSyncResponseDTO: ${Ve(e)}`);return e}async waitForEvents(s,a=void 0,n=void 0){
-return void 0===a?Qc.debug(`Waiting for events ${s.join(" | ")} in all rooms`):Qc.debug(`Waiting for events ${s.join(
-" | ")} in rooms ${a.join(", ")}`),new Promise((i,r)=>{try{let e,t;const o=()=>{Qc.debug("waitForEvents: On stop"),e&&(
-e(),e=void 0),t&&(clearTimeout(t),t=void 0),this._stopSyncing()};try{t=setTimeout(()=>{Qc.debug(
-"waitForEvents: On timeout"),t=void 0,o(),i(!1)},n),e=this.on(Ll.EVENT,(e,t)=>{var r=null==t?void 0:t.type,
+return void 0===n&&(n=3e4),void 0===a?Qc.debug(`Waiting for events ${s.join(" | ")} in all rooms`):Qc.debug(
+`Waiting for events ${s.join(" | ")} in rooms ${a.join(", ")}`),new Promise((i,r)=>{try{let e,t;const o=()=>{Qc.debug(
+"waitForEvents: On stop"),e&&(e(),e=void 0),t&&(clearTimeout(t),t=void 0),this._stopSyncing()};try{t=setTimeout(()=>{
+Qc.debug("waitForEvents: On timeout"),t=void 0,o(),i(!1)},n),e=this.on(Ll.EVENT,(e,t)=>{var r=null==t?void 0:t.type,
 n=null==t?void 0:t.room_id;void 0===a||n&&a.includes(n)?r&&s.includes(r)?(Qc.debug("waitForEvents: Event found: ",r,n,t)
 ,o(),i(!0)):Qc.debug("waitForEvents: Ignored event: ",r,n,t):Qc.debug(
 "waitForEvents: Event was not in watched room list: ",r,n,t)}),Qc.debug("waitForEvents: Started listening events"),
