@@ -616,7 +616,7 @@ tc=cl={})[tc.DEBUG=0]="DEBUG",tc[tc.INFO=1]="INFO",tc[tc.WARN=2]="WARN",tc[tc.ER
 dl=cl;const nc=null!==(au=U("1.0.9"))&&void 0!==au?au:"?";qu=null!==(su=U(""))&&void 0!==su?su:"io.nor.fi",ou=null!==(
 ju=U(""))&&void 0!==ju?ju:"nor-pipeline-runner",tc=null!==(lu=U(""))&&void 0!==lu?lu:"",su=null!==(au=U("")
 )&&void 0!==au?au:"";const ic=null!==(ju=U("production"))&&void 0!==ju?ju:"development",oc=null!==(lu=U(
-"2021-09-20T14:56:39.958Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
+"2021-09-20T15:48:42.626Z"))&&void 0!==lu?lu:"";ju=null!==(au=U(""))&&void 0!==au?au:"${",au=null!==(lu=U("")
 )&&void 0!==lu?lu:"}";const sc=null===(lu=b(""))||void 0===lu||lu,ac=null===(lu=b(""))||void 0===lu||lu,lc=null===(lu=b(
 ""))||void 0===lu||lu,uc=null===(lu=b(""))||void 0===lu||lu;lu="production"===ic;const cc="test"===ic,dc=!lu&&!cc
 ;tc=null!==(dt=function(e){if(e){if(function(){switch(e){case cl.DEBUG:case cl.INFO:case cl.WARN:case cl.ERROR:
@@ -1195,7 +1195,7 @@ i=n=await this._postJson(this._resolveHomeServerUrl(`/rooms/${Xe(t)}/join`),null
 `joinRoom: Joined to room "${t}": `,n),n}catch(e){if(this.isAlreadyInTheRoom(null==e?void 0:e.body))return{room_id:t}
 ;const r=null==e?void 0:e.getBody();throw ze(r)&&r.errcode===Ul.M_FORBIDDEN?Qc.warn(
 `joinRoom: Passing on error: Could not join to room "${t}": ${null===r||void 0===r?void 0:r.errcode}: ${null===r||void 0===r?void 0:r.error}`
-):Qc.warn(`joinRoom: Passing on error: Could not join to room "${t}": `,e),e}}async sync(e){var t;if(Qc.info(
+):Qc.warn(`joinRoom: Passing on error: Could not join to room "${t}": `,e),e}}async sync(e){var t;if(Qc.debug(
 "sync with ",e),!(t=this._accessToken))throw new TypeError(`sync: Client ${this._userId} did not have access token`)
 ;var{filter:r,since:n,full_state:i,set_presence:o,timeout:e}=e;const s={};if(void 0!==r)if(T(r))s.filter=r;else{if(!q(r)
 )throw new TypeError(`Invalid value for filter option: ${r}`);s.filter=JSON.stringify(r)}if(void 0!==n&&(s.since=n),
