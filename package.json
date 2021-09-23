@@ -1,6 +1,6 @@
 {
   "name": "@sendanor/pipeline-runner",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Sendanor Pipeline Runner",
   "main": "./dist/main.js",
   "bin": {
